@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: /projects/{{ project.meta.id }}/index.html
+---
+
+<article class="project">
+  <header class="project__header">
+    <h1 class="project__title">{{ project.meta.title }}</h1>
+    {% if project.meta.subtitle %}
+    <p class="project__subtitle">{{ project.meta.subtitle }}</p>
+    {% endif %}
+    
+    <div class="project__meta">
+      {% if project.meta.client %}
+      <span class="project__client">{{ project.meta.client }}</span>
+      {% endif %}
+      {% if project.meta.date %}
+      <span class="project__date">{{ project.meta.date }}</span>
+      {% endif %}
+      {% if project.meta.role %}
+      <span class="project__role">{{ project.meta.role }}</span>
+      {% endif %}
+    </div>
+    
+    {% if project.meta.tags.tag %}
+    <ul class="project__tags">
+      {% for tag in project.meta.tags.tag %}
+      <li class="project__tag">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+  
+  {% if project.summary %}
+  <div class="project__summary">
+    <p>{{ project.summary }}</p>
+  </div>
+  {% endif %}
+  
+  <div class="project__content">
+    {% for section in project.content.section %}
+    <section class="project__section">
+      <h2>{{ section.heading }}</h2>
+      <div class="project__body">
+        {{ section.body | safe }}
+      </div>
+      
+      {% if section.media %}
+        {% if section.media.image %}
+          {% for image in section.media.image %}
+          <figure class="project__figure">
+            <img src="{{ image['@_src'] }}" alt="{{ image['@_alt'] }}">
+            {% if image['@_caption'] %}
+            <figcaption>{{ image['@_caption'] }}</figcaption>
+            {% endif %}
+          </figure>
+          {% endfor %}
+        {% endif %}
+        
+        {% if section.media.embed %}
+        <div class="project__embed" data-type="{{ section.media.embed['@_type'] }}">
+          <iframe src="{{ section.media.embed['@_src'] }}" frameborder="0"></iframe>
+        </div>
+        {% endif %}
+      {% endif %}
+    </section>
+    {% endfor %}
+  </div>
+  
+  {% if project.outcomes %}
+  <section class="project__outcomes">
+    <h2>Outcomes</h2>
+    <ul>
+      {% for outcome in project.outcomes.outcome %}
+      <li>{{ outcome }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

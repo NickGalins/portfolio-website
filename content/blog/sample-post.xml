@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<post>
+  <meta>
+    <id>sample-post</id>
+    <title>Sample Blog Post</title>
+    <date>2024-01-15</date>
+    <excerpt>This is a placeholder blog post to demonstrate the blog structure.</excerpt>
+    <tags>
+      <tag>Writing</tag>
+      <tag>Placeholder</tag>
+    </tags>
+  </meta>
+  
+  <content>
+    Placeholder: Your blog post content goes here.
+    
+    Write about whatever interests you—process, industry thoughts, creative work, lessons learned.
+    
+    The blog is a great place to show your thinking and personality beyond the polished case studies.
+  </content>
+</post>

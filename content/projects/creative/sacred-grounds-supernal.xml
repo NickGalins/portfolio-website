@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>sacred-grounds-supernal</id>
+    <title>Sacred Grounds - The Supernal Gardens</title>
+    <subtitle>Campaign narrative and worldbuilding for a live-action event series</subtitle>
+    <date>2022-2023</date>
+    <client>Sacred Grounds Gaming</client>
+    <role>Creative Director / Lead Writer</role>
+    <thumbnail>/assets/images/supernal-gardens-thumb.png</thumbnail>
+    <tags>
+      <tag>Narrative Design</tag>
+      <tag>Worldbuilding</tag>
+      <tag>Campaign Writing</tag>
+      <tag>Live Events</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Placeholder summary: The Supernal Gardens was a multi-event campaign that ran over several months, involving hundreds of participants. This case study covers the narrative design, worldbuilding, and creative direction behind the campaign.
+  </summary>
+  
+  <content>
+    <section>
+      <heading>Campaign Concept</heading>
+      <body>
+        Placeholder: What was the core story? What themes were explored?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Worldbuilding</heading>
+      <body>
+        Placeholder: How did you build out the setting? What made it distinctive?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Player Agency</heading>
+      <body>
+        Placeholder: How did player choices affect the narrative? How did you plan for branching outcomes?
+      </body>
+      <media>
+        <image src="/assets/images/supernal-gardens-event.png" alt="Event photo" caption="The Supernal Gardens in action" />
+      </media>
+    </section>
+  </content>
+  
+  <outcomes>
+    <outcome>Placeholder: Player engagement metrics or feedback</outcome>
+    <outcome>Placeholder: Lessons learned about live narrative design</outcome>
+  </outcomes>
+</project>

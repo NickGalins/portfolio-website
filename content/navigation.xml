@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation>
+  <section id="content-design" label="Content Design">
+    <category id="case-studies-ux-technical" label="Case Studies (UI/UX &amp; Technical)">
+      <item id="everland-trust-safety" label="Everland - Trust &amp; Safety Reporting System" />
+      <item id="aws-ai-agents" label="AWS - AI Agents and Tools" />
+      <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
+    </category>
+    <category id="technical-docs" label="Technical Docs">
+      <subcategory id="product-docs" label="Product Docs">
+        <item id="google-translate-lens" label="Google - Translate with Lens" />
+      </subcategory>
+      <subcategory id="api-docs" label="API Docs">
+        <item id="aws-api-documentation" label="AWS - API Documentation" />
+        <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
+      </subcategory>
+    </category>
+  </section>
+  
+  <section id="creative" label="Creative">
+    <category id="case-studies-storytelling" label="Case Studies (Storytelling &amp; Marketing)">
+      <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Micro-copy" />
+      <item id="sacred-grounds-supernal" label="Sacred Grounds - The Supernal Gardens" />
+      <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing" />
+    </category>
+    <category id="traditional-narrative" label="Traditional Narrative">
+      <item id="oathforger-chapter-1" label="Long Form Sample - Oathforger, Chapter 1" />
+      <item id="other-narrative" label="Other Narrative Work" />
+    </category>
+  </section>
+  
+  <pages>
+    <page id="blog" label="Blog" />
+    <page id="about" label="About" />
+    <page id="contact" label="Contact" />
+    <page id="resume" label="Resume" />
+  </pages>
+</navigation>

@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: Resume
+permalink: /resume/index.html
+---
+
+<article class="page page--resume">
+  {% set resume = pages.resume %}
+  
+  <header class="resume__header">
+    <h1>Resume</h1>
+    {% if resume.intro %}
+    <p class="resume__intro">{{ resume.intro }}</p>
+    {% endif %}
+  </header>
+  
+  <section class="resume__section">
+    <h2>Experience</h2>
+    
+    {% for position in resume.positions.position %}
+    <div class="resume__position">
+      <h3 class="resume__position-title">{{ position.title }}</h3>
+      <div class="resume__position-meta">
+        <span class="resume__company">{{ position.company }}</span>
+        <span class="resume__dates">{{ position.dates }}</span>
+      </div>
+      <p class="resume__description">{{ position.description }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  
+  {% if resume.education %}
+  <section class="resume__section">
+    <h2>Education</h2>
+    
+    {% for degree in resume.education.degree %}
+    <div class="resume__education">
+      <h3>{{ degree.name }}</h3>
+      <p>{{ degree.institution }}, {{ degree.year }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+  
+  {% if resume.skills %}
+  <section class="resume__section">
+    <h2>Skills</h2>
+    <p class="resume__skills">
+      {{ resume.skills.skill | join(', ') }}
+    </p>
+  </section>
+  {% endif %}
+</article>

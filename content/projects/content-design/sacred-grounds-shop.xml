@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>sacred-grounds-shop</id>
+    <title>Sacred Grounds - Shop Processes</title>
+    <subtitle>Streamlining e-commerce and inventory workflows for a gaming company</subtitle>
+    <date>2023</date>
+    <client>Sacred Grounds Gaming</client>
+    <role>Creative Director / Content Designer</role>
+    <thumbnail>/assets/images/sacred-grounds-shop-thumb.png</thumbnail>
+    <tags>
+      <tag>UX Writing</tag>
+      <tag>Process Design</tag>
+      <tag>E-commerce</tag>
+      <tag>Documentation</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Placeholder summary: This case study covers the redesign of shop and inventory processes for Sacred Grounds Gaming, a live-action role-playing company. The project involved creating clear documentation, customer-facing content, and internal workflows.
+  </summary>
+  
+  <content>
+    <section>
+      <heading>The Challenge</heading>
+      <body>
+        Placeholder: What problems existed with the previous shop processes? What was the impact on customers and staff?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Research &amp; Discovery</heading>
+      <body>
+        Placeholder: How did you assess the current state? What stakeholder input did you gather?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Content Strategy</heading>
+      <body>
+        Placeholder: How did you approach the documentation and customer communications?
+      </body>
+    </section>
+    
+    <section>
+      <heading>The Solution</heading>
+      <body>
+        Placeholder: Walk through the final processes and content deliverables.
+      </body>
+      <media>
+        <image src="/assets/images/sacred-grounds-shop-flow.png" alt="Shop process diagram" caption="Redesigned shop workflow" />
+      </media>
+    </section>
+  </content>
+  
+  <outcomes>
+    <outcome>Placeholder: Outcome or impact metric 1</outcome>
+    <outcome>Placeholder: Outcome or impact metric 2</outcome>
+  </outcomes>
+</project>

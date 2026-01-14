@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>aws-ai-agents</id>
+    <title>AWS - AI Agents and Tools</title>
+    <subtitle>Content design for AI agent marketplace onboarding</subtitle>
+    <date>2024</date>
+    <client>AWS Marketplace</client>
+    <role>Content Designer</role>
+    <thumbnail>/assets/images/aws-ai-agents-thumb.png</thumbnail>
+    <tags>
+      <tag>UX Writing</tag>
+      <tag>Content Design</tag>
+      <tag>Enterprise</tag>
+      <tag>AI/ML</tag>
+      <tag>Onboarding</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Placeholder summary: This case study examines the content design work for AWS Marketplace's seller onboarding experience, specifically focused on helping sellers list AI agents and tools. The project required translating complex technical requirements into clear, actionable guidance.
+  </summary>
+  
+  <content>
+    <section>
+      <heading>The Challenge</heading>
+      <body>
+        Placeholder: Describe the problem space. What were sellers struggling with? What was the business impact of poor onboarding?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Research &amp; Discovery</heading>
+      <body>
+        Placeholder: What research informed your approach? What did you learn about seller pain points?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Content Strategy</heading>
+      <body>
+        Placeholder: How did you structure the information? What content hierarchy did you establish?
+      </body>
+    </section>
+    
+    <section>
+      <heading>The Solution</heading>
+      <body>
+        Placeholder: Walk through the final designs. Show before/after examples where relevant.
+      </body>
+      <media>
+        <image src="/assets/images/aws-onboarding-flow.png" alt="AWS onboarding flow" caption="Redesigned onboarding experience" />
+      </media>
+    </section>
+  </content>
+  
+  <outcomes>
+    <outcome>Placeholder: Outcome or impact metric 1</outcome>
+    <outcome>Placeholder: Outcome or impact metric 2</outcome>
+  </outcomes>
+</project>
