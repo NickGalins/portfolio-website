@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>everland-narrative</id>
+    <title>Everland - Narrative, Dialogue, &amp; Micro-copy</title>
+    <subtitle>Worldbuilding and character voice for a fictional MMO</subtitle>
+    <date>2024</date>
+    <client>Portfolio Case Study</client>
+    <role>Narrative Designer / Writer</role>
+    <thumbnail>/assets/images/everland-narrative-thumb.png</thumbnail>
+    <tags>
+      <tag>Narrative Design</tag>
+      <tag>Game Writing</tag>
+      <tag>Worldbuilding</tag>
+      <tag>Dialogue</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Placeholder summary: This case study explores the narrative and worldbuilding work for Everland, demonstrating how story, character voice, and micro-copy work together to create an immersive game experience.
+  </summary>
+  
+  <content>
+    <section>
+      <heading>The World of Everland</heading>
+      <body>
+        Placeholder: Introduce the world. What are the key themes, conflicts, and tone?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Character Voice</heading>
+      <body>
+        Placeholder: How did you develop distinct character voices? Show examples of dialogue.
+      </body>
+    </section>
+    
+    <section>
+      <heading>Narrative Micro-copy</heading>
+      <body>
+        Placeholder: How does the UI copy reinforce the world? Show examples of in-game text that tells story.
+      </body>
+      <media>
+        <image src="/assets/images/everland-dialogue-sample.png" alt="Dialogue sample" caption="Sample NPC dialogue" />
+      </media>
+    </section>
+  </content>
+  
+  <outcomes>
+    <outcome>Placeholder: What makes this narrative work effective?</outcome>
+  </outcomes>
+</project>

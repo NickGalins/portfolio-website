@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>aws-api-documentation</id>
+    <title>AWS - API Documentation</title>
+    <subtitle>Developer documentation for marketplace APIs</subtitle>
+    <date>2024</date>
+    <client>AWS Marketplace</client>
+    <role>Technical Writer</role>
+    <thumbnail>/assets/images/aws-api-thumb.png</thumbnail>
+    <tags>
+      <tag>Technical Writing</tag>
+      <tag>API Docs</tag>
+      <tag>Developer Documentation</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Placeholder summary: This sample showcases API documentation work, demonstrating the ability to translate complex technical specifications into clear, usable developer resources.
+  </summary>
+  
+  <content>
+    <section>
+      <heading>Documentation Goals</heading>
+      <body>
+        Placeholder: What were the documentation objectives? What developer needs were you addressing?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Approach</heading>
+      <body>
+        Placeholder: How did you structure the API documentation? What standards did you follow?
+      </body>
+    </section>
+    
+    <section>
+      <heading>Sample Documentation</heading>
+      <body>
+        Placeholder: Include excerpts or links to API documentation samples.
+      </body>
+      <media>
+        <image src="/assets/images/aws-api-docs-sample.png" alt="API documentation sample" caption="Sample API reference page" />
+      </media>
+    </section>
+  </content>
+  
+  <outcomes>
+    <outcome>Placeholder: What makes this documentation effective?</outcome>
+  </outcomes>
+</project>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Nick Galinski</title>
+  <meta name="description" content="{{ description | default('Portfolio of Nick Galinski - Content Designer & Writer') }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  
+  <!-- Video Hero (homepage only) -->
+  {% if showVideoHero %}
+  <div class="video-hero">
+    <video autoplay muted loop playsinline class="video-hero__video">
+      <source src="/assets/video/trailer.mp4" type="video/mp4">
+    </video>
+    <div class="video-hero__overlay"></div>
+    <div class="video-hero__content">
+      <h1 class="video-hero__title">Nick Galinski</h1>
+      <p class="video-hero__subtitle">Content Designer & Writer</p>
+    </div>
+  </div>
+  {% endif %}
+  
+  <div class="site-wrapper {% if showVideoHero %}has-video-hero{% endif %}">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+        <span class="sidebar__toggle-icon"></span>
+      </button>
+      
+      <div class="sidebar__content">
+        <a href="/" class="sidebar__logo">Nick Galinski</a>
+        
+        <nav class="sidebar__nav" aria-label="Main navigation">
+          {% for section in navigation.section %}
+          <div class="nav-section">
+            <button class="nav-section__toggle" aria-expanded="false">
+              {{ section['@_label'] }}
+              <svg class="nav-section__icon" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </button>
+            <ul class="nav-section__items">
+              {% for category in section.category %}
+              {% if category.item %}
+              <li class="nav-category">
+                <span class="nav-category__label">{{ category['@_label'] }}</span>
+                <ul class="nav-category__items">
+                  {% for item in category.item %}
+                  <li>
+                    <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endif %}
+              {% if category.subcategory %}
+              <li class="nav-category">
+                <span class="nav-category__label">{{ category['@_label'] }}</span>
+                <ul class="nav-category__items">
+                  {% for sub in category.subcategory %}
+                  <li class="nav-subcategory">
+                    <span class="nav-subcategory__label">{{ sub['@_label'] }}</span>
+                    <ul class="nav-subcategory__items">
+                      {% for item in sub.item %}
+                      <li>
+                        <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+          
+          <!-- Pages -->
+          <ul class="nav-pages">
+            {% for page in navigation.pages.page %}
+            <li>
+              <a href="/{{ page['@_id'] }}/">{{ page['@_label'] }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      {{ content | safe }}
+    </main>
+    
+  </div>
+  
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

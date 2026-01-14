@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: /blog/{{ post.meta.id }}/index.html
+---
+
+<article class="blog-post">
+  <header class="blog-post__header">
+    <h1>{{ post.meta.title }}</h1>
+    <time class="blog-post__date">{{ post.meta.date }}</time>
+    {% if post.meta.tags.tag %}
+    <ul class="blog-post__tags">
+      {% for tag in post.meta.tags.tag %}
+      <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+  
+  <div class="blog-post__content">
+    {{ post.content | safe }}
+  </div>
+  
+  <footer class="blog-post__footer">
+    <a href="/blog/">← Back to all posts</a>
+  </footer>
+</article>
