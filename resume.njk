@@ -1,3 +1,17 @@
+{# ============================================================================
+   RESUME PAGE TEMPLATE
+   ============================================================================
+   This template displays your resume from content/pages/resume.xml
+
+   STRUCTURE:
+   - Header with optional intro paragraph
+   - Experience section (loops through positions)
+   - Education section (conditional - only shows if data exists)
+   - Skills section (conditional - only shows if data exists)
+
+   The resume.xml has a different structure than about/contact pages,
+   so this template is customized to match that structure.
+   ============================================================================ #}
 ---
 layout: base.njk
 title: Resume
@@ -5,34 +19,44 @@ permalink: /resume/index.html
 ---
 
 <article class="page page--resume">
+  {# LOAD RESUME DATA: Get resume data from global pages object #}
   {% set resume = pages.resume %}
-  
+
+  {# HEADER: Page title and optional intro text #}
   <header class="resume__header">
     <h1>Resume</h1>
+    {# Only show intro if it exists in the XML #}
     {% if resume.intro %}
     <p class="resume__intro">{{ resume.intro }}</p>
     {% endif %}
   </header>
-  
+
+  {# EXPERIENCE SECTION: List all work positions #}
   <section class="resume__section">
     <h2>Experience</h2>
-    
+
+    {# Loop through each position in resume.xml #}
     {% for position in resume.positions.position %}
     <div class="resume__position">
+      {# Job title #}
       <h3 class="resume__position-title">{{ position.title }}</h3>
+      {# Company and date range #}
       <div class="resume__position-meta">
         <span class="resume__company">{{ position.company }}</span>
         <span class="resume__dates">{{ position.dates }}</span>
       </div>
+      {# Job description #}
       <p class="resume__description">{{ position.description }}</p>
     </div>
     {% endfor %}
   </section>
-  
+
+  {# EDUCATION SECTION: Only displays if education data exists #}
   {% if resume.education %}
   <section class="resume__section">
     <h2>Education</h2>
-    
+
+    {# Loop through each degree #}
     {% for degree in resume.education.degree %}
     <div class="resume__education">
       <h3>{{ degree.name }}</h3>
@@ -41,10 +65,12 @@ permalink: /resume/index.html
     {% endfor %}
   </section>
   {% endif %}
-  
+
+  {# SKILLS SECTION: Only displays if skills data exists #}
   {% if resume.skills %}
   <section class="resume__section">
     <h2>Skills</h2>
+    {# The 'join' filter creates a comma-separated list from an array #}
     <p class="resume__skills">
       {{ resume.skills.skill | join(', ') }}
     </p>

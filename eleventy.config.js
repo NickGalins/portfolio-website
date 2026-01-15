@@ -1,49 +1,94 @@
-const { XMLParser } = require('fast-xml-parser');
-const fs = require('fs');
-const path = require('path');
+// ============================================================================
+// ELEVENTY CONFIGURATION FILE
+// ============================================================================
+// This file tells Eleventy (the static site generator) how to build your site.
+// It handles:
+// 1. Reading XML content files (projects, pages, blog posts)
+// 2. Making that data available to your .njk templates
+// 3. Configuring how files are processed and where output goes
+// ============================================================================
 
+// IMPORT REQUIRED LIBRARIES
+// These are Node.js modules that let us work with files and parse XML
+const { XMLParser } = require('fast-xml-parser');  // Converts XML to JavaScript objects
+const fs = require('fs');                           // File system - read/write files
+const path = require('path');                       // Handle file paths correctly
+
+// MAIN CONFIGURATION FUNCTION
+// Eleventy calls this function when building your site
 module.exports = function(eleventyConfig) {
-  
-  // XML Parser configuration
+
+  // -------------------------------------------------------------------------
+  // XML PARSER SETUP
+  // -------------------------------------------------------------------------
+  // This creates an XML parser that converts your .xml content files into
+  // JavaScript objects that templates can use
   const xmlParser = new XMLParser({
-    ignoreAttributes: false,
-    attributeNamePrefix: "@_"
+    ignoreAttributes: false,        // Keep XML attributes like <tag attr="value">
+    attributeNamePrefix: "@_"       // Prefix attributes with @_ to avoid conflicts
   });
-  
-  // Helper function to parse XML files
+
+  // -------------------------------------------------------------------------
+  // HELPER FUNCTION: parseXML()
+  // -------------------------------------------------------------------------
+  // This function reads an XML file and converts it to a JavaScript object
+  // Used by all the data loading functions below
   function parseXML(filePath) {
     try {
+      // Read the file as text
       const content = fs.readFileSync(filePath, 'utf-8');
+      // Parse the XML text into a JavaScript object
       return xmlParser.parse(content);
     } catch (e) {
+      // If something goes wrong, log it and return null
       console.log('Could not parse:', filePath);
       return null;
     }
   }
   
-  // Load navigation data
+  // -------------------------------------------------------------------------
+  // LOAD NAVIGATION DATA
+  // -------------------------------------------------------------------------
+  // This reads content/navigation.xml and makes it available as {{ navigation }}
+  // in all your templates. The navigation.xml file defines your sidebar menu.
   eleventyConfig.addGlobalData('navigation', () => {
+    // Build the full path to navigation.xml
     const navPath = path.join(__dirname, 'content/navigation.xml');
+    // Check if the file exists
     if (fs.existsSync(navPath)) {
+      // Parse the XML and return just the 'navigation' part
       return parseXML(navPath).navigation;
     }
+    // If file doesn't exist, return empty object so templates don't break
     return {};
   });
   
-  // Load all projects
+  // -------------------------------------------------------------------------
+  // LOAD ALL PROJECTS
+  // -------------------------------------------------------------------------
+  // This reads all XML files from your project folders and makes them
+  // available as {{ projects }} in templates. Each project gets tagged with
+  // its category (content-design or creative).
   eleventyConfig.addGlobalData('projects', () => {
-    const projects = [];
+    const projects = [];  // Start with empty array
+    // Look in both project directories
     const projectDirs = ['content/projects/content-design', 'content/projects/creative'];
-    
+
+    // Loop through each directory
     projectDirs.forEach(dir => {
       const fullDir = path.join(__dirname, dir);
+      // Check if directory exists
       if (fs.existsSync(fullDir)) {
+        // Read all files in the directory
         fs.readdirSync(fullDir).forEach(file => {
+          // Only process XML files
           if (file.endsWith('.xml')) {
             const data = parseXML(path.join(fullDir, file));
+            // Make sure we got valid project data
             if (data && data.project) {
               projects.push({
-                ...data.project,
+                ...data.project,  // Spread operator: copies all properties from data.project
+                // Add a 'category' field based on which folder it came from
                 category: dir.includes('content-design') ? 'content-design' : 'creative'
               });
             }
@@ -51,55 +96,75 @@ module.exports = function(eleventyConfig) {
         });
       }
     });
-    
-    return projects;
+
+    return projects;  // Return the array of all projects
   });
   
-  // Load pages
-  eleventyConfig.addGlobalData('pages', () => {
-    const pages = {};
-    const pagesDir = path.join(__dirname, 'content/pages');
+  // -------------------------------------------------------------------------
+  // LOAD PAGES (About, Contact, Resume)
+  // -------------------------------------------------------------------------
+  // This reads XML files from content/pages/ and makes them available as
+  // {{ pages.about }}, {{ pages.contact }}, etc. in your templates.
+  // The 'id' in each XML file's <meta> tag determines the property name.
+  //
+  // NOTE: This uses "immediate execution" (runs when config loads) instead
+  // of a lazy function, which ensures the data is available when needed.
+  const pages = {};  // Empty object to store pages
+  const pagesDir = path.join(__dirname, 'content/pages');
 
-    console.log('📁 Looking for pages in:', pagesDir);
-    console.log('📁 Directory exists?', fs.existsSync(pagesDir));
+  // DEBUG LOGGING - These help us see what's happening during the build
+  console.log('📁 Looking for pages in:', pagesDir);
+  console.log('📁 Directory exists?', fs.existsSync(pagesDir));
 
-    if (fs.existsSync(pagesDir)) {
-      const files = fs.readdirSync(pagesDir);
-      console.log('📄 Files found:', files);
+  if (fs.existsSync(pagesDir)) {
+    // Read all files in the pages directory
+    const files = fs.readdirSync(pagesDir);
+    console.log('📄 Files found:', files);
 
-      files.forEach(file => {
-        if (file.endsWith('.xml')) {
-          console.log('🔍 Processing:', file);
-          const data = parseXML(path.join(pagesDir, file));
-          console.log('📊 Parsed data:', JSON.stringify(data, null, 2));
+    files.forEach(file => {
+      // Only process XML files
+      if (file.endsWith('.xml')) {
+        console.log('🔍 Processing:', file);
+        const data = parseXML(path.join(pagesDir, file));
+        console.log('📊 Parsed data:', JSON.stringify(data, null, 2));
 
-          if (data) {
-            const pageType = Object.keys(data)[0];
-            const pageData = data[pageType];
-            console.log('🔑 Page type:', pageType);
-            console.log('📄 Page data:', JSON.stringify(pageData, null, 2));
+        if (data) {
+          // Get the root element name (usually 'page')
+          const pageType = Object.keys(data)[0];
+          // Get the actual page data
+          const pageData = data[pageType];
+          console.log('🔑 Page type:', pageType);
+          console.log('📄 Page data:', JSON.stringify(pageData, null, 2));
 
-            if (pageData && pageData.meta && pageData.meta.id) {
-              console.log('✅ Adding page:', pageData.meta.id);
-              pages[pageData.meta.id] = pageData;
-            } else {
-              console.log('❌ Missing meta.id for file:', file);
-            }
+          // Check if page has required meta.id field
+          if (pageData && pageData.meta && pageData.meta.id) {
+            // Add to pages object using the id as the key
+            // Example: <meta><id>about</id></meta> becomes pages['about']
+            console.log('✅ Adding page:', pageData.meta.id);
+            pages[pageData.meta.id] = pageData;
+          } else {
+            console.log('❌ Missing meta.id for file:', file);
           }
         }
-      });
-    }
+      }
+    });
+  }
 
-    console.log('📦 Final pages object:', JSON.stringify(pages, null, 2));
-    return pages;
-  });
+  console.log('📦 Final pages object:', JSON.stringify(pages, null, 2));
+  // Make the pages object available to all templates
+  eleventyConfig.addGlobalData('pages', pages);
   
-  // Load blog posts
+  // -------------------------------------------------------------------------
+  // LOAD BLOG POSTS
+  // -------------------------------------------------------------------------
+  // This reads XML files from content/blog/ and makes them available as
+  // {{ posts }} in templates. Posts are automatically sorted by date (newest first).
   eleventyConfig.addGlobalData('posts', () => {
-    const posts = [];
+    const posts = [];  // Empty array to store posts
     const blogDir = path.join(__dirname, 'content/blog');
-    
+
     if (fs.existsSync(blogDir)) {
+      // Read all files in the blog directory
       fs.readdirSync(blogDir).forEach(file => {
         if (file.endsWith('.xml')) {
           const data = parseXML(path.join(blogDir, file));
@@ -109,35 +174,58 @@ module.exports = function(eleventyConfig) {
         }
       });
     }
-    
+
+    // Sort posts by date, newest first
+    // Compares dates: b.meta.date - a.meta.date gives reverse chronological order
     return posts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
   });
-  
-  // Helper to find project by ID
+
+  // -------------------------------------------------------------------------
+  // CUSTOM FILTERS (Helper Functions for Templates)
+  // -------------------------------------------------------------------------
+  // Filters let you transform data in templates using the pipe syntax: {{ data | filterName }}
+
+  // FILTER: findProject
+  // Usage in template: {{ projects | findProject('project-id') }}
+  // Searches the projects array for one with matching meta.id
   eleventyConfig.addFilter('findProject', (projects, id) => {
     return projects.find(p => p.meta && p.meta.id === id);
   });
-  
-  // Helper to filter projects by tag
+
+  // FILTER: withTag
+  // Usage in template: {{ projects | withTag('ux-writing') }}
+  // Returns only projects that have the specified tag
   eleventyConfig.addFilter('withTag', (projects, tag) => {
     return projects.filter(p => p.meta && p.meta.tags && p.meta.tags.tag && p.meta.tags.tag.includes(tag));
   });
-  
-  // Pass through assets
+
+  // -------------------------------------------------------------------------
+  // ASSET HANDLING
+  // -------------------------------------------------------------------------
+  // This tells Eleventy to copy the 'assets' folder directly to the output
+  // without processing it. Your CSS, JS, images, videos all go through here.
   eleventyConfig.addPassthroughCopy('assets');
+
+  // -------------------------------------------------------------------------
+  // WATCH TARGETS (Live Reload During Development)
+  // -------------------------------------------------------------------------
+  // When you run 'npm run dev', Eleventy watches these folders for changes
+  // and automatically rebuilds the site when you edit files.
+  eleventyConfig.addWatchTarget('./content/');   // Watch all XML content files
+  eleventyConfig.addWatchTarget('./assets/');    // Watch CSS, JS, images, etc.
   
-  // Watch for changes
-  eleventyConfig.addWatchTarget('./content/');
-  eleventyConfig.addWatchTarget('./assets/');
-  
+  // -------------------------------------------------------------------------
+  // ELEVENTY CONFIGURATION OBJECT
+  // -------------------------------------------------------------------------
+  // This return object tells Eleventy where to find files and how to process them
   return {
     dir: {
-      input: '.',
-      output: '_site',
-      includes: '_includes',
-      layouts: '_includes/layouts'
+      input: '.',                      // Look for templates in the root directory
+      output: '_site',                 // Put the built site in the _site folder
+      includes: '_includes',           // Look for layout/partial templates in _includes
+      layouts: '_includes/layouts'     // Look for layout templates here (not currently used)
     },
-    templateFormats: ['njk', 'html', 'md'],
-    htmlTemplateEngine: 'njk'
+    templateFormats: ['njk', 'html', 'md'],  // Process these file types as templates
+    htmlTemplateEngine: 'njk'          // Use Nunjucks for processing HTML files
   };
 };

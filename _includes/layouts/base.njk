@@ -1,70 +1,127 @@
+{# ============================================================================
+   BASE LAYOUT TEMPLATE
+   ============================================================================
+   This is the main layout that wraps around all your pages. It includes:
+   - The HTML structure (<head>, <body>)
+   - The video hero section (homepage only)
+   - The collapsible sidebar navigation
+   - A content area where page-specific content gets inserted
+
+   HOW IT WORKS:
+   When you create a page like about.njk and add 'layout: base.njk' at the top,
+   Eleventy wraps your page's content with this template. Your content appears
+   where it says {{ content | safe }}.
+   ============================================================================ #}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {# META TAGS: Basic information about your page for browsers and search engines #}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {# TITLE: Shows in browser tab. Format: "Page Name | Nick Galinski" #}
+  {# The {{ title }} variable comes from the front matter of each page #}
   <title>{{ title }} | Nick Galinski</title>
+
+  {# DESCRIPTION: Shows in search engine results #}
+  {# Uses page's description if provided, otherwise uses default text #}
   <meta name="description" content="{{ description | default('Portfolio of Nick Galinski - Content Designer & Writer') }}">
+
+  {# STYLESHEET: Links to your main CSS file #}
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  
-  <!-- Video Hero (homepage only) -->
+
+  {# ==========================================================================
+     VIDEO HERO SECTION (Homepage Only)
+     ========================================================================== #}
+  {# This only displays if showVideoHero is true (set in index.njk) #}
   {% if showVideoHero %}
   <div class="video-hero">
+    {# VIDEO: Vimeo embed with background autoplay #}
+    {# The video autoplays, is muted, and loops continuously #}
     <div class="video-hero__video">
       <iframe src="https://player.vimeo.com/video/1154771220?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:50%;left:50%;width:177.77vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);" title="Portfolio Trailer"></iframe>
     </div>
+    {# OVERLAY: Dark semi-transparent layer over video to improve text readability #}
     <div class="video-hero__overlay"></div>
+    {# TEXT CONTENT: Your name and tagline appear over the video #}
     <div class="video-hero__content">
       <h1 class="video-hero__title">Nicholas Galinski</h1>
       <p class="video-hero__subtitle">The Everything Storyteller</p>
     </div>
   </div>
   {% endif %}
-  
+
+  {# ==========================================================================
+     MAIN SITE WRAPPER
+     ========================================================================== #}
+  {# This contains the sidebar and main content area #}
+  {# The 'has-video-hero' class is added on homepage to adjust spacing #}
   <div class="site-wrapper {% if showVideoHero %}has-video-hero{% endif %}">
-    
-    <!-- Sidebar Navigation -->
+
+    {# ========================================================================
+       SIDEBAR NAVIGATION
+       ======================================================================== #}
+    {# The sidebar contains your navigation menu and collapses on mobile #}
     <aside class="sidebar" id="sidebar">
+      {# TOGGLE BUTTON: Hamburger menu button (mobile only) #}
+      {# Clicking this expands/collapses the sidebar on small screens #}
       <button class="sidebar__toggle" id="sidebar-toggle" aria-label="Toggle navigation">
         <span class="sidebar__toggle-icon"></span>
       </button>
-      
+
       <div class="sidebar__content">
+        {# LOGO/HOME LINK: Your name, links back to homepage #}
         <a href="/" class="sidebar__logo">Nicholas Galinski</a>
-        
+
+        {# NAVIGATION MENU: Built from navigation.xml data #}
         <nav class="sidebar__nav" aria-label="Main navigation">
+          {# Loop through each top-level section (Content Design, Creative) #}
           {% for section in navigation.section %}
           <div class="nav-section">
+            {# SECTION TOGGLE BUTTON: Clickable header for collapsing/expanding #}
+            {# Shows section name (e.g., "Content Design") and arrow icon #}
             <button class="nav-section__toggle" aria-expanded="false">
               {{ section['@_label'] }}
               <svg class="nav-section__icon" viewBox="0 0 24 24" width="16" height="16">
                 <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
               </svg>
             </button>
+
+            {# SECTION ITEMS: The collapsible content under each section #}
             <ul class="nav-section__items">
+              {# Loop through categories within this section #}
               {% for category in section.category %}
+
+              {# SIMPLE CATEGORY: Categories with direct items (no subcategories) #}
               {% if category.item %}
               <li class="nav-category">
                 <span class="nav-category__label">{{ category['@_label'] }}</span>
                 <ul class="nav-category__items">
+                  {# Loop through each project/item in this category #}
                   {% for item in category.item %}
                   <li>
+                    {# Link to project page using its ID #}
                     <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
                   </li>
                   {% endfor %}
                 </ul>
               </li>
               {% endif %}
+
+              {# NESTED CATEGORY: Categories with subcategories #}
+              {# Example: "Writing Samples" contains "Product Docs" and "API Docs" #}
               {% if category.subcategory %}
               <li class="nav-category">
                 <span class="nav-category__label">{{ category['@_label'] }}</span>
                 <ul class="nav-category__items">
+                  {# Loop through subcategories #}
                   {% for sub in category.subcategory %}
                   <li class="nav-subcategory">
                     <span class="nav-subcategory__label">{{ sub['@_label'] }}</span>
                     <ul class="nav-subcategory__items">
+                      {# Loop through items in this subcategory #}
                       {% for item in sub.item %}
                       <li>
                         <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
@@ -80,8 +137,9 @@
             </ul>
           </div>
           {% endfor %}
-          
-          <!-- Pages -->
+
+          {# STANDALONE PAGES: About, Contact, Resume #}
+          {# These appear at the bottom of the sidebar #}
           <ul class="nav-pages">
             {% for page in navigation.pages.page %}
             <li>
@@ -92,14 +150,20 @@
         </nav>
       </div>
     </aside>
-    
-    <!-- Main Content -->
+
+    {# ========================================================================
+       MAIN CONTENT AREA
+       ======================================================================== #}
+    {# This is where your page-specific content gets inserted #}
+    {# The {{ content | safe }} variable contains the HTML from your page files #}
+    {# The 'safe' filter tells Nunjucks to render the HTML (not escape it) #}
     <main class="main-content" id="main-content">
       {{ content | safe }}
     </main>
-    
+
   </div>
-  
+
+  {# JAVASCRIPT: Handles sidebar toggle and collapsible navigation #}
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

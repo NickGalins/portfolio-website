@@ -1,3 +1,14 @@
+{# ============================================================================
+   CONTACT PAGE TEMPLATE
+   ============================================================================
+   This template displays your Contact page content from content/pages/contact.xml
+
+   STRUCTURE:
+   - Uses base.njk layout (includes sidebar, header, footer)
+   - Pulls data from pages.contact (loaded from contact.xml)
+   - Loops through sections to display headings and content
+   - The 'safe' filter allows HTML in your XML to render properly
+   ============================================================================ #}
 ---
 layout: base.njk
 title: Contact
@@ -5,13 +16,17 @@ permalink: /contact/index.html
 ---
 
 <article class="page page--contact">
+  {# LOAD PAGE DATA: Get contact page data from global pages object #}
   {% set page = pages.contact %}
-  
+
+  {# LOOP THROUGH SECTIONS: Display each section from contact.xml #}
   {% for section in page.content.section %}
   <section class="page__section">
+    {# Display heading if present #}
     {% if section.heading %}
     <h1>{{ section.heading }}</h1>
     {% endif %}
+    {# Display body content (HTML from XML CDATA) #}
     <div class="page__body">
       {{ section.body | safe }}
     </div>

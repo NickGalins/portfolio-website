@@ -1,3 +1,18 @@
+{# ============================================================================
+   ABOUT PAGE TEMPLATE
+   ============================================================================
+   This template displays your About page content from content/pages/about.xml
+
+   HOW IT WORKS:
+   1. The front matter (between ---) tells Eleventy:
+      - Use base.njk as the layout (wraps this in sidebar/header/footer)
+      - Set the page title to "About"
+      - Generate the page at /about/index.html URL
+
+   2. The template pulls data from the 'pages' global data (loaded in eleventy.config.js)
+   3. It accesses pages.about using the 'id' from about.xml's <meta><id>about</id></meta>
+   4. It loops through each section in the XML and displays heading + body content
+   ============================================================================ #}
 ---
 layout: base.njk
 title: About
@@ -5,15 +20,22 @@ permalink: /about/index.html
 ---
 
 <article class="page page--about">
+  {# DEBUG OUTPUT: Shows what data is available (remove after fixing) #}
   <pre>DEBUG: {{ pages | dump }}</pre>
   <pre>DEBUG page: {{ pages.about | dump }}</pre>
+
+  {# LOAD PAGE DATA: Get the about page data from the global pages object #}
   {% set page = pages.about %}
-  
+
+  {# LOOP THROUGH SECTIONS: Each <section> in about.xml gets rendered here #}
   {% for section in page.content.section %}
   <section class="page__section">
+    {# Display section heading if it exists #}
     {% if section.heading %}
     <h1>{{ section.heading }}</h1>
     {% endif %}
+    {# Display section body content #}
+    {# The 'safe' filter allows HTML from the XML CDATA to render properly #}
     <div class="page__body">
       {{ section.body | safe }}
     </div>
