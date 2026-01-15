@@ -5,6 +5,8 @@ permalink: /about/index.html
 ---
 
 <article class="page page--about">
+  <pre>DEBUG: {{ pages | dump }}</pre>
+  <pre>DEBUG page: {{ pages.about | dump }}</pre>
   {% set page = pages.about %}
   
   {% for section in page.content.section %}
