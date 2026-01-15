@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<page>
-  <title>Contact</title>
-  <description>Get in touch with Nicholas Galinski for employment opportunities or consulting work</description>
-  
-  <intro>
+<content>
+  <section>
     <heading>Let's Connect</heading>
-    <text>I'm always interested in hearing about new opportunities, whether that's a full-time role or a project that needs a storyteller's touch.</text>
-  </intro>
+    <body><![CDATA[
+      <p>I'm always interested in hearing about new opportunities, whether that's a full-time role or a project that needs a storyteller's touch.</p>
+    ]]></body>
+  </section>
   
-  <section id="employment">
+  <section>
     <heading>Employment Opportunities</heading>
-    <text>For recruiters and employers interested in hiring for full-time or W-2 contract positions:</text>
-    <contact>
-      <email>nick.galinski@gmail.com</email>
-      <linkedin>https://www.linkedin.com/in/nicholas-galinski/</linkedin>
-    </contact>
+    <body><![CDATA[
+      <p>For recruiters and employers interested in full-time or contract positions:</p>
+      <p><strong>Email:</strong> <a href="mailto:nick.galinski@gmail.com">nick.galinski@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicholas-galinski/">linkedin.com/in/nicholas-galinski</a></p>
+    ]]></body>
   </section>
   
-  <section id="consulting">
+  <section>
     <heading>Consulting &amp; Contract Work</heading>
-    <text>For consulting engagements and 1099 contracts:</text>
-    <contact>
-      <email>nicholasgalinski@everythingstoryteller.com</email>
-    </contact>
+    <body><![CDATA[
+      <p>For consulting engagements and 1099 contracts:</p>
+      <p><strong>Email:</strong> <a href="mailto:nicholasgalinski@everythingstoryteller.com">nicholasgalinski@everythingstoryteller.com</a></p>
+    ]]></body>
   </section>
-</page>
+</content>
