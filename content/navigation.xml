@@ -7,12 +7,10 @@
       <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
     </category>
     <category id="technical-docs" label="Technical Docs">
+     <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
+     <item id="aws-api-documentation" label="AWS - API Documentation" />
       <subcategory id="product-docs" label="Product Docs">
         <item id="google-translate-lens" label="Google - Translate with Lens" />
-      </subcategory>
-      <subcategory id="api-docs" label="API Docs">
-        <item id="aws-api-documentation" label="AWS - API Documentation" />
-        <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
       </subcategory>
     </category>
   </section>

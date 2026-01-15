@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const sectionToggles = document.querySelectorAll('.nav-section__toggle');
   
-  sectionToggles.forEach(toggle => {
-    // Start with first section expanded
-    if (toggle === sectionToggles[0]) {
+  sectionToggles.forEach((toggle, index) => {
+    // Start with first two sections expanded (Content Design & Creative)
+    if (index === 0 || index === 1) {
       toggle.setAttribute('aria-expanded', 'true');
     }
     
