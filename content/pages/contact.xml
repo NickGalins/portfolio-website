@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page>
-  <meta>
-    <id>contact</id>
-    <title>Contact</title>
-    <description>Get in touch with Nick Galinski</description>
-    <template>contact</template>
-  </meta>
+  <title>Contact</title>
+  <description>Get in touch with Nicholas Galinski for employment opportunities or consulting work</description>
   
-  <content>
-    <section>
-      <heading>Let's Talk</heading>
-      <body>
-        Placeholder: A brief, friendly invitation to connect. What kind of inquiries are you open to?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Contact Information</heading>
-      <body>
-        Email: placeholder@email.com
-        LinkedIn: linkedin.com/in/placeholder
-        
-        Placeholder: Add or remove contact methods as needed.
-      </body>
-    </section>
-  </content>
+  <intro>
+    <heading>Let's Connect</heading>
+    <text>I'm always interested in hearing about new opportunities, whether that's a full-time role or a project that needs a storyteller's touch.</text>
+  </intro>
+  
+  <section id="employment">
+    <heading>Employment Opportunities</heading>
+    <text>For recruiters and employers interested in hiring for full-time or W-2 contract positions:</text>
+    <contact>
+      <email>nick.galinski@gmail.com</email>
+      <linkedin>https://www.linkedin.com/in/nicholas-galinski/</linkedin>
+    </contact>
+  </section>
+  
+  <section id="consulting">
+    <heading>Consulting &amp; Contract Work</heading>
+    <text>For consulting engagements and 1099 contracts:</text>
+    <contact>
+      <email>nicholasgalinski@everythingstoryteller.com</email>
+    </contact>
+  </section>
 </page>
