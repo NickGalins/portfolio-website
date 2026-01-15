@@ -6,24 +6,21 @@
       <item id="aws-ai-agents" label="AWS - AI Agents and Tools" />
       <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
     </category>
-    <category id="technical-docs" label="Technical Docs">
-     <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
-     <item id="aws-api-documentation" label="AWS - API Documentation" />
-      <subcategory id="product-docs" label="Product Docs">
-        <item id="google-translate-lens" label="Google - Translate with Lens" />
-      </subcategory>
-    </category>
+    <category id="technical-writing-samples" label="Technical Writing Samples">
+  <item id="google-translate-lens" label="Google - Translate with Lens" />
+  <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
+  <item id="aws-api-documentation" label="AWS - API Documentation" />
+</category>
   </section>
   
   <section id="creative" label="Creative">
     <category id="case-studies-storytelling" label="Case Studies (Storytelling &amp; Marketing)">
-      <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Micro-copy" />
-      <item id="sacred-grounds-supernal" label="Sacred Grounds - The Supernal Gardens" />
-      <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing" />
+      <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" />
+      <item id="sacred-grounds-supernal" label="The Supernal Gardens - Live Gamified Event Experience" />
+      <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" />
     </category>
-    <category id="traditional-narrative" label="Traditional Narrative">
-      <item id="oathforger-chapter-1" label="Long Form Sample - Oathforger, Chapter 1" />
-      <item id="other-narrative" label="Other Narrative Work" />
+    <category id="creative-writing-samples" label="Creative Writing Samples">
+      <item id="oathforger-chapter-1" label="Oathforger, Chapter 1 - Long Form Narrative" />
     </category>
   </section>
   
