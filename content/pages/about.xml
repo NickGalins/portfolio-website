@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <meta>
+    <id>about</id>
+    <title>About</title>
+  </meta>
+  <content>
+    <section>
+      <heading>The Everything Storyteller</heading>
+      <body><![CDATA[
+        <p>I'm a writer who works across content design, UX writing, technical documentation, 
+        and narrative. I believe every piece of content, whether it's an error message or an epic fantasy chapter, 
+        contributes to a product or customer's story.</p>
+      ]]></body>
+    </section>
+    
+    <section>
+      <heading>My Journey</heading>
+      <body><![CDATA[
+        <p>After getting my English Education degree at the University of Central Florida, I started my professional 
+        career in the world of education, where I taught secondary school English and Creative Writing. While I found
+        this to be satisfying work, my passion for writing pulled me in another direction. As I worked through my Masters 
+        Degree in Creative Writing, the drive to do more than teach kept growing.</p>
+        <p>I co-founded Sacred Grounds Gaming and served as the Director of Content, Narrative, and the Customer Experience.
+        In this role, I juggled the business side while developing a massive amount of technical and creative content for a 
+        unique business—live gamified experiences—with no clear blueprint to follow. It was a challenge that excited me and 
+        sharpened my skills.</p>
+        <p>I was directly responsible for much of Sacred Grounds' success, and the content I helped create allowed us to 
+        successfully sell the intellectual property to another game company after nearly 7 years of development.</p>
+        <p>In that role, I was a world-builder, marketer, policy writer, rules writer, director of talent, and narrative
+        designer all-in-one. It was the foundation for my philosophy that "everything is a story", and that a good writer
+        can be anything from a content designer to a novelist as long as they have the context, tools, and team behind them.</p>
+        <p>I've been a part of Technical Content Experience at AWS, a POD leader for Google Search's XWF via Accenture, designed 
+        trust and safety systems and story for social games, and created live gamified experiences that brought stories to life. 
+        Each project reinforced my belief that good writing isn't about the medium; it's about understanding your audience and 
+        meeting them where they are.</p>
+      ]]></body>
+    </section>
+    
+    <section>
+      <heading>What I Bring</heading>
+      <body><![CDATA[
+        <p>I bring narrative thinking to technical work: documentation and information architecture that guides rather than overwhelms,
+        UI copy that is clear about what comes next, and content strategy that cares about not just what the customer needs, but 
+        what will make them happy with their experience. And I bring technical rigor to creative work: structured approaches to world-building, 
+        systematic thinking about user/player experience, and clear communication with cross-functional teams.</p>
+        <p>Whether you need someone to make complex systems understandable, craft compelling user journeys, or write stories that resonate,
+        I can help you tell it well.</p>
+      ]]></body>
+    </section>
+    
+    <section>
+      <heading>Beyond Work</heading>
+      <body><![CDATA[
+        <p>When I'm not writing, you'll find me out on hikes, walking my corgis, listening to an endless stream of audio books and podcasts, 
+        or getting ready for my next D&D session. I'm a movie buff thanks to a minor in Film. I also love to learn by watching YouTube 
+        tutorials or taking courses on various sites. I believe play and storytelling are fundamental to how we understand the world, 
+        and that belief shapes everything I create.</p>
+      ]]></body>
+    </section>
+  </content>
+</page>
