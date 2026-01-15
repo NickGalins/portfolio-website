@@ -129,8 +129,11 @@ module.exports = function(eleventyConfig) {
         console.log('📊 Parsed data:', JSON.stringify(data, null, 2));
 
         if (data) {
-          // Get the root element name (usually 'page')
-          const pageType = Object.keys(data)[0];
+          // Get all keys from the parsed XML
+          const keys = Object.keys(data);
+          // Skip the ?xml declaration and find the actual content element
+          // (could be 'page', 'resume', etc.)
+          const pageType = keys.find(key => key !== '?xml');
           // Get the actual page data
           const pageData = data[pageType];
           console.log('🔑 Page type:', pageType);
