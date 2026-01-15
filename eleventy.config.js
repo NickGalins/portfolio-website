@@ -12,14 +12,22 @@ module.exports = function(eleventyConfig) {
   
   // Helper function to parse XML files
   function parseXML(filePath) {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    return xmlParser.parse(content);
+    try {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      return xmlParser.parse(content);
+    } catch (e) {
+      console.log('Could not parse:', filePath);
+      return null;
+    }
   }
   
   // Load navigation data
   eleventyConfig.addGlobalData('navigation', () => {
     const navPath = path.join(__dirname, 'content/navigation.xml');
-    return parseXML(navPath).navigation;
+    if (fs.existsSync(navPath)) {
+      return parseXML(navPath).navigation;
+    }
+    return {};
   });
   
   // Load all projects
@@ -33,10 +41,12 @@ module.exports = function(eleventyConfig) {
         fs.readdirSync(fullDir).forEach(file => {
           if (file.endsWith('.xml')) {
             const data = parseXML(path.join(fullDir, file));
-            projects.push({
-              ...data.project,
-              category: dir.includes('content-design') ? 'content-design' : 'creative'
-            });
+            if (data && data.project) {
+              projects.push({
+                ...data.project,
+                category: dir.includes('content-design') ? 'content-design' : 'creative'
+              });
+            }
           }
         });
       }
@@ -54,9 +64,13 @@ module.exports = function(eleventyConfig) {
       fs.readdirSync(pagesDir).forEach(file => {
         if (file.endsWith('.xml')) {
           const data = parseXML(path.join(pagesDir, file));
-          const pageType = Object.keys(data)[0]; // 'page' or 'resume'
-          const pageData = data[pageType];
-          pages[pageData.meta.id] = pageData;
+          if (data) {
+            const pageType = Object.keys(data)[0];
+            const pageData = data[pageType];
+            if (pageData && pageData.meta && pageData.meta.id) {
+              pages[pageData.meta.id] = pageData;
+            }
+          }
         }
       });
     }
@@ -73,23 +87,24 @@ module.exports = function(eleventyConfig) {
       fs.readdirSync(blogDir).forEach(file => {
         if (file.endsWith('.xml')) {
           const data = parseXML(path.join(blogDir, file));
-          posts.push(data.post);
+          if (data && data.post) {
+            posts.push(data.post);
+          }
         }
       });
     }
     
-    // Sort by date, newest first
     return posts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date));
   });
   
   // Helper to find project by ID
   eleventyConfig.addFilter('findProject', (projects, id) => {
-    return projects.find(p => p.meta.id === id);
+    return projects.find(p => p.meta && p.meta.id === id);
   });
   
   // Helper to filter projects by tag
   eleventyConfig.addFilter('withTag', (projects, tag) => {
-    return projects.filter(p => p.meta.tags?.tag?.includes(tag));
+    return projects.filter(p => p.meta && p.meta.tags && p.meta.tags.tag && p.meta.tags.tag.includes(tag));
   });
   
   // Pass through assets
@@ -100,13 +115,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./assets/');
   
   return {
-  dir: {
-    input: '.',
-    output: '_site',
-    includes: '_includes',
-    layouts: '_includes/layouts'
-  },
-  templateFormats: ['njk', 'html', 'md'],
-  htmlTemplateEngine: 'njk'
+    dir: {
+      input: '.',
+      output: '_site',
+      includes: '_includes',
+      layouts: '_includes/layouts'
+    },
+    templateFormats: ['njk', 'html', 'md'],
+    htmlTemplateEngine: 'njk'
   };
 };
