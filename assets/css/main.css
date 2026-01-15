@@ -265,11 +265,11 @@ ul, ol {
   padding: var(--space-sm) 0;
   background: transparent;
   border: none;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
+  color: var(--color-accent);
   cursor: pointer;
   transition: color var(--transition-fast);
 }
@@ -336,7 +336,9 @@ ul, ol {
 
 /* Subcategory */
 .nav-subcategory {
-  margin-left: var(--space-sm);
+  margin-left: var(--space-lg);
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--color-border);
 }
 
 .nav-subcategory__label {
