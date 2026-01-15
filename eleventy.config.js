@@ -59,22 +59,38 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData('pages', () => {
     const pages = {};
     const pagesDir = path.join(__dirname, 'content/pages');
-    
+
+    console.log('📁 Looking for pages in:', pagesDir);
+    console.log('📁 Directory exists?', fs.existsSync(pagesDir));
+
     if (fs.existsSync(pagesDir)) {
-      fs.readdirSync(pagesDir).forEach(file => {
+      const files = fs.readdirSync(pagesDir);
+      console.log('📄 Files found:', files);
+
+      files.forEach(file => {
         if (file.endsWith('.xml')) {
+          console.log('🔍 Processing:', file);
           const data = parseXML(path.join(pagesDir, file));
+          console.log('📊 Parsed data:', JSON.stringify(data, null, 2));
+
           if (data) {
             const pageType = Object.keys(data)[0];
             const pageData = data[pageType];
+            console.log('🔑 Page type:', pageType);
+            console.log('📄 Page data:', JSON.stringify(pageData, null, 2));
+
             if (pageData && pageData.meta && pageData.meta.id) {
+              console.log('✅ Adding page:', pageData.meta.id);
               pages[pageData.meta.id] = pageData;
+            } else {
+              console.log('❌ Missing meta.id for file:', file);
             }
           }
         }
       });
     }
-    
+
+    console.log('📦 Final pages object:', JSON.stringify(pages, null, 2));
     return pages;
   });
   
