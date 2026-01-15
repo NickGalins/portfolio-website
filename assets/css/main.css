@@ -109,6 +109,17 @@ ul, ol {
    Video Hero
    ========================================================================== */
 
+.video-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .video-hero__video {
   position: absolute;
   top: 0;
@@ -117,16 +128,6 @@ ul, ol {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-}
-
-.video-hero__video {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
 }
 
 .video-hero__overlay {
