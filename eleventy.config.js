@@ -100,13 +100,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./assets/');
   
   return {
-    dir: {
-      input: '_includes',
-      output: '_site',
-      includes: '../_includes',
-      layouts: 'layouts'
-    },
-    templateFormats: ['njk', 'html', 'md'],
-    htmlTemplateEngine: 'njk'
+  dir: {
+    input: '.',
+    output: '_site',
+    includes: '_includes',
+    layouts: '_includes/layouts'
+  },
+  templateFormats: ['njk', 'html', 'md'],
+  htmlTemplateEngine: 'njk'
   };
 };
