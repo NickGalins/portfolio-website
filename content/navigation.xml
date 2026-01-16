@@ -26,7 +26,7 @@
   </section>
   
   <pages>
-    <page id="blog" label="Blog" />
+    <page id="blog" label="Everything Storyteller Blog" />
     <page id="about" label="About" />
     <page id="contact" label="Contact" />
     <page id="resume" label="Work History" />
