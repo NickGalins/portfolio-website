@@ -3,8 +3,7 @@
   <meta>
     <id>everland-trust-safety</id>
     <title>Everland - Trust &amp; Safety Reporting System</title>
-    <subtitle>Designing a player-first reporting flow for a fictional MMO</subtitle>
-    <date>2024</date>
+    <subtitle>Designing a player-first reporting flow</subtitle>
     <client>Everland MMO</client>
     <role>Lead Narrative Designer</role>
     <thumbnail>/assets/images/everland-trust-safety-thumb.png</thumbnail>
@@ -12,29 +11,23 @@
       <tag>UX Writing</tag>
       <tag>Content Design</tag>
       <tag>Trust &amp; Safety</tag>
-      <tag>Game UI</tag>
+      <tag>Games</tag>
+      <tag>UI</tag>
       <tag>User Flow</tag>
-      <tag>Email Design</tag>
+      <tag>Customer-facing Comms</tag>
     </tags>
   </meta>
 
   <summary>
-    This case study showcases the redesign of Everland's trust and safety reporting system. The project focused on creating an intuitive, multi-entry-point flow that helps players quickly report harmful behavior while setting clear expectations about outcomes. The work included in-game UI copy, user flow design, and enforcement communication templates.
+    This recreated sample demonstrates a player reporting flow designed to help players report harmful behavior quickly and safely. It includes clear UX copy, supportive tone, and immediate safety actions such as blocking or muting. Language is written to set expectations without promising specific outcomes and to support global readability. I also included email templates for three different enforcement actions. I chose this project because it is one I conceptualized and advocated for through a presentation to the Game Director.
   </summary>
 
   <content>
     <section>
-      <heading>The Problem</heading>
+      <heading>Problem</heading>
       <body>
         <![CDATA[
-          <p>Everland's existing reporting system was underutilized and created confusion for players who encountered harmful behavior. Key issues included:</p>
-          <ul>
-            <li><strong>Limited access points:</strong> Players could only report from one location in the game</li>
-            <li><strong>Unclear outputs:</strong> The system didn't communicate what would happen after a report was filed</li>
-            <li><strong>Poor information architecture:</strong> Report categories were confusing and didn't match player mental models</li>
-            <li><strong>Lack of agency:</strong> Players had no immediate tools to protect themselves while waiting for moderation action</li>
-          </ul>
-          <p>This resulted in low report submission rates and increased player frustration with the community safety experience.</p>
+          <p>Players need a fast, clear way to report harmful behavior without escalating conflict or collecting unnecessary personal data. Our current reporting system only has one entry point (Player profile > Report) and is completely open-ended with little guidance, which can result in the system being underused and reports being confusing to team members handling tickets.</p>
         ]]>
       </body>
     </section>
@@ -43,266 +36,274 @@
       <heading>Goals</heading>
       <body>
         <![CDATA[
-          <ol>
-            <li><strong>Create multiple entry points</strong> so players can report from anywhere they encounter problems</li>
-            <li><strong>Make reporting fast</strong> with streamlined flows that don't interrupt gameplay unnecessarily</li>
-            <li><strong>Improve information architecture</strong> with clear, intuitive report categories</li>
-            <li><strong>Set clear expectations</strong> about what happens after submission</li>
-            <li><strong>Suggest immediate safety controls</strong> players can use while waiting for moderation</li>
-          </ol>
+          <ul>
+            <li>Add multiple entry points for reporting.</li>
+            <li>Make reporting fast and straightforward with scannable choices.</li>
+            <li>Improve information architecture of outputs to improve the Trust & Safety team's response.</li>
+            <li>Set expectations without promising enforcement outcomes or timelines.</li>
+            <li>Suggest safety controls (block) after submission.</li>
+          </ul>
         ]]>
       </body>
     </section>
 
     <section>
-      <heading>User Flow</heading>
+      <heading>Flow</heading>
       <body>
         <![CDATA[
-          <p>I designed a flexible flow with <strong>four entry points</strong> that all lead to the same streamlined three-screen process:</p>
-
           <h3>Entry Points</h3>
           <ul>
-            <li><strong>Profile dropdown:</strong> From any player's profile card</li>
-            <li><strong>Chat message dropdown:</strong> Directly from a message in chat</li>
-            <li><strong>Waypoint menu:</strong> From the main game menu</li>
-            <li><strong>Settings:</strong> From the Settings > Help & Support section</li>
+            <li>Open <strong>Player profile</strong> > Choose <strong>Report</strong></li>
+            <li>Click player name in chat > Select <strong>Report</strong> from the context menu</li>
+            <li>Open <strong>Recent players</strong> > Choose <strong>Report</strong> next to the player's name</li>
+            <li>In chat, enter <strong>/report {playername}</strong></li>
           </ul>
+        ]]>
+      </body>
+      <media>
+        <image src="/assets/images/everland-user-flow.png" alt="Everland Trust & Safety reporting user flow diagram" caption="User flow showing four entry points leading to three-screen reporting process" />
+      </media>
+    </section>
 
-          <h3>Three-Screen Process</h3>
-          <ol>
-            <li><strong>Select a reason:</strong> Choose from clear, user-friendly categories</li>
-            <li><strong>Add details:</strong> Provide context with optional text and evidence</li>
-            <li><strong>Confirmation:</strong> Get immediate feedback and suggested safety actions</li>
-          </ol>
+    <section>
+      <heading>Screen 1 - Select report reason</heading>
+      <body>
+        <![CDATA[
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <h4 style="margin-top: 0;">What happened?</h4>
+            <p style="color: #666; margin-bottom: 1rem;">Help keep Everland safe. Select the category that best describes what happened.</p>
 
-          <p>This approach ensures players can report from their natural context without having to remember where the reporting tool lives or navigate through multiple menus.</p>
+            <div style="background: white; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 1rem;">
+              <strong>{playername}</strong><br/>
+              <small style="color: #666;">Last seen {time} ago</small>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse;">
+              <tbody>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid #ddd; background: white;">
+                    <strong>Harassment or abuse</strong><br/>
+                    <small style="color: #666;">Insults, threats, bullying, or unwanted behavior.</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid #ddd; background: white;">
+                    <strong>Hateful speech</strong><br/>
+                    <small style="color: #666;">Discriminatory comments or actions based on race, gender, religion, or sexual orientation.</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid #ddd; background: white;">
+                    <strong>Inappropriate content</strong><br/>
+                    <small style="color: #666;">Sexual content, gore, or promotion of illegal activities.</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid #ddd; background: white;">
+                    <strong>Cheating</strong><br/>
+                    <small style="color: #666;">Using bots, hacks, or exploiting game bugs.</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 1rem; border: 1px solid #ddd; background: white;">
+                    <strong>Spam</strong><br/>
+                    <small style="color: #666;">Repetitive messages, advertising out-of-game services, or fraudulent offers.</small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p style="margin-top: 1rem;"><button style="padding: 0.5rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px;">Tell us more</button></p>
+          </div>
         ]]>
       </body>
     </section>
 
     <section>
-      <heading>Screen 1: Select a Reason</heading>
+      <heading>Screen 2 - Add report details</heading>
       <body>
         <![CDATA[
-          <p>The first screen presents clear, plain-language categories that match how players think about problems, not how the moderation team categorizes them internally.</p>
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <h4 style="margin-top: 0;">Tell us about what happened</h4>
+            <p style="color: #666; margin-bottom: 1.5rem;">Help keep Everland safe. Describe what happened so we can investigate. Add chat logs or screenshots to support your report.</p>
 
-          <h3>Copy</h3>
-          <p><strong>Header:</strong> Report Player</p>
-          <p><strong>Subheader:</strong> Why are you reporting [Player Name]?</p>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Additional details</label>
+              <textarea style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; min-height: 100px;" placeholder="Describe what happened. You may include timestamps and specific messages."></textarea>
+              <small style="color: #666;">0/500</small>
+            </div>
 
-          <p><strong>Categories:</strong></p>
-          <ul>
-            <li><strong>Harassment or hate speech</strong><br/>
-            This player used slurs, threatened me, or targeted me repeatedly</li>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Add evidence</label>
 
-            <li><strong>Spam or advertising</strong><br/>
-            This player posted repetitive messages or advertised external services</li>
+              <div style="padding: 1rem; border: 1px solid #ddd; border-radius: 4px; background: white; margin-bottom: 0.5rem;">
+                <strong>Attach chat logs</strong><br/>
+                <small style="color: #666;">Add the last 200 messages from your chat log this session.</small>
+              </div>
 
-            <li><strong>Cheating or exploits</strong><br/>
-            This player used hacks, bots, or took advantage of game exploits</li>
+              <div style="padding: 1rem; border: 1px solid #ddd; border-radius: 4px; background: white;">
+                <strong>Attach screenshot</strong><br/>
+                <small style="color: #666;">Open an upload window to add a screenshot.</small>
+              </div>
+            </div>
 
-            <li><strong>Inappropriate name or content</strong><br/>
-            This player's username, profile, or shared content violates our guidelines</li>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;"><em>We cannot take enforcement actions on incidents that occur outside of Everland.</em></p>
 
-            <li><strong>Scamming or fraud</strong><br/>
-            This player tried to trick me or steal from me</li>
+            <div style="display: flex; gap: 1rem;">
+              <button style="padding: 0.5rem 1.5rem; background: white; border: 1px solid #ccc; border-radius: 4px;">Back</button>
+              <button style="padding: 0.5rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px;">Submit report</button>
+            </div>
 
-            <li><strong>Other</strong><br/>
-            Something else that doesn't fit these categories</li>
-          </ul>
-
-          <p><strong>Button:</strong> Next</p>
-
-          <h3>Design Decisions</h3>
-          <ul>
-            <li><strong>Player-centric language:</strong> Categories use "This player..." to maintain focus on the action being reported</li>
-            <li><strong>Descriptive subtext:</strong> Each category includes examples so players can make confident choices</li>
-            <li><strong>Flat hierarchy:</strong> All options at one level—no nested menus or complex decision trees</li>
-          </ul>
+            <div style="margin-top: 1rem; padding: 0.75rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; font-size: 0.9rem;">
+              <strong>Error messages:</strong><br/>
+              • Unsupported file type. Upload a .jpg or .png file.<br/>
+              • Total file size must be 50 MB or less.
+            </div>
+          </div>
         ]]>
       </body>
     </section>
 
     <section>
-      <heading>Screen 2: Add Details</heading>
+      <heading>Screen 3 - Confirmation</heading>
       <body>
         <![CDATA[
-          <p>The second screen collects context while keeping the burden low. All fields are optional to prevent report abandonment.</p>
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <h4 style="margin-top: 0;">Thank you for helping keep Everland safe</h4>
+            <p style="color: #666; margin-bottom: 2rem;">We've received your report. You can block this player so they can't message you or send you invites.</p>
 
-          <h3>Copy</h3>
-          <p><strong>Header:</strong> Add Details (Optional)</p>
-          <p><strong>Body text:</strong> Help us understand what happened. The more details you provide, the faster we can review your report.</p>
-
-          <p><strong>Text field label:</strong> What happened?</p>
-          <p><strong>Text field placeholder:</strong> Describe what this player did...</p>
-          <p><strong>Character limit:</strong> 500 characters</p>
-
-          <p><strong>Evidence section label:</strong> Evidence (Optional)</p>
-          <p><strong>Evidence helper text:</strong> Screenshots, chat logs, or other evidence can help our team review faster.</p>
-          <p><strong>Button:</strong> Attach File</p>
-          <p><strong>Accepted formats note:</strong> Accepted formats: .png, .jpg, .txt (Max 5MB)</p>
-
-          <p><strong>Buttons:</strong></p>
-          <ul>
-            <li>Back (secondary)</li>
-            <li>Submit Report (primary)</li>
-          </ul>
-
-          <h3>Design Decisions</h3>
-          <ul>
-            <li><strong>Everything is optional:</strong> Players can submit with just a category selection if they prefer</li>
-            <li><strong>Encouraging but not demanding:</strong> Copy explains why details help without making them feel required</li>
-            <li><strong>Clear file restrictions:</strong> Prevents errors and sets expectations about what can be attached</li>
-          </ul>
+            <div style="background: white; padding: 1.5rem; border-radius: 4px; border: 1px solid #ddd;">
+              <h4 style="margin-top: 0;">What happens next?</h4>
+              <ul>
+                <li>Our Trust & Safety team will review the chat logs and interaction history.</li>
+                <li>If a violation is found, we will take appropriate action against the account in accordance with our safety policies.</li>
+                <li>We do not share who submitted a report.</li>
+              </ul>
+              <p style="margin-bottom: 0;"><a href="#">Learn more about Everland's Trust & Safety Policies</a></p>
+            </div>
+          </div>
         ]]>
       </body>
     </section>
 
     <section>
-      <heading>Screen 3: Confirmation</heading>
+      <heading>Enforcement action - Chat privilege revocation email</heading>
       <body>
         <![CDATA[
-          <p>The final screen confirms submission, sets expectations about timing, and—critically—suggests immediate actions players can take to protect themselves.</p>
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Chat privileges temporarily restricted for {accountname}</div>
+            </div>
 
-          <h3>Copy</h3>
-          <p><strong>Header:</strong> Report Submitted</p>
-          <p><strong>Icon:</strong> ✓ (checkmark)</p>
+            <p>Hi {accountname},</p>
 
-          <p><strong>Body text:</strong> Thanks for helping keep Everland safe. Our Trust & Safety team will review your report within 24 hours.</p>
+            <p>We are writing to let you know that your Everland account's chat privileges have been temporarily restricted due to activity that violates our {policyname}.</p>
 
-          <p><strong>Subheader:</strong> Take Action Now</p>
-          <p><strong>Suggested actions:</strong></p>
-          <ul>
-            <li><strong>Block [Player Name]</strong><br/>
-            They won't be able to message you or see your profile</li>
-
-            <li><strong>Mute [Player Name]</strong><br/>
-            You won't see their messages in chat, but they can still see yours</li>
-
-            <li><strong>Leave this area</strong><br/>
-            Fast-travel to a different zone to avoid further interaction</li>
-          </ul>
-
-          <p><strong>Note:</strong> These actions are immediate and don't require moderator approval.</p>
-
-          <p><strong>Button:</strong> Return to Game</p>
-
-          <h3>Design Decisions</h3>
-          <ul>
-            <li><strong>Immediate reassurance:</strong> Visual checkmark and thank-you message confirm the action was successful</li>
-            <li><strong>Clear timeline:</strong> "Within 24 hours" sets realistic expectations without overpromising</li>
-            <li><strong>Empowerment:</strong> Suggested actions give players agency instead of leaving them feeling helpless</li>
-            <li><strong>Explaining each action:</strong> Brief descriptions help players understand what each option does</li>
-            <li><strong>Emphasis on immediacy:</strong> Note clarifies these are instant tools, not more waiting</li>
-          </ul>
-        ]]>
-      </body>
-    </section>
-
-    <section>
-      <heading>Enforcement Communications</heading>
-      <body>
-        <![CDATA[
-          <p>In addition to the reporting flow, I created templated email communications for the three most common enforcement actions. These emails needed to be clear, firm, and consistent while maintaining Everland's friendly tone.</p>
-
-          <h3>Email 1: Chat Restriction</h3>
-          <p><strong>Subject:</strong> Action Taken on Your Everland Account</p>
-          <p><strong>Body:</strong></p>
-          <blockquote>
-            <p>Hi [Player Name],</p>
-
-            <p>We're reaching out because your chat privileges in Everland have been temporarily restricted.</p>
-
-            <p><strong>What happened:</strong><br/>
-            Our Trust & Safety team reviewed reports about messages you sent and determined they violated our Community Guidelines, specifically our rules around [SPECIFIC VIOLATION, e.g., "harassment and abusive language"].</p>
-
-            <p><strong>What this means:</strong><br/>
-            For the next [DURATION, e.g., "48 hours"], you won't be able to send messages in public chat, private messages, or guild chat. You can still play the game normally, join groups, and participate in activities.</p>
-
-            <p><strong>Next steps:</strong><br/>
-            Your chat privileges will be automatically restored on [DATE/TIME]. To avoid future restrictions, please review our Community Guidelines: [LINK]</p>
-
-            <p>If you believe this restriction was applied in error, you can appeal by replying to this email with additional context.</p>
-
-            <p>Thanks for helping us keep Everland a welcoming place for everyone.</p>
-
-            <p>— The Everland Trust & Safety Team</p>
-          </blockquote>
-
-          <h3>Email 2: Temporary Suspension</h3>
-          <p><strong>Subject:</strong> Your Everland Account Has Been Suspended</p>
-          <p><strong>Body:</strong></p>
-          <blockquote>
-            <p>Hi [Player Name],</p>
-
-            <p>Your Everland account has been temporarily suspended due to a violation of our Community Guidelines.</p>
-
-            <p><strong>What happened:</strong><br/>
-            Our Trust & Safety team investigated reports about your behavior and determined you violated our rules around [SPECIFIC VIOLATION, e.g., "cheating and use of unauthorized third-party software"]. This is a serious violation that negatively impacts other players' experiences.</p>
-
-            <p><strong>What this means:</strong><br/>
-            Your account is suspended for [DURATION, e.g., "7 days"]. You won't be able to log in or access any part of Everland during this time.</p>
-
-            <p><strong>Next steps:</strong><br/>
-            Your suspension will be lifted on [DATE/TIME]. Before returning, please review our Community Guidelines: [LINK]</p>
-
-            <p><strong>Important:</strong> Future violations may result in a permanent ban from Everland.</p>
-
-            <p>If you believe this suspension was applied in error, you can appeal by replying to this email with additional context within 7 days.</p>
-
-            <p>— The Everland Trust & Safety Team</p>
-          </blockquote>
-
-          <h3>Email 3: Indefinite Suspension (Ban)</h3>
-          <p><strong>Subject:</strong> Your Everland Account Has Been Permanently Suspended</p>
-          <p><strong>Body:</strong></p>
-          <blockquote>
-            <p>Hi [Player Name],</p>
-
-            <p>Your Everland account has been permanently suspended and you will no longer be able to access the game.</p>
-
-            <p><strong>What happened:</strong><br/>
-            After reviewing reports and your account history, our Trust & Safety team determined you engaged in severe or repeated violations of our Community Guidelines, specifically [SPECIFIC VIOLATION, e.g., "repeated harassment and hate speech targeting other players"].</p>
-
-            <p><strong>What this means:</strong><br/>
-            Your account is permanently banned. You will not be able to log in, and any purchased content or progress cannot be transferred or refunded. Creating new accounts to bypass this ban is also against our Terms of Service and will result in those accounts being banned as well.</p>
-
-            <p><strong>Next steps:</strong><br/>
-            This decision is final in most cases. However, if you believe this suspension was applied in error, you may submit an appeal by replying to this email within 14 days with:</p>
+            <p><strong>What this means</strong></p>
             <ul>
-              <li>A detailed explanation of why you believe the ban was incorrect</li>
-              <li>Any evidence or context that wasn't previously available to our team</li>
+              <li>You can still log in and play Everland.</li>
+              <li>You will not be able to send messages in in-game chat or direct messages.</li>
+              <li>This restriction will end on {enddate} at {endtime} {timezone}.</li>
             </ul>
 
-            <p>Appeals are reviewed carefully, but please note that permanent bans are only issued after thorough investigation.</p>
+            <p><strong>What you can do now</strong></p>
+            <ul>
+              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+              <li>Review the rule that applies: {policyname}</li>
+            </ul>
 
-            <p>— The Everland Trust & Safety Team</p>
-          </blockquote>
+            <p><strong>Important notes</strong></p>
+            <ul>
+              <li>Do not attempt to bypass this restriction by creating or using another account. Ban evasion may result in additional enforcement, including account suspension.</li>
+              <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
+            </ul>
 
-          <h3>Design Decisions for Enforcement Emails</h3>
-          <ul>
-            <li><strong>Consistent structure:</strong> All emails follow the same "What happened / What this means / Next steps" format for scanability</li>
-            <li><strong>Specific but not inflammatory:</strong> Copy references the violation type without quoting offensive content</li>
-            <li><strong>Clear consequences:</strong> Each email explicitly states what the player can and cannot do</li>
-            <li><strong>Path forward:</strong> All enforcement actions include either automatic restoration or appeal instructions</li>
-            <li><strong>Escalation language:</strong> Severity increases from chat restriction to temporary suspension to permanent ban</li>
-            <li><strong>Firm but respectful tone:</strong> Copy maintains professionalism without being punitive or emotional</li>
-          </ul>
+            <p><strong>Future violations may result in additional penalties, including account suspension.</strong></p>
+
+            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+
+            <p>Everland Trust & Safety Team</p>
+          </div>
         ]]>
       </body>
     </section>
 
     <section>
-      <heading>Key Takeaways</heading>
+      <heading>Enforcement action - Temporary suspension email</heading>
       <body>
         <![CDATA[
-          <ul>
-            <li><strong>Meet users where they are:</strong> Multiple entry points dramatically increased accessibility—players didn't have to "go find" the reporting tool</li>
-            <li><strong>Optional doesn't mean useless:</strong> Making details optional reduced abandonment while still collecting valuable context from motivated reporters</li>
-            <li><strong>Immediate agency matters:</strong> Suggesting self-service safety controls reduced follow-up contacts and player frustration</li>
-            <li><strong>Enforcement needs empathy too:</strong> Even when delivering bad news, clear structure and respectful tone maintained player trust in the moderation system</li>
-            <li><strong>Content design shapes behavior:</strong> The way we present options influences which tools players use and how they think about community safety</li>
-          </ul>
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account temporarily suspended for {accountname}</div>
+            </div>
+
+            <p>Hi {accountname},</p>
+
+            <p>We are writing to let you know that your Everland account has been temporarily suspended due to activity that violates our {policyname}.</p>
+
+            <p><strong>What this means</strong></p>
+            <ul>
+              <li>You will not be able to log in to Everland.</li>
+              <li>This restriction will end on {enddate} at {endtime} {timezone}.</li>
+            </ul>
+
+            <p><strong>What you can do now</strong></p>
+            <ul>
+              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+              <li>Review the rule that applies: {policyname}</li>
+            </ul>
+
+            <p><strong>Important notes</strong></p>
+            <ul>
+              <li>Do not attempt to bypass this restriction by creating or using another account. Ban evasion may result in additional enforcement, including extending this suspension or suspending related accounts.</li>
+              <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
+            </ul>
+
+            <p><strong>Future violations may result in additional penalties, including indefinite suspension.</strong></p>
+
+            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+
+            <p>Everland Trust & Safety Team</p>
+          </div>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Enforcement action - Indefinite suspension email</heading>
+      <body>
+        <![CDATA[
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account indefinitely suspended for {accountname}</div>
+            </div>
+
+            <p>Hi {accountname},</p>
+
+            <p>We are writing to let you know that your Everland account has been indefinitely suspended due to activity that violates our {policyname}.</p>
+
+            <p><strong>What this means</strong></p>
+            <ul>
+              <li>You will not be able to log in to Everland.</li>
+              <li>Your access will remain suspended unless an appeal or review changes this decision.</li>
+            </ul>
+
+            <p><strong>What you can do now</strong></p>
+            <ul>
+              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+              <li>Review the rule that applies: {policyname}</li>
+            </ul>
+
+            <p><strong>Important notes</strong></p>
+            <ul>
+              <li>Do not attempt to bypass this restriction by creating or using another account. Additional accounts you create may be suspended indefinitely.</li>
+              <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
+            </ul>
+
+            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+
+            <p>Everland Trust & Safety Team</p>
+          </div>
         ]]>
       </body>
     </section>
