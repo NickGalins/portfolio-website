@@ -21,6 +21,15 @@
 
   <content>
     <section>
+      <heading>About This Sample</heading>
+      <body>
+        <![CDATA[
+          <p style="font-size: 1.1rem; line-height: 1.6; color: #444; max-width: 700px; margin: 0 auto 2rem;">This chapter introduces Kohiri on the night she's invited to Revelry—a monthly celebration held by the Amethyst Circle, a group of Fae who tend the magical towers keeping their world safe. Having spent years training after being freed from slavery, Kohiri is finally being welcomed into the circle. The chapter explores her anxiety about belonging, her relationship with her rescuer Grimoak, and hints at approaching danger through distant horn calls that only she seems to notice.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
       <heading>Chapter One: The Party Guest</heading>
       <body>
         <![CDATA[
@@ -312,4 +321,10 @@
       </body>
     </section>
   </content>
+
+  <outcomes>
+    <outcome>4,016-word opening chapter demonstrating character voice, worldbuilding, and narrative pacing</outcome>
+    <outcome>Established main character's emotional arc and introduced key themes of belonging and freedom</outcome>
+    <outcome>Created tension through environmental details (distant horns) foreshadowing future conflict</outcome>
+  </outcomes>
 </project>
