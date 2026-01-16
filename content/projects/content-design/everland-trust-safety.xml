@@ -196,7 +196,7 @@
         <![CDATA[
           <div style="background: #1a1a1a; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #ffffff;">
             <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
-              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Chat privileges temporarily restricted for {accountname}</div>
+              <div style="color: #aaa; font-size: 0.9rem;"><strong>Subject:</strong> Chat privileges temporarily restricted for {accountname}</div>
             </div>
 
             <p style="color: #ffffff;">Hi {accountname},</p>
@@ -238,7 +238,7 @@
         <![CDATA[
           <div style="background: #1a1a1a; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #ffffff;">
             <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
-              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account temporarily suspended for {accountname}</div>
+              <div style="color: #aaa; font-size: 0.9rem;"><strong>Subject:</strong> Account temporarily suspended for {accountname}</div>
             </div>
 
             <p style="color: #ffffff;">Hi {accountname},</p>
@@ -279,7 +279,7 @@
         <![CDATA[
           <div style="background: #1a1a1a; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #ffffff;">
             <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
-              <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account indefinitely suspended for {accountname}</div>
+              <div style="color: #aaa; font-size: 0.9rem;"><strong>Subject:</strong> Account indefinitely suspended for {accountname}</div>
             </div>
 
             <p style="color: #ffffff;">Hi {accountname},</p>
