@@ -33,10 +33,10 @@
       <heading>Chapter One: The Party Guest</heading>
       <body>
         <![CDATA[
-          <div style="max-width: 700px; margin: 0 auto; font-family: 'Georgia', serif; line-height: 1.8; color: #2a2a2a;">
+          <div id="book-container" style="max-width: 700px; margin: 0 auto; font-family: 'Georgia', serif; line-height: 1.8; color: #2a2a2a;">
 
             <!-- Page 1 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="1" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">The first sound that meant freedom to Kohiri was not a song or a prayer.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">It was the ring of iron links snapping, one after another, under Grimoak's sword.</p>
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Page 2 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="2" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">It was no surprise that family was so important as well. The Fae stuck together in families they made themselves. Circles. Bound together by oaths, promises to protect one another. To live freely with one another. To celebrate every day of freedom. To find a way to bring Oenomaus back, if it were even possible.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">These were the lessons that Kohiri had learned in the last year of her life from Fae that were much older than her, some by scores of years. Having recently turned twenty, she was barely an adult by Fae standards. Her kind weren't apt to release even young adults to the larger world, lest their naivety lead them to Daltanic cages or Casorian fighting pits. Few humans understood the Fae, least of all in the Daltanic Empire, but every forest needed a circle to tend to it. It was unfortunate that the Stardust Forest was in Daltanic territory, but the Fae of the Amethyst Circle made do. Having so many minotaurs among their ranks certainly helped. Even so, the last year had brought more Daltanic patrols along the forest edge. Kohiri had learned the clink of their armor and the rhythm of their marching the way other children learned birdsong. Lately, she had heard it more often than she liked.</p>
@@ -62,7 +62,7 @@
             </div>
 
             <!-- Page 3 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="3" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">In place of freckles, a few blue sparkles dotted the bridge of her nose and under each eye. Her arms and legs were sinewy, her shoulders rounded, hands callused from a childhood spent training and climbing trees, along with a few scars from all the times she had fallen or been struck by an unexpected blow. Her wings could do little more than flutter, after all, and perhaps help her body to hover for a few labored seconds.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Unlike her, the minotaurs were born to fight. Even an untrained minotaur's strength was enough to give pause to the staunchest warriors of other races. Satyrs were much the same way. Pixies, on the other hand, weren't expected to pick up a sword, and yet a thin silver blade rested at Kohiri's side. Grimoak had taught her how to use it well in the past two years she had spent petitioning his circle, hoping they would accept her as a member.</p>
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Page 4 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="4" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">A satyr child tore past her, hooves skidding on the wet stone. One foot went out from under him, and he pinwheeled toward the steaming water. Kohiri moved before she had time to think, catching him by the wrist and hauling him back from the edge.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Careful," she said, more sharply than she intended.</p>
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Page 5 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="5" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">A roar of laughter went up at the far table, someone slamming a fist down hard enough to rattle the cups. Kohiri's shoulders jumped, her hand half-rising toward the hilt at her side. Then Belra, too, burst out laughing, and Kohiri caught herself, drawing her hand away from the sword. She struggled to remember when last she had seen a gloaming smile, let alone laugh. It seemed Revelry really did have its intended effect.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Koh, koh."</p>
@@ -105,7 +105,7 @@
             </div>
 
             <!-- Page 6 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="6" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Are you nervous?" Megwei said, scrunching up her nose. "Oh Oenomaus help us! You're nervous. Grim, Koh is nervous!"</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Kohiri swiveled her head all the way around, not realizing that Grimoak was only steps away from the other side of the spring, seemingly approaching from the northern woods. He responded with a low grumble that rolled over the water's surface and left Kohiri's pointed ears vibrating uncomfortably. It made them itchy. Grimoak was the tallest minotaur Kohiri had ever met. His legs were as thick as his namesake. One of his horns was cracked and blackening, and his graying beard showed his late middle age. On his back he carried a sword so long and broad that it made Kohiri's look like a dagger. His dark skin contrasted starkly with the white snow.</p>
@@ -120,7 +120,7 @@
             </div>
 
             <!-- Page 7 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="7" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Nervous isn't the word," Kohiri said. "I'm trying to be..." she paused, looking up to find the right way to phrase it. The clear night sky, filled with the light of so many other distant worlds, nearly distracted her yet again. "Respectful," she said quickly. "I want to be respectful."</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Relax," Megwei said. "Nobody cares. Just have fun."</p>
@@ -133,7 +133,7 @@
             </div>
 
             <!-- Page 8 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="8" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Every kind of Fae had a way of dealing with the memories. For most pixies, a carefree exterior kept the darkness at bay. Kohiri just didn't see the world the way her fellow spring-wings did.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"You've come a long way. You aren't the girl whose chains I shattered three years ago," Grim said, patting Kohiri's head with five thick fingers as he walked by. "But I'm going to eat. I suggest you do the same. There are several people here you haven't met yet."</p>
@@ -146,7 +146,7 @@
             </div>
 
             <!-- Page 9 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="9" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">For a heartbeat, the shout of someone laughing near the tables twisted into the barked orders of a Daltanic officer, and Kohiri's shoulders tightened. She forced herself to breathe, to remember the snow under her boots, the heat of the springs at her back, the safety of the circle's clearing. This was not the Savarrio estate. Not anymore.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Appropriately, Grim was the stand-in this time. She was right, though: the hesitance she felt was not nerves; it was plain anxiety. She felt like she was trying to rejoin a world she had not been a part of for most of her life. The humans of House Savarrio had taken that life from her when they turned her into a dancing servant girl for most of her youth. Grim's rescue led to three years of martial training so it would never happen again, but more importantly, it led to this second chance.</p>
@@ -161,7 +161,7 @@
             </div>
 
             <!-- Page 10 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="10" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Keep eating and shut your trap, Bix!" the woman yelled, but her tone seemed only half-serious. "I swear. This one. All he does is eat. What am I supposed to do?"</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Kohiri wasn't sure if she was supposed to answer, but the long pause that accompanied the woman sticking her hands on her hips led her to open her mouth. She, admittedly, didn't know what she was going to say before she got interrupted.</p>
@@ -180,7 +180,7 @@
             </div>
 
             <!-- Page 11 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="11" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"A dress?" Kohiri asked.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Have you never had a dress before?" the woman asked. Before Kohiri could answer, the woman had wrapped her hands around her. "Oh, you poor thing."</p>
@@ -197,7 +197,7 @@
             </div>
 
             <!-- Page 12 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="12" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"She can fight," Belra said, "can't you, girl?"</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"We can always use more of that," came another voice, this time from a satyr seated at the table. He was using his dagger like a kabob, covered in an apple slice, a wedge of dripping white cheese, and what looked like a slice of pie. "Murkz."</p>
@@ -216,7 +216,7 @@
             </div>
 
             <!-- Page 13 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="13" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">The satyr nodded and bit into the apple wedge, but continued to watch her with interest.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Well what's fighting got to do with wearing a dress?" Kinra said indignantly. Behind her, the tables were covered end-to-end with food. So many colors. It brightened up the otherwise muted appearance of the clearing.</p>
@@ -235,7 +235,7 @@
             </div>
 
             <!-- Page 14 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="14" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">There were a lot of satyr and minotaur in the Amethyst Circle. There were three pixies in the clearing: Megwei drying herself near the rock, Kohiri, and Kinra. Belra was the only gloaming. All the other Fae at the Revelry were progeny of summer or winter, horned and hooved, and never far from their weapons. Perhaps the cold weather of the Spire Point made most winged Fae flutter elsewhere, or perhaps there was more to it. Either way, Kohiri didn't mind. She felt out of season as it was, and the hooved Fae would make far better sparring partners.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Have a seat, girl," Kinra said quietly. Kohiri hadn't realized that she was one of the few left standing, and quickly found a seat at the table. She could feel the droplets of water frosting up on her wings just in time for Megwei, who had put them there in the first place, to sit down next to her. Megwei flashed her a smile before covering her plate in fruit and truffles.</p>
@@ -248,7 +248,7 @@
             </div>
 
             <!-- Page 15 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="15" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">As everyone settled, the chatter faded and attention drifted toward Belra. When only the murmur of the hot spring remained, she began to speak.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Every month, we come out of hiding to celebrate Revelry, just as our ancestors had celebrated every week with Oenomaus on Faeholme," Belra said. Just the mention of Oenomaus' name stirred the faintest memories; echoes of what one of her ancestors had experienced, now living on in her and in all the seasonal Fae who walked Aularia. Their children would know it, and their children's children would know it: the pain of seeing their creator killed before their very eyes. "But we are not on Faeholme. Oenomaus is lost to us. The First Oath we promised to ourselves and to Oenomaus was that we'd find a way to one day bring him back. We gather with family to live as he would have wanted us to live, to remind ourselves of this Oath, to take time to separate ourselves from the painful memories of our enslavement among the Abyssals.</p>
@@ -259,7 +259,7 @@
             </div>
 
             <!-- Page 16 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="16" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">A few ears pricked up. That last line was new.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Now..."</p>
@@ -278,7 +278,7 @@
             </div>
 
             <!-- Page 17 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="17" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"But as one family member leaves us, we gain another. Five nights from tonight, we will join together for something we have not done in a long time. Duke Grimoak has seen fit to have a new member join our beloved circle. I have forged an oath, and Kohiri, our long lost kin, whose own circle was torn apart by wretched Daltanics, and who has been unable to enjoy the same taste of freedom we have, will be taking that oath. The Amethyst Circle will remain whole."</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">Kohiri slowly rose to her feet, but she was not met with the cheering or clapping that had greeted Bix. As much as Belra's speech had made her feel included, the lack of response from the members of the circle left her feeling anxious yet again. She could feel the embarrassing cold sweat begin to form above her brow, and could not stop thinking about how she had a patch of moisture, brightly glistening in the moonlight, above her eyes. She dipped her head so that as many golden strands of hair as possible would fall to cover her face.</p>
@@ -289,7 +289,7 @@
             </div>
 
             <!-- Page 18 -->
-            <div class="book-page" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px;">
+            <div class="book-page" data-page="18" style="background: #fafaf8; padding: 3rem 2.5rem; margin-bottom: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; cursor: pointer; display: none;">
               <p style="text-indent: 2em; margin-bottom: 1.2em;">"Th-thank you," Kohiri said. Her voice sounded small to her own ears. She nodded and tried to steady her breathing. <em>You will be a member of the Amethyst Circle. You will be a member of the Amethyst Circle. You will be a member of the Amethyst Circle.</em> She could not stop repeating it to herself in Belra's voice.</p>
 
               <p style="text-indent: 2em; margin-bottom: 1.2em;">At last, cups were raised, and a mighty cheer followed. Some of it, she knew, was for her.</p>
@@ -305,16 +305,129 @@
               <div style="text-align: center; margin-top: 2rem; color: #999; font-size: 0.9em;">18</div>
             </div>
 
-            <!-- Navigation hint -->
-            <div style="text-align: center; margin: 3rem 0 2rem; padding: 1.5rem; background: #f0f0ed; border-radius: 4px;">
-              <p style="font-style: italic; color: #666; margin: 0 0 0.5rem;">End of Chapter One</p>
-              <p style="margin: 0; color: #888; font-size: 0.9em;">~4,016 words</p>
+            <!-- Navigation Controls -->
+            <div id="book-navigation" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding: 1rem; background: #f0f0ed; border-radius: 4px;">
+              <button id="prev-page" style="padding: 0.75rem 1.5rem; background: #2a2a2a; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Georgia', serif; font-size: 1rem; opacity: 0.5;">
+                ← Previous
+              </button>
+              <div id="page-indicator" style="font-family: 'Georgia', serif; color: #666; font-size: 1rem;">
+                Page <span id="current-page">1</span> of 18
+              </div>
+              <button id="next-page" style="padding: 0.75rem 1.5rem; background: #2a2a2a; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Georgia', serif; font-size: 1rem;">
+                Next →
+              </button>
             </div>
 
-            <!-- Scroll navigation hint -->
-            <div style="text-align: center; margin-top: 2rem; padding: 1rem; color: #999; font-size: 0.85em;">
-              <p style="margin: 0;">↑ Scroll up to read from the beginning ↑</p>
+            <!-- End message (hidden by default) -->
+            <div id="end-message" style="display: none; text-align: center; margin: 3rem 0 2rem; padding: 1.5rem; background: #f0f0ed; border-radius: 4px;">
+              <p style="font-style: italic; color: #666; margin: 0 0 0.5rem;">End of Chapter One</p>
+              <p style="margin: 0; color: #888; font-size: 0.9em;">~4,016 words</p>
+              <button id="restart-button" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #2a2a2a; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Georgia', serif; font-size: 1rem;">
+                Read Again
+              </button>
             </div>
+
+            <script>
+              (function() {
+                const totalPages = 18;
+                let currentPage = 1;
+
+                const pages = document.querySelectorAll('.book-page');
+                const prevBtn = document.getElementById('prev-page');
+                const nextBtn = document.getElementById('next-page');
+                const currentPageSpan = document.getElementById('current-page');
+                const bookNav = document.getElementById('book-navigation');
+                const endMessage = document.getElementById('end-message');
+                const restartBtn = document.getElementById('restart-button');
+
+                function showPage(pageNum) {
+                  // Hide all pages
+                  pages.forEach(page => {
+                    page.style.display = 'none';
+                  });
+
+                  // Show the requested page
+                  const targetPage = document.querySelector(`[data-page="${pageNum}"]`);
+                  if (targetPage) {
+                    targetPage.style.display = 'block';
+                    window.scrollTo({ top: targetPage.offsetTop - 20, behavior: 'smooth' });
+                  }
+
+                  // Update page indicator
+                  currentPageSpan.textContent = pageNum;
+
+                  // Update button states
+                  if (pageNum === 1) {
+                    prevBtn.style.opacity = '0.5';
+                    prevBtn.style.cursor = 'not-allowed';
+                  } else {
+                    prevBtn.style.opacity = '1';
+                    prevBtn.style.cursor = 'pointer';
+                  }
+
+                  if (pageNum === totalPages) {
+                    nextBtn.textContent = 'Finish';
+                  } else {
+                    nextBtn.textContent = 'Next →';
+                  }
+
+                  currentPage = pageNum;
+                }
+
+                function nextPage() {
+                  if (currentPage < totalPages) {
+                    showPage(currentPage + 1);
+                  } else {
+                    // Show end message
+                    pages.forEach(page => page.style.display = 'none');
+                    bookNav.style.display = 'none';
+                    endMessage.style.display = 'block';
+                    window.scrollTo({ top: endMessage.offsetTop - 20, behavior: 'smooth' });
+                  }
+                }
+
+                function prevPage() {
+                  if (currentPage > 1) {
+                    showPage(currentPage - 1);
+                  }
+                }
+
+                function restart() {
+                  endMessage.style.display = 'none';
+                  bookNav.style.display = 'flex';
+                  showPage(1);
+                }
+
+                // Button click handlers
+                nextBtn.addEventListener('click', nextPage);
+                prevBtn.addEventListener('click', prevPage);
+                restartBtn.addEventListener('click', restart);
+
+                // Click on page to advance
+                pages.forEach(page => {
+                  page.addEventListener('click', function(e) {
+                    // Only advance if not clicking a button
+                    if (e.target.tagName !== 'BUTTON') {
+                      nextPage();
+                    }
+                  });
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', function(e) {
+                  if (e.key === 'ArrowRight' || e.key === ' ') {
+                    e.preventDefault();
+                    nextPage();
+                  } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevPage();
+                  }
+                });
+
+                // Initialize - show first page
+                showPage(1);
+              })();
+            </script>
 
           </div>
         ]]>
