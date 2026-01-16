@@ -111,6 +111,7 @@ Every project XML file MUST have this structure:
 - Projects: `content/projects/content-design/` or `content/projects/creative/`
 - Pages: `content/pages/`
 - Blog posts: `content/blog/`
+- **CRITICAL for Blog Posts:** The `blog-post.njk` pagination template MUST be at the ROOT level, NOT in `_includes/`. Eleventy only processes pagination from root-level templates.
 
 ✅ **Step 3: Rebuild the Site**
 ```bash
@@ -606,10 +607,12 @@ content/blog/*.xml → eleventy.config.js → {{ posts }} → Templates → _sit
 **Files Involved:**
 - `content/blog/*.xml` - Individual blog post content files
 - `blog.njk` - Blog listing page template (shows all posts)
-- `_includes/blog-post.njk` - Individual post page template (uses pagination)
+- `blog-post.njk` - Individual post page template (uses pagination) **MUST BE AT ROOT LEVEL**
 - `assets/css/main.css` - Blog styling (lines 756+)
 - `assets/images/blog/` - Hero images for blog posts
 - `assets/images/author-*.jpg` - Author photos
+
+**⚠️ CRITICAL:** The `blog-post.njk` file MUST be at the root level of the project, NOT in `_includes/`. Eleventy's pagination system only processes templates at the root level. If you move it to `_includes/`, blog post pages will 404.
 
 **URLs Generated:**
 - Blog listing: `/blog/`
@@ -928,8 +931,8 @@ portfolio-website/
 │   │   └── author-nick.jpg                 ← Author photo
 │   └── js/
 ├── blog.njk                                 ← Blog listing page
+├── blog-post.njk                            ← Individual post template (MUST be at root for pagination)
 └── _includes/
-    └── blog-post.njk                        ← Individual post template
 ```
 
 ---
