@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     BLOG POST: I Stopped Trying to Be Just One Kind of Writer
+     ============================================================================
+     This is a content marketing post about embracing multiple writing roles
+     as performance - from technical writing to creative storytelling.
+
+     KEY FEATURES IN THIS POST:
+     - Lead paragraph (larger opening text)
+     - Pull quote (highlighted key insight)
+     - Callout box (list of writing roles)
+     - Author information with photo and bio
+     - Hero image for visual impact
+     - Featured post designation
+     ============================================================================ -->
+<post>
+  <meta>
+    <!-- REQUIRED: Unique identifier used in URL (/blog/multidisciplinary-writer/) -->
+    <id>multidisciplinary-writer</id>
+
+    <!-- REQUIRED: Post title displayed in headers and listings -->
+    <title>Writers Are Performers</title>
+
+    <!-- REQUIRED: Publication date (YYYY-MM-DD format) -->
+    <date>2026-01-16</date>
+
+    <!-- AUTHOR INFORMATION -->
+    <author>Nicholas Galinski</author>
+    <authorPhoto>/assets/images/author-nick.jpg</authorPhoto>
+    <authorBio>Multidisciplinary writer specializing in technical documentation, UX content, and creative storytelling. Former English teacher who brings narrative craft to every form of writing.</authorBio>
+
+    <!-- HERO IMAGE (Featured visual at top of post) -->
+    <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+    <heroAlt>Theater stage with spotlight representing different writing performance roles</heroAlt>
+
+    <!-- EXCERPT (Used in blog listings and previews) -->
+    <excerpt>If you view writing as a performance, you realize you can write anything. Here's how I embraced being a multidisciplinary writer instead of limiting myself to one niche.</excerpt>
+
+    <!-- FEATURED FLAG (Makes this post prominent on blog index) -->
+    <featured>true</featured>
+
+    <!-- TAGS (Categories for organization and filtering) -->
+    <tags>
+      <tag>Writing</tag>
+      <tag>Content Marketing</tag>
+      <tag>Professional Development</tag>
+    </tags>
+  </meta>
+
+  <!-- POST CONTENT
+       ======================================================================
+       Content is wrapped in CDATA to allow HTML/CSS without XML parsing issues.
+
+       AVAILABLE CSS CLASSES:
+       - .lead           : Larger opening paragraph
+       - .pullquote      : Centered, emphasized quote (use <blockquote>)
+       - .callout        : Highlighted box for important content
+       - <figure>        : Images with captions
+       ====================================================================== -->
+  <content>
+    <![CDATA[
+      <p class="lead">I stopped trying to be just one kind of writer.</p>
+
+      <p>This is the first entry in Everything Storyteller, and I want to start with the small mindset shift that changed how I see my career.</p>
+
+      <p>For a long time, I treated "writer" like it was supposed to be a single, stable identity. Pick a lane. Stay in it. Become known for one thing. That is what the algorithm wants. It is what many recruiters want. It is what LinkedIn rewards.</p>
+
+      <p>But here's the change in thinking that finally unlocked something for me:</p>
+
+      <blockquote class="pullquote">
+        If you view writing as a performance, you realize you can write anything.
+      </blockquote>
+
+      <p>Not because you are magically good at every genre or format, but because performance is about learning the part. You study the world of the piece, the audience, the constraints, the rhythm, the stakes. You build a voice that fits the moment.</p>
+
+      <p>I was watching the Michael Lewis MasterClass recently, and something clicked.</p>
+
+      <p>Lewis did not just sit down and type <em>Moneyball</em> into existence. He embedded himself in the world. He had to understand Billy Beane's method, his blind spots, his insecurities, the numbers, the human tension behind the numbers. He became a very specific kind of narrator to tell that specific story.</p>
+
+      <p>That is not just writing. That is <strong>role work</strong>.</p>
+
+      <h2>Writers are performers</h2>
+
+      <p>Once I started thinking of writing this way, a lot of shame evaporated.</p>
+
+      <p>Because if writing is performance, then a "writing style" is not your identity. It is a role you can step into.</p>
+
+      <p>Some roles require deep research and immersion. Call it method acting. You live inside the system until you can translate it clearly for someone else.</p>
+
+      <p>Some roles are about precision and constraint. You hit your marks. You cut the fat. You make the sentence do its job.</p>
+
+      <p>Some roles are about emotion and timing. You build tension. You land the beat. You let silence do work.</p>
+
+      <p>And some roles are about serving someone else's vision. You are not the star. You are the person who makes the story function.</p>
+
+      <p><strong>The algorithm wants one thing. Real life rarely works that way.</strong></p>
+
+      <p>On LinkedIn, calling yourself a multidisciplinary writer can feel "dangerous." The safest path is to be one thing forever.</p>
+
+      <p>But my career is not a straight line. It is a repertoire.</p>
+
+      <p>Here are some of the roles I have played, sometimes separately, sometimes all at once:</p>
+
+      <div class="callout">
+        <ul>
+          <li>Technical Writer</li>
+          <li>Copywriter</li>
+          <li>Storyteller</li>
+          <li>UX Writer</li>
+          <li>Writing Manager</li>
+          <li>Content Strategist</li>
+          <li>Worldbuilder</li>
+          <li>Scriptwriter</li>
+          <li>English and Creative Writing Teacher</li>
+        </ul>
+      </div>
+
+      <p>I used to worry that this made me unfocused.</p>
+
+      <p>Now I think it makes me <strong>trained</strong>.</p>
+
+      <h2>Range is not randomness. It's transferable craft.</h2>
+
+      <p>Anyone who has seen a comedy actor crush a dramatic role understands this.</p>
+
+      <p>Comedy teaches timing, cadence, subtext, misdirection, and restraint. Those same tools can make a dramatic performance sharper and more human. The skill transfers.</p>
+
+      <p>Writing works the same way.</p>
+
+      <p><strong>Technical writing</strong> teaches you structure, clarity, audience empathy, and constraint. Those skills show up everywhere, even in personal essays.</p>
+
+      <p><strong>Copywriting</strong> teaches you attention, pacing, and persuasion. You learn how to earn the next sentence.</p>
+
+      <p><strong>Storytelling</strong> teaches you stakes and momentum. You learn why anyone should care.</p>
+
+      <p><strong>Teaching</strong> teaches you how to explain, how to scaffold, and how to meet people where they are.</p>
+
+      <p>These are not disconnected identities. They are different applications of the same underlying craft.</p>
+
+      <h2>What I mean when I say "multidisciplinary"</h2>
+
+      <p>When I say I am a multidisciplinary writer, I do not mean I want to do everything at once with no point of view.</p>
+
+      <p>I mean this:</p>
+
+      <blockquote class="pullquote">
+        If you give me the context, I can learn the part.
+      </blockquote>
+
+      <p>I can study the audience, the goal, the constraints, the voice, and the stakes. I can step into the role that the moment requires.</p>
+
+      <p>I do not want to play one character forever.</p>
+
+      <p><strong>I want the whole cast.</strong></p>
+
+      <h2>What you can expect from Everything Storyteller</h2>
+
+      <p>This blog is going to live at the intersection of three things:</p>
+
+      <ul>
+        <li><strong>Content strategy advice</strong> for writers and creators who want to be understood clearly.</li>
+        <li><strong>Storytelling advice</strong> for anyone trying to make work that lands.</li>
+        <li><strong>Personal stories</strong> about the behind-the-scenes reality of building a creative life.</li>
+      </ul>
+
+      <p>If you are also tired of being told you must be exactly one thing, I think you will feel at home here.</p>
+
+      <p>If this resonated, follow along. The next posts will get more tactical, including how to position yourself as a "writer with range" without sounding vague, and how to build a brand that makes your variety make sense.</p>
+    ]]>
+  </content>
+</post>

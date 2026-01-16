@@ -1,30 +1,120 @@
 ---
 layout: base.njk
-title: Blog
+title: Everything Storyteller
 permalink: /blog/index.html
 ---
 
+<!-- ============================================================================
+     BLOG LISTING PAGE: "Everything Storyteller"
+     ============================================================================
+     This page displays all blog posts with:
+     - Featured post section (large, prominent display)
+     - Regular post listings with thumbnails
+     - Author attribution and dates
+     - Tag display for categorization
+
+     FEATURES:
+     - Featured post gets special styling and layout
+     - Hero images display as thumbnails
+     - Excerpts provide preview text
+     - Responsive grid layout for mobile/desktop
+     ============================================================================ -->
+
 <article class="page page--blog">
+  <!-- BLOG HEADER
+       ----------------------------------------------------------------
+       Shows the blog name and tagline at the top of the page -->
   <header class="blog__header">
-    <h1>Blog</h1>
+    <h1>Everything Storyteller</h1>
+    <p class="blog__tagline">Stories, insights, and lessons from a multidisciplinary writer</p>
   </header>
-  
-  <div class="blog__posts">
-    {% for post in posts %}
-    <article class="blog-post-preview">
-      <h2><a href="/blog/{{ post.meta.id }}/">{{ post.meta.title }}</a></h2>
-      <time class="blog-post-preview__date">{{ post.meta.date }}</time>
-      {% if post.meta.excerpt %}
-      <p class="blog-post-preview__excerpt">{{ post.meta.excerpt }}</p>
+
+  <!-- FEATURED POST SECTION
+       ----------------------------------------------------------------
+       Displays the first post marked with <featured>true</featured>
+       in a prominent card layout with larger text and images -->
+  {% set featuredPost = posts | selectattr('meta.featured', 'equalto', 'true') | first %}
+  {% if featuredPost %}
+  <section class="blog__featured">
+    <article class="blog-post-featured">
+      <!-- Hero image for featured post (left side on desktop) -->
+      {% if featuredPost.meta.heroImage %}
+      <a href="/blog/{{ featuredPost.meta.id }}/" class="blog-post-featured__image">
+        <img src="{{ featuredPost.meta.heroImage }}" alt="{{ featuredPost.meta.heroAlt or featuredPost.meta.title }}">
+      </a>
       {% endif %}
-      {% if post.meta.tags.tag %}
-      <ul class="blog-post-preview__tags">
-        {% for tag in post.meta.tags.tag %}
-        <li>{{ tag }}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+
+      <!-- Featured post content (right side on desktop) -->
+      <div class="blog-post-featured__content">
+        <span class="blog-post-featured__label">Featured</span>
+        <h2><a href="/blog/{{ featuredPost.meta.id }}/">{{ featuredPost.meta.title }}</a></h2>
+
+        <!-- Post metadata: date and author -->
+        <div class="blog-post-featured__meta">
+          <time>{{ featuredPost.meta.date }}</time>
+          {% if featuredPost.meta.author %}
+          <span class="blog-post-featured__author">by {{ featuredPost.meta.author }}</span>
+          {% endif %}
+        </div>
+
+        <!-- Excerpt preview text -->
+        {% if featuredPost.meta.excerpt %}
+        <p class="blog-post-featured__excerpt">{{ featuredPost.meta.excerpt }}</p>
+        {% endif %}
+
+        <!-- Call to action link -->
+        <a href="/blog/{{ featuredPost.meta.id }}/" class="blog-post-featured__link">Read more →</a>
+      </div>
     </article>
+  </section>
+  {% endif %}
+
+  <!-- ALL POSTS SECTION
+       ----------------------------------------------------------------
+       Lists all blog posts in chronological order (newest first)
+       Shows thumbnails, titles, excerpts, and tags -->
+  <div class="blog__posts">
+    <h2 class="blog__posts-heading">All Posts</h2>
+
+    {% for post in posts %}
+      <!-- Skip the featured post if it's already shown above -->
+      {% if not post.meta.featured or posts.length > 1 %}
+      <article class="blog-post-preview">
+        <!-- Thumbnail image (left side on desktop) -->
+        {% if post.meta.heroImage %}
+        <a href="/blog/{{ post.meta.id }}/" class="blog-post-preview__image">
+          <img src="{{ post.meta.heroImage }}" alt="{{ post.meta.heroAlt or post.meta.title }}">
+        </a>
+        {% endif %}
+
+        <!-- Post content area (right side on desktop) -->
+        <div class="blog-post-preview__content">
+          <h3><a href="/blog/{{ post.meta.id }}/">{{ post.meta.title }}</a></h3>
+
+          <!-- Post metadata: date and author -->
+          <div class="blog-post-preview__meta">
+            <time class="blog-post-preview__date">{{ post.meta.date }}</time>
+            {% if post.meta.author %}
+            <span class="blog-post-preview__author">by {{ post.meta.author }}</span>
+            {% endif %}
+          </div>
+
+          <!-- Excerpt preview text -->
+          {% if post.meta.excerpt %}
+          <p class="blog-post-preview__excerpt">{{ post.meta.excerpt }}</p>
+          {% endif %}
+
+          <!-- Tags for categorization -->
+          {% if post.meta.tags.tag %}
+          <ul class="blog-post-preview__tags">
+            {% for tag in post.meta.tags.tag %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </article>
+      {% endif %}
     {% endfor %}
   </div>
 </article>

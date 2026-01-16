@@ -753,26 +753,198 @@ ul, ol {
   font-style: italic;
 }
 
-/* Blog */
+/* ==========================================================================
+   Blog Styles - "Everything Storyteller"
+   ========================================================================== */
+/* Modern blog styling with featured posts, author cards, pull quotes,
+   and callout boxes. Maintains the dark navy portfolio aesthetic while
+   adding visual interest for content marketing. */
+
+/* Blog Listing Page Header
+   ========================================================================== */
+.blog__header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+}
+
+.blog__tagline {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* Featured Post Section
+   ========================================================================== */
+/* Large, prominent display for the featured blog post with hero image */
+.blog__featured {
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.blog-post-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.blog-post-featured__image {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-featured__image:hover {
+  transform: scale(1.02);
+}
+
+.blog-post-featured__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-post-featured__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  background: rgba(78, 168, 222, 0.1);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.blog-post-featured__content h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.blog-post-featured__content h2 a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-post-featured__content h2 a:hover {
+  color: var(--color-accent);
+}
+
+.blog-post-featured__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.blog-post-featured__excerpt {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.blog-post-featured__link {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.blog-post-featured__link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* All Posts Section Heading
+   ========================================================================== */
+.blog__posts-heading {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-2xl);
+  color: var(--color-text);
+}
+
+/* Blog Post Previews (Enhanced)
+   ========================================================================== */
+/* Grid layout with thumbnail images and content area */
 .blog-post-preview {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-lg);
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--color-border);
 }
 
-.blog-post-preview h2 {
-  margin-bottom: var(--space-xs);
+.blog-post-preview__image {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  transition: opacity 0.3s ease;
 }
 
-.blog-post-preview__date {
+.blog-post-preview__image:hover {
+  opacity: 0.8;
+}
+
+.blog-post-preview__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+.blog-post-preview__content h3 {
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.blog-post-preview__content h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-post-preview__content h3 a:hover {
+  color: var(--color-accent);
+}
+
+.blog-post-preview__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
   font-size: 0.875rem;
   color: var(--color-text-muted);
   margin-bottom: var(--space-sm);
 }
 
+.blog-post-preview__date {
+  display: block;
+  color: var(--color-text-muted);
+}
+
+.blog-post-preview__author {
+  color: var(--color-text-muted);
+}
+
 .blog-post-preview__excerpt {
   color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
 }
 
 .blog-post-preview__tags {
@@ -788,17 +960,53 @@ ul, ol {
   padding: var(--space-xs) var(--space-sm);
   background: var(--color-border);
   border-radius: 4px;
+  color: var(--color-text-muted);
 }
 
+/* Individual Blog Post Page
+   ========================================================================== */
+
+/* Hero Image */
+.blog-post__hero {
+  margin: calc(var(--space-xl) * -1) calc(var(--space-xl) * -1) var(--space-2xl);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-post__hero img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Post Header */
 .blog-post__header {
   margin-bottom: var(--space-2xl);
 }
 
-.blog-post__date {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
+.blog-post__header h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.blog-post__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: 0.875rem;
+}
+
+.blog-post__date {
+  color: var(--color-text-muted);
+}
+
+.blog-post__author-name {
+  color: var(--color-text-muted);
 }
 
 .blog-post__tags {
@@ -806,7 +1014,7 @@ ul, ol {
   gap: var(--space-sm);
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: var(--space-md) 0 0;
 }
 
 .blog-post__tags li {
@@ -814,14 +1022,248 @@ ul, ol {
   padding: var(--space-xs) var(--space-sm);
   background: var(--color-border);
   border-radius: 4px;
+  color: var(--color-text-muted);
 }
 
+/* Author Card
+   ========================================================================== */
+/* Displays author photo, name, and bio before the post content */
+.blog-post__author-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-bg-alt);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+  margin-bottom: var(--space-2xl);
+}
+
+.blog-post__author-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.blog-post__author-info {
+  flex: 1;
+}
+
+.blog-post__author-info strong {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.blog-post__author-bio {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Blog Post Content
+   ========================================================================== */
+/* Enhanced typography and content elements for rich blog posts */
 .blog-post__content {
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.125rem;
+  color: var(--color-text);
 }
 
-.blog-post__footer {
+.blog-post__content p {
+  margin-bottom: var(--space-lg);
+}
+
+/* Lead Paragraph - Larger opening text */
+.blog-post__content .lead {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  line-height: 1.4;
+}
+
+/* Section Headings within Blog Content */
+.blog-post__content h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
   margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+.blog-post__content h3 {
+  font-size: 1.375rem;
+  line-height: 1.3;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+/* Lists within Blog Content */
+.blog-post__content ul,
+.blog-post__content ol {
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-xl);
+}
+
+.blog-post__content li {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+/* Emphasis Styling */
+.blog-post__content strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.blog-post__content em {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* Pull Quotes
+   ========================================================================== */
+/* Large, centered quotes that stand out from body text */
+.blog-post__content .pullquote {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  margin: var(--space-2xl) auto;
+  padding: var(--space-xl);
+  max-width: 700px;
+  color: var(--color-accent);
+  border-top: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  font-style: italic;
+}
+
+/* Callout Boxes
+   ========================================================================== */
+/* Highlighted boxes for important lists or key concepts */
+.blog-post__content .callout {
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-accent);
+  padding: var(--space-lg);
+  margin: var(--space-xl) 0;
+  border-radius: 4px;
+}
+
+.blog-post__content .callout h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-accent);
+  font-size: 1.25rem;
+}
+
+.blog-post__content .callout ul {
+  margin: 0;
+  padding-left: var(--space-lg);
+}
+
+.blog-post__content .callout li {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+/* Images with Captions
+   ========================================================================== */
+.blog-post__content figure {
+  margin: var(--space-2xl) 0;
+}
+
+.blog-post__content figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.blog-post__content figcaption {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-sm);
+  font-style: italic;
+}
+
+/* Blog Post Footer
+   ========================================================================== */
+.blog-post__footer {
+  margin-top: var(--space-3xl);
   padding-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
+}
+
+.blog-post__back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.blog-post__back-link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Responsive Design - Mobile Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Featured post stacks vertically on mobile */
+  .blog-post-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post-featured__image {
+    order: -1;
+  }
+
+  .blog-post-featured__content h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Regular post previews stack vertically */
+  .blog-post-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post-preview__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Hero image extends to screen edges on mobile */
+  .blog-post__hero {
+    margin-left: calc(var(--space-md) * -1);
+    margin-right: calc(var(--space-md) * -1);
+  }
+
+  /* Smaller headings on mobile */
+  .blog-post__header h1 {
+    font-size: 2rem;
+  }
+
+  .blog-post__content {
+    font-size: 1rem;
+  }
+
+  .blog-post__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-post__content .pullquote {
+    font-size: 1.5rem;
+    padding: var(--space-lg);
+  }
+
+  .blog-post__content .lead {
+    font-size: 1.25rem;
+  }
 }
