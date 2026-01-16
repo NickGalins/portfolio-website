@@ -81,7 +81,11 @@ permalink: /blog/index.html
       {% if not post.meta.featured or posts.length > 1 %}
       <article class="blog-post-preview">
         <!-- Thumbnail image (left side on desktop) -->
-        {% if post.meta.heroImage %}
+        {% if post.meta.thumbnailImage %}
+        <a href="/blog/{{ post.meta.id }}/" class="blog-post-preview__image">
+          <img src="{{ post.meta.thumbnailImage }}" alt="{{ post.meta.thumbnailAlt or post.meta.title }}">
+        </a>
+        {% elif post.meta.heroImage %}
         <a href="/blog/{{ post.meta.id }}/" class="blog-post-preview__image">
           <img src="{{ post.meta.heroImage }}" alt="{{ post.meta.heroAlt or post.meta.title }}">
         </a>

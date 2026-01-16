@@ -33,6 +33,10 @@
     <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
     <heroAlt>Theater stage with spotlight representing different writing performance roles</heroAlt>
 
+    <!-- THUMBNAIL IMAGE (Square image for blog listing cards) -->
+    <thumbnailImage>/assets/images/blog/writers-are-performers-thumbnail.jpg</thumbnailImage>
+    <thumbnailAlt>Visual representation of multidisciplinary writing as performance</thumbnailAlt>
+
     <!-- EXCERPT (Used in blog listings and previews) -->
     <excerpt>If you view writing as a performance, you realize you can write anything. Here's how I embraced being a multidisciplinary writer instead of limiting myself to one niche.</excerpt>
 
