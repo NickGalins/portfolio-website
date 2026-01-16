@@ -1,22 +1,14 @@
-{# ============================================================================
-   RESUME PAGE TEMPLATE
-   ============================================================================
-   This template displays your resume from content/pages/resume.xml
-
-   STRUCTURE:
-   - Header with optional intro paragraph
-   - Experience section (loops through positions)
-   - Education section (conditional - only shows if data exists)
-   - Skills section (conditional - only shows if data exists)
-
-   The resume.xml has a different structure than about/contact pages,
-   so this template is customized to match that structure.
-   ============================================================================ #}
 ---
 layout: base.njk
 title: Resume
 permalink: /resume/index.html
 ---
+
+{# ============================================================================
+   RESUME PAGE TEMPLATE
+   ============================================================================
+   This template displays your resume from content/pages/resume.xml
+   ============================================================================ #}
 
 <article class="page page--resume">
   {# LOAD RESUME DATA: Get resume data from global pages object #}

@@ -1,19 +1,14 @@
-{# ============================================================================
-   CONTACT PAGE TEMPLATE
-   ============================================================================
-   This template displays your Contact page content from content/pages/contact.xml
-
-   STRUCTURE:
-   - Uses base.njk layout (includes sidebar, header, footer)
-   - Pulls data from pages.contact (loaded from contact.xml)
-   - Loops through sections to display headings and content
-   - The 'safe' filter allows HTML in your XML to render properly
-   ============================================================================ #}
 ---
 layout: base.njk
 title: Contact
 permalink: /contact/index.html
 ---
+
+{# ============================================================================
+   CONTACT PAGE TEMPLATE
+   ============================================================================
+   This template displays your Contact page content from content/pages/contact.xml
+   ============================================================================ #}
 
 <article class="page page--contact">
   {# LOAD PAGE DATA: Get contact page data from global pages object #}
