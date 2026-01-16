@@ -218,6 +218,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./assets/');    // Watch CSS, JS, images, etc.
   
   // -------------------------------------------------------------------------
+  // IGNORE PATTERNS
+  // -------------------------------------------------------------------------
+  // Tell Eleventy to ignore certain files that shouldn't be processed as templates
+  eleventyConfig.ignores.add('context.md');    // Documentation file with template syntax examples
+  eleventyConfig.ignores.add('README.md');      // Project README
+
+  // -------------------------------------------------------------------------
   // ELEVENTY CONFIGURATION OBJECT
   // -------------------------------------------------------------------------
   // This return object tells Eleventy where to find files and how to process them
