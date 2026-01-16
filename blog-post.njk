@@ -89,8 +89,17 @@ permalink: /blog/{{ post.meta.id }}/index.html
 
   <!-- POST FOOTER
        ----------------------------------------------------------------
-       Navigation back to blog listing -->
+       Navigation back to blog listing, disclaimer, and copyright -->
   <footer class="blog-post__footer">
     <a href="/blog/" class="blog-post__back-link">← Back to Everything Storyteller</a>
+
+    <div class="blog-post__legal">
+      <p class="blog-post__disclaimer">
+        <strong>Disclaimer:</strong> All views and opinions expressed on this blog are my own and do not represent the views of any current or former employer. All content is original work by Nicholas Galinski unless otherwise cited.
+      </p>
+      <p class="blog-post__copyright">
+        © {{ "now" | date: "%Y" }} Nicholas Galinski. All rights reserved.
+      </p>
+    </div>
   </footer>
 </article>

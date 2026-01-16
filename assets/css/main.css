@@ -1244,6 +1244,30 @@ ul, ol {
   color: var(--color-accent-hover);
 }
 
+/* Blog Footer Legal Text (Disclaimer & Copyright)
+   ========================================================================== */
+.blog__footer,
+.blog-post__legal {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.blog__disclaimer,
+.blog-post__disclaimer {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.blog__copyright,
+.blog-post__copyright {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* Responsive Design - Mobile Adjustments
    ========================================================================== */
 @media (max-width: 768px) {

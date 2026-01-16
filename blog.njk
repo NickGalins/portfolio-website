@@ -78,8 +78,8 @@ permalink: /blog/index.html
     <h2 class="blog__posts-heading">All Posts</h2>
 
     {% for post in posts %}
-      <!-- Skip the featured post if it's already shown above -->
-      {% if not post.meta.featured or posts.length > 1 %}
+      <!-- Skip the featured post ONLY if there are multiple posts (to avoid duplication) -->
+      {% if not (post.meta.featured and posts.length > 1) %}
       <article class="blog-post-preview">
         <!-- Thumbnail image (left side on desktop) -->
         {% if post.meta.thumbnailImage %}
@@ -122,4 +122,16 @@ permalink: /blog/index.html
       {% endif %}
     {% endfor %}
   </div>
+
+  <!-- BLOG FOOTER
+       ----------------------------------------------------------------
+       Disclaimer and copyright notice for blog content -->
+  <footer class="blog__footer">
+    <p class="blog__disclaimer">
+      <strong>Disclaimer:</strong> All views and opinions expressed on this blog are my own and do not represent the views of any current or former employer. All content is original work by Nicholas Galinski unless otherwise cited.
+    </p>
+    <p class="blog__copyright">
+      © {{ "now" | date: "%Y" }} Nicholas Galinski. All rights reserved.
+    </p>
+  </footer>
 </article>
