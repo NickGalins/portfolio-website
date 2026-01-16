@@ -25,11 +25,12 @@ permalink: /blog/index.html
        ----------------------------------------------------------------
        Shows the blog name and tagline at the top of the page
        If a featured post exists, its hero image displays as background -->
-  {% set featuredPost = posts | selectattr('meta.featured') | first %}
-  <!-- DEBUG: Posts count = {{ posts.length }} -->
-  {% if posts.length > 0 %}<!-- DEBUG: First post featured = "{{ posts[0].meta.featured }}" -->{% endif %}
-  <!-- DEBUG: featuredPost exists = {{ featuredPost != undefined }} -->
-  {% if featuredPost %}<!-- DEBUG: featuredPost.meta.heroImage = "{{ featuredPost.meta.heroImage }}" -->{% endif %}
+  {% set featuredPost = null %}
+  {% for post in posts %}
+    {% if post.meta.featured == "true" %}
+      {% set featuredPost = post %}
+    {% endif %}
+  {% endfor %}
   <header class="blog__header" {% if featuredPost and featuredPost.meta.heroImage %}style="background-image: url('{{ featuredPost.meta.heroImage }}');"{% endif %}>
     <h1>Everything Storyteller</h1>
     <p class="blog__tagline">Stories, insights, and lessons from a multidisciplinary writer</p>
