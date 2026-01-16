@@ -29,6 +29,6 @@
     <page id="blog" label="Blog" />
     <page id="about" label="About" />
     <page id="contact" label="Contact" />
-    <page id="resume" label="Resume" />
+    <page id="resume" label="Work History" />
   </pages>
 </navigation>

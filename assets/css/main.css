@@ -657,7 +657,7 @@ ul, ol {
   line-height: 1.7;
 }
 
-/* Resume */
+/* Resume / Work History */
 .resume__header {
   margin-bottom: var(--space-2xl);
 }
@@ -681,8 +681,37 @@ ul, ol {
   border-bottom: none;
 }
 
+/* Compact position format - single line display */
+.resume__position--compact {
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: none;
+}
+
+.resume__position--compact:last-child {
+  margin-bottom: 0;
+}
+
+.resume__position-content {
+  line-height: 1.8;
+}
+
+.resume__company {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.resume__position-separator {
+  color: var(--color-text-muted);
+}
+
 .resume__position-title {
-  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.resume__years {
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 .resume__position-meta {
@@ -697,8 +726,31 @@ ul, ol {
   line-height: 1.7;
 }
 
+.resume__education {
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
 .resume__skills {
   line-height: 1.8;
+}
+
+/* Brands section */
+.resume__brands-description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.resume__brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.resume__brands-placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 /* Blog */

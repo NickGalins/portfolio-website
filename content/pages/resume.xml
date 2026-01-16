@@ -2,58 +2,64 @@
 <resume>
   <meta>
     <id>resume</id>
-    <title>Resume</title>
+    <title>Work History</title>
   </meta>
-  
+
   <intro>
-    Placeholder: A brief professional summary. What do you bring to the table? What are you looking for?
+    This is a high-level overview of my professional experience. For a more detailed resume, please visit my Contact page.
   </intro>
-  
+
   <positions>
     <position>
-      <title>Creative Director</title>
-      <company>Sacred Grounds Gaming</company>
-      <dates>2018 – 2024</dates>
-      <description>
-        Placeholder: Describe the scope of this role in prose. What did you lead? What scale did you operate at? What were your key responsibilities and achievements? Avoid bullet points—write it like you're explaining the job to someone over coffee.
-      </description>
+      <title>Senior Technical Writer</title>
+      <company>Amazon Web Services</company>
+      <years>2 Years</years>
     </position>
-    
+
     <position>
-      <title>Placeholder Title</title>
-      <company>Placeholder Company</company>
-      <dates>YYYY – YYYY</dates>
-      <description>
-        Placeholder: Describe the scope of this role in prose. Focus on impact and responsibilities rather than a list of tasks.
-      </description>
+      <title>Lead Writer</title>
+      <company>Google XWF via Accenture</company>
+      <years>3 Years</years>
     </position>
-    
+
     <position>
-      <title>Placeholder Title</title>
-      <company>Placeholder Company</company>
-      <dates>YYYY – YYYY</dates>
-      <description>
-        Placeholder: Describe the scope of this role in prose.
-      </description>
+      <title>Lead Narrative Designer</title>
+      <company>Everland MMO</company>
+      <years>1 Year</years>
+    </position>
+
+    <position>
+      <title>Director of Content, Customer Experience, and Narrative</title>
+      <company>Sacred Grounds Gaming, Inc</company>
+      <years>6 Years</years>
+    </position>
+
+    <position>
+      <title>English & Creative Writing Teacher & Tutor</title>
+      <company>NY</company>
+      <years>8 Years</years>
+    </position>
+
+    <position>
+      <title>Contract Work</title>
+      <company>See brands I've worked with below</company>
+      <years></years>
     </position>
   </positions>
-  
+
   <education>
     <degree>
-      <name>Placeholder Degree</name>
-      <institution>Placeholder University</institution>
-      <year>YYYY</year>
+      <name>Creative Writing MA</name>
+      <institution>Southern New Hampshire University</institution>
+    </degree>
+    <degree>
+      <name>English Education BS - Minor in Film</name>
+      <institution>University of Central Florida</institution>
     </degree>
   </education>
-  
-  <skills>
-    <skill>Content Design</skill>
-    <skill>UX Writing</skill>
-    <skill>Technical Writing</skill>
-    <skill>Narrative Design</skill>
-    <skill>Creative Direction</skill>
-    <skill>Worldbuilding</skill>
-    <skill>Placeholder Skill</skill>
-    <skill>Placeholder Skill</skill>
-  </skills>
+
+  <brands>
+    <description>A selection of brands I've worked with across technical and creative copy.</description>
+    <!-- Brand logos will be added here later -->
+  </brands>
 </resume>

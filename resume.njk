@@ -1,71 +1,76 @@
 ---
 layout: base.njk
-title: Resume
+title: Work History
 permalink: /resume/index.html
 ---
 
 {# ============================================================================
-   RESUME PAGE TEMPLATE
+   WORK HISTORY PAGE TEMPLATE
    ============================================================================
-   This template displays your resume from content/pages/resume.xml
+   This template displays work history from content/pages/resume.xml
    ============================================================================ #}
 
 <article class="page page--resume">
   {# LOAD RESUME DATA: Get resume data from global pages object #}
   {% set resume = pages.resume %}
 
-  {# HEADER: Page title and optional intro text #}
+  {# HEADER: Page title and intro text #}
   <header class="resume__header">
-    <h1>Resume</h1>
-    {# Only show intro if it exists in the XML #}
+    <h1>Work History</h1>
     {% if resume.intro %}
     <p class="resume__intro">{{ resume.intro }}</p>
     {% endif %}
   </header>
 
-  {# EXPERIENCE SECTION: List all work positions #}
+  {# EXPERIENCE SECTION: List all positions in compact format #}
   <section class="resume__section">
     <h2>Experience</h2>
 
-    {# Loop through each position in resume.xml #}
+    {# Loop through each position - compact display with no descriptions #}
     {% for position in resume.positions.position %}
-    <div class="resume__position">
-      {# Job title #}
-      <h3 class="resume__position-title">{{ position.title }}</h3>
-      {# Company and date range #}
-      <div class="resume__position-meta">
-        <span class="resume__company">{{ position.company }}</span>
-        <span class="resume__dates">{{ position.dates }}</span>
+    <div class="resume__position resume__position--compact">
+      <div class="resume__position-content">
+        <strong class="resume__company">{{ position.company }}</strong>
+        <span class="resume__position-separator"> - </span>
+        <span class="resume__position-title">{{ position.title }}</span>
+        {% if position.years %}
+        <span class="resume__position-separator"> - </span>
+        <span class="resume__years">{{ position.years }}</span>
+        {% endif %}
       </div>
-      {# Job description #}
-      <p class="resume__description">{{ position.description }}</p>
     </div>
     {% endfor %}
   </section>
 
-  {# EDUCATION SECTION: Only displays if education data exists #}
+  {# EDUCATION SECTION #}
   {% if resume.education %}
   <section class="resume__section">
     <h2>Education</h2>
 
-    {# Loop through each degree #}
-    {% for degree in resume.education.degree %}
-    <div class="resume__education">
-      <h3>{{ degree.name }}</h3>
-      <p>{{ degree.institution }}, {{ degree.year }}</p>
-    </div>
-    {% endfor %}
+    {# Loop through each degree - handle both single degree and array #}
+    {% if resume.education.degree.length %}
+      {% for degree in resume.education.degree %}
+      <div class="resume__education">
+        <strong>{{ degree.institution }}</strong> - {{ degree.name }}
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="resume__education">
+        <strong>{{ resume.education.degree.institution }}</strong> - {{ resume.education.degree.name }}
+      </div>
+    {% endif %}
   </section>
   {% endif %}
 
-  {# SKILLS SECTION: Only displays if skills data exists #}
-  {% if resume.skills %}
+  {# BRANDS SECTION: Placeholder for brand logos #}
+  {% if resume.brands %}
   <section class="resume__section">
-    <h2>Skills</h2>
-    {# The 'join' filter creates a comma-separated list from an array #}
-    <p class="resume__skills">
-      {{ resume.skills.skill | join(', ') }}
-    </p>
+    <h2>Brands</h2>
+    <p class="resume__brands-description">{{ resume.brands.description }}</p>
+    <div class="resume__brands-grid">
+      {# Brand logos will be added here in the future #}
+      <p class="resume__brands-placeholder">(Brand logos to be added)</p>
+    </div>
   </section>
   {% endif %}
 </article>
