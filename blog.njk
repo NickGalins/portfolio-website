@@ -39,8 +39,12 @@ permalink: /blog/index.html
   {% if featuredPost %}
   <section class="blog__featured">
     <article class="blog-post-featured">
-      <!-- Hero image for featured post (left side on desktop) -->
-      {% if featuredPost.meta.heroImage %}
+      <!-- Thumbnail image for featured post (left side on desktop) -->
+      {% if featuredPost.meta.thumbnailImage %}
+      <a href="/blog/{{ featuredPost.meta.id }}/" class="blog-post-featured__image">
+        <img src="{{ featuredPost.meta.thumbnailImage }}" alt="{{ featuredPost.meta.thumbnailAlt or featuredPost.meta.title }}">
+      </a>
+      {% elif featuredPost.meta.heroImage %}
       <a href="/blog/{{ featuredPost.meta.id }}/" class="blog-post-featured__image">
         <img src="{{ featuredPost.meta.heroImage }}" alt="{{ featuredPost.meta.heroAlt or featuredPost.meta.title }}">
       </a>
