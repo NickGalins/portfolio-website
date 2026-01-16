@@ -765,11 +765,12 @@ ul, ol {
 .blog__header {
   margin-bottom: var(--space-2xl);
   text-align: center;
+  /* Fallback background color if no image */
+  background-color: var(--color-bg);
   /* Background image styling */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: var(--color-bg);
   position: relative;
   padding: var(--space-3xl) var(--space-xl);
   min-height: 300px;
