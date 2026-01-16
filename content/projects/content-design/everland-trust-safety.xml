@@ -194,8 +194,8 @@
       <heading>Enforcement action - Chat privilege revocation email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
-            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+          <div style="background: #fafaf8; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
+            <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Chat privileges temporarily restricted for {accountname}</div>
             </div>
 
@@ -236,8 +236,8 @@
       <heading>Enforcement action - Temporary suspension email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
-            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+          <div style="background: #fafaf8; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
+            <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account temporarily suspended for {accountname}</div>
             </div>
 
@@ -277,8 +277,8 @@
       <heading>Enforcement action - Indefinite suspension email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
-            <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
+          <div style="background: #fafaf8; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
+            <div style="border-bottom: 2px solid #29b6f6; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account indefinitely suspended for {accountname}</div>
             </div>
 
