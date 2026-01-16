@@ -15,8 +15,8 @@
      ============================================================================ -->
 <post>
   <meta>
-    <!-- REQUIRED: Unique identifier used in URL (/blog/multidisciplinary-writer/) -->
-    <id>multidisciplinary-writer</id>
+    <!-- REQUIRED: Unique identifier used in URL (/blog/writers-are-performers/) -->
+    <id>writers-are-performers</id>
 
     <!-- REQUIRED: Post title displayed in headers and listings -->
     <title>Writers Are Performers</title>
@@ -78,6 +78,10 @@
       <p>Lewis did not just sit down and type <em>Moneyball</em> into existence. He embedded himself in the world. He had to understand Billy Beane's method, his blind spots, his insecurities, the numbers, the human tension behind the numbers. He became a very specific kind of narrator to tell that specific story.</p>
 
       <p>That is not just writing. That is <strong>role work</strong>.</p>
+
+      <figure>
+        <img src="/assets/images/blog/writers-are-performers-thumbnail.jpg" alt="Visual representation of multidisciplinary writing as performance">
+      </figure>
 
       <h2>Writers are performers</h2>
 
