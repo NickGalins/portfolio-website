@@ -51,6 +51,8 @@
       <heading>Flow</heading>
       <body>
         <![CDATA[
+          <img src="/assets/images/reportflow.png" alt="Everland Trust & Safety reporting user flow diagram" style="width: 100%; max-width: 800px; height: auto; margin: 1.5rem 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+
           <h3>Entry Points</h3>
           <ul>
             <li>Open <strong>Player profile</strong> > Choose <strong>Report</strong></li>
@@ -60,9 +62,6 @@
           </ul>
         ]]>
       </body>
-      <media>
-        <image src="/assets/images/reportflow.png" alt="Everland Trust & Safety reporting user flow diagram" caption="User flow showing four entry points leading to three-screen reporting process" />
-      </media>
     </section>
 
     <section>
@@ -155,9 +154,13 @@
             </div>
 
             <div style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #ffa726; border-radius: 4px; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(255, 167, 38, 0.2);">
-              <strong style="color: #e65100;">Error messages:</strong><br/>
-              <span style="color: #5d4037;">• Unsupported file type. Upload a .jpg or .png file.<br/>
-              • Total file size must be 50 MB or less.</span>
+              <strong style="color: #e65100;">Error</strong><br/>
+              <span style="color: #5d4037;">Unsupported file type. Upload a .jpg or .png file.</span>
+            </div>
+
+            <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #ffa726; border-radius: 4px; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(255, 167, 38, 0.2);">
+              <strong style="color: #e65100;">Error</strong><br/>
+              <span style="color: #5d4037;">Total file size must be 50 MB or less.</span>
             </div>
           </div>
         ]]>
@@ -180,7 +183,7 @@
                 <li>If a violation is found, we will take appropriate action against the account in accordance with our safety policies.</li>
                 <li>We do not share who submitted a report.</li>
               </ul>
-              <p style="margin-bottom: 0;"><a href="#" style="color: #29b6f6; text-decoration: none; font-weight: 600; font-size: 1.05rem;">Learn more about Everland's Trust & Safety Policies →</a></p>
+              <p style="margin-bottom: 0;"><span style="color: #29b6f6; font-weight: 600; font-size: 1.05rem;">Learn more about Everland's Trust & Safety Policies →</span></p>
             </div>
           </div>
         ]]>
@@ -191,39 +194,39 @@
       <heading>Enforcement action - Chat privilege revocation email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
             <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Chat privileges temporarily restricted for {accountname}</div>
             </div>
 
-            <p>Hi {accountname},</p>
+            <p style="color: #000;">Hi {accountname},</p>
 
-            <p>We are writing to let you know that your Everland account's chat privileges have been temporarily restricted due to activity that violates our {policyname}.</p>
+            <p style="color: #000;">We are writing to let you know that your Everland account's chat privileges have been temporarily restricted due to activity that violates our {policyname}.</p>
 
-            <p><strong>What this means</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>What this means</strong></p>
+            <ul style="color: #000;">
               <li>You can still log in and play Everland.</li>
               <li>You will not be able to send messages in in-game chat or direct messages.</li>
               <li>This restriction will end on {enddate} at {endtime} {timezone}.</li>
             </ul>
 
-            <p><strong>What you can do now</strong></p>
-            <ul>
-              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+            <p style="color: #000;"><strong>What you can do now</strong></p>
+            <ul style="color: #000;">
+              <li>Learn more about <span style="color: #29b6f6;">Everland's Trust & Safety Policies</span></li>
               <li>Review the rule that applies: {policyname}</li>
             </ul>
 
-            <p><strong>Important notes</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>Important notes</strong></p>
+            <ul style="color: #000;">
               <li>Do not attempt to bypass this restriction by creating or using another account. Ban evasion may result in additional enforcement, including account suspension.</li>
               <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
             </ul>
 
-            <p><strong>Future violations may result in additional penalties, including account suspension.</strong></p>
+            <p style="color: #000;"><strong>Future violations may result in additional penalties, including account suspension.</strong></p>
 
-            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+            <p style="color: #000;">If you believe this action was applied in error, you can submit an appeal in the <span style="color: #29b6f6;">Player Action Center</span></p>
 
-            <p>Everland Trust & Safety Team</p>
+            <p style="color: #000;">Everland Trust & Safety Team</p>
           </div>
         ]]>
       </body>
@@ -233,38 +236,38 @@
       <heading>Enforcement action - Temporary suspension email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
             <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account temporarily suspended for {accountname}</div>
             </div>
 
-            <p>Hi {accountname},</p>
+            <p style="color: #000;">Hi {accountname},</p>
 
-            <p>We are writing to let you know that your Everland account has been temporarily suspended due to activity that violates our {policyname}.</p>
+            <p style="color: #000;">We are writing to let you know that your Everland account has been temporarily suspended due to activity that violates our {policyname}.</p>
 
-            <p><strong>What this means</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>What this means</strong></p>
+            <ul style="color: #000;">
               <li>You will not be able to log in to Everland.</li>
               <li>This restriction will end on {enddate} at {endtime} {timezone}.</li>
             </ul>
 
-            <p><strong>What you can do now</strong></p>
-            <ul>
-              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+            <p style="color: #000;"><strong>What you can do now</strong></p>
+            <ul style="color: #000;">
+              <li>Learn more about <span style="color: #29b6f6;">Everland's Trust & Safety Policies</span></li>
               <li>Review the rule that applies: {policyname}</li>
             </ul>
 
-            <p><strong>Important notes</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>Important notes</strong></p>
+            <ul style="color: #000;">
               <li>Do not attempt to bypass this restriction by creating or using another account. Ban evasion may result in additional enforcement, including extending this suspension or suspending related accounts.</li>
               <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
             </ul>
 
-            <p><strong>Future violations may result in additional penalties, including indefinite suspension.</strong></p>
+            <p style="color: #000;"><strong>Future violations may result in additional penalties, including indefinite suspension.</strong></p>
 
-            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+            <p style="color: #000;">If you believe this action was applied in error, you can submit an appeal in the <span style="color: #29b6f6;">Player Action Center</span></p>
 
-            <p>Everland Trust & Safety Team</p>
+            <p style="color: #000;">Everland Trust & Safety Team</p>
           </div>
         ]]>
       </body>
@@ -274,36 +277,36 @@
       <heading>Enforcement action - Indefinite suspension email</heading>
       <body>
         <![CDATA[
-          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+          <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #000;">
             <div style="border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem;">
               <div style="color: #666; font-size: 0.9rem;"><strong>Subject:</strong> Account indefinitely suspended for {accountname}</div>
             </div>
 
-            <p>Hi {accountname},</p>
+            <p style="color: #000;">Hi {accountname},</p>
 
-            <p>We are writing to let you know that your Everland account has been indefinitely suspended due to activity that violates our {policyname}.</p>
+            <p style="color: #000;">We are writing to let you know that your Everland account has been indefinitely suspended due to activity that violates our {policyname}.</p>
 
-            <p><strong>What this means</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>What this means</strong></p>
+            <ul style="color: #000;">
               <li>You will not be able to log in to Everland.</li>
               <li>Your access will remain suspended unless an appeal or review changes this decision.</li>
             </ul>
 
-            <p><strong>What you can do now</strong></p>
-            <ul>
-              <li>Learn more about <a href="#">Everland's Trust & Safety Policies</a></li>
+            <p style="color: #000;"><strong>What you can do now</strong></p>
+            <ul style="color: #000;">
+              <li>Learn more about <span style="color: #29b6f6;">Everland's Trust & Safety Policies</span></li>
               <li>Review the rule that applies: {policyname}</li>
             </ul>
 
-            <p><strong>Important notes</strong></p>
-            <ul>
+            <p style="color: #000;"><strong>Important notes</strong></p>
+            <ul style="color: #000;">
               <li>Do not attempt to bypass this restriction by creating or using another account. Additional accounts you create may be suspended indefinitely.</li>
               <li>Your privacy is important to us. We do not share the results of this enforcement action with anyone outside of the Everland team.</li>
             </ul>
 
-            <p>If you believe this action was applied in error, you can submit an appeal in the <a href="#">Player Action Center</a></p>
+            <p style="color: #000;">If you believe this action was applied in error, you can submit an appeal in the <span style="color: #29b6f6;">Player Action Center</span></p>
 
-            <p>Everland Trust & Safety Team</p>
+            <p style="color: #000;">Everland Trust & Safety Team</p>
           </div>
         ]]>
       </body>
