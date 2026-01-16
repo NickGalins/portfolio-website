@@ -765,6 +765,36 @@ ul, ol {
 .blog__header {
   margin-bottom: var(--space-2xl);
   text-align: center;
+  /* Background image styling */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--color-bg);
+  position: relative;
+  padding: var(--space-3xl) var(--space-xl);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 27, 42, 0.75);
+  z-index: 1;
+}
+
+.blog__header h1,
+.blog__header .blog__tagline {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .blog__tagline {

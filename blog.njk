@@ -23,8 +23,10 @@ permalink: /blog/index.html
 <article class="page page--blog">
   <!-- BLOG HEADER
        ----------------------------------------------------------------
-       Shows the blog name and tagline at the top of the page -->
-  <header class="blog__header">
+       Shows the blog name and tagline at the top of the page
+       If a featured post exists, its hero image displays as background -->
+  {% set featuredPost = posts | selectattr('meta.featured', 'equalto', 'true') | first %}
+  <header class="blog__header" {% if featuredPost and featuredPost.meta.heroImage %}style="background-image: url('{{ featuredPost.meta.heroImage }}');"{% endif %}>
     <h1>Everything Storyteller</h1>
     <p class="blog__tagline">Stories, insights, and lessons from a multidisciplinary writer</p>
   </header>
@@ -33,7 +35,6 @@ permalink: /blog/index.html
        ----------------------------------------------------------------
        Displays the first post marked with <featured>true</featured>
        in a prominent card layout with larger text and images -->
-  {% set featuredPost = posts | selectattr('meta.featured', 'equalto', 'true') | first %}
   {% if featuredPost %}
   <section class="blog__featured">
     <article class="blog-post-featured">
