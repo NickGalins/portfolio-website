@@ -572,6 +572,140 @@ For technical documentation:
 
 ---
 
+## AI Assistant Prompt: Add New Blog Post
+
+**When the user says:** "I want to add a new blog post" or similar request, follow this workflow:
+
+### Step 1: Gather Information
+
+Ask the user for the following information:
+
+1. **Post Title:** "What is the title of the blog post?"
+2. **Post Body Content:** "Please provide the body content for the post (can be raw text, outline, or formatted HTML)"
+3. **Thumbnail Alt Text:** "What should the alt text be for the thumbnail image?"
+4. **Confirm Thumbnail Filename:** "Please confirm the thumbnail image filename. It should be: `[article-slug]-thumbnail.jpg` (e.g., `building-writer-brand-thumbnail.jpg`). Is this correct?"
+
+### Step 2: Your Responsibilities
+
+Once you have the information, you will:
+
+1. **Create the XML file** at `content/blog/[post-slug].xml` with:
+   - Auto-generated post slug (lowercase, hyphenated from title)
+   - Current date (YYYY-MM-DD format)
+   - User's title and content
+   - Shared hero image: `/assets/images/blog/multidisciplinary-writer-hero.jpg`
+   - Hero alt text: `A prism showing ideas coming in and various types of story content coming out`
+   - User's thumbnail path: `/assets/images/blog/[post-slug]-thumbnail.jpg`
+   - User's thumbnail alt text
+   - Author info (standard: Nicholas Galinski + bio)
+   - Set `<featured>true</featured>` if this is the most recent post
+   - Appropriate tags (3-5 based on content)
+
+2. **Write the excerpt** (1-2 compelling sentences summarizing the post)
+
+3. **Format the content** with:
+   - Opening paragraph(s) with `.lead` class on first paragraph
+   - Inline thumbnail image after first 2-4 paragraphs using `<figure>` tag
+   - Section headings (`<h2>`) for main sections
+   - **Select 1-2 pull quotes** from the content that have the most impact (use `<blockquote class="pullquote">`)
+   - Add callout boxes where appropriate for lists or key takeaways
+   - Proper HTML structure (paragraphs, emphasis, etc.)
+
+4. **Add Call to Action** at the end if not already present:
+   ```html
+   <p>Connect with me on <a href="https://www.linkedin.com/in/nicholas-galinski/">LinkedIn</a> to continue the conversation about writing, content strategy, and storytelling.</p>
+   ```
+
+5. **Update featured flags** if this is the most recent post:
+   - Set new post to `<featured>true</featured>`
+   - Set previous featured post to `<featured>false</featured>`
+
+6. **Verify the post will appear correctly** in:
+   - "All Posts" section on `/blog/` (with thumbnail)
+   - "Featured" section on `/blog/` (if most recent, with thumbnail)
+   - Individual post page at `/blog/[post-slug]/` (with hero banner and inline thumbnail)
+
+7. **Build and test:**
+   - Commit changes with descriptive message
+   - Remind user to add the thumbnail image file to `assets/images/blog/`
+
+### Step 3: Confirmation Before Action
+
+Before creating the post, show the user:
+- Generated post slug: `[post-slug]`
+- Excerpt you wrote
+- Pull quotes you selected (if any)
+- Confirmation of thumbnail filename
+- Ask: "Does this look correct? Should I proceed?"
+
+### Critical Rules
+
+❌ **NEVER remove a blog post unless explicitly asked**
+- If asked to remove a post, ask for explicit confirmation: "You want me to delete the blog post '[title]' at `content/blog/[slug].xml`. This action cannot be undone. Please confirm: Yes or No?"
+
+❌ **NEVER edit CSS that affects the rest of the website**
+- Only use existing blog-specific CSS classes
+- Do not modify `main.css` for individual post styling
+- Use only documented content classes: `.lead`, `.pullquote`, `.callout`, `<figure>`
+
+✅ **Always check if this is the most recent post by date**
+- If yes: Set `<featured>true</featured>` and update previous featured post
+- If no: Set `<featured>false</featured>`
+
+✅ **Always use the shared hero image**
+- Path: `/assets/images/blog/multidisciplinary-writer-hero.jpg`
+- Alt: `A prism showing ideas coming in and various types of story content coming out`
+
+✅ **Always include thumbnail in 3 places**
+- XML `<thumbnailImage>` field
+- "All Posts" section (automatic via template)
+- "Featured" section (automatic via template)
+- Inline in content after opening paragraphs using `<figure>` tag
+
+### Example Interaction
+
+**User:** "I want to add a new blog post"
+
+**Assistant:**
+"I'll help you add a new blog post to Everything Storyteller. I need the following information:
+
+1. What is the title of the blog post?
+2. Please provide the body content for the post (can be raw text, outline, or formatted HTML)
+3. What should the alt text be for the thumbnail image?
+4. Confirm the thumbnail image filename (based on the title, I'll suggest: `[slug]-thumbnail.jpg`)"
+
+[After receiving information:]
+
+"Based on your content, here's what I'll create:
+
+- **Post slug:** `your-post-slug`
+- **Excerpt:** [Generated 1-2 sentence summary]
+- **Pull quotes selected:** [1-2 impactful quotes from content]
+- **Thumbnail filename:** `your-post-slug-thumbnail.jpg`
+- **Featured status:** [Yes if most recent, No if not]
+- **CTA:** LinkedIn link [added/already present]
+
+Does this look correct? Should I proceed with creating the blog post?"
+
+[After user confirms:]
+
+[Create the XML file, commit changes, provide summary]
+
+"✅ Blog post created successfully!
+
+**Next steps:**
+1. Add the thumbnail image to: `assets/images/blog/your-post-slug-thumbnail.jpg` (400x400px, <100KB)
+2. Once image is added, rebuild: `npm run build`
+3. Verify at: `/blog/` and `/blog/your-post-slug/`
+
+**What was created:**
+- XML file: `content/blog/your-post-slug.xml`
+- Appears in: All Posts section
+- Featured status: [Yes/No]
+- Thumbnail will appear in: All Posts card, Featured section (if featured), inline after opening paragraphs"
+
+---
+
 **Last Updated:** January 16, 2026
 **Blog Version:** 1.0
 **Maintained By:** Nicholas Galinski
