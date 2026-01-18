@@ -462,11 +462,11 @@ ul, ol {
   .sidebar {
     transform: translateX(-100%);
   }
-  
+
   .sidebar.is-open {
     transform: translateX(0);
   }
-  
+
   .sidebar__toggle {
     display: flex;
     align-items: center;
@@ -482,6 +482,56 @@ ul, ol {
 }
 
 /* ==========================================================================
+   Right Sticky Menu - Desktop Only
+   ========================================================================== */
+
+.right-menu {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .right-menu {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: var(--space-lg);
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+
+  .right-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .right-menu li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .right-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg-alt);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .right-menu a:hover {
+    color: var(--color-text);
+    background: var(--color-border);
+  }
+
+  /* Hide nav-pages in sidebar on desktop */
+  .nav-pages {
+    display: none;
+  }
+}
+
+/* ==========================================================================
    Main Content
    ========================================================================== */
 
@@ -489,7 +539,8 @@ ul, ol {
   flex: 1;
   margin-left: var(--sidebar-width);
   padding: var(--space-3xl);
-  max-width: 900px;
+  max-width: 1200px;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
@@ -528,6 +579,7 @@ ul, ol {
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-accent);
 }
 
 .project-card__image {
@@ -561,6 +613,38 @@ ul, ol {
   font-size: 0.875rem;
   color: var(--color-text-muted);
   margin: 0;
+}
+
+/* Featured Projects - Desktop Only */
+.featured-projects {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .featured-projects {
+    display: block;
+    margin-top: var(--space-3xl);
+  }
+}
+
+.project-category {
+  margin-bottom: var(--space-2xl);
+}
+
+.project-category__title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+.project-category__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.project-card--square .project-card__image {
+  aspect-ratio: 1 / 1;
 }
 
 /* ==========================================================================

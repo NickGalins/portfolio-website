@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>short-form</id>
+    <title>Elgato &amp; DiceEnvy - Podcast Ad Reads</title>
+    <subtitle>Short-form sponsored content for podcast audiences</subtitle>
+    <date>2023-2024</date>
+    <client>Elgato / DiceEnvy</client>
+    <role>Content Creator</role>
+    <thumbnail>/assets/images/short-form-thumb.png</thumbnail>
+    <tags>
+      <tag>Creative Writing</tag>
+      <tag>Copywriting</tag>
+      <tag>Podcast</tag>
+      <tag>Sponsored Content</tag>
+    </tags>
+  </meta>
+
+  <summary>
+    Placeholder summary for podcast ad reads created for Elgato and DiceEnvy sponsorships.
+  </summary>
+
+  <content>
+    <section>
+      <heading>Overview</heading>
+      <body>
+        Placeholder: Describe the podcast ad read work.
+      </body>
+    </section>
+  </content>
+
+  <outcomes>
+    <outcome>Placeholder outcome</outcome>
+  </outcomes>
+</project>
