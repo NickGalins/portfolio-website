@@ -223,6 +223,7 @@ module.exports = function(eleventyConfig) {
   // Tell Eleventy to ignore certain files that shouldn't be processed as templates
   eleventyConfig.ignores.add('context.md');    // Documentation file with template syntax examples
   eleventyConfig.ignores.add('README.md');      // Project README
+  eleventyConfig.ignores.add('CARD-IMAGES.md'); // Card images documentation
 
   // -------------------------------------------------------------------------
   // ELEVENTY CONFIGURATION OBJECT
