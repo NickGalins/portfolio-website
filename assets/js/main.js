@@ -128,4 +128,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start observing the video element
     observer.observe(heroVideo);
   }
+
+  // ==========================================================================
+  // IMAGE MAGNIFIER
+  // ==========================================================================
+  // Creates a circular magnifying glass effect when hovering over images
+  // with the .magnifier-image class
+
+  const magnifierImages = document.querySelectorAll('.magnifier-image');
+
+  magnifierImages.forEach(img => {
+    const container = img.closest('.magnifier-container');
+    if (!container) return;
+
+    let lens;
+    const zoomLevel = 2; // 2x zoom
+
+    // Create magnifier lens element
+    function createLens() {
+      lens = document.createElement('div');
+      lens.className = 'magnifier-lens';
+      container.appendChild(lens);
+      lens.style.display = 'none';
+    }
+
+    // Calculate and update lens position and background
+    function moveLens(e) {
+      if (!lens) return;
+
+      const rect = img.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+
+      // Get lens dimensions
+      const lensWidth = lens.offsetWidth;
+      const lensHeight = lens.offsetHeight;
+
+      // Keep lens within image bounds
+      x = Math.max(lensWidth / 2, Math.min(x, rect.width - lensWidth / 2));
+      y = Math.max(lensHeight / 2, Math.min(y, rect.height - lensHeight / 2));
+
+      // Position the lens
+      lens.style.left = (x - lensWidth / 2) + 'px';
+      lens.style.top = (y - lensHeight / 2) + 'px';
+
+      // Calculate background position for zoom effect
+      const bgX = -((x * zoomLevel) - (lensWidth / 2));
+      const bgY = -((y * zoomLevel) - (lensHeight / 2));
+
+      // Set background image and position
+      lens.style.backgroundImage = `url('${img.src}')`;
+      lens.style.backgroundSize = `${rect.width * zoomLevel}px ${rect.height * zoomLevel}px`;
+      lens.style.backgroundPosition = `${bgX}px ${bgY}px`;
+    }
+
+    // Show lens on mouse enter
+    img.addEventListener('mouseenter', () => {
+      if (!lens) createLens();
+      lens.style.display = 'block';
+    });
+
+    // Hide lens on mouse leave
+    img.addEventListener('mouseleave', () => {
+      if (lens) lens.style.display = 'none';
+    });
+
+    // Update lens position on mouse move
+    img.addEventListener('mousemove', moveLens);
+  });
 });

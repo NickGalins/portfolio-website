@@ -57,7 +57,9 @@
       <heading>Flow</heading>
       <body>
         <![CDATA[
-          <img src="/assets/images/sacred-grounds-shop-flow.png" alt="Sacred Grounds shop workflow diagram showing the 4-screen process from home screen to mine card generation" style="width: 100%; max-width: 800px; height: auto; margin: 1.5rem 0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+          <div class="magnifier-container" style="position: relative; max-width: 800px; margin: 1.5rem 0;">
+            <img src="/assets/images/sacred-grounds-shop-flow.png" alt="Sacred Grounds shop workflow diagram showing the 4-screen process from home screen to mine card generation" class="magnifier-image" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: crosshair;" />
+          </div>
 
           <h3>Complete Workflow</h3>
           <p>The shopkeeper flow consists of four screens with built-in validation at each step:</p>

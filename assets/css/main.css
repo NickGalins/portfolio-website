@@ -1322,3 +1322,26 @@ ul, ol {
     font-size: 1.25rem;
   }
 }
+
+/* ==========================================================================
+   IMAGE MAGNIFIER
+   ========================================================================== */
+/* Hover magnifying glass effect for images with .magnifier-image class */
+
+.magnifier-container {
+  position: relative;
+  display: inline-block;
+}
+
+.magnifier-lens {
+  position: absolute;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  cursor: none;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 100;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
