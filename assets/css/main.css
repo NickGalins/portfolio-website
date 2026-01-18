@@ -234,13 +234,21 @@ ul, ol {
   height: 100vh;
   background: var(--color-bg-alt);
   border-right: 1px solid var(--color-border);
-  overflow-y: auto;
   z-index: 100;
   transition: transform var(--transition-base);
 }
 
 .sidebar__content {
   padding: var(--space-xl) var(--space-lg);
+  height: 100%;
+  overflow-y: auto;
+  /* Hide scrollbar - Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar - Chrome/Safari/Edge */
+.sidebar__content::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar__logo {
@@ -416,6 +424,37 @@ ul, ol {
 
 .nav-pages a:hover {
   color: var(--color-accent);
+}
+
+/* Scroll Indicators */
+.sidebar__scroll-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.sidebar__scroll-indicator--top {
+  top: 0;
+  background: linear-gradient(to bottom, var(--color-bg-alt) 50%, transparent);
+}
+
+.sidebar__scroll-indicator--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, var(--color-bg-alt) 50%, transparent);
+}
+
+.sidebar__scroll-indicator.is-visible {
+  opacity: 1;
 }
 
 /* Mobile sidebar */

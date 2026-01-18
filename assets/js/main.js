@@ -42,7 +42,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  
+
+  // ==========================================================================
+  // SIDEBAR SCROLL INDICATORS
+  // ==========================================================================
+  // Shows "More" indicators at top/bottom when sidebar content overflows
+
+  const sidebarContent = document.querySelector('.sidebar__content');
+  const topIndicator = document.querySelector('.sidebar__scroll-indicator--top');
+  const bottomIndicator = document.querySelector('.sidebar__scroll-indicator--bottom');
+
+  function updateScrollIndicators() {
+    if (!sidebarContent || !topIndicator || !bottomIndicator) return;
+
+    const { scrollTop, scrollHeight, clientHeight } = sidebarContent;
+
+    // Show top indicator if scrolled down
+    topIndicator.classList.toggle('is-visible', scrollTop > 10);
+
+    // Show bottom indicator if more content below
+    bottomIndicator.classList.toggle('is-visible', scrollTop + clientHeight < scrollHeight - 10);
+  }
+
+  if (sidebarContent) {
+    // Run on scroll
+    sidebarContent.addEventListener('scroll', updateScrollIndicators);
+    // Run on load and resize
+    window.addEventListener('load', updateScrollIndicators);
+    window.addEventListener('resize', updateScrollIndicators);
+    // Also run immediately
+    updateScrollIndicators();
+  }
+
   // ==========================================================================
   // NAVIGATION SECTION TOGGLES
   // ==========================================================================

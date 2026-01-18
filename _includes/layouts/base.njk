@@ -60,17 +60,16 @@
   {# The 'has-video-hero' class is added on homepage to adjust spacing #}
   <div class="site-wrapper {% if showVideoHero %}has-video-hero{% endif %}">
 
+    {# HAMBURGER TOGGLE: Mobile menu button (outside sidebar so it's always visible) #}
+    <button class="sidebar__toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+      <span class="sidebar__toggle-icon"></span>
+    </button>
+
     {# ========================================================================
        SIDEBAR NAVIGATION
        ======================================================================== #}
     {# The sidebar contains your navigation menu and collapses on mobile #}
     <aside class="sidebar" id="sidebar">
-      {# TOGGLE BUTTON: Hamburger menu button (mobile only) #}
-      {# Clicking this expands/collapses the sidebar on small screens #}
-      <button class="sidebar__toggle" id="sidebar-toggle" aria-label="Toggle navigation">
-        <span class="sidebar__toggle-icon"></span>
-      </button>
-
       <div class="sidebar__content">
         {# LOGO/HOME LINK: Your name, links back to homepage #}
         <a href="/" class="sidebar__logo">Nicholas Galinski</a>
@@ -148,6 +147,20 @@
             {% endfor %}
           </ul>
         </nav>
+      </div>
+
+      {# SCROLL INDICATORS: Show "More" when content overflows #}
+      <div class="sidebar__scroll-indicator sidebar__scroll-indicator--top" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="12" height="12">
+          <path d="M18 15l-6-6-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span>More</span>
+      </div>
+      <div class="sidebar__scroll-indicator sidebar__scroll-indicator--bottom" aria-hidden="true">
+        <span>More</span>
+        <svg viewBox="0 0 24 24" width="12" height="12">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
       </div>
     </aside>
 
