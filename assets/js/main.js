@@ -164,17 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const lensWidth = lens.offsetWidth;
       const lensHeight = lens.offsetHeight;
 
-      // Keep lens within image bounds
-      x = Math.max(lensWidth / 2, Math.min(x, rect.width - lensWidth / 2));
-      y = Math.max(lensHeight / 2, Math.min(y, rect.height - lensHeight / 2));
+      // Allow lens to bleed off edges - only constrain cursor position
+      // Keep cursor within image, but lens can extend beyond
+      const cursorX = Math.max(0, Math.min(x, rect.width));
+      const cursorY = Math.max(0, Math.min(y, rect.height));
 
-      // Position the lens
-      lens.style.left = (x - lensWidth / 2) + 'px';
-      lens.style.top = (y - lensHeight / 2) + 'px';
+      // Position the lens centered on cursor (can extend beyond image)
+      lens.style.left = (cursorX - lensWidth / 2) + 'px';
+      lens.style.top = (cursorY - lensHeight / 2) + 'px';
 
-      // Calculate background position for zoom effect
-      const bgX = -((x * zoomLevel) - (lensWidth / 2));
-      const bgY = -((y * zoomLevel) - (lensHeight / 2));
+      // Calculate background position for zoom effect using actual cursor position
+      const bgX = -((cursorX * zoomLevel) - (lensWidth / 2));
+      const bgY = -((cursorY * zoomLevel) - (lensHeight / 2));
 
       // Set background image and position
       lens.style.backgroundImage = `url('${img.src}')`;

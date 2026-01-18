@@ -1331,6 +1331,7 @@ ul, ol {
 .magnifier-container {
   position: relative;
   display: inline-block;
+  overflow: visible;
 }
 
 .magnifier-lens {
