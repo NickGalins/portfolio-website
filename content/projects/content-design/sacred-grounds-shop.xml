@@ -88,68 +88,68 @@
       <body>
         <![CDATA[
           <div style="background: linear-gradient(135deg, #eff6ff 0%, #e8f5e9 100%); padding: 2rem; border-radius: 12px; margin: 1rem 0; border: 2px solid #2563eb;">
-            <h4 style="margin-top: 0; color: #1e40af;">Input validation rules</h4>
-            <p style="color: #000000; margin-bottom: 1.5rem; font-size: 1.05rem;">The system validates all inputs to prevent invalid mine cards and enforce game rules.</p>
+            <h4 style="margin-top: 0; color: #1e40af;">Input rules</h4>
+            <p style="color: #000000; margin-bottom: 1.5rem; font-size: 1.05rem;">The system checks all inputs to prevent invalid mine cards and enforce game rules.</p>
 
             <table style="width: 100%; border-collapse: collapse; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
               <thead>
                 <tr style="background: #1e40af; color: white;">
-                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Field</th>
-                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Requirements</th>
-                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Error message</th>
+                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a; color: #ffffff;">Field</th>
+                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a; color: #ffffff;">Requirements</th>
+                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a; color: #ffffff;">Error message</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Event code</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">7 to 16 alphanumeric characters</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;"><strong>Event code</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;">7 to 16 alphanumeric characters</td>
                   <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Enter an event code that's 7 to 16 alphanumeric characters.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Player number</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">3 to 16 digits</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;"><strong>Player number</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;">3 to 16 digits</td>
                   <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Enter a player number that's 3 to 16 digits.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Mining level</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">Required. Select a value from 1 to 10.</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;"><strong>Mining level</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;">Required. Select a value from 1 to 10.</td>
                   <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Select a mining skill level.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Modifiers</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">Can't select both Fast Worker and Slow Worker</td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">You can't select both Fast Worker and Slow Worker.</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;"><strong>Modifiers</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; color: #000000;">Can't select both Fast Worker and Slow Worker</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Two or more of the toggled modifiers are incompatible. Check the modifiers and make adjustments to continue.</td>
                 </tr>
               </tbody>
             </table>
 
             <div style="background: #fff3cd; padding: 1rem; border-left: 4px solid #ffa726; border-radius: 4px; margin-bottom: 1.5rem;">
               <strong style="color: #e65100;">Error handling</strong><br/>
-              <p style="color: #000000; margin-top: 0.5rem; margin-bottom: 0;">When validation fails, the system displays an error message below the field and blocks progression to the next screen. Correct all errors before you select <strong>Next</strong>.</p>
+              <p style="color: #000000; margin-top: 0.5rem; margin-bottom: 0;">When an input check fails, the system displays an error message below the field and blocks progression to the next screen. Correct all errors before you select <strong>Next</strong>.</p>
             </div>
 
-            <h4 style="color: #1e40af;">Validation workflow</h4>
+            <h4 style="color: #1e40af;">Workflow steps</h4>
             <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 2px solid #cbd5e1;">
-              <p style="margin-top: 0;"><strong>Screen 1: Event and player information</strong></p>
+              <p style="margin-top: 0; color: #000000;"><strong>Screen 1: Event and player information</strong></p>
               <ol style="line-height: 1.8; color: #000000;">
                 <li>Enter the event code and player number.</li>
                 <li>Select <strong>Next</strong>.</li>
-                <li>The system validates your input.</li>
+                <li>The system checks your input.</li>
                 <li>
-                  If the input is valid, the system opens Screen 2.<br/>
-                  If the input is invalid, the system displays error messages and remains on Screen 1.
+                  If the input is correct, the system opens Screen 2.<br/>
+                  If the input has errors, the system displays error messages and stays on Screen 1.
                 </li>
               </ol>
 
-              <p style="margin-bottom: 0; margin-top: 1.5rem;"><strong>Screen 2: Mining skill and modifiers</strong></p>
+              <p style="margin-bottom: 0; margin-top: 1.5rem; color: #000000;"><strong>Screen 2: Mining skill and modifiers</strong></p>
               <ol style="line-height: 1.8; color: #000000;">
                 <li>Select a mining level from 1 to 10.</li>
                 <li>Optionally, select modifiers.</li>
                 <li>The system calculates skill point cost, effective level, and mine opening time.</li>
                 <li>Select <strong>Open Mine</strong>.</li>
                 <li>
-                  If your selections are valid, the system opens Screen 3.<br/>
-                  If your selections are invalid, the system displays error messages and remains on Screen 2.
+                  If your selections are correct, the system opens Screen 3.<br/>
+                  If your selections have errors, the system displays error messages and stays on Screen 2.
                 </li>
               </ol>
             </div>
@@ -180,31 +180,31 @@
 
             <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid #0ea5e9;">
               <h4 style="margin-top: 0; color: #0369a1;">Calculation formulas</h4>
-              <p style="margin-bottom: 1rem;"><strong>Skill point cost</strong></p>
-              <code style="background: white; padding: 0.5rem 1rem; border-radius: 4px; display: block; margin-bottom: 1.5rem; font-size: 1.05rem; color: #1e293b;">
+              <p style="margin-bottom: 1rem; color: #000000;"><strong>Skill point cost</strong></p>
+              <code style="background: white; padding: 0.5rem 1rem; border-radius: 4px; display: block; margin-bottom: 1.5rem; font-size: 1.05rem; color: #000000;">
                 Skill Points = (Mining Level × 2) ± Modifiers
               </code>
 
-              <p style="margin-bottom: 1rem;"><strong>Effective level (range: 1 to 10)</strong></p>
+              <p style="margin-bottom: 1rem; color: #000000;"><strong>Effective level (range: 1 to 10)</strong></p>
               <ul style="color: #000000; line-height: 1.8;">
                 <li>Base level is the mining level the player selects.</li>
                 <li>Expert Miner adds 2 to the effective level (maximum of 10).</li>
                 <li>Novice Miner subtracts 1 from the effective level (minimum of 1).</li>
               </ul>
 
-              <p style="margin-bottom: 1rem; margin-top: 1.5rem;"><strong>Mine opening time</strong></p>
+              <p style="margin-bottom: 1rem; margin-top: 1.5rem; color: #000000;"><strong>Mine opening time</strong></p>
               <table style="width: 100%; border-collapse: collapse; background: white;">
                 <tr>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>Fast Worker</strong></td>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;">10 minutes</td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;"><strong>Fast Worker</strong></td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;">10 minutes</td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>No modifier</strong></td>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;">15 minutes</td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;"><strong>No modifier</strong></td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;">15 minutes</td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>Slow Worker</strong></td>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;">20 minutes</td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;"><strong>Slow Worker</strong></td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd; color: #000000;">20 minutes</td>
                 </tr>
               </table>
             </div>
@@ -212,16 +212,16 @@
             <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid #22c55e;">
               <h4 style="margin-top: 0; color: #15803d;">Troubleshooting</h4>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"You can't select both Fast Worker and Slow Worker."</em></p>
+              <p style="margin-bottom: 0.5rem; color: #000000;"><strong style="color: #dc2626;">Error:</strong> <em style="color: #000000;">"Two or more of the toggled modifiers are incompatible. Check the modifiers and make adjustments to continue."</em></p>
               <p style="margin-bottom: 1.5rem; color: #000000;"><strong style="color: #16a34a;">Solution:</strong> Ask the player to clear one of the modifiers.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"Enter an event code that's 7 to 16 alphanumeric characters."</em></p>
+              <p style="margin-bottom: 0.5rem; color: #000000;"><strong style="color: #dc2626;">Error:</strong> <em style="color: #000000;">"Enter an event code that's 7 to 16 alphanumeric characters."</em></p>
               <p style="margin-bottom: 1.5rem; color: #000000;"><strong style="color: #16a34a;">Solution:</strong> Verify that the event code doesn't contain special characters or spaces, and that it's 7 to 16 characters long.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"Enter a player number that's 3 to 16 digits."</em></p>
+              <p style="margin-bottom: 0.5rem; color: #000000;"><strong style="color: #dc2626;">Error:</strong> <em style="color: #000000;">"Enter a player number that's 3 to 16 digits."</em></p>
               <p style="margin-bottom: 1.5rem; color: #000000;"><strong style="color: #16a34a;">Solution:</strong> Verify that the player number contains only digits (not letters), and that it's 3 to 16 digits long.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Issue:</strong> <em>The player doesn't know their player number.</em></p>
+              <p style="margin-bottom: 0.5rem; color: #000000;"><strong style="color: #dc2626;">Issue:</strong> <em style="color: #000000;">The player doesn't know their player number.</em></p>
               <p style="margin-bottom: 0; color: #000000;"><strong style="color: #16a34a;">Solution:</strong> Ask the player to check their player card or visit the registration desk.</p>
             </div>
 
