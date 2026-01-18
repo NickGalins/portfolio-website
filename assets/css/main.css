@@ -1339,8 +1339,8 @@ ul, ol {
   border: 3px solid var(--color-accent);
   border-radius: 50%;
   cursor: none;
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   pointer-events: none;
   z-index: 100;
   background-repeat: no-repeat;
