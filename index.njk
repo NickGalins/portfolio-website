@@ -22,6 +22,13 @@ permalink: /index.html
 {# ==========================================================================
    FEATURED PROJECTS - Desktop Only
    ========================================================================== #}
+{# Card image mapping: project ID -> image filename #}
+{% set cardImages = {
+  'everland-trust-safety': 'everland-trust-safety-card.jpg',
+  'aws-ai-agents': 'aws-ai-agents-tools-card.jpg',
+  'sacred-grounds-shop': 'sg-shop-processes-card.jpg'
+} %}
+
 <section class="featured-projects">
   {% for section in navigation.section %}
     {% for category in section.category %}
@@ -31,7 +38,11 @@ permalink: /index.html
         {% for item in category.item %}
         <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square">
           <div class="project-card__image">
+            {% if cardImages[item['@_id']] %}
+            <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+            {% else %}
             <div class="project-card__placeholder"></div>
+            {% endif %}
           </div>
           <div class="project-card__content">
             <h4 class="project-card__title">{{ item['@_label'] }}</h4>
