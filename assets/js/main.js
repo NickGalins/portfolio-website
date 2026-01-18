@@ -44,6 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // SIDEBAR COLLAPSE TOGGLE (Desktop)
+  // ==========================================================================
+  // Allows users to collapse/expand the sidebar on desktop screens
+
+  const collapseToggle = document.getElementById('sidebar-collapse');
+
+  if (collapseToggle && sidebar) {
+    // Check for saved preference
+    const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+    if (isCollapsed) {
+      sidebar.classList.add('is-collapsed');
+    }
+
+    collapseToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('is-collapsed');
+      // Save preference
+      localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('is-collapsed'));
+    });
+  }
+
+  // ==========================================================================
   // SIDEBAR SCROLL INDICATORS
   // ==========================================================================
   // Shows "More" indicators at top/bottom when sidebar content overflows

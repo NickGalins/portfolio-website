@@ -162,6 +162,13 @@
           <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
         </svg>
       </div>
+
+      {# COLLAPSE TOGGLE: Desktop only - collapse/expand sidebar #}
+      <button class="sidebar__collapse-toggle" id="sidebar-collapse" aria-label="Collapse sidebar">
+        <svg viewBox="0 0 24 24" width="16" height="16">
+          <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
     </aside>
 
     {# ========================================================================
@@ -178,12 +185,51 @@
        RIGHT STICKY MENU - Desktop Only
        ======================================================================== #}
     <nav class="right-menu" aria-label="Site pages">
-      <ul>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/resume/">Work History</a></li>
-      </ul>
+      {# Container 1: Blog #}
+      <div class="right-menu__section">
+        <a href="/blog/" class="right-menu__header">Everything Storyteller Blog</a>
+        {% if posts and posts[0] %}
+        <a href="/blog/{{ posts[0].meta.id }}/" class="right-menu__recent-post">
+          {{ posts[0].meta.title }}
+        </a>
+        {% endif %}
+      </div>
+
+      {# Container 2: Navigation #}
+      <div class="right-menu__section">
+        <a href="/about/" class="right-menu__link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+          </svg>
+          <span>About</span>
+        </a>
+        <a href="/resume/" class="right-menu__link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+          <span>Work History</span>
+        </a>
+        <a href="/contact/" class="right-menu__link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      {# Container 3: Socials #}
+      <div class="right-menu__section">
+        <a href="https://www.linkedin.com/in/nicholas-galinski/" class="right-menu__link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </nav>
 
   </div>
