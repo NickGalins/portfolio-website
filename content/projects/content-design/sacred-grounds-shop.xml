@@ -84,72 +84,72 @@
     </section>
 
     <section>
-      <heading>Process Documentation - Validation & Error Handling</heading>
+      <heading>Process documentation: Validation and error handling</heading>
       <body>
         <![CDATA[
           <div style="background: linear-gradient(135deg, #eff6ff 0%, #e8f5e9 100%); padding: 2rem; border-radius: 12px; margin: 1rem 0; border: 2px solid #2563eb;">
-            <h4 style="margin-top: 0; color: #1e40af;">Input Validation Rules</h4>
-            <p style="color: #424242; margin-bottom: 1.5rem; font-size: 1.05rem;">The system enforces strict validation to prevent invalid mine cards and ensure game rules are followed.</p>
+            <h4 style="margin-top: 0; color: #1e40af;">Input validation rules</h4>
+            <p style="color: #424242; margin-bottom: 1.5rem; font-size: 1.05rem;">The system validates all inputs to prevent invalid mine cards and enforce game rules.</p>
 
             <table style="width: 100%; border-collapse: collapse; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
               <thead>
                 <tr style="background: #1e40af; color: white;">
                   <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Field</th>
-                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Validation Rule</th>
-                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Error Message</th>
+                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Requirements</th>
+                  <th style="padding: 1rem; text-align: left; border: 2px solid #1e3a8a;">Error message</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Event Code</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">7-16 alphanumeric characters</td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Event code must be 7-16 alphanumeric characters</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Event code</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">7 to 16 alphanumeric characters</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Enter an event code that's 7 to 16 alphanumeric characters.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Player Number</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">3-16 digits only</td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Player number must be 3-16 digits</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Player number</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">3 to 16 digits</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Enter a player number that's 3 to 16 digits.</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Mining Level</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">1-10 (required selection)</td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Please select a mining skill level</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Mining level</strong></td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">Required. Select a value from 1 to 10.</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Select a mining skill level.</td>
                 </tr>
                 <tr>
                   <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;"><strong>Modifiers</strong></td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">Fast Worker + Slow Worker = incompatible</td>
-                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">Fast Worker and Slow Worker cannot both be selected</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white;">Can't select both Fast Worker and Slow Worker</td>
+                  <td style="padding: 1rem; border: 2px solid #e0e0e0; background: white; font-family: monospace; color: #dc2626;">You can't select both Fast Worker and Slow Worker.</td>
                 </tr>
               </tbody>
             </table>
 
             <div style="background: #fff3cd; padding: 1rem; border-left: 4px solid #ffa726; border-radius: 4px; margin-bottom: 1.5rem;">
-              <strong style="color: #e65100;">Error Handling Protocol</strong><br/>
-              <p style="color: #5d4037; margin-top: 0.5rem; margin-bottom: 0;">When validation fails, the system displays the error message below the relevant field and prevents progression to the next screen. Errors must be corrected before clicking "Next."</p>
+              <strong style="color: #e65100;">Error handling</strong><br/>
+              <p style="color: #5d4037; margin-top: 0.5rem; margin-bottom: 0;">When validation fails, the system displays an error message below the field and blocks progression to the next screen. Correct all errors before you select <strong>Next</strong>.</p>
             </div>
 
-            <h4 style="color: #1e40af;">Decision Tree</h4>
+            <h4 style="color: #1e40af;">Validation workflow</h4>
             <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 2px solid #cbd5e1;">
-              <p style="margin-top: 0;"><strong>Screen 1: Event & Player Info</strong></p>
+              <p style="margin-top: 0;"><strong>Screen 1: Event and player information</strong></p>
               <ol style="line-height: 1.8; color: #424242;">
-                <li>User enters Event Code and Player Number</li>
-                <li>User clicks "Next"</li>
-                <li>System validates inputs</li>
+                <li>Enter the event code and player number.</li>
+                <li>Select <strong>Next</strong>.</li>
+                <li>The system validates your input.</li>
                 <li>
-                  <strong>If valid:</strong> Proceed to Screen 2<br/>
-                  <strong>If invalid:</strong> Display error(s), remain on Screen 1
+                  If the input is valid, the system opens Screen 2.<br/>
+                  If the input is invalid, the system displays error messages and remains on Screen 1.
                 </li>
               </ol>
 
-              <p style="margin-bottom: 0; margin-top: 1.5rem;"><strong>Screen 2: Mining Skill & Modifiers</strong></p>
+              <p style="margin-bottom: 0; margin-top: 1.5rem;"><strong>Screen 2: Mining skill and modifiers</strong></p>
               <ol style="line-height: 1.8; color: #424242;">
-                <li>User selects Mining Level (1-10)</li>
-                <li>User toggles optional modifiers</li>
-                <li>System calculates live: Skill Points Cost, Effective Level, Time to Open</li>
-                <li>User clicks "Open Mine"</li>
+                <li>Select a mining level from 1 to 10.</li>
+                <li>Optionally, select modifiers.</li>
+                <li>The system calculates skill point cost, effective level, and mine opening time.</li>
+                <li>Select <strong>Open Mine</strong>.</li>
                 <li>
-                  <strong>If valid:</strong> Proceed to Screen 3 (Loading)<br/>
-                  <strong>If invalid:</strong> Display error(s), remain on Screen 2
+                  If your selections are valid, the system opens Screen 3.<br/>
+                  If your selections are invalid, the system displays error messages and remains on Screen 2.
                 </li>
               </ol>
             </div>
@@ -159,47 +159,47 @@
     </section>
 
     <section>
-      <heading>Staff Training Material - Shopkeeper Quick Reference</heading>
+      <heading>Staff training material: Shopkeeper quick reference</heading>
       <body>
         <![CDATA[
           <div style="background: linear-gradient(135deg, #fff9e6 0%, #ffe4e6 100%); padding: 2rem; border-radius: 12px; margin: 1rem 0; border: 2px solid #f59e0b;">
-            <h4 style="margin-top: 0; color: #b45309;">Quick Reference Guide for Shopkeepers</h4>
-            <p style="color: #424242; margin-bottom: 1.5rem; font-size: 1.05rem;">This guide helps shopkeepers navigate the "Open a Mine" workflow efficiently while ensuring accuracy.</p>
+            <h4 style="margin-top: 0; color: #b45309;">Quick reference for shopkeepers</h4>
+            <p style="color: #424242; margin-bottom: 1.5rem; font-size: 1.05rem;">Use this guide to complete the "Open a Mine" workflow efficiently and accurately.</p>
 
             <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid #fed7aa;">
-              <h4 style="margin-top: 0; color: #ea580c;">Step-by-Step Workflow</h4>
+              <h4 style="margin-top: 0; color: #ea580c;">Open a mine</h4>
               <ol style="line-height: 1.8; color: #424242; font-size: 1.05rem;">
-                <li><strong>Home Screen:</strong> Select "Mining" (other trade skills currently disabled)</li>
-                <li><strong>Mining Selection:</strong> Choose "Open a Mine" (not "Use a Mine")</li>
-                <li><strong>Screen 1:</strong> Enter Event Code and Player Number, click "Next"</li>
-                <li><strong>Screen 2:</strong> Select Mining Level (1-10), toggle modifiers, click "Open Mine"</li>
-                <li><strong>Screen 3:</strong> Wait briefly for results to generate</li>
-                <li><strong>Screen 4:</strong> Show generated mine card to player, click "Done"</li>
+                <li>On the home screen, select <strong>Mining</strong>. (Other trade skills are unavailable.)</li>
+                <li>On the mining selection screen, select <strong>Open a Mine</strong>. (Don't select <strong>Use a Mine</strong>.)</li>
+                <li>On Screen 1, enter the event code and player number, and then select <strong>Next</strong>.</li>
+                <li>On Screen 2, select a mining level from 1 to 10, select any modifiers, and then select <strong>Open Mine</strong>.</li>
+                <li>On Screen 3, wait for the system to generate results.</li>
+                <li>On Screen 4, show the generated mine card to the player, and then select <strong>Done</strong>.</li>
               </ol>
             </div>
 
             <div style="background: #e0f2fe; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid #0ea5e9;">
-              <h4 style="margin-top: 0; color: #0369a1;">Calculation Formulas</h4>
-              <p style="margin-bottom: 1rem;"><strong>Skill Points Cost:</strong></p>
+              <h4 style="margin-top: 0; color: #0369a1;">Calculation formulas</h4>
+              <p style="margin-bottom: 1rem;"><strong>Skill point cost</strong></p>
               <code style="background: white; padding: 0.5rem 1rem; border-radius: 4px; display: block; margin-bottom: 1.5rem; font-size: 1.05rem; color: #1e293b;">
                 Skill Points = (Mining Level × 2) ± Modifiers
               </code>
 
-              <p style="margin-bottom: 1rem;"><strong>Effective Level (clamped 1-10):</strong></p>
+              <p style="margin-bottom: 1rem;"><strong>Effective level (range: 1 to 10)</strong></p>
               <ul style="color: #424242; line-height: 1.8;">
-                <li>Base = Mining Level selected by player</li>
-                <li>Expert Miner: +2 to effective level (max 10)</li>
-                <li>Novice Miner: -1 to effective level (min 1)</li>
+                <li>Base level is the mining level the player selects.</li>
+                <li>Expert Miner adds 2 to the effective level (maximum of 10).</li>
+                <li>Novice Miner subtracts 1 from the effective level (minimum of 1).</li>
               </ul>
 
-              <p style="margin-bottom: 1rem; margin-top: 1.5rem;"><strong>Mine Opening Time:</strong></p>
+              <p style="margin-bottom: 1rem; margin-top: 1.5rem;"><strong>Mine opening time</strong></p>
               <table style="width: 100%; border-collapse: collapse; background: white;">
                 <tr>
                   <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>Fast Worker</strong></td>
                   <td style="padding: 0.75rem; border: 2px solid #bae6fd;">10 minutes</td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>Normal (no modifier)</strong></td>
+                  <td style="padding: 0.75rem; border: 2px solid #bae6fd;"><strong>No modifier</strong></td>
                   <td style="padding: 0.75rem; border: 2px solid #bae6fd;">15 minutes</td>
                 </tr>
                 <tr>
@@ -210,28 +210,28 @@
             </div>
 
             <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 2px solid #22c55e;">
-              <h4 style="margin-top: 0; color: #15803d;">Common Scenarios & Solutions</h4>
+              <h4 style="margin-top: 0; color: #15803d;">Troubleshooting</h4>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Scenario:</strong> <em>"Fast Worker and Slow Worker cannot both be selected"</em></p>
-              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> These modifiers are incompatible. Ask the player to deselect one before proceeding.</p>
+              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"You can't select both Fast Worker and Slow Worker."</em></p>
+              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Ask the player to clear one of the modifiers.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Scenario:</strong> <em>"Event code must be 7-16 alphanumeric characters"</em></p>
-              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Check that the event code doesn't contain special characters or spaces. Verify length (minimum 7, maximum 16).</p>
+              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"Enter an event code that's 7 to 16 alphanumeric characters."</em></p>
+              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Verify that the event code doesn't contain special characters or spaces, and that it's 7 to 16 characters long.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Scenario:</strong> <em>"Player number must be 3-16 digits"</em></p>
-              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Ensure player number contains only numbers (no letters). Check it's at least 3 digits and no more than 16.</p>
+              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Error:</strong> <em>"Enter a player number that's 3 to 16 digits."</em></p>
+              <p style="margin-bottom: 1.5rem; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Verify that the player number contains only digits (not letters), and that it's 3 to 16 digits long.</p>
 
-              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Scenario:</strong> <em>Player forgot their player number</em></p>
-              <p style="margin-bottom: 0; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Direct them to check their player card or visit registration to look up their number.</p>
+              <p style="margin-bottom: 0.5rem;"><strong style="color: #dc2626;">Issue:</strong> <em>The player doesn't know their player number.</em></p>
+              <p style="margin-bottom: 0; color: #424242;"><strong style="color: #16a34a;">Solution:</strong> Ask the player to check their player card or visit the registration desk.</p>
             </div>
 
             <div style="background: #fef2f2; padding: 1rem; border-left: 4px solid #dc2626; border-radius: 4px;">
-              <strong style="color: #991b1b;">Tips for Reducing Wait Times</strong>
+              <strong style="color: #991b1b;">Best practices</strong>
               <ul style="color: #7f1d1d; line-height: 1.8; margin-bottom: 0;">
-                <li>Ask players to have their player card ready before approaching the shop</li>
-                <li>Verify the event code is entered correctly before moving to Screen 2</li>
-                <li>The system calculates everything automatically—no need for manual math</li>
-                <li>If errors appear, read the message carefully and fix that specific field</li>
+                <li>Ask players to have their player card ready before they come to the shop.</li>
+                <li>Verify that the event code is correct before you move to Screen 2.</li>
+                <li>Let the system calculate skill points automatically. You don't need to do the math manually.</li>
+                <li>If an error message appears, read it carefully and fix the issue in that specific field.</li>
               </ul>
             </div>
           </div>
