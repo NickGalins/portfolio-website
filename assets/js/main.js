@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update status message
     updateStatusMessage();
 
-    // Filter project cards with animation (AND logic)
+    // Filter project cards with pop animations (AND logic)
     projectCards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',').map(t => t.trim());
       const matchesAll = activeFilters.every(filter => cardTags.includes(filter));
@@ -244,18 +244,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const isCurrentlyHidden = card.classList.contains('is-hidden');
 
       if (shouldHide && !isCurrentlyHidden) {
-        // Animate out, then hide
+        // Pop out animation, then hide
+        card.classList.remove('is-filtering-in');
         card.classList.add('is-filtering-out');
-        setTimeout(() => {
+
+        card.addEventListener('animationend', function handler() {
           card.classList.add('is-hidden');
           card.classList.remove('is-filtering-out');
-        }, 300);
+          card.removeEventListener('animationend', handler);
+        }, { once: true });
+
       } else if (!shouldHide && isCurrentlyHidden) {
-        // Show and animate in
-        card.classList.remove('is-hidden');
-        // Force reflow for animation
-        card.offsetHeight;
-        card.classList.remove('is-filtering-out');
+        // Show and pop in animation
+        card.classList.remove('is-hidden', 'is-filtering-out');
+        card.classList.add('is-filtering-in');
+
+        card.addEventListener('animationend', function handler() {
+          card.classList.remove('is-filtering-in');
+          card.removeEventListener('animationend', handler);
+        }, { once: true });
       }
     });
   }

@@ -917,19 +917,36 @@ ul, ol {
     border-color: var(--color-accent);
     color: var(--color-text);
   }
+}
 
-  /* Project cards filtering animation */
-  .project-card {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+/* Keyframes for playful card animations */
+@keyframes popOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
   }
-
-  .project-card.is-hidden {
-    display: none;
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
   }
-
-  .project-card.is-filtering-out {
+  100% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -952,6 +969,23 @@ ul, ol {
 
   .projects-grid .project-card__title {
     font-size: 0.9375rem;
+  }
+
+  /* Card animation states */
+  .projects-grid .project-card {
+    transform-origin: center center;
+  }
+
+  .projects-grid .project-card.is-filtering-out {
+    animation: popOut 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .projects-grid .project-card.is-filtering-in {
+    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .projects-grid .project-card.is-hidden {
+    display: none;
   }
 }
 
