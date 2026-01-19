@@ -80,26 +80,14 @@ A docs-as-code portfolio website built with XML content and Eleventy.
 
 ### Adding a Blog Post
 
-1. Create a new XML file in `content/blog/`
-   ```xml
-   <?xml version="1.0" encoding="UTF-8"?>
-   <post>
-     <meta>
-       <id>my-post-slug</id>
-       <title>My Post Title</title>
-       <date>2024-01-15</date>
-       <excerpt>Brief description for the listing page.</excerpt>
-       <tags>
-         <tag>Topic</tag>
-       </tags>
-     </meta>
-     <content>
-       Your post content here...
-     </content>
-   </post>
-   ```
+See [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md) for the complete guide.
 
-2. Commit and push
+Quick steps:
+
+1. Create a new XML file in `content/blog/`
+2. Add required metadata (id, title, date, author info, images)
+3. Write content using HTML in a CDATA block
+4. Commit and push
 
 ### Editing Existing Content
 
@@ -112,35 +100,73 @@ A docs-as-code portfolio website built with XML content and Eleventy.
 ## File Structure
 
 ```
-portfolio/
-├── content/                    # YOUR CONTENT (XML)
-│   ├── navigation.xml          # Sidebar structure
+portfolio-website/
+├── content/                          # YOUR CONTENT (XML)
+│   ├── navigation.xml                # Sidebar menu structure
 │   ├── projects/
-│   │   ├── content-design/     # Content Design projects
-│   │   └── creative/           # Creative projects
+│   │   ├── content-design/           # Content Design projects (6)
+│   │   └── creative/                 # Creative projects (6)
 │   ├── pages/
 │   │   ├── about.xml
 │   │   ├── contact.xml
 │   │   └── resume.xml
-│   └── blog/                   # Blog posts
+│   └── blog/                         # Blog posts
 │
-├── assets/                     # MEDIA & STYLES
-│   ├── css/main.css
-│   ├── js/main.js
-│   ├── images/                 # Project images
-│   └── video/                  # Hero video (trailer.mp4)
+├── assets/                           # MEDIA & STYLES
+│   ├── css/main.css                  # Main stylesheet (CSS variables)
+│   ├── js/main.js                    # Interactivity (filtering, sidebar)
+│   ├── images/                       # Project images
+│   │   └── blog/                     # Blog-specific images
+│   └── video/                        # Video assets
 │
-├── _includes/                  # TEMPLATES (rarely edit)
-│   └── layouts/
+├── _includes/                        # TEMPLATE PARTIALS
+│   ├── layouts/base.njk              # Main layout wrapper
+│   └── index.njk                     # Homepage components
 │
-├── schemas/                    # XML VALIDATION (reference)
+├── schemas/                          # XML VALIDATION
+│   ├── page.xsd
+│   └── project.xsd
 │
-├── .github/workflows/          # AUTO-DEPLOY (don't edit)
+├── *.njk (root)                      # PAGE TEMPLATES
+│   ├── index.njk                     # Homepage
+│   ├── about.njk, contact.njk        # Static pages
+│   ├── resume.njk                    # Work history
+│   ├── blog.njk                      # Blog listing
+│   ├── blog-post.njk                 # Individual blog posts
+│   ├── project.njk                   # Individual projects
+│   └── sitemap.njk                   # XML sitemap for SEO
 │
-├── eleventy.config.js          # BUILD CONFIG (rarely edit)
-├── package.json
-└── README.md
+├── .github/workflows/deploy.yml      # AUTO-DEPLOY (don't edit)
+├── eleventy.config.js                # BUILD CONFIG
+└── package.json
 ```
+
+---
+
+## How It Works
+
+### Build Process
+
+1. You write content in XML files (`content/` folder)
+2. Eleventy reads XML and converts to JavaScript objects
+3. Templates (`.njk` files) use this data to generate HTML
+4. Output goes to `_site/` folder and deploys to GitHub Pages
+
+### Route Generation
+
+Routes are created automatically from your XML `<id>` fields:
+
+| XML Location                              | ID Value  | Generated URL       |
+| ----------------------------------------- | --------- | ------------------- |
+| `content/projects/creative/example.xml`   | `example` | `/projects/example/`|
+| `content/blog/my-post.xml`                | `my-post` | `/blog/my-post/`    |
+| `content/pages/about.xml`                 | `about`   | `/about/`           |
+
+### Key Files
+
+- **`eleventy.config.js`** - Loads XML data and makes it available to templates
+- **`project.njk`** - Uses pagination to create one page per project
+- **`blog-post.njk`** - Uses pagination to create one page per blog post
 
 ---
 
@@ -203,26 +229,86 @@ portfolio/
       <!-- id must match project's meta.id -->
     </category>
   </section>
-  
+
   <pages>
     <page id="about" label="About" />
   </pages>
 </navigation>
 ```
 
+### Blog Post XML Structure
+
+For detailed blog instructions, see [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md).
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<post>
+  <meta>
+    <id>post-url-slug</id>                    <!-- URL: /blog/post-url-slug/ -->
+    <title>Post Title</title>
+    <date>2026-01-15</date>                   <!-- YYYY-MM-DD format -->
+    <author>Nicholas Galinski</author>
+    <authorPhoto>/assets/images/author-nick.jpg</authorPhoto>
+    <authorBio>Brief bio text.</authorBio>
+    <heroImage>/assets/images/blog/hero.jpg</heroImage>
+    <thumbnailImage>/assets/images/blog/thumb.jpg</thumbnailImage>
+    <excerpt>Brief summary for listings.</excerpt>
+    <featured>true</featured>                  <!-- Show in featured section -->
+    <tags>
+      <tag>Writing</tag>
+    </tags>
+  </meta>
+  <content>
+    <![CDATA[
+      <p class="lead">Opening paragraph.</p>
+      <p>Regular content with HTML formatting...</p>
+      <blockquote class="pullquote">Key quote</blockquote>
+    ]]>
+  </content>
+</post>
+```
+
 ---
 
-## Adding Your Video Header
+## Video Header (Homepage)
 
-1. Export your trailer as MP4 (H.264 codec)
-2. Keep it short (15-30 seconds) and under 10MB
-3. Save as `assets/video/trailer.mp4`
-4. The homepage will automatically use it
+The homepage features a Vimeo video background that autoplays.
 
-**Tips:**
-- No audio needed (it's muted by default)
-- Compress for web (HandBrake is free and works well)
-- Consider a static fallback image for mobile
+### Current Setup
+
+- Video is embedded from Vimeo (not a local file)
+- Autoplays muted, loops continuously
+- Desktop: 80vh height | Mobile: 50vh height
+
+### Changing the Video
+
+1. Upload your video to Vimeo
+2. Get the embed URL (e.g., `https://player.vimeo.com/video/YOUR_ID`)
+3. Edit `_includes/layouts/base.njk`
+4. Update the iframe `src` attribute with your video URL
+
+**Video tips:**
+
+- Keep it short (15-30 seconds for the loop)
+- No audio needed (muted by default)
+- Works best with subtle, ambient footage
+
+---
+
+## Desktop vs Mobile
+
+The site uses a single breakpoint at **768px**. Here's what changes:
+
+| Feature        | Desktop (>768px)           | Mobile (≤768px)          |
+| -------------- | -------------------------- | ------------------------ |
+| Sidebar        | Fixed 280px, collapsible   | Hidden, hamburger menu   |
+| Right menu     | Sticky navigation          | Hidden                   |
+| Project grid   | 4 columns                  | Auto-fill responsive     |
+| Tag filters    | Collapsible panel          | Hidden                   |
+| Video hero     | 80vh height                | 50vh height              |
+| Image magnifier| Hover effect               | Disabled                 |
+
+Mobile-hidden features are intentional to simplify the experience on smaller screens.
 
 ---
 
@@ -255,6 +341,24 @@ Uncomment the dark mode section in `main.css`:
 
 ---
 
+## Documentation
+
+This project includes detailed guides for specific features:
+
+| File                                                              | Description                         |
+| ----------------------------------------------------------------- | ----------------------------------- |
+| [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md)              | Blog post creation guide            |
+| [CARD-IMAGES.md](CARD-IMAGES.md)                                  | Homepage card image specifications  |
+| [TAG-SYSTEM.md](TAG-SYSTEM.md)                                    | Tag filtering system reference      |
+| [context.md](context.md)                                          | Technical context for AI assistants |
+| [BLOG_IMPLEMENTATION_CONTEXT.md](BLOG_IMPLEMENTATION_CONTEXT.md)  | Blog system architecture            |
+| [assets/images/README.md](assets/images/README.md)                | Project image guidelines            |
+| [assets/images/blog/README.md](assets/images/blog/README.md)      | Blog image guidelines               |
+| [assets/video/README.md](assets/video/README.md)                  | Video asset guidelines              |
+| [SECURITY.md](SECURITY.md)                                        | Security best practices and issues  |
+
+---
+
 ## Troubleshooting
 
 ### Site not updating after push?
@@ -272,6 +376,19 @@ Uncomment the dark mode section in `main.css`:
 
 1. Make sure the `id` in your project XML matches the `id` in `navigation.xml`
 2. Check for typos in the XML
+
+### Blog post not appearing?
+
+1. Check that `meta.id` is unique and URL-friendly (lowercase, hyphens)
+2. Verify the file is in `content/blog/` folder
+3. Ensure the date format is `YYYY-MM-DD`
+
+### Tag filters not working?
+
+Tag filters are **desktop only** (hidden on mobile). On desktop:
+
+1. Check that project XML has valid `<tag>` elements
+2. Verify tags match those defined in [TAG-SYSTEM.md](TAG-SYSTEM.md)
 
 ---
 
