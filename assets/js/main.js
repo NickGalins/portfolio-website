@@ -236,7 +236,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update status message
     updateStatusMessage();
 
-    // Filter project cards with pop animations (AND logic)
+    // FLIP Animation: First - capture current positions of visible cards
+    const firstPositions = new Map();
+    projectCards.forEach(card => {
+      if (!card.classList.contains('is-hidden')) {
+        const rect = card.getBoundingClientRect();
+        firstPositions.set(card, { x: rect.left, y: rect.top });
+      }
+    });
+
+    // Determine which cards to hide/show
+    const cardsToHide = [];
+    const cardsToShow = [];
+
     projectCards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',').map(t => t.trim());
       const matchesAll = activeFilters.every(filter => cardTags.includes(filter));
@@ -244,25 +256,76 @@ document.addEventListener('DOMContentLoaded', () => {
       const isCurrentlyHidden = card.classList.contains('is-hidden');
 
       if (shouldHide && !isCurrentlyHidden) {
-        // Pop out animation, then hide
-        card.classList.remove('is-filtering-in');
-        card.classList.add('is-filtering-out');
-
-        card.addEventListener('animationend', function handler() {
-          card.classList.add('is-hidden');
-          card.classList.remove('is-filtering-out');
-          card.removeEventListener('animationend', handler);
-        }, { once: true });
-
+        cardsToHide.push(card);
       } else if (!shouldHide && isCurrentlyHidden) {
-        // Show and pop in animation
-        card.classList.remove('is-hidden', 'is-filtering-out');
-        card.classList.add('is-filtering-in');
+        cardsToShow.push(card);
+      }
+    });
 
-        card.addEventListener('animationend', function handler() {
-          card.classList.remove('is-filtering-in');
-          card.removeEventListener('animationend', handler);
-        }, { once: true });
+    // Animate cards out with pop effect
+    cardsToHide.forEach(card => {
+      card.classList.remove('is-filtering-in');
+      card.classList.add('is-filtering-out');
+
+      card.addEventListener('animationend', function handler() {
+        card.classList.add('is-hidden');
+        card.classList.remove('is-filtering-out');
+
+        // After hiding, trigger slide animation for remaining cards
+        animateCardSlide(firstPositions);
+      }, { once: true });
+    });
+
+    // Show cards with pop in effect
+    cardsToShow.forEach(card => {
+      card.classList.remove('is-hidden', 'is-filtering-out');
+      card.classList.add('is-filtering-in');
+
+      card.addEventListener('animationend', function handler() {
+        card.classList.remove('is-filtering-in');
+      }, { once: true });
+    });
+
+    // If no cards are being hidden, still animate any position changes
+    if (cardsToHide.length === 0 && cardsToShow.length > 0) {
+      // Delay slightly to let new cards appear first
+      requestAnimationFrame(() => {
+        animateCardSlide(firstPositions);
+      });
+    }
+  }
+
+  // FLIP Animation: Animate cards sliding to new positions with jiggle
+  function animateCardSlide(firstPositions) {
+    projectCards.forEach(card => {
+      if (card.classList.contains('is-hidden') || card.classList.contains('is-filtering-out')) return;
+
+      const first = firstPositions.get(card);
+      if (!first) return; // Card wasn't visible before
+
+      const last = card.getBoundingClientRect();
+      const deltaX = first.x - last.left;
+      const deltaY = first.y - last.top;
+
+      // Only animate if position actually changed
+      if (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1) {
+        // Invert: Set transform to start position
+        card.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        card.style.transition = 'none';
+
+        // Play: Animate to final position
+        requestAnimationFrame(() => {
+          card.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          card.style.transform = '';
+
+          // Add jiggle when animation ends
+          card.addEventListener('transitionend', function handler() {
+            card.classList.add('is-settling');
+            card.addEventListener('animationend', function jiggleHandler() {
+              card.classList.remove('is-settling');
+            }, { once: true });
+          }, { once: true });
+        });
       }
     });
   }
