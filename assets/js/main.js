@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // FLIP Animation: Animate cards sliding to new positions with jiggle
+  // FLIP Animation: Animate cards sliding to new positions with jiggle during movement
   function animateCardSlide(firstPositions) {
     projectCards.forEach(card => {
       if (card.classList.contains('is-hidden') || card.classList.contains('is-filtering-out')) return;
@@ -313,17 +313,18 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
         card.style.transition = 'none';
 
-        // Play: Animate to final position
+        // Play: Animate to final position with jiggle during slide
         requestAnimationFrame(() => {
-          card.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          // Add jiggle class at the start of slide
+          card.classList.add('is-sliding');
+          card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
           card.style.transform = '';
 
-          // Add jiggle when animation ends
-          card.addEventListener('transitionend', function handler() {
-            card.classList.add('is-settling');
-            card.addEventListener('animationend', function jiggleHandler() {
-              card.classList.remove('is-settling');
-            }, { once: true });
+          // Remove jiggle class when slide ends
+          card.addEventListener('transitionend', function handler(e) {
+            if (e.propertyName === 'transform') {
+              card.classList.remove('is-sliding');
+            }
           }, { once: true });
         });
       }
