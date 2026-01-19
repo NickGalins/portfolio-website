@@ -20,6 +20,67 @@ permalink: /index.html
 </section>
 
 {# ==========================================================================
+   TAG FILTERS - Desktop Only
+   ========================================================================== #}
+<section class="tag-filters">
+  <div class="tag-filters__container">
+    <div class="tag-filters__header">
+      <span class="tag-filters__label">Filter by tags:</span>
+      <button class="tag-filters__clear" id="clear-filters">Clear all</button>
+    </div>
+
+    <div class="tag-filters__category">
+      <span class="tag-filters__category-label">Design</span>
+      <div class="tag-filters__buttons">
+        <button class="tag-filter" data-tag="Content Design">Content Design</button>
+        <button class="tag-filter" data-tag="Game">Game</button>
+        <button class="tag-filter" data-tag="Systems Design">Systems Design</button>
+      </div>
+    </div>
+
+    <div class="tag-filters__category">
+      <span class="tag-filters__category-label">Copy Types</span>
+      <div class="tag-filters__buttons">
+        <button class="tag-filter" data-tag="UX Writing">UX Writing</button>
+        <button class="tag-filter" data-tag="Technical Writing">Technical Writing</button>
+        <button class="tag-filter" data-tag="API Documentation">API Documentation</button>
+        <button class="tag-filter" data-tag="Product Writing">Product Writing</button>
+        <button class="tag-filter" data-tag="UI/UX">UI/UX</button>
+        <button class="tag-filter" data-tag="Marketing">Marketing</button>
+        <button class="tag-filter" data-tag="Narrative">Narrative</button>
+        <button class="tag-filter" data-tag="Content Writing">Content Writing</button>
+        <button class="tag-filter" data-tag="Creative">Creative</button>
+        <button class="tag-filter" data-tag="Trust & Safety">Trust & Safety</button>
+      </div>
+    </div>
+
+    <div class="tag-filters__category">
+      <span class="tag-filters__category-label">Scope</span>
+      <div class="tag-filters__buttons">
+        <button class="tag-filter" data-tag="Case Study">Case Study</button>
+        <button class="tag-filter" data-tag="Writing Sample">Writing Sample</button>
+        <button class="tag-filter" data-tag="Other Sample">Other Sample</button>
+      </div>
+    </div>
+
+    <div class="tag-filters__category">
+      <span class="tag-filters__category-label">Secondary Skills</span>
+      <div class="tag-filters__buttons">
+        <button class="tag-filter" data-tag="GenAI">GenAI</button>
+        <button class="tag-filter" data-tag="Prototyping">Prototyping</button>
+        <button class="tag-filter" data-tag="VSCode">VSCode</button>
+        <button class="tag-filter" data-tag="Change Management">Change Management</button>
+        <button class="tag-filter" data-tag="Project Management">Project Management</button>
+        <button class="tag-filter" data-tag="People Management">People Management</button>
+        <button class="tag-filter" data-tag="Cross-functional Collaboration">Cross-functional Collaboration</button>
+        <button class="tag-filter" data-tag="Information Architecture">Information Architecture</button>
+        <button class="tag-filter" data-tag="Content Strategy">Content Strategy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ==========================================================================
    FEATURED PROJECTS - Desktop Only
    ========================================================================== #}
 {# Card image mapping: project ID -> image filename #}
@@ -44,7 +105,8 @@ permalink: /index.html
       <h3 class="project-category__title">{{ category['@_label'] }}</h3>
       <div class="project-category__grid">
         {% for item in category.item %}
-        <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square">
+        {% set project = projects | findProject(item['@_id']) %}
+        <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
           <div class="project-card__image">
             {% if cardImages[item['@_id']] %}
             <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">

@@ -224,6 +224,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add('context.md');    // Documentation file with template syntax examples
   eleventyConfig.ignores.add('README.md');      // Project README
   eleventyConfig.ignores.add('CARD-IMAGES.md'); // Card images documentation
+  eleventyConfig.ignores.add('TAG-SYSTEM.md');  // Tag system documentation
 
   // -------------------------------------------------------------------------
   // ELEVENTY CONFIGURATION OBJECT

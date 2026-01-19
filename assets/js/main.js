@@ -182,6 +182,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // TAG FILTERING (Desktop Only)
+  // ==========================================================================
+  // Allows users to filter project cards on the homepage by selecting tags.
+  // Uses AND logic - projects must match ALL selected tags to be shown.
+  // Maximum of 5 tags can be selected at once.
+
+  const MAX_FILTERS = 5;
+  let activeFilters = [];
+
+  const filterButtons = document.querySelectorAll('.tag-filter');
+  const clearButton = document.getElementById('clear-filters');
+  const projectCards = document.querySelectorAll('.project-card[data-tags]');
+
+  function updateFilters() {
+    // Update button states
+    filterButtons.forEach(btn => {
+      const isActive = activeFilters.includes(btn.dataset.tag);
+      btn.classList.toggle('is-active', isActive);
+      // Disable non-active buttons when at max
+      btn.disabled = !isActive && activeFilters.length >= MAX_FILTERS;
+    });
+
+    // Show/hide clear button
+    if (clearButton) {
+      clearButton.classList.toggle('is-visible', activeFilters.length > 0);
+    }
+
+    // Filter project cards (AND logic)
+    projectCards.forEach(card => {
+      const cardTags = (card.dataset.tags || '').split(',').map(t => t.trim());
+      const matchesAll = activeFilters.every(filter => cardTags.includes(filter));
+      card.classList.toggle('is-hidden', activeFilters.length > 0 && !matchesAll);
+    });
+
+    // Hide empty categories
+    document.querySelectorAll('.project-category').forEach(category => {
+      const visibleCards = category.querySelectorAll('.project-card:not(.is-hidden)');
+      category.classList.toggle('is-empty', visibleCards.length === 0);
+    });
+  }
+
+  // Only set up filtering if filter buttons exist (homepage only)
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag;
+        if (activeFilters.includes(tag)) {
+          activeFilters = activeFilters.filter(t => t !== tag);
+        } else if (activeFilters.length < MAX_FILTERS) {
+          activeFilters.push(tag);
+        }
+        updateFilters();
+      });
+    });
+
+    if (clearButton) {
+      clearButton.addEventListener('click', () => {
+        activeFilters = [];
+        updateFilters();
+      });
+    }
+  }
+
+  // ==========================================================================
   // IMAGE MAGNIFIER
   // ==========================================================================
   // Creates a circular magnifying glass effect when hovering over images
