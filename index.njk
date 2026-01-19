@@ -20,66 +20,84 @@ permalink: /index.html
 </section>
 
 {# ==========================================================================
-   TAG FILTERS - Desktop Only
+   PROJECTS CONTAINER - Desktop Only
    ========================================================================== #}
-<section class="tag-filters">
-  <div class="tag-filters__container">
-    <div class="tag-filters__header">
-      <span class="tag-filters__label">Filter by tags:</span>
-      <button class="tag-filters__clear" id="clear-filters">Clear all</button>
-    </div>
-
-    <div class="tag-filters__category">
-      <span class="tag-filters__category-label">Design</span>
-      <div class="tag-filters__buttons">
-        <button class="tag-filter" data-tag="Content Design">Content Design</button>
-        <button class="tag-filter" data-tag="Game">Game</button>
-        <button class="tag-filter" data-tag="Systems Design">Systems Design</button>
-      </div>
-    </div>
-
-    <div class="tag-filters__category">
-      <span class="tag-filters__category-label">Copy Types</span>
-      <div class="tag-filters__buttons">
-        <button class="tag-filter" data-tag="UX Writing">UX Writing</button>
-        <button class="tag-filter" data-tag="Technical Writing">Technical Writing</button>
-        <button class="tag-filter" data-tag="API Documentation">API Documentation</button>
-        <button class="tag-filter" data-tag="Product Writing">Product Writing</button>
-        <button class="tag-filter" data-tag="UI/UX">UI/UX</button>
-        <button class="tag-filter" data-tag="Marketing">Marketing</button>
-        <button class="tag-filter" data-tag="Narrative">Narrative</button>
-        <button class="tag-filter" data-tag="Content Writing">Content Writing</button>
-        <button class="tag-filter" data-tag="Creative">Creative</button>
-        <button class="tag-filter" data-tag="Trust & Safety">Trust & Safety</button>
-      </div>
-    </div>
-
-    <div class="tag-filters__category">
-      <span class="tag-filters__category-label">Scope</span>
-      <div class="tag-filters__buttons">
-        <button class="tag-filter" data-tag="Case Study">Case Study</button>
-        <button class="tag-filter" data-tag="Writing Sample">Writing Sample</button>
-        <button class="tag-filter" data-tag="Other Sample">Other Sample</button>
-      </div>
-    </div>
-
-    <div class="tag-filters__category">
-      <span class="tag-filters__category-label">Secondary Skills</span>
-      <div class="tag-filters__buttons">
-        <button class="tag-filter" data-tag="GenAI">GenAI</button>
-        <button class="tag-filter" data-tag="Prototyping">Prototyping</button>
-        <button class="tag-filter" data-tag="VSCode">VSCode</button>
-        <button class="tag-filter" data-tag="Change Management">Change Management</button>
-        <button class="tag-filter" data-tag="Project Management">Project Management</button>
-        <button class="tag-filter" data-tag="People Management">People Management</button>
-        <button class="tag-filter" data-tag="Cross-functional Collaboration">Cross-functional Collaboration</button>
-        <button class="tag-filter" data-tag="Information Architecture">Information Architecture</button>
-        <button class="tag-filter" data-tag="Content Strategy">Content Strategy</button>
-      </div>
-    </div>
+<section class="projects-section">
+  <div class="projects-section__header">
+    <h2 class="projects-section__title">Selected projects and samples</h2>
+    <p class="projects-section__description">To view a Case Study or Writing Sample, select a project below. You can apply up to 5 tags to find projects of a specific type.</p>
   </div>
-</section>
 
+  <div class="projects-section__container">
+    {# Tag Filters - Collapsible #}
+    <div class="tag-filters">
+      <button class="tag-filters__toggle" id="filter-toggle" aria-expanded="false">
+        <span class="tag-filters__status" id="filter-status">Showing all projects. Select up to 5 filters.</span>
+        <svg class="tag-filters__chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </button>
+
+      <div class="tag-filters__content" id="filter-content">
+        <div class="tag-filters__categories">
+          <div class="tag-filters__category">
+            <span class="tag-filters__category-label">Design</span>
+            <div class="tag-filters__buttons">
+              <button class="tag-filter" data-tag="Content Design">Content Design</button>
+              <button class="tag-filter" data-tag="Game">Game</button>
+              <button class="tag-filter" data-tag="Systems Design">Systems Design</button>
+            </div>
+          </div>
+
+          <div class="tag-filters__category">
+            <span class="tag-filters__category-label">Copy Types</span>
+            <div class="tag-filters__buttons">
+              <button class="tag-filter" data-tag="UX Writing">UX Writing</button>
+              <button class="tag-filter" data-tag="Technical Writing">Technical Writing</button>
+              <button class="tag-filter" data-tag="API Documentation">API Documentation</button>
+              <button class="tag-filter" data-tag="Product Writing">Product Writing</button>
+              <button class="tag-filter" data-tag="UI/UX">UI/UX</button>
+              <button class="tag-filter" data-tag="Marketing">Marketing</button>
+              <button class="tag-filter" data-tag="Narrative">Narrative</button>
+              <button class="tag-filter" data-tag="Content Writing">Content Writing</button>
+              <button class="tag-filter" data-tag="Creative">Creative</button>
+              <button class="tag-filter" data-tag="Trust & Safety">Trust & Safety</button>
+            </div>
+          </div>
+
+          <div class="tag-filters__category">
+            <span class="tag-filters__category-label">Scope</span>
+            <div class="tag-filters__buttons">
+              <button class="tag-filter" data-tag="Case Study">Case Study</button>
+              <button class="tag-filter" data-tag="Writing Sample">Writing Sample</button>
+              <button class="tag-filter" data-tag="Other Sample">Other Sample</button>
+            </div>
+          </div>
+
+          <div class="tag-filters__category">
+            <span class="tag-filters__category-label">Secondary Skills</span>
+            <div class="tag-filters__buttons">
+              <button class="tag-filter" data-tag="GenAI">GenAI</button>
+              <button class="tag-filter" data-tag="Prototyping">Prototyping</button>
+              <button class="tag-filter" data-tag="VSCode">VSCode</button>
+              <button class="tag-filter" data-tag="Change Management">Change Management</button>
+              <button class="tag-filter" data-tag="Project Management">Project Management</button>
+              <button class="tag-filter" data-tag="People Management">People Management</button>
+              <button class="tag-filter" data-tag="Cross-functional Collaboration">Cross-functional Collaboration</button>
+              <button class="tag-filter" data-tag="Information Architecture">Information Architecture</button>
+              <button class="tag-filter" data-tag="Content Strategy">Content Strategy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tag-filters__actions">
+          <button class="tag-filters__clear" id="clear-filters">Clear all filters</button>
+        </div>
+      </div>
+    </div>
+
+    {# Project Cards Grid #}
+    <div class="projects-section__cards">
 {# ==========================================================================
    FEATURED PROJECTS - Desktop Only
    ========================================================================== #}
@@ -102,7 +120,6 @@ permalink: /index.html
   {% for section in navigation.section %}
     {% for category in section.category %}
     <div class="project-category">
-      <h3 class="project-category__title">{{ category['@_label'] }}</h3>
       <div class="project-category__grid">
         {% for item in category.item %}
         {% set project = projects | findProject(item['@_id']) %}
@@ -124,3 +141,6 @@ permalink: /index.html
     {% endfor %}
   {% endfor %}
 </section>
+    </div>{# .projects-section__cards #}
+  </div>{# .projects-section__container #}
+</section>{# .projects-section #}

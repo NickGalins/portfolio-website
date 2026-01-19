@@ -187,13 +187,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Allows users to filter project cards on the homepage by selecting tags.
   // Uses AND logic - projects must match ALL selected tags to be shown.
   // Maximum of 5 tags can be selected at once.
+  // Filter panel is collapsible with dynamic status message.
 
   const MAX_FILTERS = 5;
   let activeFilters = [];
 
+  const filterToggle = document.getElementById('filter-toggle');
+  const filterContent = document.getElementById('filter-content');
+  const filterStatus = document.getElementById('filter-status');
   const filterButtons = document.querySelectorAll('.tag-filter');
   const clearButton = document.getElementById('clear-filters');
+  const actionsContainer = document.querySelector('.tag-filters__actions');
   const projectCards = document.querySelectorAll('.project-card[data-tags]');
+
+  // Update the status message based on active filters
+  function updateStatusMessage() {
+    if (!filterStatus) return;
+
+    if (activeFilters.length === 0) {
+      filterStatus.textContent = 'Showing all projects. Select up to 5 filters.';
+    } else if (activeFilters.length === 1) {
+      const remaining = MAX_FILTERS - activeFilters.length;
+      filterStatus.textContent = `Showing projects with the "${activeFilters[0]}" tag. Add up to ${remaining} more filter${remaining !== 1 ? 's' : ''}.`;
+    } else if (activeFilters.length < MAX_FILTERS) {
+      const remaining = MAX_FILTERS - activeFilters.length;
+      const tagList = activeFilters.map(t => `"${t}"`).join(', ');
+      filterStatus.textContent = `Showing projects with ${tagList} tags. Add up to ${remaining} more filter${remaining !== 1 ? 's' : ''}.`;
+    } else {
+      const tagList = activeFilters.map(t => `"${t}"`).join(', ');
+      filterStatus.textContent = `Showing projects with ${tagList} tags. Maximum filters reached.`;
+    }
+  }
 
   function updateFilters() {
     // Update button states
@@ -204,10 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = !isActive && activeFilters.length >= MAX_FILTERS;
     });
 
-    // Show/hide clear button
-    if (clearButton) {
-      clearButton.classList.toggle('is-visible', activeFilters.length > 0);
+    // Show/hide clear button container
+    if (actionsContainer) {
+      actionsContainer.classList.toggle('is-visible', activeFilters.length > 0);
     }
+
+    // Update status message
+    updateStatusMessage();
 
     // Filter project cards (AND logic)
     projectCards.forEach(card => {
@@ -220,6 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.project-category').forEach(category => {
       const visibleCards = category.querySelectorAll('.project-card:not(.is-hidden)');
       category.classList.toggle('is-empty', visibleCards.length === 0);
+    });
+  }
+
+  // Set up filter toggle (collapsible)
+  if (filterToggle && filterContent) {
+    filterToggle.addEventListener('click', () => {
+      const isExpanded = filterToggle.getAttribute('aria-expanded') === 'true';
+      filterToggle.setAttribute('aria-expanded', !isExpanded);
     });
   }
 
