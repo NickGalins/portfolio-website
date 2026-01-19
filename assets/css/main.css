@@ -955,23 +955,14 @@ ul, ol {
   0% {
     rotate: 0deg;
   }
-  15% {
-    rotate: 2deg;
-  }
-  30% {
-    rotate: -1.5deg;
+  20% {
+    rotate: 6deg;
   }
   45% {
-    rotate: 1.2deg;
+    rotate: -4deg;
   }
-  60% {
-    rotate: -0.8deg;
-  }
-  75% {
-    rotate: 0.4deg;
-  }
-  90% {
-    rotate: -0.2deg;
+  70% {
+    rotate: 2deg;
   }
   100% {
     rotate: 0deg;
