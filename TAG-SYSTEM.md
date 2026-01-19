@@ -37,7 +37,6 @@ The homepage features a tag-based filtering system for project cards (desktop on
 
 - GenAI
 - Prototyping
-- VSCode
 - Change Management
 - Project Management
 - People Management
@@ -97,9 +96,9 @@ Filter logic is in `assets/js/main.js` under the "TAG FILTERING" section.
 | Design | Content Design, Game, Systems Design |
 | Copy Types | UX Writing, Technical Writing, API Documentation, Product Writing, UI/UX, Marketing, Narrative, Content Writing, Creative, Trust & Safety |
 | Scope | Case Study, Writing Sample, Other Sample |
-| Secondary Skills | GenAI, Prototyping, VSCode, Change Management, Project Management, People Management, Cross-functional Collaboration, Information Architecture, Content Strategy |
+| Secondary Skills | GenAI, Prototyping, Change Management, Project Management, People Management, Cross-functional Collaboration, Information Architecture, Content Strategy |
 
-**Total: 22 tags across 4 categories**
+**Total: 21 tags across 4 categories**
 
 ---
 
@@ -134,18 +133,18 @@ We are updating each project XML file to use the standardized tags. Use the numb
 **Secondary Skills:**
 17. GenAI
 18. Prototyping
-19. VSCode
-20. Change Management
-21. Project Management
-22. People Management
-23. Cross-functional Collaboration
-24. Information Architecture
-25. Content Strategy
+19. Change Management
+20. Project Management
+21. People Management
+22. Cross-functional Collaboration
+23. Information Architecture
+24. Content Strategy
 
 ### Migration Notes
 
 The following changes were made to consolidate tags:
-- **Content Management** merged into **Change Management** (20)
+- **Content Management** merged into **Change Management** (19)
+- **VSCode** tag removed
 - **Technical Documentation** renamed to **Technical Writing** (5)
 - **Product Documentation** renamed to **Product Writing** (7)
 - **UX Documentation** renamed to **UX Writing** (4)
