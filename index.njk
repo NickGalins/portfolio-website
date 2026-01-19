@@ -23,16 +23,17 @@ permalink: /index.html
    PROJECTS CONTAINER - Desktop Only
    ========================================================================== #}
 <section class="projects-section">
-  <div class="projects-section__header">
-    <h2 class="projects-section__title">Selected projects and samples</h2>
-    <p class="projects-section__description">To view a Case Study or Writing Sample, select a project below. You can apply up to 5 tags to find projects of a specific type.</p>
-  </div>
-
   <div class="projects-section__container">
+    {# Header inside container #}
+    <div class="projects-section__header">
+      <h2 class="projects-section__title">Selected projects and samples</h2>
+      <p class="projects-section__description">To view a Case Study or Writing Sample, select a project below. You can apply up to 5 tags to find projects of a specific type.</p>
+    </div>
+
     {# Tag Filters - Collapsible #}
     <div class="tag-filters">
       <button class="tag-filters__toggle" id="filter-toggle" aria-expanded="false">
-        <span class="tag-filters__status" id="filter-status">Showing all projects. Select up to 5 filters.</span>
+        <span>Filter by tags</span>
         <svg class="tag-filters__chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z"/>
         </svg>
@@ -93,6 +94,8 @@ permalink: /index.html
         <div class="tag-filters__actions">
           <button class="tag-filters__clear" id="clear-filters">Clear all filters</button>
         </div>
+
+        <div class="tag-filters__status" id="filter-status">Showing all projects. Select up to 5 filters.</div>
       </div>
     </div>
 

@@ -751,8 +751,16 @@ ul, ol {
     margin-top: var(--space-2xl);
   }
 
+  .projects-section__container {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
   .projects-section__header {
-    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .projects-section__title {
@@ -763,16 +771,8 @@ ul, ol {
 
   .projects-section__description {
     font-size: 1rem;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin: 0;
-    max-width: 600px;
-  }
-
-  .projects-section__container {
-    background: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    overflow: hidden;
   }
 
   .projects-section__cards {
@@ -805,16 +805,12 @@ ul, ol {
     border: none;
     cursor: pointer;
     transition: background var(--transition-fast);
+    font-size: 0.9375rem;
+    color: var(--color-text);
   }
 
   .tag-filters__toggle:hover {
     background: rgba(255, 255, 255, 0.03);
-  }
-
-  .tag-filters__status {
-    font-size: 0.9375rem;
-    color: var(--color-text-muted);
-    text-align: left;
   }
 
   .tag-filters__chevron {
@@ -835,6 +831,15 @@ ul, ol {
 
   .tag-filters__toggle[aria-expanded="true"] + .tag-filters__content {
     display: block;
+  }
+
+  /* Status message - below filters */
+  .tag-filters__status {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
   }
 
   .tag-filters__categories {
