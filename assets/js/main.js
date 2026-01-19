@@ -236,17 +236,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update status message
     updateStatusMessage();
 
-    // Filter project cards (AND logic)
+    // Filter project cards with animation (AND logic)
     projectCards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',').map(t => t.trim());
       const matchesAll = activeFilters.every(filter => cardTags.includes(filter));
-      card.classList.toggle('is-hidden', activeFilters.length > 0 && !matchesAll);
-    });
+      const shouldHide = activeFilters.length > 0 && !matchesAll;
+      const isCurrentlyHidden = card.classList.contains('is-hidden');
 
-    // Hide empty categories
-    document.querySelectorAll('.project-category').forEach(category => {
-      const visibleCards = category.querySelectorAll('.project-card:not(.is-hidden)');
-      category.classList.toggle('is-empty', visibleCards.length === 0);
+      if (shouldHide && !isCurrentlyHidden) {
+        // Animate out, then hide
+        card.classList.add('is-filtering-out');
+        setTimeout(() => {
+          card.classList.add('is-hidden');
+          card.classList.remove('is-filtering-out');
+        }, 300);
+      } else if (!shouldHide && isCurrentlyHidden) {
+        // Show and animate in
+        card.classList.remove('is-hidden');
+        // Force reflow for animation
+        card.offsetHeight;
+        card.classList.remove('is-filtering-out');
+      }
     });
   }
 

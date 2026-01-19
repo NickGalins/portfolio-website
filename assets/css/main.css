@@ -918,40 +918,41 @@ ul, ol {
     color: var(--color-text);
   }
 
-  /* Hidden project cards when filtered */
+  /* Project cards filtering animation */
+  .project-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
   .project-card.is-hidden {
     display: none;
   }
 
-  /* Empty category when all projects filtered out */
-  .project-category.is-empty {
-    display: none;
+  .project-card.is-filtering-out {
+    opacity: 0;
+    transform: scale(0.95);
   }
 }
 
-/* Featured Projects - Desktop Only */
-.featured-projects {
+/* Projects Grid - Desktop Only */
+.projects-grid {
   display: none;
 }
 
 @media (min-width: 769px) {
-  .featured-projects {
-    display: block;
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
   }
-}
 
-.project-category {
-  margin-bottom: var(--space-xl);
-}
+  /* Smaller card styling for 4-column layout */
+  .projects-grid .project-card__content {
+    padding: var(--space-md);
+  }
 
-.project-category:last-child {
-  margin-bottom: 0;
-}
-
-.project-category__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  .projects-grid .project-card__title {
+    font-size: 0.9375rem;
+  }
 }
 
 .project-card--square .project-card__image {

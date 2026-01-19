@@ -118,31 +118,27 @@ permalink: /index.html
   'short-form': 'podcast-ad-reads-card.jpg'
 } %}
 
-<section class="featured-projects">
+<div class="projects-grid">
   {% for section in navigation.section %}
     {% for category in section.category %}
-    <div class="project-category">
-      <div class="project-category__grid">
-        {% for item in category.item %}
-        {% set project = projects | findProject(item['@_id']) %}
-        <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
-          <div class="project-card__image">
-            {% if cardImages[item['@_id']] %}
-            <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
-            {% else %}
-            <div class="project-card__placeholder"></div>
-            {% endif %}
-          </div>
-          <div class="project-card__content">
-            <h4 class="project-card__title">{{ item['@_label'] }}</h4>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
+      {% for item in category.item %}
+      {% set project = projects | findProject(item['@_id']) %}
+      <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
+        <div class="project-card__image">
+          {% if cardImages[item['@_id']] %}
+          <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+          {% else %}
+          <div class="project-card__placeholder"></div>
+          {% endif %}
+        </div>
+        <div class="project-card__content">
+          <h4 class="project-card__title">{{ item['@_label'] }}</h4>
+        </div>
+      </a>
+      {% endfor %}
     {% endfor %}
   {% endfor %}
-</section>
+</div>
     </div>{# .projects-section__cards #}
   </div>{# .projects-section__container #}
 </section>{# .projects-section #}
