@@ -56,8 +56,8 @@ A docs-as-code portfolio website built with XML content and Eleventy.
 
 1. **Copy an existing project XML file**
    ```
-   content/projects/content-design/  ← for Content Design work
-   content/projects/creative/        ← for Creative work
+   content/projects/case-studies/        ← for in-depth case studies
+   content/projects/individual-samples/  ← for focused writing samples
    ```
 
 2. **Edit the XML with your content**
@@ -104,8 +104,8 @@ portfolio-website/
 ├── content/                          # YOUR CONTENT (XML)
 │   ├── navigation.xml                # Sidebar menu structure
 │   ├── projects/
-│   │   ├── content-design/           # Content Design projects (6)
-│   │   └── creative/                 # Creative projects (6)
+│   │   ├── case-studies/             # In-depth case studies (7)
+│   │   └── individual-samples/       # Focused writing samples (6)
 │   ├── pages/
 │   │   ├── about.xml
 │   │   ├── contact.xml
@@ -223,11 +223,13 @@ Routes are created automatically from your XML `<id>` fields:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation>
-  <section id="section-id" label="Section Name">
-    <category id="cat-id" label="Category Name">
-      <item id="project-id" label="Project Title" />
-      <!-- id must match project's meta.id -->
-    </category>
+  <section id="case-studies" label="Case Studies" landing="/case-studies/">
+    <item id="project-id" label="Project Title" />
+    <!-- id must match project's meta.id -->
+  </section>
+
+  <section id="individual-samples" label="Individual Samples" landing="/individual-samples/">
+    <item id="sample-id" label="Sample Title" />
   </section>
 
   <pages>

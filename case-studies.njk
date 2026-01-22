@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Case Studies
+permalink: /case-studies/
+---
+
+{# Card image mapping: project ID -> image filename #}
+{% set cardImages = {
+  'everland-trust-safety': 'everland-trust-safety-card.jpg',
+  'aws-ai-agents': 'aws-ai-agents-tools-card.jpg',
+  'sacred-grounds-shop': 'sg-shop-processes-card.jpg',
+  'everland-narrative': 'everland-narrative-card.jpg',
+  'sacred-grounds-supernal': 'supernal-gardens-card.jpg',
+  'sacred-grounds-influencer': 'sg-influender-marketing-card.jpg',
+  'building-this-portfolio': 'building-this-site-card.jpg'
+} %}
+
+{# Company/client mapping for header display #}
+{% set companyMap = {
+  'everland-trust-safety': 'Everland',
+  'aws-ai-agents': 'AWS',
+  'sacred-grounds-shop': 'Sacred Grounds',
+  'everland-narrative': 'Everland',
+  'sacred-grounds-supernal': 'Sacred Grounds',
+  'sacred-grounds-influencer': 'Sacred Grounds',
+  'building-this-portfolio': 'Everything Storyteller'
+} %}
+
+{# Short title mapping for cleaner display #}
+{% set titleMap = {
+  'everland-trust-safety': 'Trust & Safety Reporting System',
+  'aws-ai-agents': 'AI Agents & Tools',
+  'sacred-grounds-shop': 'Shop Processes',
+  'everland-narrative': 'Narrative, Dialogue, & Creative Micro-copy',
+  'sacred-grounds-supernal': 'The Supernal Gardens',
+  'sacred-grounds-influencer': 'Influencer Marketing Campaign',
+  'building-this-portfolio': 'Building This Portfolio'
+} %}
+
+<section class="category-landing">
+  <div class="category-landing__header">
+    <h1>Case Studies</h1>
+    <p class="category-landing__intro">These selected works are deep dives into content decisions based on specific objectives. They showcase projects that required cross-collaboration as well as my contribution in content design and strategy.</p>
+  </div>
+
+  <div class="landing-cards">
+    {% for section in navigation.section %}
+      {% if section['@_id'] === 'case-studies' %}
+        {% if section.item.length %}
+          {% for item in section.item %}
+            {% set project = projects | findProject(item['@_id']) %}
+            {% set company = companyMap[item['@_id']] or 'Project' %}
+            {% set shortTitle = titleMap[item['@_id']] or item['@_label'] %}
+
+            <a href="/projects/{{ item['@_id'] }}/" class="landing-card">
+              <div class="landing-card__header">
+                <span class="landing-card__company">{{ company }}</span>
+                <span class="landing-card__divider">|</span>
+                <h3 class="landing-card__title">{{ shortTitle }}</h3>
+              </div>
+              <div class="landing-card__body">
+                <div class="landing-card__image">
+                  {% if cardImages[item['@_id']] %}
+                  <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+                  {% endif %}
+                </div>
+                <div class="landing-card__content">
+                  <p class="landing-card__teaser">
+                    {% if project and project.meta and project.meta.teaser %}
+                      {{ project.meta.teaser }}
+                    {% else %}
+                      Case study coming soon.
+                    {% endif %}
+                  </p>
+                  {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}
+                  <div class="landing-card__tags">
+                    {% for tag in project.meta.tags.tag %}
+                    <span class="landing-card__tag">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          {# Handle single item case #}
+          {% set item = section.item %}
+          {% set project = projects | findProject(item['@_id']) %}
+          {% set company = companyMap[item['@_id']] or 'Project' %}
+          {% set shortTitle = titleMap[item['@_id']] or item['@_label'] %}
+
+          <a href="/projects/{{ item['@_id'] }}/" class="landing-card">
+            <div class="landing-card__header">
+              <span class="landing-card__company">{{ company }}</span>
+              <span class="landing-card__divider">|</span>
+              <h3 class="landing-card__title">{{ shortTitle }}</h3>
+            </div>
+            <div class="landing-card__body">
+              <div class="landing-card__image">
+                {% if cardImages[item['@_id']] %}
+                <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+                {% endif %}
+              </div>
+              <div class="landing-card__content">
+                <p class="landing-card__teaser">
+                  {% if project and project.meta and project.meta.teaser %}
+                    {{ project.meta.teaser }}
+                  {% else %}
+                    Case study coming soon.
+                  {% endif %}
+                </p>
+                {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}
+                <div class="landing-card__tags">
+                  {% for tag in project.meta.tags.tag %}
+                  <span class="landing-card__tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

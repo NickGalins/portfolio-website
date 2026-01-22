@@ -76,63 +76,51 @@
 
         {# NAVIGATION MENU: Built from navigation.xml data #}
         <nav class="sidebar__nav" aria-label="Main navigation">
-          {# Loop through each top-level section (Content Design, Creative) #}
+          {# Short titles for nav menu items #}
+          {% set navTitles = {
+            'everland-trust-safety': 'In-Game Reporting System',
+            'aws-ai-agents': 'AI Agents Marketplace',
+            'sacred-grounds-shop': 'Live Game System CX',
+            'everland-narrative': 'MMO Narrative Design',
+            'sacred-grounds-supernal': 'Immersive Marketing Event',
+            'sacred-grounds-influencer': 'Influencer Marketing',
+            'building-this-portfolio': 'Building This Portfolio',
+            'google-translate-lens': 'Tech Product Documentation',
+            'sacred-grounds-rulebook': 'Game Rules',
+            'api-documentation': 'API Reference',
+            'oathforger-chapter-1': 'Fiction Narrative',
+            'short-form': 'Podcast Ad Read Copy'
+          } %}
+          {# Loop through each top-level section (Case Studies, Individual Samples) #}
           {% for section in navigation.section %}
-          <div class="nav-section">
-            {# SECTION TOGGLE BUTTON: Clickable header for collapsing/expanding #}
-            {# Shows section name (e.g., "Content Design") and arrow icon #}
-            <button class="nav-section__toggle" aria-expanded="false">
-              {{ section['@_label'] }}
-              <svg class="nav-section__icon" viewBox="0 0 24 24" width="16" height="16">
-                <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </button>
+          <div class="nav-section" data-section-id="{{ section['@_id'] }}">
+            {# SECTION HEADER: Split into link (navigates) and button (expands) #}
+            <div class="nav-section__header">
+              <a href="{{ section['@_landing'] }}" class="nav-section__link" data-landing="{{ section['@_landing'] }}">
+                {{ section['@_label'] }}
+              </a>
+              <button class="nav-section__expand" aria-expanded="false" aria-label="Expand {{ section['@_label'] }}">
+                <svg class="nav-section__icon" viewBox="0 0 24 24" width="16" height="16">
+                  <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+            </div>
 
             {# SECTION ITEMS: The collapsible content under each section #}
             <ul class="nav-section__items">
-              {# Loop through categories within this section #}
-              {% for category in section.category %}
-
-              {# SIMPLE CATEGORY: Categories with direct items (no subcategories) #}
-              {% if category.item %}
-              <li class="nav-category">
-                <span class="nav-category__label">{{ category['@_label'] }}</span>
-                <ul class="nav-category__items">
-                  {# Loop through each project/item in this category #}
-                  {% for item in category.item %}
-                  <li>
-                    {# Link to project page using its ID #}
-                    <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </li>
+              {# Handle array of items #}
+              {% if section.item.length %}
+                {% for item in section.item %}
+                <li>
+                  <a href="/projects/{{ item['@_id'] }}/">{{ navTitles[item['@_id']] or item['@_label'] }}</a>
+                </li>
+                {% endfor %}
+              {% else %}
+                {# Handle single item (not an array) #}
+                <li>
+                  <a href="/projects/{{ section.item['@_id'] }}/">{{ navTitles[section.item['@_id']] or section.item['@_label'] }}</a>
+                </li>
               {% endif %}
-
-              {# NESTED CATEGORY: Categories with subcategories #}
-              {# Example: "Writing Samples" contains "Product Docs" and "API Docs" #}
-              {% if category.subcategory %}
-              <li class="nav-category">
-                <span class="nav-category__label">{{ category['@_label'] }}</span>
-                <ul class="nav-category__items">
-                  {# Loop through subcategories #}
-                  {% for sub in category.subcategory %}
-                  <li class="nav-subcategory">
-                    <span class="nav-subcategory__label">{{ sub['@_label'] }}</span>
-                    <ul class="nav-subcategory__items">
-                      {# Loop through items in this subcategory #}
-                      {% for item in sub.item %}
-                      <li>
-                        <a href="/projects/{{ item['@_id'] }}/">{{ item['@_label'] }}</a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </li>
-              {% endif %}
-              {% endfor %}
             </ul>
           </div>
           {% endfor %}

@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation>
-  <section id="content-design" label="Content Design">
-    <category id="case-studies-ux-technical" label="Case Studies (UI/UX &amp; Technical)">
-      <item id="everland-trust-safety" label="Everland - Trust &amp; Safety Reporting System" />
-      <item id="aws-ai-agents" label="AWS - AI Agents and Tools" />
-      <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
-    </category>
-    <category id="technical-writing-samples" label="Technical Writing Samples">
-  <item id="google-translate-lens" label="Google - Translate with Lens" />
-  <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
-  <item id="aws-api-documentation" label="AWS - API Documentation" />
-</category>
+  <section id="case-studies" label="Case Studies" landing="/case-studies/">
+    <item id="everland-trust-safety" label="Everland - Trust &amp; Safety Reporting System" />
+    <item id="aws-ai-agents" label="AWS - AI Agents and Tools" />
+    <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
+    <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" />
+    <item id="sacred-grounds-supernal" label="The Supernal Gardens - Live Gamified Event Experience" />
+    <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" />
+    <item id="building-this-portfolio" label="Building This Portfolio" />
   </section>
-  
-  <section id="creative" label="Creative">
-    <category id="case-studies-storytelling" label="Case Studies (Storytelling &amp; Marketing)">
-      <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" />
-      <item id="sacred-grounds-supernal" label="The Supernal Gardens - Live Gamified Event Experience" />
-      <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" />
-    </category>
-    <category id="creative-writing-samples" label="Creative Writing Samples">
-      <item id="oathforger-chapter-1" label="Oathforger, Chapter 1 - Long Form Narrative" />
-      <item id="short-form" label="Elgato &amp; DiceEnvy - Podcast Ad Reads" />
-    </category>
+
+  <section id="individual-samples" label="Individual Samples" landing="/individual-samples/">
+    <item id="google-translate-lens" label="Google - Translate with Lens" />
+    <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
+    <item id="api-documentation" label="Gski ReviewLoop API Reference" />
+    <item id="oathforger-chapter-1" label="Oathforger, Chapter 1 - Long Form Narrative" />
+    <item id="short-form" label="Elgato &amp; DiceEnvy - Podcast Ad Reads" />
   </section>
-  
+
   <pages>
     <page id="blog" label="Everything Storyteller Blog" />
     <page id="about" label="About" />

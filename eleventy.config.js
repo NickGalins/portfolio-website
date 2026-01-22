@@ -68,11 +68,11 @@ module.exports = function(eleventyConfig) {
   // -------------------------------------------------------------------------
   // This reads all XML files from your project folders and makes them
   // available as {{ projects }} in templates. Each project gets tagged with
-  // its category (content-design or creative).
+  // its category (case-studies or individual-samples).
   eleventyConfig.addGlobalData('projects', () => {
     const projects = [];  // Start with empty array
     // Look in both project directories
-    const projectDirs = ['content/projects/content-design', 'content/projects/creative'];
+    const projectDirs = ['content/projects/case-studies', 'content/projects/individual-samples'];
 
     // Loop through each directory
     projectDirs.forEach(dir => {
@@ -89,7 +89,7 @@ module.exports = function(eleventyConfig) {
               projects.push({
                 ...data.project,  // Spread operator: copies all properties from data.project
                 // Add a 'category' field based on which folder it came from
-                category: dir.includes('content-design') ? 'content-design' : 'creative'
+                category: dir.includes('case-studies') ? 'case-studies' : 'individual-samples'
               });
             }
           }
@@ -225,6 +225,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add('README.md');      // Project README
   eleventyConfig.ignores.add('CARD-IMAGES.md'); // Card images documentation
   eleventyConfig.ignores.add('TAG-SYSTEM.md');  // Tag system documentation
+  eleventyConfig.ignores.add('CHANGELOG.md');   // Version history
 
   // -------------------------------------------------------------------------
   // ELEVENTY CONFIGURATION OBJECT

@@ -1,0 +1,121 @@
+---
+layout: base.njk
+title: Individual Samples
+permalink: /individual-samples/
+---
+
+{# Card image mapping: project ID -> image filename #}
+{% set cardImages = {
+  'google-translate-lens': 'g-translate-with-lens-card.jpg',
+  'sacred-grounds-rulebook': 'sg-rulebook-examples-card.jpg',
+  'api-documentation': 'review-loop-api-card.png',
+  'oathforger-chapter-1': 'oathforger-chapter-card.png',
+  'short-form': 'podcast-ad-reads-card.jpg'
+} %}
+
+{# Company/client mapping for header display #}
+{% set companyMap = {
+  'google-translate-lens': 'Google',
+  'sacred-grounds-rulebook': 'Sacred Grounds',
+  'api-documentation': 'Sample',
+  'oathforger-chapter-1': 'Everything Storyteller',
+  'short-form': 'Elgato / DiceEnvy'
+} %}
+
+{# Short title mapping for cleaner display #}
+{% set titleMap = {
+  'google-translate-lens': 'Translate with Lens',
+  'sacred-grounds-rulebook': 'Rulebook Examples',
+  'api-documentation': 'API Reference',
+  'oathforger-chapter-1': 'Oathforger, Chapter 1',
+  'short-form': 'Podcast Ad Reads'
+} %}
+
+<section class="category-landing">
+  <div class="category-landing__header">
+    <h1>Individual Samples</h1>
+    <p class="category-landing__intro">These focused pieces showcase specific content types—from technical documentation to narrative writing. Each demonstrates craft in a particular format without the full project context.</p>
+  </div>
+
+  <div class="landing-cards">
+    {% for section in navigation.section %}
+      {% if section['@_id'] === 'individual-samples' %}
+        {% if section.item.length %}
+          {% for item in section.item %}
+            {% set project = projects | findProject(item['@_id']) %}
+            {% set company = companyMap[item['@_id']] or 'Project' %}
+            {% set shortTitle = titleMap[item['@_id']] or item['@_label'] %}
+
+            <a href="/projects/{{ item['@_id'] }}/" class="landing-card">
+              <div class="landing-card__header">
+                <span class="landing-card__company">{{ company }}</span>
+                <span class="landing-card__divider">|</span>
+                <h3 class="landing-card__title">{{ shortTitle }}</h3>
+              </div>
+              <div class="landing-card__body">
+                <div class="landing-card__image">
+                  {% if cardImages[item['@_id']] %}
+                  <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+                  {% endif %}
+                </div>
+                <div class="landing-card__content">
+                  <p class="landing-card__teaser">
+                    {% if project and project.meta and project.meta.teaser %}
+                      {{ project.meta.teaser }}
+                    {% else %}
+                      Writing sample coming soon.
+                    {% endif %}
+                  </p>
+                  {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}
+                  <div class="landing-card__tags">
+                    {% for tag in project.meta.tags.tag %}
+                    <span class="landing-card__tag">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          {# Handle single item case #}
+          {% set item = section.item %}
+          {% set project = projects | findProject(item['@_id']) %}
+          {% set company = companyMap[item['@_id']] or 'Project' %}
+          {% set shortTitle = titleMap[item['@_id']] or item['@_label'] %}
+
+          <a href="/projects/{{ item['@_id'] }}/" class="landing-card">
+            <div class="landing-card__header">
+              <span class="landing-card__company">{{ company }}</span>
+              <span class="landing-card__divider">|</span>
+              <h3 class="landing-card__title">{{ shortTitle }}</h3>
+            </div>
+            <div class="landing-card__body">
+              <div class="landing-card__image">
+                {% if cardImages[item['@_id']] %}
+                <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+                {% endif %}
+              </div>
+              <div class="landing-card__content">
+                <p class="landing-card__teaser">
+                  {% if project and project.meta and project.meta.teaser %}
+                    {{ project.meta.teaser }}
+                  {% else %}
+                    Writing sample coming soon.
+                  {% endif %}
+                </p>
+                {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}
+                <div class="landing-card__tags">
+                  {% for tag in project.meta.tags.tag %}
+                  <span class="landing-card__tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

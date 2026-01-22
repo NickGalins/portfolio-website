@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>api-documentation</id>
+    <title>Gski ReviewLoop API Reference</title>
+    <subtitle>Note: This service is fictional and provided as an API documentation writing sample.</subtitle>
+    <date>2024</date>
+    <client></client>
+    <role>Technical Writer</role>
+    <thumbnail>/assets/images/review-loop-api-card.png</thumbnail>
+    <teaser>API documentation samples with endpoint descriptions, request/response examples, and error handling guidance. Written for developer audiences with varying familiarity levels.</teaser>
+    <tags>
+      <tag>UX Writing</tag>
+      <tag>API Documentation</tag>
+      <tag>Content Design</tag>
+      <tag>Writing Sample</tag>
+      <tag>GenAI</tag>
+      <tag>Change Management</tag>
+      <tag>Cross-functional Collaboration</tag>
+      <tag>Information Architecture</tag>
+      <tag>Content Strategy</tag>
+    </tags>
+  </meta>
+  
+  <summary>
+    Gski ReviewLoop provides collaboration primitives for creative tools. You can create threads pinned to a location in a file, add comments, and resolve threads. Use webhooks to receive events when review activity occurs.
+  </summary>
+
+  <content>
+    <section>
+      <heading>Endpoint</heading>
+      <body><![CDATA[
+        <p>The endpoint is specific to your Region.</p>
+        <pre><code>reviewloop.{region}.gski.example</code></pre>
+      ]]></body>
+    </section>
+
+    <section>
+      <heading>Version</heading>
+      <body><![CDATA[
+        <p>API version: 2035-04-19</p>
+      ]]></body>
+    </section>
+
+    <section class="bordered-bottom">
+      <heading>Authentication and authorization</heading>
+      <body><![CDATA[
+        <p>You must sign requests with Gski Signature V4 and include the signature in the Authorization header.</p>
+        <p>If you use one of the Gski SDKs, requests are signed for you.</p>
+
+        <div class="toc-box">
+          <strong>Actions</strong>
+          <ul>
+            <li><a href="#createthread">CreateThread</a></li>
+            <li><a href="#createcomment">CreateComment</a></li>
+            <li><a href="#resolvethread">ResolveThread</a></li>
+          </ul>
+        </div>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>CreateThread</heading>
+      <body><![CDATA[
+        <p>Creates a review thread on the specified file. You can pin the thread to an anchor such as an image region, a video region at a timestamp, an audio time range, or a document text range.</p>
+
+        <h3>Request Syntax</h3>
+<pre><code>POST /v1/files/{fileId}/threads HTTP/1.1
+Host: reviewloop.{region}.gski.example
+Content-Type: application/json
+Authorization: CL4-HMAC-SHA256 Credential=CLAKIA.../{date}/{region}/reviewloop/cl4_request, SignedHeaders=..., Signature=...
+X-Cl-Date: 20350419T184211Z
+
+{
+  "title": "string",
+  "body": "string",
+  "priority": "string",
+  "assigneeUserId": "string",
+  "mentions": ["string"],
+  "anchor": { ... }
+}</code></pre>
+
+        <h3>URI Request Parameters</h3>
+        <p>The request uses the following URI parameters.</p>
+        <dl>
+          <dt>fileId</dt>
+          <dd>The identifier of the file in your system.<br/>
+          Type: String<br/>
+          Length Constraints: Minimum length of 1. Maximum length of 128.<br/>
+          Pattern: <code>^[A-Za-z0-9._\\-]+$</code><br/>
+          Required: Yes</dd>
+        </dl>
+
+        <h3>Request Body</h3>
+        <p>For information about the parameters that are common to all actions, see Common Parameters.</p>
+        <div class="info-box"><strong>Note:</strong> In the following list, the required parameters are described first.</div>
+        <dl>
+          <dt>title</dt>
+          <dd>A short summary visible in the review UI.<br/>
+          Type: String<br/>
+          Length Constraints: Minimum length of 1. Maximum length of 120.<br/>
+          Required: Yes</dd>
+
+          <dt>body</dt>
+          <dd>A description of the feedback.<br/>
+          Type: String<br/>
+          Length Constraints: Maximum length of 5000.<br/>
+          Required: No</dd>
+
+          <dt>priority</dt>
+          <dd>The priority of the thread.<br/>
+          Type: String<br/>
+          Valid Values: <code>low</code> | <code>medium</code> | <code>high</code><br/>
+          Required: No</dd>
+
+          <dt>assigneeUserId</dt>
+          <dd>The user to assign the thread to.<br/>
+          Type: String<br/>
+          Length Constraints: Minimum length of 1. Maximum length of 64.<br/>
+          Pattern: <code>^usr_[A-Za-z0-9]+$</code><br/>
+          Required: No</dd>
+
+          <dt>mentions</dt>
+          <dd>A list of users to mention in the thread.<br/>
+          Type: Array of String<br/>
+          Array Members: Maximum number of 50 items.<br/>
+          Required: No</dd>
+
+          <dt>anchor</dt>
+          <dd>The location in the file to pin the thread to.<br/>
+          Type: Anchor object<br/>
+          Required: No</dd>
+        </dl>
+
+        <h4>Anchor object</h4>
+        <p>Provide exactly one of the following anchor shapes.</p>
+
+        <p><strong>ImageRegionAnchor</strong></p>
+<pre><code>{
+  "type": "image_region",
+  "rect": { "x": 120, "y": 80, "width": 300, "height": 180 },
+  "canvas": { "width": 2048, "height": 2048 }
+}</code></pre>
+
+        <p><strong>VideoRegionAnchor</strong></p>
+<pre><code>{
+  "type": "video_region",
+  "timecodeMs": 12400,
+  "rect": { "x": 812, "y": 340, "width": 420, "height": 260 },
+  "canvas": { "width": 1920, "height": 1080 }
+}</code></pre>
+
+        <p><strong>TimeRangeAnchor</strong></p>
+<pre><code>{
+  "type": "time_range",
+  "startMs": 61200,
+  "endMs": 68400
+}</code></pre>
+
+        <p><strong>TextRangeAnchor</strong></p>
+<pre><code>{
+  "type": "text_range",
+  "startOffset": 1024,
+  "endOffset": 1188
+}</code></pre>
+
+        <h4>Anchor validation</h4>
+        <p>For region anchors, <code>rect</code> must fit within <code>canvas</code>.</p>
+        <p>For time ranges, <code>endMs</code> must be greater than <code>startMs</code>.</p>
+        <p>For text ranges, offsets must be non-negative and <code>endOffset</code> must be greater than <code>startOffset</code>.</p>
+        <p>If an anchor fails validation, the service returns <code>ValidationException</code>.</p>
+
+        <h3>Response Syntax</h3>
+<pre><code>HTTP/1.1 201
+Content-Type: application/json
+x-cl-RequestId: 01234567-89ab-cdef-0123-456789abcdef
+
+{
+  "thread": {
+    "threadId": "string",
+    "fileId": "string",
+    "status": "string",
+    "priority": "string",
+    "title": "string",
+    "body": "string",
+    "assigneeUserId": "string",
+    "createdByUserId": "string",
+    "createdAt": "string",
+    "updatedAt": "string",
+    "mentions": ["string"],
+    "anchor": { ... }
+  }
+}</code></pre>
+
+        <h3>Response Elements</h3>
+        <p>If the action is successful, the service sends back an HTTP 201 response.</p>
+        <p>The service returns the following data in JSON format.</p>
+        <dl>
+          <dt>thread</dt>
+          <dd>The new thread.<br/>
+          Type: Thread object</dd>
+        </dl>
+
+        <h3>Errors</h3>
+        <p>For information about the errors that are common to all actions, see Common Errors.</p>
+        <dl>
+          <dt>AccessDeniedException</dt>
+          <dd>You do not have sufficient access to perform this action.<br/>
+          HTTP Status Code: 403</dd>
+
+          <dt>ResourceNotFoundException</dt>
+          <dd>The specified file was not found.<br/>
+          HTTP Status Code: 404</dd>
+
+          <dt>ValidationException</dt>
+          <dd>One or more request fields failed validation.<br/>
+          HTTP Status Code: 422</dd>
+
+          <dt>ThrottlingException</dt>
+          <dd>The request was denied due to request throttling.<br/>
+          HTTP Status Code: 429</dd>
+        </dl>
+
+        <h3>Examples</h3>
+        <div class="info-box"><strong>Note:</strong> In the following example, the Authorization header contents (<code>[authorization-params]</code>) must be replaced with a Gski Signature V4 signature. You only need to sign HTTP requests if you intend to manually create them. When you use an SDK, requests are signed for you.</div>
+
+        <h4>Sample Request</h4>
+<pre><code>POST /v1/files/file_8f3K2/threads HTTP/1.1
+Host: reviewloop.us-east-1.gski.example
+Content-Type: application/json
+Authorization: [authorization-params]
+X-Cl-Date: 20350419T184211Z
+
+{
+  "title": "Timing feels late on this motion",
+  "body": "Can we shift the punch-in earlier by about 6 frames?",
+  "priority": "medium",
+  "assigneeUserId": "usr_29ad",
+  "mentions": ["usr_29ad", "usr_91bf"],
+  "anchor": {
+    "type": "video_region",
+    "timecodeMs": 12400,
+    "rect": { "x": 812, "y": 340, "width": 420, "height": 260 },
+    "canvas": { "width": 1920, "height": 1080 }
+  }
+}</code></pre>
+
+        <h4>Sample Response</h4>
+<pre><code>HTTP/1.1 201
+Content-Type: application/json
+x-cl-RequestId: [request-id]
+
+{
+  "thread": {
+    "threadId": "thr_01J1C7B3C8S9R4GQ1MZ0P2D8JW",
+    "fileId": "file_8f3K2",
+    "status": "open",
+    "priority": "medium",
+    "title": "Timing feels late on this motion",
+    "body": "Can we shift the punch-in earlier by about 6 frames?",
+    "assigneeUserId": "usr_29ad",
+    "createdByUserId": "usr_91bf",
+    "createdAt": "2035-04-19T18:42:11Z",
+    "updatedAt": "2035-04-19T18:42:11Z",
+    "mentions": ["usr_29ad", "usr_91bf"],
+    "anchor": {
+      "type": "video_region",
+      "timecodeMs": 12400,
+      "rect": { "x": 812, "y": 340, "width": 420, "height": 260 },
+      "canvas": { "width": 1920, "height": 1080 }
+    }
+  }
+}</code></pre>
+
+        <h3>See Also</h3>
+        <ul>
+          <li><a href="#createcomment">CreateComment</a></li>
+          <li><a href="#resolvethread">ResolveThread</a></li>
+        </ul>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>CreateComment</heading>
+      <body><![CDATA[
+        <p>Creates a comment in the specified thread.</p>
+
+        <h3>Request Syntax</h3>
+<pre><code>POST /v1/threads/{threadId}/comments HTTP/1.1
+Host: reviewloop.{region}.gski.example
+Content-Type: application/json
+
+{
+  "body": "string",
+  "mentions": ["string"]
+}</code></pre>
+
+        <h3>URI Request Parameters</h3>
+        <dl>
+          <dt>threadId</dt>
+          <dd>The identifier of the thread.<br/>
+          Type: String<br/>
+          Pattern: <code>^thr_[A-Za-z0-9]+$</code><br/>
+          Required: Yes</dd>
+        </dl>
+
+        <h3>Request Body</h3>
+        <div class="info-box"><strong>Note:</strong> In the following list, the required parameters are described first.</div>
+        <dl>
+          <dt>body</dt>
+          <dd>The comment text.<br/>
+          Type: String<br/>
+          Length Constraints: Minimum length of 1. Maximum length of 5000.<br/>
+          Required: Yes</dd>
+
+          <dt>mentions</dt>
+          <dd>A list of users to mention in the comment.<br/>
+          Type: Array of String<br/>
+          Array Members: Maximum number of 50 items.<br/>
+          Required: No</dd>
+        </dl>
+
+        <h3>Response Syntax</h3>
+<pre><code>HTTP/1.1 201
+Content-Type: application/json
+
+{
+  "comment": {
+    "commentId": "string",
+    "threadId": "string",
+    "fileId": "string",
+    "body": "string",
+    "createdByUserId": "string",
+    "createdAt": "string",
+    "mentions": ["string"]
+  }
+}</code></pre>
+
+        <h3>Errors</h3>
+        <p>For information about the errors that are common to all actions, see Common Errors.</p>
+        <dl>
+          <dt>ConflictException</dt>
+          <dd>The thread is resolved and your workspace does not allow comments on resolved threads.<br/>
+          HTTP Status Code: 409</dd>
+
+          <dt>ResourceNotFoundException</dt>
+          <dd>The specified thread was not found.<br/>
+          HTTP Status Code: 404</dd>
+
+          <dt>ValidationException</dt>
+          <dd>One or more request fields failed validation.<br/>
+          HTTP Status Code: 422</dd>
+        </dl>
+
+        <h3>See Also</h3>
+        <ul>
+          <li><a href="#createthread">CreateThread</a></li>
+          <li><a href="#resolvethread">ResolveThread</a></li>
+        </ul>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>ResolveThread</heading>
+      <body><![CDATA[
+        <p>Marks the specified thread as resolved.</p>
+
+        <h3>Request Syntax</h3>
+<pre><code>POST /v1/threads/{threadId}/resolve HTTP/1.1
+Host: reviewloop.{region}.gski.example
+Content-Type: application/json
+
+{
+  "resolutionNote": "string"
+}</code></pre>
+
+        <h3>URI Request Parameters</h3>
+        <dl>
+          <dt>threadId</dt>
+          <dd>The identifier of the thread.<br/>
+          Type: String<br/>
+          Pattern: <code>^thr_[A-Za-z0-9]+$</code><br/>
+          Required: Yes</dd>
+        </dl>
+
+        <h3>Request Body</h3>
+        <dl>
+          <dt>resolutionNote</dt>
+          <dd>A note added to the resolution event.<br/>
+          Type: String<br/>
+          Length Constraints: Maximum length of 2000.<br/>
+          Required: No</dd>
+        </dl>
+
+        <h3>Response Syntax</h3>
+<pre><code>HTTP/1.1 200
+Content-Type: application/json
+
+{
+  "thread": {
+    "threadId": "string",
+    "status": "string",
+    "resolvedAt": "string",
+    "resolvedByUserId": "string",
+    "updatedAt": "string"
+  }
+}</code></pre>
+
+        <h3>Errors</h3>
+        <p>For information about the errors that are common to all actions, see Common Errors.</p>
+        <dl>
+          <dt>ResourceNotFoundException</dt>
+          <dd>The specified thread was not found.<br/>
+          HTTP Status Code: 404</dd>
+
+          <dt>ConflictException</dt>
+          <dd>The thread is already resolved.<br/>
+          HTTP Status Code: 409</dd>
+        </dl>
+
+        <h3>See Also</h3>
+        <ul>
+          <li><a href="#createthread">CreateThread</a></li>
+          <li><a href="#createcomment">CreateComment</a></li>
+        </ul>
+      ]]></body>
+    </section>
+  </content>
+</project>

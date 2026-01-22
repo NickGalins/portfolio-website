@@ -110,18 +110,19 @@ permalink: /index.html
   'sacred-grounds-shop': 'sg-shop-processes-card.jpg',
   'google-translate-lens': 'g-translate-with-lens-card.jpg',
   'sacred-grounds-rulebook': 'sg-rulebook-examples-card.jpg',
-  'aws-api-documentation': 'aws-api-docs-card.jpg',
+  'api-documentation': 'review-loop-api-card.png',
   'everland-narrative': 'everland-narrative-card.jpg',
   'sacred-grounds-supernal': 'supernal-gardens-card.jpg',
   'sacred-grounds-influencer': 'sg-influender-marketing-card.jpg',
   'oathforger-chapter-1': 'oathforger-chapter-card.png',
-  'short-form': 'podcast-ad-reads-card.jpg'
+  'short-form': 'podcast-ad-reads-card.jpg',
+  'building-this-portfolio': 'building-this-site-card.jpg'
 } %}
 
 <div class="projects-grid">
   {% for section in navigation.section %}
-    {% for category in section.category %}
-      {% for item in category.item %}
+    {% if section.item.length %}
+      {% for item in section.item %}
       {% set project = projects | findProject(item['@_id']) %}
       <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
         <div class="project-card__image">
@@ -136,8 +137,27 @@ permalink: /index.html
         </div>
       </a>
       {% endfor %}
-    {% endfor %}
+    {% else %}
+      {# Handle single item case #}
+      {% set item = section.item %}
+      {% set project = projects | findProject(item['@_id']) %}
+      <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
+        <div class="project-card__image">
+          {% if cardImages[item['@_id']] %}
+          <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
+          {% else %}
+          <div class="project-card__placeholder"></div>
+          {% endif %}
+        </div>
+        <div class="project-card__content">
+          <h4 class="project-card__title">{{ item['@_label'] }}</h4>
+        </div>
+      </a>
+    {% endif %}
   {% endfor %}
+</div>
+<div class="projects-grid__no-results" id="no-results">
+  No results. Select a different combination of tags to view projects.
 </div>
     </div>{# .projects-section__cards #}
   </div>{# .projects-section__container #}

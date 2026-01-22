@@ -2,6 +2,18 @@
   "name": "nick-galinski-portfolio",
   "version": "1.0.0",
   "description": "Portfolio website for Nick Galinski",
+  "homepage": "https://github.com/NickGalins/portfolio-website#readme",
+  "bugs": {
+    "url": "https://github.com/NickGalins/portfolio-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickGalins/portfolio-website.git"
+  },
+  "license": "ISC",
+  "author": "NickGalins",
+  "type": "commonjs",
+  "main": "eleventy.config.js",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",

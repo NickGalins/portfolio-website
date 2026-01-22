@@ -43,8 +43,19 @@ permalink: /projects/{{ project.meta.id }}/index.html
   
   <div class="project__content">
     {% for section in project.content.section %}
-    <section class="project__section">
-      <h2>{{ section.heading }}</h2>
+    {% set sectionId = section.heading | lower | replace(" ", "-") | replace("/", "-") %}
+    <section class="project__section{% if section['@_class'] %} {{ section['@_class'] }}{% endif %}" id="{{ sectionId }}">
+      <div class="project__section-header">
+        <h2>{{ section.heading }}</h2>
+        {% if section['@_anchor'] %}
+        <a href="#{{ sectionId }}" class="project__anchor-link" title="Copy link to section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </a>
+        {% endif %}
+      </div>
       <div class="project__body">
         {{ section.body | safe }}
       </div>
@@ -71,14 +82,4 @@ permalink: /projects/{{ project.meta.id }}/index.html
     {% endfor %}
   </div>
   
-  {% if project.outcomes %}
-  <section class="project__outcomes">
-    <h2>Outcomes</h2>
-    <ul>
-      {% for outcome in project.outcomes.outcome %}
-      <li>{{ outcome }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
 </article>

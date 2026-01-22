@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>building-this-portfolio</id>
+    <title>Building This Portfolio</title>
+    <subtitle>A meta case study on creating a role-agnostic portfolio</subtitle>
+    <client>Personal Project</client>
+    <role>Content Designer &amp; Developer</role>
+    <thumbnail>/assets/images/building-this-site-card.jpg</thumbnail>
+    <teaser>How I designed a format-based navigation system to present work across Content Design, Technical Writing, and Narrative roles.</teaser>
+    <tags>
+      <tag>Content Design</tag>
+      <tag>Case Study</tag>
+      <tag>Information Architecture</tag>
+      <tag>Content Strategy</tag>
+    </tags>
+  </meta>
+
+  <summary>
+    This case study explores the decisions behind building this portfolio site. As a multidisciplinary writer spanning Content Design, Technical Writing, and Narrative/Game Writing, I needed a portfolio structure that could adapt to different hiring contexts without pigeonholing my work into a single specialty.
+  </summary>
+
+  <content>
+    <section>
+      <heading>Challenge</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>Creating a role-agnostic portfolio for a multidisciplinary writer. The challenge was presenting work that spans Content Design, Technical Writing, and Narrative/Game Design without forcing visitors to choose a professional identity before exploring.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Information Architecture Decisions</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>Why format-based taxonomy (Case Studies vs. Individual Samples) over role-based categories. The distinction is about depth and presentation style, not professional specialty:</p>
+          <ul>
+            <li><strong>Case Studies:</strong> Deep dives into content decisions based on specific objectives, showcasing cross-collaboration and strategic thinking</li>
+            <li><strong>Individual Samples:</strong> Focused pieces demonstrating craft in a particular format without full project context</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Technical Choices</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>Technology stack and why these choices support the content goals:</p>
+          <ul>
+            <li>Eleventy 2.0 static site generator</li>
+            <li>XML-based content model (not Markdown)</li>
+            <li>Nunjucks templating</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Navigation Design</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>How the tag system works for discovery while categories handle wayfinding:</p>
+          <ul>
+            <li>18 tags across 4 categories for filtering (desktop only)</li>
+            <li>Category landing pages for mobile users who don't have desktop tag filters</li>
+            <li>localStorage for nav state persistence</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Content Strategy</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>The distinction between case studies and samples, and how each type serves different evaluation needs for hiring managers.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Responsive Considerations</heading>
+      <body>
+        <![CDATA[
+          <p><em>[Placeholder - Nick to write]</em></p>
+          <p>How the portfolio adapts between desktop (with tag filters) and mobile (nav-only browsing), and why category landing pages are critical for mobile users.</p>
+        ]]>
+      </body>
+    </section>
+  </content>
+
+  <outcomes>
+    <outcome>Created a navigation structure that adapts to different hiring contexts</outcome>
+    <outcome>Designed a tag system that lets work speak for itself across specialties</outcome>
+    <outcome>Built an accessible, responsive experience that works on all devices</outcome>
+  </outcomes>
+</project>

@@ -98,44 +98,86 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // NAVIGATION SECTION TOGGLES
   // ==========================================================================
-  // The navigation has collapsible sections (Content Design, Creative)
-  // This code makes the section headers clickable to expand/collapse
+  // The navigation has collapsible sections (Case Studies, Individual Samples)
+  // - Category text link navigates to landing page
+  // - Chevron button expands/collapses the submenu
 
-  // Find all section toggle buttons in the navigation
-  const sectionToggles = document.querySelectorAll('.nav-section__toggle');
+  // Find all expand buttons in the navigation
+  const sectionExpands = document.querySelectorAll('.nav-section__expand');
+  // Find all section links (for current page highlighting)
+  const sectionLinks = document.querySelectorAll('.nav-section__link');
 
-  // Loop through each toggle button
-  sectionToggles.forEach((toggle, index) => {
-    // DEFAULT STATE: Start with first two sections expanded
-    // (Content Design = 0, Creative = 1)
-    if (index === 0 || index === 1) {
-      toggle.setAttribute('aria-expanded', 'true');
+  // STORAGE KEY for remembering expanded sections
+  const NAV_STATE_KEY = 'navExpandedSections';
+
+  // Get saved section states from localStorage (or empty object)
+  function getSavedNavState() {
+    try {
+      return JSON.parse(localStorage.getItem(NAV_STATE_KEY)) || {};
+    } catch {
+      return {};
     }
+  }
 
-    // CLICK HANDLER: Toggle expanded/collapsed state
-    toggle.addEventListener('click', () => {
-      // Check current state (true = expanded, false = collapsed)
-      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-      // Flip the state (!isExpanded means opposite)
-      toggle.setAttribute('aria-expanded', !isExpanded);
-      // NOTE: CSS uses [aria-expanded="true"] to show/hide section content
+  // Save section states to localStorage
+  function saveNavState(state) {
+    localStorage.setItem(NAV_STATE_KEY, JSON.stringify(state));
+  }
+
+  // Loop through each expand button
+  sectionExpands.forEach((expandBtn) => {
+    const section = expandBtn.closest('.nav-section');
+    const sectionId = section?.dataset.sectionId;
+
+    // DEFAULT STATE: All sections start collapsed
+    // (unless they have a saved expanded state or contain current page)
+    expandBtn.setAttribute('aria-expanded', 'false');
+
+    // CLICK HANDLER: Toggle expand/collapse when clicking the chevron button
+    // This does NOT navigate - only expands/collapses the submenu
+    expandBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isExpanded = expandBtn.getAttribute('aria-expanded') === 'true';
+      expandBtn.setAttribute('aria-expanded', !isExpanded);
+
+      // Save state to localStorage
+      if (sectionId) {
+        const state = getSavedNavState();
+        state[sectionId] = !isExpanded;
+        saveNavState(state);
+      }
     });
   });
-  
+
   // ==========================================================================
-  // HIGHLIGHT CURRENT PAGE IN NAVIGATION
+  // HIGHLIGHT CURRENT PAGE IN NAVIGATION + RESTORE SAVED STATES
   // ==========================================================================
   // This finds the link to the current page and highlights it, plus expands
-  // its parent section so the user can see where they are in the site
+  // its parent section so the user can see where they are in the site.
+  // Also restores any manually expanded sections from localStorage.
 
   // Get the current page's URL path (e.g., "/about/" or "/projects/project-id/")
   const currentPath = window.location.pathname;
   // Find all navigation links
   const navLinks = document.querySelectorAll('.sidebar__nav a');
+  // Get saved nav states
+  const savedNavState = getSavedNavState();
+
+  // First, restore saved expanded states
+  sectionExpands.forEach((expandBtn) => {
+    const section = expandBtn.closest('.nav-section');
+    const sectionId = section?.dataset.sectionId;
+    if (sectionId && savedNavState[sectionId]) {
+      expandBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
 
   // Check each link to see if it matches the current page
   navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    const linkHref = link.getAttribute('href');
+
+    // Check for exact match OR if current path is within this section's landing page
+    if (linkHref === currentPath) {
       // Add 'is-current' class to highlight this link (CSS styles it)
       link.classList.add('is-current');
 
@@ -143,13 +185,59 @@ document.addEventListener('DOMContentLoaded', () => {
       // closest() finds the nearest parent element matching the selector
       const section = link.closest('.nav-section');
       if (section) {
-        const toggle = section.querySelector('.nav-section__toggle');
-        if (toggle) {
+        const expandBtn = section.querySelector('.nav-section__expand');
+        if (expandBtn) {
           // Set to expanded so user can see the highlighted link
-          toggle.setAttribute('aria-expanded', 'true');
+          expandBtn.setAttribute('aria-expanded', 'true');
         }
       }
     }
+
+    // Also check if this is a section landing page link that matches current path
+    if (link.classList.contains('nav-section__link') && linkHref === currentPath) {
+      link.classList.add('is-current');
+      // Also expand the section when on its landing page
+      const section = link.closest('.nav-section');
+      if (section) {
+        const expandBtn = section.querySelector('.nav-section__expand');
+        if (expandBtn) {
+          expandBtn.setAttribute('aria-expanded', 'true');
+        }
+      }
+    }
+  });
+
+  // Auto-expand section if we're on a project page within that section
+  // Check landing pages to determine which section we're in
+  sectionLinks.forEach((link) => {
+    const landingPath = link.dataset.landing;
+    const section = link.closest('.nav-section');
+    const expandBtn = section?.querySelector('.nav-section__expand');
+
+    // If current path starts with the landing path (e.g., /case-studies/ matches /case-studies/some-project/)
+    // OR if current path is a project under this section
+    if (landingPath && expandBtn && (currentPath === landingPath || currentPath.startsWith(landingPath.replace(/\/$/, '') + '/'))) {
+      expandBtn.setAttribute('aria-expanded', 'true');
+      if (currentPath === landingPath) {
+        link.classList.add('is-current');
+      }
+    }
+  });
+
+  // ==========================================================================
+  // LANDING PAGE TAGS TOGGLE
+  // ==========================================================================
+  // On category landing pages, tags are collapsed by default with a toggle button
+
+  const tagsToggles = document.querySelectorAll('.landing-card__tags-toggle');
+
+  tagsToggles.forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent card link from firing
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !isExpanded);
+    });
   });
   
   // ==========================================================================
@@ -199,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearButton = document.getElementById('clear-filters');
   const actionsContainer = document.querySelector('.tag-filters__actions');
   const projectCards = document.querySelectorAll('.project-card[data-tags]');
+  const noResultsMessage = document.getElementById('no-results');
 
   // Update the status message based on active filters
   function updateStatusMessage() {
@@ -248,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Determine which cards to hide/show
     const cardsToHide = [];
     const cardsToShow = [];
+    let visibleCount = 0;
 
     projectCards.forEach(card => {
       const cardTags = (card.dataset.tags || '').split(',').map(t => t.trim());
@@ -259,8 +349,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsToHide.push(card);
       } else if (!shouldHide && isCurrentlyHidden) {
         cardsToShow.push(card);
+        visibleCount++;
+      } else if (!shouldHide && !isCurrentlyHidden) {
+        visibleCount++;
       }
     });
+
+    // Show/hide no results message
+    if (noResultsMessage) {
+      noResultsMessage.classList.toggle('is-visible', visibleCount === 0 && activeFilters.length > 0);
+    }
 
     // Animate cards out with pop effect
     cardsToHide.forEach(card => {

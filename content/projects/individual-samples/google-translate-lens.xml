@@ -8,6 +8,7 @@
     <client>Portfolio Sample</client>
     <role>Technical Writer</role>
     <thumbnail>/assets/images/google-lens-thumb.png</thumbnail>
+    <teaser>UX writing samples demonstrating clear, concise microcopy for the Translate with Lens feature. Shows how constraints of mobile UI and international audiences shaped content decisions.</teaser>
     <tags>
       <tag>UX Writing</tag>
       <tag>Technical Writing</tag>
