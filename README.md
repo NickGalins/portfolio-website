@@ -134,6 +134,9 @@ portfolio-website/
 │   ├── blog.njk                      # Blog listing
 │   ├── blog-post.njk                 # Individual blog posts
 │   ├── project.njk                   # Individual projects
+│   ├── case-studies.njk              # Case Studies landing page
+│   ├── individual-samples.njk        # Individual Samples landing page
+│   ├── content-history.njk           # Content History (brands, talent, shows)
 │   └── sitemap.njk                   # XML sitemap for SEO
 │
 ├── .github/workflows/deploy.yml      # AUTO-DEPLOY (don't edit)
@@ -230,6 +233,13 @@ Routes are created automatically from your XML `<id>` fields:
 
   <section id="individual-samples" label="Individual Samples" landing="/individual-samples/">
     <item id="sample-id" label="Sample Title" />
+  </section>
+
+  <!-- Sections can use anchor links for in-page navigation -->
+  <section id="content-history" label="Content History" landing="/content-history/">
+    <item id="production" label="Production" anchor="/content-history/#production" />
+    <item id="copywriting" label="Copywriting" anchor="/content-history/#copywriting" />
+    <item id="publications" label="Publications" anchor="/content-history/#publications" />
   </section>
 
   <pages>

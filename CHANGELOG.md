@@ -4,6 +4,39 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-22 - Content History Page & Mini Cards
+
+### Added
+
+- New "Content History" landing page (`content-history.njk`) replacing "Brands & Influencers"
+- Table of Contents navigation within Content History page
+- Collapsible details/zippy sections for Production, Copywriting, and Publications
+- Anchor link SVG icons on section headings for direct linking
+- 15 mini-cards under Production section featuring brands, talent, and shows
+- JavaScript to auto-open details sections when navigating to anchors
+- Mini-card component styles with 125x125px thumbnails
+
+### Changed
+
+- Renamed "Brands & Influencers" section to "Content History"
+- URL changed from `/brands-influencers/` to `/content-history/`
+- Navigation items now use anchor links for in-page navigation (Production, Copywriting, Publications)
+- Updated sitemap.njk with new Content History URL
+- Card backgrounds updated to dark blue (#121f30) for brand-card and mini-card components
+- Mini-card role/description text now white, sentence case (was blue uppercase)
+- Mini-card content top-justified (was center-justified)
+
+### Renamed
+
+- `assets/images/brands-influencers/` → `assets/images/content-history/`
+
+## 2026-01-21 - Sitemap Fix
+
+### Fixed
+- Updated sitemap template to use new flat navigation structure (`section > item` instead of `section > category > item`)
+- Added `/case-studies/` and `/individual-samples/` landing pages to sitemap
+- Removed stray markdown code fence from sitemap.njk
+
 ## 2026-01-21 - Portfolio Reorganization & API Documentation Sample
 
 ### Added

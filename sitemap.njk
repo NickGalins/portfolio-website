@@ -28,12 +28,18 @@ eleventyExcludeFromCollections: true
     <loc>https://nicholasgalinski.com/individual-samples/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nicholasgalinski.com/content-history/</loc>
+    <priority>0.8</priority>
+  </url>
   {%- for section in navigation.section %}
   {%- for item in section.item %}
+  {%- if not item['@_anchor'] %}
   <url>
     <loc>https://nicholasgalinski.com/projects/{{ item['@_id'] }}/</loc>
     <priority>0.7</priority>
   </url>
+  {%- endif %}
   {%- endfor %}
   {%- endfor %}
 </urlset>

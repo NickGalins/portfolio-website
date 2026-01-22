@@ -527,4 +527,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update lens position on mouse move
     img.addEventListener('mousemove', moveLens);
   });
+
+  // ==========================================================================
+  // CONTENT HISTORY - Open details when navigating to anchor
+  // ==========================================================================
+  // When clicking a link to an anchor on the content-history page (either from
+  // the left nav or the TOC), open the associated details/zippy element.
+
+  function openDetailsForHash(hash) {
+    if (!hash) return;
+
+    // Find the target section
+    const targetSection = document.querySelector(hash);
+    if (!targetSection) return;
+
+    // Find the details element within this section
+    const details = targetSection.querySelector('.landing-section__details');
+    if (details) {
+      details.setAttribute('open', '');
+    }
+  }
+
+  // Handle initial page load with hash
+  if (window.location.hash) {
+    openDetailsForHash(window.location.hash);
+  }
+
+  // Handle clicks on anchor links (TOC and nav)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="#"]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    // Check if it's a same-page anchor or anchor to content-history
+    if (href.startsWith('#') || href.includes('/content-history/#')) {
+      const hash = href.includes('#') ? '#' + href.split('#')[1] : null;
+      if (hash) {
+        // Small delay to let the browser navigate first
+        setTimeout(() => openDetailsForHash(hash), 50);
+      }
+    }
+  });
+
+  // Handle browser back/forward navigation
+  window.addEventListener('hashchange', () => {
+    openDetailsForHash(window.location.hash);
+  });
 });

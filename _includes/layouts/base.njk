@@ -112,13 +112,21 @@
               {% if section.item.length %}
                 {% for item in section.item %}
                 <li>
+                  {% if item['@_anchor'] %}
+                  <a href="{{ item['@_anchor'] }}">{{ navTitles[item['@_id']] or item['@_label'] }}</a>
+                  {% else %}
                   <a href="/projects/{{ item['@_id'] }}/">{{ navTitles[item['@_id']] or item['@_label'] }}</a>
+                  {% endif %}
                 </li>
                 {% endfor %}
               {% else %}
                 {# Handle single item (not an array) #}
                 <li>
+                  {% if section.item['@_anchor'] %}
+                  <a href="{{ section.item['@_anchor'] }}">{{ navTitles[section.item['@_id']] or section.item['@_label'] }}</a>
+                  {% else %}
                   <a href="/projects/{{ section.item['@_id'] }}/">{{ navTitles[section.item['@_id']] or section.item['@_label'] }}</a>
+                  {% endif %}
                 </li>
               {% endif %}
             </ul>

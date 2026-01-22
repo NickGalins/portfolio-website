@@ -18,6 +18,12 @@
     <item id="short-form" label="Elgato &amp; DiceEnvy - Podcast Ad Reads" />
   </section>
 
+  <section id="content-history" label="Content History" landing="/content-history/">
+    <item id="production" label="Production" anchor="/content-history/#production" />
+    <item id="copywriting" label="Copywriting" anchor="/content-history/#copywriting" />
+    <item id="publications" label="Publications" anchor="/content-history/#publications" />
+  </section>
+
   <pages>
     <page id="blog" label="Everything Storyteller Blog" />
     <page id="about" label="About" />
