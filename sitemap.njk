@@ -20,17 +20,20 @@ eleventyExcludeFromCollections: true
     <loc>https://nicholasgalinski.com/resume/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nicholasgalinski.com/case-studies/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nicholasgalinski.com/individual-samples/</loc>
+    <priority>0.8</priority>
+  </url>
   {%- for section in navigation.section %}
-  {%- for category in section.category %}
-  {%- if category.item %}
-  {%- for item in category.item %}
+  {%- for item in section.item %}
   <url>
     <loc>https://nicholasgalinski.com/projects/{{ item['@_id'] }}/</loc>
     <priority>0.7</priority>
   </url>
   {%- endfor %}
-  {%- endif %}
-  {%- endfor %}
   {%- endfor %}
 </urlset>
-```
