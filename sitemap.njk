@@ -32,6 +32,16 @@ eleventyExcludeFromCollections: true
     <loc>https://nicholasgalinski.com/content-history/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nicholasgalinski.com/blog/</loc>
+    <priority>0.8</priority>
+  </url>
+  {%- for post in posts %}
+  <url>
+    <loc>https://nicholasgalinski.com/blog/{{ post.meta.id }}/</loc>
+    <priority>0.6</priority>
+  </url>
+  {%- endfor %}
   {%- for section in navigation.section %}
   {%- for item in section.item %}
   {%- if not item['@_anchor'] %}

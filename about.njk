@@ -24,7 +24,11 @@ permalink: /about/index.html
     {# Display section body content #}
     {# The 'safe' filter allows HTML from the XML CDATA to render properly #}
     <div class="page__body">
-      {{ section.body | safe }}
+      {% if section.body.__cdata %}
+        {{ section.body.__cdata | safe }}
+      {% else %}
+        {{ section.body | safe }}
+      {% endif %}
     </div>
   </section>
   {% endfor %}

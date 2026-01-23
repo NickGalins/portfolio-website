@@ -105,7 +105,8 @@ portfolio-website/
 │   ├── navigation.xml                # Sidebar menu structure
 │   ├── projects/
 │   │   ├── case-studies/             # In-depth case studies (7)
-│   │   └── individual-samples/       # Focused writing samples (6)
+│   │   ├── individual-samples/       # Focused writing samples (5)
+│   │   └── content-history/          # Content history tag data (3)
 │   ├── pages/
 │   │   ├── about.xml
 │   │   ├── contact.xml
@@ -117,6 +118,7 @@ portfolio-website/
 │   ├── js/main.js                    # Interactivity (filtering, sidebar)
 │   ├── images/                       # Project images
 │   │   └── blog/                     # Blog-specific images
+│   ├── audio/                        # Audio assets (podcast samples, etc.)
 │   └── video/                        # Video assets
 │
 ├── _includes/                        # TEMPLATE PARTIALS

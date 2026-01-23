@@ -4,7 +4,6 @@
     <id>sacred-grounds-rulebook</id>
     <title>Sacred Grounds - Rulebook Examples</title>
     <subtitle>Game rules documentation for live-action role-playing events</subtitle>
-    <date>2018-2024</date>
     <client>Sacred Grounds Gaming</client>
     <role>Creative Director / Technical Writer</role>
     <thumbnail>/assets/images/sacred-grounds-rulebook-thumb.png</thumbnail>
@@ -25,37 +24,21 @@
     </tags>
   </meta>
   
-  <summary>
-    Placeholder summary: This sample showcases technical documentation for game systems, demonstrating the ability to explain complex rules clearly while maintaining engagement and accessibility for diverse audiences.
-  </summary>
-  
   <content>
     <section>
-      <heading>Documentation Challenges</heading>
-      <body>
-        Placeholder: What unique challenges exist in documenting LARP rules? How do you balance completeness with usability?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Approach</heading>
-      <body>
-        Placeholder: How did you structure the rulebook? What information hierarchy did you use?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Sample Pages</heading>
-      <body>
-        Placeholder: Include excerpts from rulebook documentation.
-      </body>
-      <media>
-        <image src="/assets/images/sacred-grounds-rulebook-sample.png" alt="Rulebook sample page" caption="Sample rulebook spread" />
-      </media>
+      <body><![CDATA[
+<div class="coming-soon-notice">
+  <div class="coming-soon-notice__header">
+    <svg class="coming-soon-notice__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <span class="coming-soon-notice__title">Coming Soon</span>
+  </div>
+  <p>This is a new portfolio created in January 2026, and I'm still migrating all of my work here.</p>
+  <p>If you were hoping to read this specific sample or case study, you can <a href="/contact/">contact me</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-galinski/" target="_blank" rel="noopener">LinkedIn</a> for the PDF version.</p>
+</div>
+      ]]></body>
     </section>
   </content>
-  
-  <outcomes>
-    <outcome>Placeholder: What makes this documentation effective for players?</outcome>
-  </outcomes>
 </project>

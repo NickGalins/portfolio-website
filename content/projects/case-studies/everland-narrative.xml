@@ -4,7 +4,6 @@
     <id>everland-narrative</id>
     <title>Everland - Narrative, Dialogue, &amp; Micro-copy</title>
     <subtitle>Worldbuilding and character voice for a fictional MMO</subtitle>
-    <date>2024</date>
     <client>Portfolio Case Study</client>
     <role>Narrative Designer / Writer</role>
     <thumbnail>/assets/images/everland-narrative-thumb.png</thumbnail>
@@ -21,37 +20,21 @@
     </tags>
   </meta>
   
-  <summary>
-    Placeholder summary: This case study explores the narrative and worldbuilding work for Everland, demonstrating how story, character voice, and micro-copy work together to create an immersive game experience.
-  </summary>
-  
   <content>
     <section>
-      <heading>The World of Everland</heading>
-      <body>
-        Placeholder: Introduce the world. What are the key themes, conflicts, and tone?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Character Voice</heading>
-      <body>
-        Placeholder: How did you develop distinct character voices? Show examples of dialogue.
-      </body>
-    </section>
-    
-    <section>
-      <heading>Narrative Micro-copy</heading>
-      <body>
-        Placeholder: How does the UI copy reinforce the world? Show examples of in-game text that tells story.
-      </body>
-      <media>
-        <image src="/assets/images/everland-dialogue-sample.png" alt="Dialogue sample" caption="Sample NPC dialogue" />
-      </media>
+      <body><![CDATA[
+<div class="coming-soon-notice">
+  <div class="coming-soon-notice__header">
+    <svg class="coming-soon-notice__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <span class="coming-soon-notice__title">Coming Soon</span>
+  </div>
+  <p>This is a new portfolio created in January 2026, and I'm still migrating all of my work here.</p>
+  <p>If you were hoping to read this specific sample or case study, you can <a href="/contact/">contact me</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-galinski/" target="_blank" rel="noopener">LinkedIn</a> for the PDF version.</p>
+</div>
+      ]]></body>
     </section>
   </content>
-  
-  <outcomes>
-    <outcome>Placeholder: What makes this narrative work effective?</outcome>
-  </outcomes>
 </project>

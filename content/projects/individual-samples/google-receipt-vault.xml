@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>google-receipt-vault</id>
+    <title>Google Receipt Vault</title>
+    <subtitle>Help Center and Knowledge Base documentation samples</subtitle>
+    <client>Portfolio Sample</client>
+    <role>Technical Writer</role>
+    <thumbnail>/assets/images/g-receiptvault-card.jpg</thumbnail>
+    <teaser>Step-by-step help center guides distilling complex technical concepts for non-technical users. This fictional product represents similar documentation work across Pixel, Search, Drive, and Cloud.</teaser>
+    <tags>
+      <tag>Technical Writing</tag>
+      <tag>Product Writing</tag>
+      <tag>Writing Sample</tag>
+      <tag>Cross-functional Collaboration</tag>
+      <tag>Information Architecture</tag>
+      <tag>Content Strategy</tag>
+    </tags>
+  </meta>
+
+  <content>
+    <section>
+      <heading>About This Sample</heading>
+      <body><![CDATA[
+<div class="info-box info-box--note">
+  <div class="info-box__header">
+    <svg class="info-box__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 16v-4"></path>
+      <path d="M12 8h.01"></path>
+    </svg>
+    <span class="info-box__title">About This Sample</span>
+  </div>
+  <p><strong>Google Receipt Vault is not a real product.</strong> It's a fictional stand-in representing similar help center and knowledge base documentation I created across multiple Google products including Pixel, Search, Drive, and Cloud.</p>
+  <p>The documentation patterns, voice guidelines, and structural approaches shown here reflect real work, adapted into a fictional context to protect proprietary information.</p>
+</div>
+      ]]></body>
+    </section>
+
+    <section>
+      <heading>Help Center Article: Add a receipt to Receipt Vault</heading>
+      <body><![CDATA[
+<div class="help-article">
+  <p class="help-article__intro">Receipt Vault saves your receipts and warranty documents so you can find them later for returns, reimbursements, or warranty claims. You can add receipts by scanning, uploading, or forwarding email receipts.</p>
+
+  <div class="help-article__callout help-article__callout--important">
+    <p><strong>Important:</strong> To use Receipt Vault, you need a Google Account. Sign in at receiptvault.google.com or through the Google app.</p>
+  </div>
+
+  <div class="device-tabs">
+    <div class="device-tabs__nav" role="tablist">
+      <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-desktop" id="tab-desktop">Computer</button>
+      <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-android" id="tab-android">Android</button>
+      <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-ios" id="tab-ios">iPhone &amp; iPad</button>
+    </div>
+
+    <div class="device-tabs__panel" role="tabpanel" id="panel-desktop" aria-hidden="false" aria-labelledby="tab-desktop">
+      <ol>
+        <li>Go to <strong>receiptvault.google.com</strong>.</li>
+        <li>Click <strong>Add receipt</strong>.</li>
+        <li>Choose how to add your receipt:
+          <ul>
+            <li><strong>Upload file:</strong> Select an image or PDF from your computer.</li>
+            <li><strong>Forward email:</strong> Copy your unique forwarding address and forward receipt emails to it.</li>
+          </ul>
+        </li>
+        <li>Review the extracted details (merchant, date, amount).</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="device-tabs__panel" role="tabpanel" id="panel-android" aria-hidden="true" aria-labelledby="tab-android">
+      <ol>
+        <li>On your Android phone, open the <strong>Google</strong> app.</li>
+        <li>Tap your profile picture, then tap <strong>Receipt Vault</strong>.</li>
+        <li>Tap <strong>+</strong> (Add).</li>
+        <li>Choose how to add your receipt:
+          <ul>
+            <li><strong>Scan:</strong> Point your camera at a paper receipt.</li>
+            <li><strong>Upload:</strong> Select an image from your gallery.</li>
+            <li><strong>Forward email:</strong> Copy your forwarding address.</li>
+          </ul>
+        </li>
+        <li>Review the details and tap <strong>Save</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="device-tabs__panel" role="tabpanel" id="panel-ios" aria-hidden="true" aria-labelledby="tab-ios">
+      <ol>
+        <li>On your iPhone or iPad, open the <strong>Google</strong> app.</li>
+        <li>Tap your profile picture, then tap <strong>Receipt Vault</strong>.</li>
+        <li>Tap <strong>+</strong> (Add).</li>
+        <li>Choose how to add your receipt:
+          <ul>
+            <li><strong>Scan:</strong> Point your camera at a paper receipt.</li>
+            <li><strong>Upload:</strong> Select an image from your Photos.</li>
+            <li><strong>Forward email:</strong> Copy your forwarding address.</li>
+          </ul>
+        </li>
+        <li>Review the details and tap <strong>Save</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="help-article__callout help-article__callout--tip">
+    <p><strong>Tip:</strong> For the best scan quality, place the receipt on a flat, dark surface with good lighting.</p>
+  </div>
+</div>
+      ]]></body>
+    </section>
+
+    <section>
+      <heading>Knowledge Base Article: Troubleshoot missing receipts</heading>
+      <body><![CDATA[
+<div class="kb-article">
+  <h4>Overview</h4>
+  <p style="color: var(--color-text);">Use this guide when a user reports that Receipt Vault isn't detecting or displaying their receipts. Most issues fall into three categories: import configuration, email detection, or sync delays.</p>
+
+  <h4>Quick reference</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Symptom</th>
+        <th>Common cause</th>
+        <th>First step</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No receipts importing</td>
+        <td>Gmail not connected</td>
+        <td>Check Settings &gt; Connected accounts</td>
+      </tr>
+      <tr>
+        <td>Specific merchant missing</td>
+        <td>Sender not recognized</td>
+        <td>Check if receipt is in spam; add manually</td>
+      </tr>
+      <tr>
+        <td>Receipt shows but details wrong</td>
+        <td>Extraction error</td>
+        <td>User can edit details manually</td>
+      </tr>
+      <tr>
+        <td>Receipts delayed</td>
+        <td>Sync in progress</td>
+        <td>Wait 15 minutes; check sync status</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Canned responses</h4>
+  <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">Click "Copy" to copy the response to your clipboard. Personalize the bracketed fields before sending.</p>
+
+  <div class="canned-response">
+    <div class="canned-response__header">
+      <span class="canned-response__title">Gmail not connected</span>
+      <button class="canned-response__copy">Copy</button>
+    </div>
+    <div class="canned-response__content">Hi [Name],
+
+Thanks for reaching out about Receipt Vault.
+
+To automatically import receipts from your email, you'll need to connect your Gmail account:
+
+1. Open Receipt Vault and tap Settings.
+2. Tap Connected accounts.
+3. Tap Connect Gmail and follow the prompts.
+
+Once connected, Receipt Vault will scan your inbox for receipts. This initial scan may take a few minutes.
+
+Let me know if you have any questions!</div>
+  </div>
+
+  <div class="canned-response">
+    <div class="canned-response__header">
+      <span class="canned-response__title">Missing specific receipt</span>
+      <button class="canned-response__copy">Copy</button>
+    </div>
+    <div class="canned-response__content">Hi [Name],
+
+I understand you're looking for a specific receipt that Receipt Vault didn't detect.
+
+Some receipts aren't detected automatically if they:
+- Were sent to spam (Receipt Vault doesn't scan spam)
+- Are from a sender we don't recognize yet
+- Are image-only without text content
+
+You can add this receipt manually:
+1. Open Receipt Vault and tap +.
+2. Choose Forward email.
+3. Forward the receipt email to your unique Receipt Vault address.
+
+If you continue to have trouble, please share the merchant name and approximate date so I can investigate further.</div>
+  </div>
+
+  <div class="canned-response">
+    <div class="canned-response__header">
+      <span class="canned-response__title">Incorrect receipt details</span>
+      <button class="canned-response__copy">Copy</button>
+    </div>
+    <div class="canned-response__content">Hi [Name],
+
+Thanks for letting us know about the incorrect details on your receipt.
+
+Receipt Vault automatically extracts information like merchant name, date, and amount from your receipts. Sometimes this extraction isn't perfect, especially with:
+- Handwritten receipts
+- Faded or damaged receipts
+- Unusual receipt formats
+
+You can correct any details manually:
+1. Open the receipt in Receipt Vault.
+2. Tap Edit.
+3. Update the incorrect fields.
+4. Tap Save.
+
+Your corrections will be saved and won't be overwritten.</div>
+  </div>
+
+  <h4>Escalation criteria</h4>
+  <ul style="color: var(--color-text); line-height: 1.8;">
+    <li>User reports &gt;5 missing receipts from recognized sender &rarr; Escalate to Detection Team</li>
+    <li>User reports incorrect extraction on &gt;3 receipts &rarr; Escalate to ML Team</li>
+    <li>User cannot connect Gmail after troubleshooting &rarr; Escalate to Auth Team</li>
+  </ul>
+</div>
+      ]]></body>
+    </section>
+
+    <section>
+      <heading>Writing Approach</heading>
+      <body><![CDATA[
+<h3>Help Center: User-facing documentation</h3>
+<p>For consumer-facing documentation, I focused on:</p>
+<ul>
+  <li><strong>Task-based structure</strong> &mdash; Organized by what users want to do, not by feature</li>
+  <li><strong>Device-specific instructions</strong> &mdash; Separate steps for each platform with accurate UI references</li>
+  <li><strong>Action verbs</strong> &mdash; Steps start with "Go to," "Click," "Tap," "Select"</li>
+  <li><strong>Important/Tip callouts</strong> &mdash; Prerequisites before steps, helpful tips after</li>
+  <li><strong>Minimal jargon</strong> &mdash; Plain language for a global, non-technical audience</li>
+</ul>
+
+<h3>Knowledge Base: Internal support documentation</h3>
+<p>For internal support agents and technical users, I focused on:</p>
+<ul>
+  <li><strong>Quick reference tables</strong> &mdash; Scannable format for fast triage</li>
+  <li><strong>Canned responses</strong> &mdash; Copy-ready text blocks that agents can personalize</li>
+  <li><strong>Escalation paths</strong> &mdash; Clear criteria for when to involve other teams</li>
+  <li><strong>Technical context</strong> &mdash; Background information to support troubleshooting conversations</li>
+</ul>
+
+<h3>Consistent voice across audiences</h3>
+<p>Both documentation types maintain Google's voice principles:</p>
+<ul>
+  <li><strong>Friendly but efficient</strong> &mdash; Conversational without being verbose</li>
+  <li><strong>Second person</strong> &mdash; "You" instead of "the user" or "one"</li>
+  <li><strong>Active voice</strong> &mdash; Clear, direct instructions</li>
+  <li><strong>Accessible language</strong> &mdash; Simple words, short sentences, global readability</li>
+</ul>
+      ]]></body>
+    </section>
+  </content>
+</project>

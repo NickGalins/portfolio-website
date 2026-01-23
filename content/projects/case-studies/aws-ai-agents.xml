@@ -4,7 +4,6 @@
     <id>aws-ai-agents</id>
     <title>AWS - AI Agents and Tools</title>
     <subtitle>Content design for AI agent marketplace onboarding</subtitle>
-    <date>2024</date>
     <client>AWS Marketplace</client>
     <role>Content Designer</role>
     <thumbnail>/assets/images/aws-ai-agents-thumb.png</thumbnail>
@@ -24,45 +23,21 @@
     </tags>
   </meta>
   
-  <summary>
-    Placeholder summary: This case study examines the content design work for AWS Marketplace's seller onboarding experience, specifically focused on helping sellers list AI agents and tools. The project required translating complex technical requirements into clear, actionable guidance.
-  </summary>
-  
   <content>
     <section>
-      <heading>The Challenge</heading>
-      <body>
-        Placeholder: Describe the problem space. What were sellers struggling with? What was the business impact of poor onboarding?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Research &amp; Discovery</heading>
-      <body>
-        Placeholder: What research informed your approach? What did you learn about seller pain points?
-      </body>
-    </section>
-    
-    <section>
-      <heading>Content Strategy</heading>
-      <body>
-        Placeholder: How did you structure the information? What content hierarchy did you establish?
-      </body>
-    </section>
-    
-    <section>
-      <heading>The Solution</heading>
-      <body>
-        Placeholder: Walk through the final designs. Show before/after examples where relevant.
-      </body>
-      <media>
-        <image src="/assets/images/aws-onboarding-flow.png" alt="AWS onboarding flow" caption="Redesigned onboarding experience" />
-      </media>
+      <body><![CDATA[
+<div class="coming-soon-notice">
+  <div class="coming-soon-notice__header">
+    <svg class="coming-soon-notice__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <span class="coming-soon-notice__title">Coming Soon</span>
+  </div>
+  <p>This is a new portfolio created in January 2026, and I'm still migrating all of my work here.</p>
+  <p>If you were hoping to read this specific sample or case study, you can <a href="/contact/">contact me</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-galinski/" target="_blank" rel="noopener">LinkedIn</a> for the PDF version.</p>
+</div>
+      ]]></body>
     </section>
   </content>
-  
-  <outcomes>
-    <outcome>Placeholder: Outcome or impact metric 1</outcome>
-    <outcome>Placeholder: Outcome or impact metric 2</outcome>
-  </outcomes>
 </project>

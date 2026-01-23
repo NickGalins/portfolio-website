@@ -7,40 +7,16 @@ pagination:
 permalink: /blog/{{ post.meta.id }}/index.html
 ---
 
-<!-- ============================================================================
-     INDIVIDUAL BLOG POST TEMPLATE
-     ============================================================================
-     This template generates a page for each blog post using Eleventy pagination.
-
-     FEATURES:
-     - Hero image display (full-width at top)
-     - Author card with photo and bio
-     - Post metadata (date, author, tags)
-     - Rich content support (pull quotes, callouts, images)
-     - Back link to blog listing
-
-     HOW IT WORKS:
-     Eleventy's pagination creates one page per post at /blog/[post-id]/
-     using the 'posts' global data from eleventy.config.js
-     ============================================================================ -->
-
 <article class="blog-post">
-  <!-- HERO IMAGE SECTION
-       ----------------------------------------------------------------
-       Full-width banner image at the top of the post (if provided) -->
   {% if post.meta.heroImage %}
   <div class="blog-post__hero">
     <img src="{{ post.meta.heroImage }}" alt="{{ post.meta.heroAlt or post.meta.title }}">
   </div>
   {% endif %}
 
-  <!-- POST HEADER
-       ----------------------------------------------------------------
-       Title, date, author attribution, and tags -->
   <header class="blog-post__header">
     <h1>{{ post.meta.title }}</h1>
 
-    <!-- Post metadata: date and author -->
     <div class="blog-post__meta">
       <time class="blog-post__date">{{ post.meta.date }}</time>
       {% if post.meta.author %}
@@ -48,7 +24,6 @@ permalink: /blog/{{ post.meta.id }}/index.html
       {% endif %}
     </div>
 
-    <!-- Tags for categorization -->
     {% if post.meta.tags.tag %}
     <ul class="blog-post__tags">
       {% for tag in post.meta.tags.tag %}
@@ -58,10 +33,6 @@ permalink: /blog/{{ post.meta.id }}/index.html
     {% endif %}
   </header>
 
-  <!-- AUTHOR CARD
-       ----------------------------------------------------------------
-       Displays author photo, name, and bio before the content
-       Helps build personal connection and credibility -->
   {% if post.meta.author and post.meta.authorPhoto %}
   <aside class="blog-post__author-card">
     <img src="{{ post.meta.authorPhoto }}" alt="{{ post.meta.author }}" class="blog-post__author-photo">
@@ -74,22 +45,10 @@ permalink: /blog/{{ post.meta.id }}/index.html
   </aside>
   {% endif %}
 
-  <!-- POST CONTENT
-       ----------------------------------------------------------------
-       Main article body with support for:
-       - .lead paragraphs (larger opening text)
-       - .pullquote blockquotes (emphasized quotes)
-       - .callout divs (highlighted boxes)
-       - figure/figcaption (images with captions)
-
-       The | safe filter prevents HTML escaping -->
   <div class="blog-post__content">
-    {{ post.content | safe }}
+    {{ post.content.__cdata | safe }}
   </div>
 
-  <!-- POST FOOTER
-       ----------------------------------------------------------------
-       Navigation back to blog listing, disclaimer, and copyright -->
   <footer class="blog-post__footer">
     <a href="/blog/" class="blog-post__back-link">← Back to Everything Storyteller</a>
 

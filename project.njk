@@ -42,7 +42,8 @@ permalink: /projects/{{ project.meta.id }}/index.html
   {% endif %}
   
   <div class="project__content">
-    {% for section in project.content.section %}
+    {% set sections = project.content.section if project.content.section.length else [project.content.section] %}
+    {% for section in sections %}
     {% set sectionId = section.heading | lower | replace(" ", "-") | replace("/", "-") %}
     <section class="project__section{% if section['@_class'] %} {{ section['@_class'] }}{% endif %}" id="{{ sectionId }}">
       <div class="project__section-header">
@@ -57,7 +58,11 @@ permalink: /projects/{{ project.meta.id }}/index.html
         {% endif %}
       </div>
       <div class="project__body">
-        {{ section.body | safe }}
+        {% if section.body.__cdata %}
+          {{ section.body.__cdata | safe }}
+        {% else %}
+          {{ section.body | safe }}
+        {% endif %}
       </div>
       
       {% if section.media %}
@@ -81,5 +86,17 @@ permalink: /projects/{{ project.meta.id }}/index.html
     </section>
     {% endfor %}
   </div>
-  
+
+  {% if project.outcomes and project.outcomes.outcome %}
+  <section class="project__outcomes">
+    <h2>Outcomes</h2>
+    <ul class="project__outcomes-list">
+      {% set outcomes = project.outcomes.outcome if project.outcomes.outcome.length else [project.outcomes.outcome] %}
+      {% for outcome in outcomes %}
+      <li class="project__outcome">{{ outcome }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
 </article>

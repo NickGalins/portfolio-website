@@ -3,102 +3,395 @@
   <meta>
     <id>building-this-portfolio</id>
     <title>Building This Portfolio</title>
-    <subtitle>A meta case study on creating a role-agnostic portfolio</subtitle>
+    <subtitle>A meta case study on creating a role-agnostic portfolio with AI-forward workflows</subtitle>
     <client>Personal Project</client>
     <role>Content Designer &amp; Developer</role>
     <thumbnail>/assets/images/building-this-site-card.jpg</thumbnail>
-    <teaser>How I designed a format-based navigation system to present work across Content Design, Technical Writing, and Narrative roles.</teaser>
+    <teaser>How I designed a format-based navigation system to present work across Content Design, Technical Writing, and Narrative roles—and built it using AI-assisted development.</teaser>
     <tags>
       <tag>Content Design</tag>
       <tag>Case Study</tag>
+      <tag>GenAI</tag>
       <tag>Information Architecture</tag>
       <tag>Content Strategy</tag>
     </tags>
   </meta>
 
   <summary>
-    This case study explores the decisions behind building this portfolio site. As a multidisciplinary writer spanning Content Design, Technical Writing, and Narrative/Game Writing, I needed a portfolio structure that could adapt to different hiring contexts without pigeonholing my work into a single specialty.
+    This case study explores the decisions behind building this portfolio site. As a multidisciplinary writer spanning Content Design, Technical Writing, and Narrative/Game Writing, I needed a portfolio structure that could adapt to different hiring contexts without pigeonholing my work into a single specialty. I also used this project as an opportunity to document my AI-forward development workflow.
   </summary>
 
   <content>
+    <!-- ================================================================
+         SECTION 1: THE CHALLENGE
+         ================================================================ -->
     <section>
-      <heading>Challenge</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>Creating a role-agnostic portfolio for a multidisciplinary writer. The challenge was presenting work that spans Content Design, Technical Writing, and Narrative/Game Design without forcing visitors to choose a professional identity before exploring.</p>
-        ]]>
-      </body>
+      <heading>The Challenge</heading>
+      <body><![CDATA[
+<p>Most portfolio sites are built around a single professional identity: "UX Writer," "Technical Writer," or "Content Designer." But my career has never fit neatly into one box. I've written API documentation at AWS, designed in-game reporting systems at Everland, produced live shows for Twitch streamers, and published tabletop game rulebooks.</p>
+
+<p>The challenge was threefold:</p>
+
+<ol>
+  <li><strong>Present diverse work without confusion.</strong> A hiring manager looking for a Content Designer shouldn't have to wade through fiction samples, but a game studio should be able to find them easily.</li>
+  <li><strong>Avoid the "jack of all trades" perception.</strong> Range is an asset, but only if the portfolio demonstrates depth in each area.</li>
+  <li><strong>Build something maintainable.</strong> I needed a system where adding new work wouldn't require restructuring the entire site.</li>
+</ol>
+
+<p>Traditional portfolio templates—organized by role or industry—would have forced visitors to pick a lane before exploring. I needed a different approach.</p>
+      ]]></body>
     </section>
 
+    <!-- ================================================================
+         SECTION 2: INFORMATION ARCHITECTURE DECISIONS
+         ================================================================ -->
     <section>
-      <heading>Information Architecture Decisions</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>Why format-based taxonomy (Case Studies vs. Individual Samples) over role-based categories. The distinction is about depth and presentation style, not professional specialty:</p>
-          <ul>
-            <li><strong>Case Studies:</strong> Deep dives into content decisions based on specific objectives, showcasing cross-collaboration and strategic thinking</li>
-            <li><strong>Individual Samples:</strong> Focused pieces demonstrating craft in a particular format without full project context</li>
-          </ul>
-        ]]>
-      </body>
+      <heading>Information Architecture: Format Over Role</heading>
+      <body><![CDATA[
+<p>The key insight was organizing by <em>format</em> rather than <em>role</em>. Instead of categories like "UX Writing" or "Technical Documentation," I created two primary buckets:</p>
+
+<div class="info-box">
+  <h3>Case Studies</h3>
+  <p>Deep dives into content decisions based on specific objectives. These showcase cross-collaboration, strategic thinking, and measurable outcomes. They answer: <em>"How do you approach complex problems?"</em></p>
+</div>
+
+<div class="info-box">
+  <h3>Individual Samples</h3>
+  <p>Focused pieces demonstrating craft in a particular format without full project context. These answer: <em>"Can you write in this specific style?"</em></p>
+</div>
+
+<p>This distinction is about depth and presentation style, not professional specialty. A case study about an in-game reporting system lives alongside one about API documentation. An individual sample of rulebook writing lives alongside one showcasing product documentation.</p>
+
+<p><strong>Why this works:</strong> Hiring managers can quickly find the depth they need. Looking for someone who thinks strategically about content systems? Case Studies. Need to verify someone can write clear API references? Individual Samples. The format-first approach lets my work speak for itself without forcing a professional identity onto the visitor.</p>
+      ]]></body>
     </section>
 
+    <!-- ================================================================
+         SECTION 3: WHY XML
+         ================================================================ -->
     <section>
-      <heading>Technical Choices</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>Technology stack and why these choices support the content goals:</p>
-          <ul>
-            <li>Eleventy 2.0 static site generator</li>
-            <li>XML-based content model (not Markdown)</li>
-            <li>Nunjucks templating</li>
-          </ul>
-        ]]>
-      </body>
+      <heading>Technical Choice: Why XML Over Markdown</heading>
+      <body><![CDATA[
+<p>Most static site generators default to Markdown for content. I chose XML instead, and here's why:</p>
+
+<h3>Structured Data, Not Just Text</h3>
+<p>Each project isn't just prose—it's structured data with metadata (tags, client, role, thumbnail), a summary, multiple sections, and outcomes. XML makes this structure explicit and enforceable. With Markdown, I'd need frontmatter for metadata and hope I remembered all the fields each time.</p>
+
+<h3>Validation</h3>
+<p>XML schemas (XSD files) let me validate content before it breaks the build. If I forget a required field or misname a tag, the validator catches it. Markdown has no equivalent—errors only surface when the page looks wrong.</p>
+
+<h3>AI-Friendly</h3>
+<p>When working with AI assistants like Claude, XML's explicit structure makes it easier to generate, modify, and validate content. The AI can work with a clear schema rather than inferring structure from formatting conventions.</p>
+
+<h3>Separation of Concerns</h3>
+<p>Content lives in XML. Presentation lives in templates (Nunjucks). Styling lives in CSS. This separation means I can completely redesign the site's appearance without touching content files.</p>
+
+<div class="code-example">
+  <h4>Example: Project XML Structure</h4>
+  <pre><code>&lt;project&gt;
+  &lt;meta&gt;
+    &lt;id&gt;project-slug&lt;/id&gt;
+    &lt;title&gt;Project Title&lt;/title&gt;
+    &lt;tags&gt;
+      &lt;tag&gt;Content Design&lt;/tag&gt;
+      &lt;tag&gt;Case Study&lt;/tag&gt;
+    &lt;/tags&gt;
+  &lt;/meta&gt;
+  &lt;summary&gt;Brief overview&lt;/summary&gt;
+  &lt;content&gt;
+    &lt;section&gt;
+      &lt;heading&gt;Section Title&lt;/heading&gt;
+      &lt;body&gt;&lt;![CDATA[HTML content here]]&gt;&lt;/body&gt;
+    &lt;/section&gt;
+  &lt;/content&gt;
+  &lt;outcomes&gt;
+    &lt;outcome&gt;Key result&lt;/outcome&gt;
+  &lt;/outcomes&gt;
+&lt;/project&gt;</code></pre>
+</div>
+      ]]></body>
     </section>
 
+    <!-- ================================================================
+         SECTION 4: AI-FORWARD WORKFLOW
+         ================================================================ -->
     <section>
-      <heading>Navigation Design</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>How the tag system works for discovery while categories handle wayfinding:</p>
-          <ul>
-            <li>18 tags across 4 categories for filtering (desktop only)</li>
-            <li>Category landing pages for mobile users who don't have desktop tag filters</li>
-            <li>localStorage for nav state persistence</li>
-          </ul>
-        ]]>
-      </body>
+      <heading>AI-Forward Development Workflow</heading>
+      <body><![CDATA[
+<p>I built this entire site using Claude as a development partner. This wasn't about replacing my skills—it was about augmenting them. Here's how the collaboration worked:</p>
+
+<h3>Problem-Solving in Natural Language</h3>
+<p>When the tag filtering system wasn't updating correctly, I described the behavior I was seeing. Claude helped me trace the issue to a JavaScript event listener that wasn't properly scoped. Instead of spending hours debugging, we solved it in minutes through conversation.</p>
+
+<h3>Context Documents</h3>
+<p>I created detailed context files (<code>context.md</code>, <code>TAG-SYSTEM.md</code>, <code>BLOG_IMPLEMENTATION_CONTEXT.md</code>) that explain the architecture, coding standards, and common issues. These serve two purposes:</p>
+<ol>
+  <li>They help Claude understand the codebase quickly in each session</li>
+  <li>They serve as documentation for my future self</li>
+</ol>
+
+<h3>Iterative Refinement</h3>
+<p>The "Coming Soon" notice you see on placeholder pages went through several iterations. I described what I wanted ("a high visibility container with an SVG icon"), Claude implemented it, I gave feedback ("make the SVG yellow"), and we refined until it matched my vision. This feedback loop is faster than writing CSS from scratch.</p>
+
+<h3>What AI Can't Do</h3>
+<p>AI excelled at implementation but couldn't make content decisions. <em>Which projects to feature? How to frame my career narrative? What tone to strike?</em> Those decisions remained mine. The AI was a skilled collaborator, not an autopilot.</p>
+      ]]></body>
     </section>
 
+    <!-- ================================================================
+         SECTION 5: NAVIGATION DESIGN
+         ================================================================ -->
     <section>
-      <heading>Content Strategy</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>The distinction between case studies and samples, and how each type serves different evaluation needs for hiring managers.</p>
-        ]]>
-      </body>
+      <heading>Navigation Design: Tags for Discovery, Categories for Wayfinding</heading>
+      <body><![CDATA[
+<p>The site uses two complementary navigation systems:</p>
+
+<h3>Tag Filtering (Desktop Only)</h3>
+<p>On desktop, a collapsible filter panel lets visitors narrow projects by up to 5 tags. Tags use AND logic—selecting "Content Design" and "GenAI" shows only projects with both tags. This supports exploratory browsing: <em>"Show me everything involving AI."</em></p>
+
+<h3>Category Navigation (All Devices)</h3>
+<p>The sidebar organizes work into Case Studies, Individual Samples, and Content History. This supports directed browsing: <em>"I want to see a full case study."</em></p>
+
+<h3>Why Tags Are Desktop-Only</h3>
+<p>On mobile, screen real estate is precious. The tag filter panel would dominate the viewport. More importantly, mobile users typically have a clearer intent—they're less likely to be casually exploring. The category landing pages give mobile users a clear path without the overhead of filtering.</p>
+      ]]></body>
     </section>
 
+    <!-- ================================================================
+         SECTION 6: CONTENT HISTORY - DIFFERENT BY DESIGN
+         ================================================================ -->
     <section>
-      <heading>Responsive Considerations</heading>
-      <body>
-        <![CDATA[
-          <p><em>[Placeholder - Nick to write]</em></p>
-          <p>How the portfolio adapts between desktop (with tag filters) and mobile (nav-only browsing), and why category landing pages are critical for mobile users.</p>
-        ]]>
-      </body>
+      <heading>Content History: A Different Pattern</heading>
+      <body><![CDATA[
+<p>The <a href="/content-history/">Content History</a> page breaks from the Case Study/Individual Sample pattern intentionally. It's not a portfolio piece—it's a reference document.</p>
+
+<h3>Why It's Different</h3>
+<p>Content History serves hiring managers who want breadth, not depth. They're asking: <em>"Who have you worked with? What's your range?"</em> A traditional case study format would bury this information in narrative. Instead, Content History uses:</p>
+
+<ul>
+  <li><strong>A scrolling marquee</strong> of brand/talent logos for immediate visual impact</li>
+  <li><strong>Collapsible sections</strong> (Copywriting, Publications, Production) to keep the page scannable</li>
+  <li><strong>Card layouts</strong> optimized for quick scanning rather than deep reading</li>
+</ul>
+
+<h3>Anchor Links in Navigation</h3>
+<p>Unlike other sections, Content History's nav items link to anchors within a single page (<code>#copywriting</code>, <code>#publications</code>, <code>#production</code>) rather than separate pages. This keeps related content together while still allowing direct links.</p>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RESPONSIVE CONSIDERATIONS
+         ================================================================ -->
+    <section>
+      <heading>Responsive Design Decisions</heading>
+      <body><![CDATA[
+<p>The site uses a single breakpoint at 768px. Here's what changes and why:</p>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Desktop (&gt;768px)</th>
+      <th>Mobile (≤768px)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sidebar</td>
+      <td>Fixed 280px, collapsible</td>
+      <td>Hidden, hamburger menu</td>
+    </tr>
+    <tr>
+      <td>Right menu</td>
+      <td>Sticky navigation</td>
+      <td>Hidden</td>
+    </tr>
+    <tr>
+      <td>Tag filters</td>
+      <td>Collapsible panel</td>
+      <td>Hidden</td>
+    </tr>
+    <tr>
+      <td>Project grid</td>
+      <td>4 columns</td>
+      <td>Responsive auto-fill</td>
+    </tr>
+    <tr>
+      <td>Video hero</td>
+      <td>80vh height</td>
+      <td>50vh height</td>
+    </tr>
+    <tr>
+      <td>Image magnifier</td>
+      <td>Hover effect</td>
+      <td>Disabled</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Philosophy:</strong> Mobile isn't a lesser experience—it's a focused one. Features that require hover states (magnifier, tooltips) don't translate to touch. Features that require screen real estate (tag filters, dual navigation) clutter the mobile viewport. By removing these intentionally, mobile users get a cleaner path to content.</p>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: HOW TO USE THIS SITE
+         ================================================================ -->
+    <section>
+      <heading>How to Navigate This Portfolio</heading>
+      <body><![CDATA[
+<p>This section explains how to get the most out of this portfolio, depending on what you're looking for.</p>
+
+<div class="procedure-box">
+  <h3>Finding Work by Topic (Desktop Only)</h3>
+  <div class="procedure-steps">
+    <div class="procedure-step">
+      <span class="step-number">1</span>
+      <div class="step-content">
+        <p>From the <a href="/">homepage</a>, scroll past the video hero to the project grid.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">2</span>
+      <div class="step-content">
+        <p>Click <strong>Show Filters</strong> to expand the tag panel.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">3</span>
+      <div class="step-content">
+        <p>Select up to 5 tags. Projects update in real-time to show only those matching ALL selected tags.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">4</span>
+      <div class="step-content">
+        <p>Click any project card to view the full case study or sample.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">5</span>
+      <div class="step-content">
+        <p>To reset, click <strong>Clear all</strong> or deselect individual tags.</p>
+      </div>
+    </div>
+  </div>
+  <p class="procedure-note"><strong>Note:</strong> Tag filters are hidden on mobile devices. Use the sidebar navigation on mobile to browse by category.</p>
+</div>
+
+<div class="procedure-box">
+  <h3>Finding Work by Category</h3>
+  <div class="procedure-steps">
+    <div class="procedure-step">
+      <span class="step-number">1</span>
+      <div class="step-content">
+        <p>Use the left sidebar navigation (click the hamburger menu on mobile).</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">2</span>
+      <div class="step-content">
+        <p>Click the expand arrow next to <strong>Case Studies</strong> or <strong>Individual Samples</strong>.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">3</span>
+      <div class="step-content">
+        <p>Select a specific project, or click the section header to view the category landing page with all projects in that category.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="procedure-box">
+  <h3>Exploring Content History</h3>
+  <div class="procedure-steps">
+    <div class="procedure-step">
+      <span class="step-number">1</span>
+      <div class="step-content">
+        <p>Navigate to <a href="/content-history/">Content History</a> from the sidebar.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">2</span>
+      <div class="step-content">
+        <p>Use the table of contents at the top to jump to a section (Copywriting, Publications, Production).</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">3</span>
+      <div class="step-content">
+        <p>Click <strong>View [Section] Projects</strong> to expand the details for each category.</p>
+      </div>
+    </div>
+    <div class="procedure-step">
+      <span class="step-number">4</span>
+      <div class="step-content">
+        <p>Scroll through brand cards and mini-cards to see the full range of work.</p>
+      </div>
+    </div>
+  </div>
+</div>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
+         SECTION 9: TAG REFERENCE
+         ================================================================ -->
+    <section>
+      <heading>Tag System Reference</heading>
+      <body><![CDATA[
+<p>The tag system organizes work across 21 tags in 4 categories. Here's what each tag indicates:</p>
+
+<div class="tag-reference">
+  <h3>Design</h3>
+  <ul>
+    <li><strong>Content Design</strong> — Strategic content decisions, UX writing, information architecture</li>
+    <li><strong>Game</strong> — Game writing, narrative design, rulebook authoring</li>
+    <li><strong>Systems Design</strong> — Designing interconnected content systems</li>
+  </ul>
+
+  <h3>Copy Types</h3>
+  <ul>
+    <li><strong>UX Writing</strong> — Interface copy, microcopy, user-facing strings</li>
+    <li><strong>Technical Writing</strong> — Documentation, guides, technical explanations</li>
+    <li><strong>API Documentation</strong> — Endpoint references, developer docs</li>
+    <li><strong>Product Writing</strong> — Feature documentation, release notes</li>
+    <li><strong>UI/UX</strong> — User interface and experience design</li>
+    <li><strong>Marketing</strong> — Promotional copy, campaigns, brand messaging</li>
+    <li><strong>Narrative</strong> — Story, dialogue, worldbuilding</li>
+    <li><strong>Content Writing</strong> — Articles, blogs, long-form content</li>
+    <li><strong>Creative</strong> — Fiction, creative non-fiction, experimental formats</li>
+    <li><strong>Trust &amp; Safety</strong> — Policy writing, moderation systems, community guidelines</li>
+  </ul>
+
+  <h3>Scope</h3>
+  <ul>
+    <li><strong>Case Study</strong> — Full project context with process and outcomes</li>
+    <li><strong>Writing Sample</strong> — Focused demonstration of craft</li>
+    <li><strong>Other Sample</strong> — Additional work samples</li>
+  </ul>
+
+  <h3>Secondary Skills</h3>
+  <ul>
+    <li><strong>GenAI</strong> — AI-assisted workflows, prompt engineering, AI tools</li>
+    <li><strong>Prototyping</strong> — Interactive prototypes, proof of concepts</li>
+    <li><strong>Change Management</strong> — Process transitions, stakeholder alignment</li>
+    <li><strong>Project Management</strong> — Timeline, resource, and deliverable coordination</li>
+    <li><strong>People Management</strong> — Team leadership, mentoring</li>
+    <li><strong>Cross-functional Collaboration</strong> — Working across teams and disciplines</li>
+    <li><strong>Information Architecture</strong> — Content structure and organization</li>
+    <li><strong>Content Strategy</strong> — Long-term content planning and governance</li>
+  </ul>
+</div>
+      ]]></body>
     </section>
   </content>
 
   <outcomes>
-    <outcome>Created a navigation structure that adapts to different hiring contexts</outcome>
-    <outcome>Designed a tag system that lets work speak for itself across specialties</outcome>
-    <outcome>Built an accessible, responsive experience that works on all devices</outcome>
+    <outcome>Created a navigation structure that adapts to different hiring contexts without forcing a professional identity</outcome>
+    <outcome>Designed a tag system with 21 tags across 4 categories for flexible discovery</outcome>
+    <outcome>Built an accessible, responsive experience with intentional feature differences between desktop and mobile</outcome>
+    <outcome>Documented AI-forward development workflow that combines human content decisions with AI implementation speed</outcome>
+    <outcome>Established a maintainable XML-based content system with validation and clear separation of concerns</outcome>
   </outcomes>
 </project>

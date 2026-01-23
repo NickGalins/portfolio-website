@@ -25,7 +25,8 @@ module.exports = function(eleventyConfig) {
   // JavaScript objects that templates can use
   const xmlParser = new XMLParser({
     ignoreAttributes: false,        // Keep XML attributes like <tag attr="value">
-    attributeNamePrefix: "@_"       // Prefix attributes with @_ to avoid conflicts
+    attributeNamePrefix: "@_",      // Prefix attributes with @_ to avoid conflicts
+    cdataPropName: "__cdata"        // Parse CDATA sections into __cdata property
   });
 
   // -------------------------------------------------------------------------
@@ -72,7 +73,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData('projects', () => {
     const projects = [];  // Start with empty array
     // Look in both project directories
-    const projectDirs = ['content/projects/case-studies', 'content/projects/individual-samples'];
+    const projectDirs = ['content/projects/case-studies', 'content/projects/individual-samples', 'content/projects/content-history'];
 
     // Loop through each directory
     projectDirs.forEach(dir => {
@@ -89,7 +90,8 @@ module.exports = function(eleventyConfig) {
               projects.push({
                 ...data.project,  // Spread operator: copies all properties from data.project
                 // Add a 'category' field based on which folder it came from
-                category: dir.includes('case-studies') ? 'case-studies' : 'individual-samples'
+                category: dir.includes('case-studies') ? 'case-studies' :
+                         dir.includes('individual-samples') ? 'individual-samples' : 'content-history'
               });
             }
           }
@@ -112,21 +114,14 @@ module.exports = function(eleventyConfig) {
   const pages = {};  // Empty object to store pages
   const pagesDir = path.join(__dirname, 'content/pages');
 
-  // DEBUG LOGGING - These help us see what's happening during the build
-  console.log('📁 Looking for pages in:', pagesDir);
-  console.log('📁 Directory exists?', fs.existsSync(pagesDir));
-
   if (fs.existsSync(pagesDir)) {
     // Read all files in the pages directory
     const files = fs.readdirSync(pagesDir);
-    console.log('📄 Files found:', files);
 
     files.forEach(file => {
       // Only process XML files
       if (file.endsWith('.xml')) {
-        console.log('🔍 Processing:', file);
         const data = parseXML(path.join(pagesDir, file));
-        console.log('📊 Parsed data:', JSON.stringify(data, null, 2));
 
         if (data) {
           // Get all keys from the parsed XML
@@ -136,24 +131,18 @@ module.exports = function(eleventyConfig) {
           const pageType = keys.find(key => key !== '?xml');
           // Get the actual page data
           const pageData = data[pageType];
-          console.log('🔑 Page type:', pageType);
-          console.log('📄 Page data:', JSON.stringify(pageData, null, 2));
 
           // Check if page has required meta.id field
           if (pageData && pageData.meta && pageData.meta.id) {
             // Add to pages object using the id as the key
             // Example: <meta><id>about</id></meta> becomes pages['about']
-            console.log('✅ Adding page:', pageData.meta.id);
             pages[pageData.meta.id] = pageData;
-          } else {
-            console.log('❌ Missing meta.id for file:', file);
           }
         }
       }
     });
   }
 
-  console.log('📦 Final pages object:', JSON.stringify(pages, null, 2));
   // Make the pages object available to all templates
   eleventyConfig.addGlobalData('pages', pages);
   
@@ -226,6 +215,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add('CARD-IMAGES.md'); // Card images documentation
   eleventyConfig.ignores.add('TAG-SYSTEM.md');  // Tag system documentation
   eleventyConfig.ignores.add('CHANGELOG.md');   // Version history
+  eleventyConfig.ignores.add('Context/**');     // AI assistant context files
 
   // -------------------------------------------------------------------------
   // ELEVENTY CONFIGURATION OBJECT

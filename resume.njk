@@ -62,15 +62,49 @@ permalink: /resume/index.html
   </section>
   {% endif %}
 
-  {# BRANDS SECTION: Placeholder for brand logos #}
+  {# BRANDS SECTION: Marquee + link to Content History #}
   {% if resume.brands %}
   <section class="resume__section">
-    <h2>Brands</h2>
+    <h2>Brands & Talent</h2>
     <p class="resume__brands-description">{{ resume.brands.description }}</p>
-    <div class="resume__brands-grid">
-      {# Brand logos will be added here in the future #}
-      <p class="resume__brands-placeholder">(Brand logos to be added)</p>
+
+    {% set marqueeImages = [
+      'brands-sg-card.jpg',
+      'talent-sodapoppin-card.jpg',
+      'shows-hatewatchers-card.jpg',
+      'brands-elgato-card.jpg',
+      'talent-alinity-card.jpg',
+      'copywriting-aws-card.jpg',
+      'brands-diceenvy-card.jpg',
+      'talent-dkane-card.jpg',
+      'shows-christmas-card.jpg',
+      'brands-suspects-card.jpg',
+      'talent-roflgator-card.jpg',
+      'copywriting-g-card.jpg',
+      'brands-hellofresh-card.jpg',
+      'talent-simply-card.jpg',
+      'brands-channelf-card.jpg',
+      'pubs-embers-card.jpg',
+      'talent-lukeafk-card.jpg',
+      'brands-austinshow-card.jpg'
+    ] %}
+
+    <div class="logo-marquee logo-marquee--inline">
+      <div class="logo-marquee__track">
+        <div class="logo-marquee__content">
+          {% for image in marqueeImages %}
+          <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+          {% endfor %}
+        </div>
+        <div class="logo-marquee__content" aria-hidden="true">
+          {% for image in marqueeImages %}
+          <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+          {% endfor %}
+        </div>
+      </div>
     </div>
+
+    <p class="resume__brands-cta"><a href="/content-history/">View full content history →</a></p>
   </section>
   {% endif %}
 </article>

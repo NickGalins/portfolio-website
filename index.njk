@@ -108,15 +108,18 @@ permalink: /index.html
   'everland-trust-safety': 'everland-trust-safety-card.jpg',
   'aws-ai-agents': 'aws-ai-agents-tools-card.jpg',
   'sacred-grounds-shop': 'sg-shop-processes-card.jpg',
-  'google-translate-lens': 'g-translate-with-lens-card.jpg',
+  'google-receipt-vault': 'g-receiptvault-card.jpg',
   'sacred-grounds-rulebook': 'sg-rulebook-examples-card.jpg',
   'api-documentation': 'review-loop-api-card.png',
   'everland-narrative': 'everland-narrative-card.jpg',
   'sacred-grounds-supernal': 'supernal-gardens-card.jpg',
   'sacred-grounds-influencer': 'sg-influender-marketing-card.jpg',
   'oathforger-chapter-1': 'oathforger-chapter-card.png',
-  'short-form': 'podcast-ad-reads-card.jpg',
-  'building-this-portfolio': 'building-this-site-card.jpg'
+  'short-form-ugc-copy': 'content-history/brands-elgato-card.jpg',
+  'building-this-portfolio': 'building-this-site-card.jpg',
+  'copywriting': 'content-history/copywriting-g-card.jpg',
+  'publications': 'content-history/pubs-embers-card.jpg',
+  'production': 'content-history/brands-channelf-card.jpg'
 } %}
 
 <div class="projects-grid">
@@ -124,7 +127,8 @@ permalink: /index.html
     {% if section.item.length %}
       {% for item in section.item %}
       {% set project = projects | findProject(item['@_id']) %}
-      <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
+      {% set cardHref = item['@_anchor'] if item['@_anchor'] else '/projects/' + item['@_id'] + '/' %}
+      <a href="{{ cardHref }}" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
         <div class="project-card__image">
           {% if cardImages[item['@_id']] %}
           <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
@@ -141,7 +145,8 @@ permalink: /index.html
       {# Handle single item case #}
       {% set item = section.item %}
       {% set project = projects | findProject(item['@_id']) %}
-      <a href="/projects/{{ item['@_id'] }}/" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
+      {% set cardHref = item['@_anchor'] if item['@_anchor'] else '/projects/' + item['@_id'] + '/' %}
+      <a href="{{ cardHref }}" class="project-card project-card--square" data-tags="{{ project.meta.tags.tag | join(',') if project and project.meta and project.meta.tags and project.meta.tags.tag else '' }}">
         <div class="project-card__image">
           {% if cardImages[item['@_id']] %}
           <img src="/assets/images/{{ cardImages[item['@_id']] }}" alt="{{ item['@_label'] }}">
@@ -162,3 +167,51 @@ permalink: /index.html
     </div>{# .projects-section__cards #}
   </div>{# .projects-section__container #}
 </section>{# .projects-section #}
+
+{# ==========================================================================
+   LOGO MARQUEE - Mobile only (desktop uses tag filters instead)
+   ========================================================================== #}
+{% set marqueeImages = [
+  'brands-sg-card.jpg',
+  'talent-sodapoppin-card.jpg',
+  'shows-hatewatchers-card.jpg',
+  'brands-elgato-card.jpg',
+  'talent-alinity-card.jpg',
+  'copywriting-aws-card.jpg',
+  'brands-diceenvy-card.jpg',
+  'talent-dkane-card.jpg',
+  'shows-christmas-card.jpg',
+  'brands-suspects-card.jpg',
+  'talent-roflgator-card.jpg',
+  'copywriting-g-card.jpg',
+  'brands-hellofresh-card.jpg',
+  'talent-simply-card.jpg',
+  'brands-channelf-card.jpg',
+  'pubs-embers-card.jpg',
+  'talent-lukeafk-card.jpg',
+  'brands-austinshow-card.jpg',
+  'copywriting-museumaf-card.jpg',
+  'brands-startrek-card.jpg',
+  'writing-eschaton-card.jpg',
+  'brands-raid-card.jpg',
+  'copywriting-mmeink-card.jpg',
+  'shows-fashion-card.jpg',
+  'pubs-breach-card.jpg',
+  'copywriting-everland-card.jpg'
+] %}
+
+<section class="logo-marquee logo-marquee--mobile-only">
+  <h2 class="logo-marquee__label">Brands & Talent I've Worked With</h2>
+  <div class="logo-marquee__track">
+    <div class="logo-marquee__content">
+      {% for image in marqueeImages %}
+      <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+      {% endfor %}
+    </div>
+    <div class="logo-marquee__content" aria-hidden="true">
+      {% for image in marqueeImages %}
+      <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+      {% endfor %}
+    </div>
+  </div>
+</section>

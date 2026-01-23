@@ -40,11 +40,6 @@
       <years>8 Years</years>
     </position>
 
-    <position>
-      <title>See other brands I've worked with below</title>
-      <company></company>
-      <years></years>
-    </position>
   </positions>
 
   <education>
@@ -59,7 +54,6 @@
   </education>
 
   <brands>
-    <description>A selection of brands I've worked with across technical and creative copy.</description>
-    <!-- Brand logos will be added here later -->
+    <description>A selection of brands and talent I've worked with across technical and creative copy.</description>
   </brands>
 </resume>

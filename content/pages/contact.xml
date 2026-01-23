@@ -16,16 +16,40 @@
       <heading>Employment Opportunities</heading>
       <body><![CDATA[
         <p>For recruiters and employers interested in full-time or contract positions:</p>
-        <p><strong>Email:</strong> <a href="mailto:nick.galinski@gmail.com">nick.galinski@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicholas-galinski/">linkedin.com/in/nicholas-galinski</a></p>
+        <p class="contact-item">
+          <svg class="contact-item__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <strong>Email:</strong> <a href="mailto:nick.galinski@gmail.com">nick.galinski@gmail.com</a>
+        </p>
+        <p class="contact-item">
+          <svg class="contact-item__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicholas-galinski/" target="_blank" rel="noopener">linkedin.com/in/nicholas-galinski</a>
+        </p>
       ]]></body>
     </section>
-    
+
     <section>
       <heading>Consulting &amp; Contract Work</heading>
       <body><![CDATA[
         <p>For consulting engagements and 1099 contracts:</p>
-        <p><strong>Email:</strong> <a href="mailto:nicholasgalinski@everythingstoryteller.com">nicholasgalinski@everythingstoryteller.com</a></p>
+        <p class="contact-item">
+          <svg class="contact-item__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+            <path d="M10 6h4"></path>
+            <path d="M10 10h4"></path>
+            <path d="M10 14h4"></path>
+            <path d="M10 18h4"></path>
+          </svg>
+          <strong>Business Email:</strong> <a href="mailto:nicholasgalinski@everythingstoryteller.com">nicholasgalinski@everythingstoryteller.com</a>
+        </p>
       ]]></body>
     </section>
   </content>

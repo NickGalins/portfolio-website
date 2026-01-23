@@ -10,14 +10,262 @@ permalink: /content-history/
     <p class="category-landing__intro">I've worked in social, content marketing, and content strategy across not just full-time roles, but in contracts, side projects, and publications. Below is a list of major projects, as well as brands, publishers, and influencers I've worked with.</p>
   </div>
 
+  {# LOGO MARQUEE - Scrolling image showcase #}
+  {% set marqueeImages = [
+    'brands-sg-card.jpg',
+    'talent-sodapoppin-card.jpg',
+    'shows-hatewatchers-card.jpg',
+    'brands-elgato-card.jpg',
+    'talent-alinity-card.jpg',
+    'copywriting-aws-card.jpg',
+    'brands-diceenvy-card.jpg',
+    'talent-dkane-card.jpg',
+    'shows-christmas-card.jpg',
+    'brands-suspects-card.jpg',
+    'talent-roflgator-card.jpg',
+    'copywriting-g-card.jpg',
+    'brands-hellofresh-card.jpg',
+    'talent-simply-card.jpg',
+    'brands-channelf-card.jpg',
+    'pubs-embers-card.jpg',
+    'talent-lukeafk-card.jpg',
+    'brands-austinshow-card.jpg',
+    'copywriting-museumaf-card.jpg',
+    'brands-startrek-card.jpg',
+    'writing-eschaton-card.jpg',
+    'brands-raid-card.jpg',
+    'copywriting-mmeink-card.jpg',
+    'shows-fashion-card.jpg',
+    'pubs-breach-card.jpg',
+    'copywriting-everland-card.jpg'
+  ] %}
+
+  <section class="logo-marquee">
+    <h2 class="logo-marquee__label">Brands & Talent I've Worked With</h2>
+    <div class="logo-marquee__track">
+      <div class="logo-marquee__content">
+        {% for image in marqueeImages %}
+        <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+        {% endfor %}
+      </div>
+      <div class="logo-marquee__content" aria-hidden="true">
+        {% for image in marqueeImages %}
+        <img src="/assets/images/content-history/{{ image }}" alt="" class="logo-marquee__image">
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
   {# TABLE OF CONTENTS #}
   <nav class="content-history__toc">
     <ul>
-      <li><a href="#production">Production</a></li>
       <li><a href="#copywriting">Copywriting</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#production">Production</a></li>
     </ul>
   </nav>
+
+  {# COPYWRITING SECTION #}
+  <div class="landing-section" id="copywriting">
+    <div class="landing-section__header">
+      <h2 class="landing-section__heading">Copywriting</h2>
+      <a href="#copywriting" class="landing-section__anchor-link" title="Copy link to section">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a>
+    </div>
+
+    <p class="landing-section__description">Marketing copy and brand messaging work.</p>
+
+    <details class="landing-section__details">
+      <summary>View Copywriting Projects</summary>
+      <div class="landing-cards">
+        {# Amazon Web Services #}
+        <div class="brand-card">
+          <div class="brand-card__image">
+            <img src="/assets/images/content-history/copywriting-aws-card.jpg" alt="Amazon Web Services">
+          </div>
+          <div class="brand-card__content">
+            <h3 class="brand-card__title">Amazon Web Services</h3>
+            <div class="brand-card__role">Senior Technical Writer (Technical Role Class)</div>
+            <p class="brand-card__description">Content architect, writer, and strategist across AWS Marketplace, Partner Central, Partner Network, and several key feature releases, including AI Agents Marketplace and opening AWS Marketplace to sellers in India. Writer of technical documentation, including API. Key collaborator in marketing and brand content strategy. Editor for content marketing, including blogs and case studies, ensuring content meets a high bar.</p>
+            <div class="brand-card__results">
+              <strong>Results:</strong> Success across key KPIs, continuous reduction in support tickets, sought-after collaborator, architect of several AI-enhanced workflows, and contribution to content frameworks and service level agreement decisions.
+            </div>
+          </div>
+        </div>
+
+        {# Google #}
+        <div class="brand-card">
+          <div class="brand-card__image">
+            <img src="/assets/images/content-history/copywriting-g-card.jpg" alt="Google">
+          </div>
+          <div class="brand-card__content">
+            <h3 class="brand-card__title">Google</h3>
+            <div class="brand-card__role">Lead Writer / POD Leader as part of Google's extended workforce via Accenture</div>
+            <p class="brand-card__description">Writer, manager, and collaborator for an array of technical and marketing copy across several products and features, including Search, Classroom, Lens, Pixel, Drive, and Cloud.</p>
+            <div class="brand-card__results">
+              <strong>Results:</strong> Success across key KPIs, continuous reduction in support tickets, and contribution to content frameworks and service level agreement decisions.
+            </div>
+          </div>
+        </div>
+
+        {# Everland #}
+        <div class="brand-card">
+          <div class="brand-card__image">
+            <img src="/assets/images/content-history/copywriting-everland-card.jpg" alt="Everland">
+          </div>
+          <div class="brand-card__content">
+            <h3 class="brand-card__title">Everland</h3>
+            <div class="brand-card__role">Narrative Designer</div>
+            <p class="brand-card__description">As the sole writer on the Everland team, I was responsible for narrative design, including in-game explicit and implicit story elements, character dialogue, and quest design. I also handled website copy, developer blog posts as a form of content marketing, and collaborated on overall marketing messaging.</p>
+          </div>
+        </div>
+      </div>
+
+      {# Mini Cards - 2 per row #}
+      <div class="mini-cards">
+        <div class="mini-card">
+          <div class="mini-card__image">
+            <img src="/assets/images/content-history/copywriting-museumaf-card.jpg" alt="Museum of American Finance">
+          </div>
+          <div class="mini-card__content">
+            <h3 class="mini-card__title">Museum of American Finance</h3>
+            <div class="mini-card__role">Traditional marketing copy for a brochure and newsletter offering the museum as an event venue.</div>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <div class="mini-card__image">
+            <img src="/assets/images/content-history/copywriting-mmeink-card.jpg" alt="MMEink">
+          </div>
+          <div class="mini-card__content">
+            <h3 class="mini-card__title">MMEink</h3>
+            <div class="mini-card__role">Traditional marketing copy for print materials, as well as website copy overhaul that included adding improved Information Architecture and CTAs.</div>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  {# PUBLICATIONS SECTION #}
+  <div class="landing-section" id="publications">
+    <div class="landing-section__header">
+      <h2 class="landing-section__heading">Publications</h2>
+      <a href="#publications" class="landing-section__anchor-link" title="Copy link to section">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a>
+    </div>
+
+    <p class="landing-section__description">History of publications as author, editor, or contributor.</p>
+
+    <details class="landing-section__details">
+      <summary>View Publications</summary>
+      <div class="publication-cards">
+        {# Dystopia Rising Tabletop: Embers of the Irradiated West #}
+        <div class="publication-card">
+          <div class="publication-card__image">
+            <img src="/assets/images/content-history/pubs-embers-card.jpg" alt="Dystopia Rising Tabletop: Embers of the Irradiated West">
+          </div>
+          <div class="publication-card__content">
+            <h3 class="publication-card__title">Dystopia Rising Tabletop: Embers of the Irradiated West</h3>
+            <div class="publication-card__meta">
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">By:</span> Michael Pucci, Ian Powell, and Nicholas John Galinski</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Publisher:</span> Eschaton Media Inc</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Year:</span> 2013</span>
+            </div>
+            <div class="publication-card__divider"></div>
+            <div class="publication-card__role">Author</div>
+            <div class="publication-card__scope">
+              <strong>Scope:</strong> Writer of all locations, characters, factions, lore, and hooks for the Mexico ("Pridelands") portion of the book.
+            </div>
+          </div>
+        </div>
+
+        {# The Colonist's Guide to Aularia #}
+        <div class="publication-card">
+          <div class="publication-card__image">
+            <img src="/assets/images/content-history/brands-sg-card.jpg" alt="The Colonist's Guide to Aularia">
+          </div>
+          <div class="publication-card__content">
+            <h3 class="publication-card__title">The Colonist's Guide to Aularia</h3>
+            <div class="publication-card__meta">
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">By:</span> Nicholas Galinski &amp; Matthew Trezza</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Publisher:</span> Sacred Grounds Gaming, Inc.</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Year:</span> 1st Edition 2014, 2nd Edition 2017</span>
+            </div>
+            <div class="publication-card__divider"></div>
+            <div class="publication-card__role">Author, Project Manager, &amp; Game Designer</div>
+            <div class="publication-card__scope">
+              <strong>Scope:</strong> Driving force behind the 1st and 2nd edition book's creation, including collaborative ideation with co-author. Organized all art briefs, contractors, information architecture, and content strategy. Continuing in a consultant for 3rd edition on.
+            </div>
+          </div>
+        </div>
+
+        {# The Merchant's Guide to Aularia #}
+        <div class="publication-card">
+          <div class="publication-card__image">
+            <img src="/assets/images/content-history/brands-sg-card.jpg" alt="The Merchant's Guide to Aularia">
+          </div>
+          <div class="publication-card__content">
+            <h3 class="publication-card__title">The Merchant's Guide to Aularia</h3>
+            <div class="publication-card__meta">
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">By:</span> Nicholas Galinski &amp; Matthew Trezza</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Publisher:</span> Sacred Grounds Gaming, Inc.</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Year:</span> 1st Edition 2017</span>
+            </div>
+            <div class="publication-card__divider"></div>
+            <div class="publication-card__role">Author, Project Manager, &amp; Game Designer</div>
+            <div class="publication-card__scope">
+              <strong>Scope:</strong> Driving force behind the 1st edition book's creation, including collaborative ideation with co-author. Organized all art briefs, contractors, information architecture, and content strategy. Continuing in a consultant for 2nd edition on.
+            </div>
+          </div>
+        </div>
+
+        {# BREACH: Guide to the Multiverse #}
+        <div class="publication-card">
+          <div class="publication-card__image">
+            <img src="/assets/images/content-history/pubs-breach-card.jpg" alt="BREACH: Guide to the Multiverse">
+          </div>
+          <div class="publication-card__content">
+            <h3 class="publication-card__title">BREACH: Guide to the Multiverse</h3>
+            <div class="publication-card__meta">
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">By:</span> Nicholas Galinski &amp; Matthew Trezza</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Publisher:</span> Sacred Grounds Gaming, Inc.</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Year:</span> 2017</span>
+            </div>
+            <div class="publication-card__divider"></div>
+            <div class="publication-card__role">Author, Project Manager, &amp; Game Designer</div>
+            <div class="publication-card__scope">
+              <strong>Scope:</strong> Designed system and set story based on lore from a third party intellectual property.
+            </div>
+          </div>
+        </div>
+
+        {# Sacred Grounds: Aularia Lore Packets Series #}
+        <div class="publication-card">
+          <div class="publication-card__image">
+            <img src="/assets/images/content-history/brands-sg-card.jpg" alt="Sacred Grounds: Aularia Lore Packets Series">
+          </div>
+          <div class="publication-card__content">
+            <h3 class="publication-card__title">Sacred Grounds: Aularia Lore Packets Series</h3>
+            <div class="publication-card__meta">
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">By:</span> Nicholas Galinski, Matthew Trezza, Anthony Sarno</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Publisher:</span> Sacred Grounds Gaming, Inc.</span>
+              <span class="publication-card__meta-item"><span class="publication-card__meta-label">Year:</span> 2014-2020</span>
+            </div>
+            <div class="publication-card__divider"></div>
+            <div class="publication-card__role">Author, Project Manager, &amp; Editor</div>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
 
   {# PRODUCTION SECTION #}
   <div class="landing-section" id="production">
@@ -231,95 +479,6 @@ permalink: /content-history/
           <div class="mini-card__content">
             <h3 class="mini-card__title">Dice Envy</h3>
             <div class="mini-card__role">Integrated UGC-style ad-reads on livestreams, live play from influencers integrated into shows, written Discord content with CTA.</div>
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>
-
-  {# COPYWRITING SECTION #}
-  <div class="landing-section" id="copywriting">
-    <div class="landing-section__header">
-      <h2 class="landing-section__heading">Copywriting</h2>
-      <a href="#copywriting" class="landing-section__anchor-link" title="Copy link to section">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a>
-    </div>
-
-    <p class="landing-section__description">Marketing copy and brand messaging work.</p>
-
-    <details class="landing-section__details">
-      <summary>View Copywriting Projects</summary>
-      <div class="landing-cards">
-        {# Full-size Brand Card #}
-        <div class="brand-card">
-          <div class="brand-card__image">
-            <img src="/assets/images/content-history/placeholder.jpg" alt="Project placeholder">
-          </div>
-          <div class="brand-card__content">
-            <div class="brand-card__role">Role</div>
-            <p class="brand-card__description">Description of the project and contribution.</p>
-            <div class="brand-card__results">
-              <strong>Results:</strong> Metrics and outcomes.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {# Mini Cards - 2 per row #}
-      <div class="mini-cards">
-        <div class="mini-card">
-          <div class="mini-card__image">
-            <img src="/assets/images/content-history/placeholder.jpg" alt="Project placeholder">
-          </div>
-          <div class="mini-card__content">
-            <h3 class="mini-card__title">Project Title</h3>
-            <div class="mini-card__role">Role</div>
-          </div>
-        </div>
-
-        <div class="mini-card">
-          <div class="mini-card__image">
-            <img src="/assets/images/content-history/placeholder.jpg" alt="Project placeholder">
-          </div>
-          <div class="mini-card__content">
-            <h3 class="mini-card__title">Project Title</h3>
-            <div class="mini-card__role">Role</div>
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>
-
-  {# PUBLICATIONS SECTION #}
-  <div class="landing-section" id="publications">
-    <div class="landing-section__header">
-      <h2 class="landing-section__heading">Publications</h2>
-      <a href="#publications" class="landing-section__anchor-link" title="Copy link to section">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a>
-    </div>
-
-    <p class="landing-section__description">History of publications as author, editor, or contributor.</p>
-
-    <details class="landing-section__details">
-      <summary>View Publications</summary>
-      <div class="landing-cards">
-        {# Placeholder publication card #}
-        <div class="brand-card">
-          <div class="brand-card__image">
-            <img src="/assets/images/content-history/placeholder.jpg" alt="Publication placeholder">
-          </div>
-          <div class="brand-card__content">
-            <h3 class="brand-card__title">Publication Title</h3>
-            <div class="brand-card__role">Role</div>
-            <p class="brand-card__description">Description of the publication and contribution.</p>
           </div>
         </div>
       </div>

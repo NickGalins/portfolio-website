@@ -23,7 +23,11 @@ permalink: /contact/index.html
     {% endif %}
     {# Display body content (HTML from XML CDATA) #}
     <div class="page__body">
-      {{ section.body | safe }}
+      {% if section.body.__cdata %}
+        {{ section.body.__cdata | safe }}
+      {% else %}
+        {{ section.body | safe }}
+      {% endif %}
     </div>
   </section>
   {% endfor %}

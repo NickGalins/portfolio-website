@@ -573,4 +573,163 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('hashchange', () => {
     openDetailsForHash(window.location.hash);
   });
+
+  // ==========================================================================
+  // FEEDBACK FORM (Building This Portfolio page)
+  // ==========================================================================
+  // Handles thumbs up/down feedback with optional form for negative feedback
+
+  const feedbackPositive = document.getElementById('feedback-positive');
+  const feedbackNegative = document.getElementById('feedback-negative');
+  const feedbackThanksPositive = document.getElementById('feedback-thanks-positive');
+  const feedbackFormContainer = document.getElementById('feedback-form-container');
+  const feedbackForm = document.getElementById('feedback-form');
+  const feedbackIncludeEmail = document.getElementById('feedback-include-email');
+  const feedbackEmail = document.getElementById('feedback-email');
+  const feedbackThanksNegative = document.getElementById('feedback-thanks-negative');
+
+  // Only set up if feedback elements exist on the page
+  if (feedbackPositive && feedbackNegative) {
+
+    // POSITIVE FEEDBACK: Show thanks message
+    feedbackPositive.addEventListener('click', () => {
+      // Mark button as selected
+      feedbackPositive.classList.add('selected');
+      feedbackNegative.classList.remove('selected');
+
+      // Hide form, show thanks
+      if (feedbackFormContainer) feedbackFormContainer.style.display = 'none';
+      if (feedbackThanksPositive) feedbackThanksPositive.style.display = 'block';
+    });
+
+    // NEGATIVE FEEDBACK: Show feedback form
+    feedbackNegative.addEventListener('click', () => {
+      // Mark button as selected
+      feedbackNegative.classList.add('selected');
+      feedbackPositive.classList.remove('selected');
+
+      // Hide positive thanks, show form
+      if (feedbackThanksPositive) feedbackThanksPositive.style.display = 'none';
+      if (feedbackFormContainer) feedbackFormContainer.style.display = 'block';
+      if (feedbackThanksNegative) feedbackThanksNegative.style.display = 'none';
+    });
+
+    // EMAIL CHECKBOX: Toggle email input visibility
+    if (feedbackIncludeEmail && feedbackEmail) {
+      feedbackIncludeEmail.addEventListener('change', () => {
+        feedbackEmail.style.display = feedbackIncludeEmail.checked ? 'block' : 'none';
+        if (feedbackIncludeEmail.checked) {
+          feedbackEmail.focus();
+        }
+      });
+    }
+
+    // FORM SUBMISSION: Send feedback via mailto
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const feedbackText = document.getElementById('feedback-text');
+        const feedback = feedbackText ? feedbackText.value : '';
+        const includeEmail = feedbackIncludeEmail ? feedbackIncludeEmail.checked : false;
+        const email = feedbackEmail ? feedbackEmail.value : '';
+
+        // Build email body
+        let body = 'Portfolio Feedback:\n\n';
+        body += feedback;
+        if (includeEmail && email) {
+          body += '\n\nFrom: ' + email;
+        } else {
+          body += '\n\n(Anonymous feedback)';
+        }
+
+        // Create mailto link
+        const mailtoLink = 'mailto:nicholasgalinski@everythingstoryteller.com'
+          + '?subject=' + encodeURIComponent('Portfolio Feedback')
+          + '&body=' + encodeURIComponent(body);
+
+        // Open email client in new window/tab (more reliable than location.href)
+        window.open(mailtoLink, '_blank');
+
+        // Show thanks message after a short delay
+        setTimeout(() => {
+          if (feedbackForm) feedbackForm.style.display = 'none';
+          if (feedbackThanksNegative) feedbackThanksNegative.style.display = 'block';
+        }, 500);
+      });
+    }
+  }
+
+  // ==========================================================================
+  // DEVICE TABS (Google Help Center style)
+  // ==========================================================================
+  // Tabbed interface for showing device-specific instructions
+  // (Desktop / Android / iOS)
+
+  const deviceTabGroups = document.querySelectorAll('.device-tabs');
+
+  deviceTabGroups.forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.device-tabs__tab');
+    const panels = tabGroup.querySelectorAll('.device-tabs__panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('aria-controls');
+
+        // Update tab states
+        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+
+        // Update panel visibility
+        panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+        const targetPanel = tabGroup.querySelector(`#${targetId}`);
+        if (targetPanel) {
+          targetPanel.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  });
+
+  // ==========================================================================
+  // CANNED RESPONSE COPY BUTTONS
+  // ==========================================================================
+  // Copies canned response text to clipboard when clicking the copy button
+
+  const copyButtons = document.querySelectorAll('.canned-response__copy');
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const container = btn.closest('.canned-response');
+      const content = container?.querySelector('.canned-response__content');
+      if (!content) return;
+
+      const text = content.textContent || '';
+
+      try {
+        await navigator.clipboard.writeText(text.trim());
+        // Show feedback
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = text.trim();
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      }
+    });
+  });
 });

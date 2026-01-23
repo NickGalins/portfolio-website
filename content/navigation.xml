@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation>
   <section id="case-studies" label="Case Studies" landing="/case-studies/">
+    <!-- Projects with content -->
     <item id="everland-trust-safety" label="Everland - Trust &amp; Safety Reporting System" />
-    <item id="aws-ai-agents" label="AWS - AI Agents and Tools" />
     <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
-    <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" />
-    <item id="sacred-grounds-supernal" label="The Supernal Gardens - Live Gamified Event Experience" />
-    <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" />
     <item id="building-this-portfolio" label="Building This Portfolio" />
+    <!-- Coming Soon (alphabetical) -->
+    <item id="aws-ai-agents" label="AWS - AI Agents and Tools" coming-soon="true" />
+    <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" coming-soon="true" />
+    <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" coming-soon="true" />
+    <item id="sacred-grounds-supernal" label="The Supernal Gardens - Live Gamified Event Experience" coming-soon="true" />
   </section>
 
   <section id="individual-samples" label="Individual Samples" landing="/individual-samples/">
-    <item id="google-translate-lens" label="Google - Translate with Lens" />
-    <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" />
+    <!-- Projects with content -->
     <item id="api-documentation" label="Gski ReviewLoop API Reference" />
+    <item id="google-receipt-vault" label="Google-Style UX &amp; KB Writing" />
     <item id="oathforger-chapter-1" label="Oathforger, Chapter 1 - Long Form Narrative" />
-    <item id="short-form" label="Elgato &amp; DiceEnvy - Podcast Ad Reads" />
+    <item id="short-form-ugc-copy" label="Short Form UGC Copy" />
+    <!-- Coming Soon (alphabetical) -->
+    <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" coming-soon="true" />
   </section>
 
   <section id="content-history" label="Content History" landing="/content-history/">
-    <item id="production" label="Production" anchor="/content-history/#production" />
     <item id="copywriting" label="Copywriting" anchor="/content-history/#copywriting" />
     <item id="publications" label="Publications" anchor="/content-history/#publications" />
+    <item id="production" label="Production" anchor="/content-history/#production" />
   </section>
 
   <pages>

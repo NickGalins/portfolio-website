@@ -4,6 +4,87 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-22 - Everything Storyteller Blog Launch
+
+### Added
+
+- "Everything Storyteller" blog section with listing page and individual post pages
+- First blog post: "Writers Are Performers" - literary journalism on multidisciplinary writing
+- Blog templates: `blog.njk` (listing) and `blog-post.njk` (individual posts)
+- Blog XML content in `content/blog/` directory
+- Author card with photo and bio on blog posts
+- Featured post highlighting on blog index
+- Pull quote and callout box styling for blog content
+- Blog images: hero and thumbnail for posts
+- Blog URLs added to sitemap
+
+### Changed
+
+- Updated `eleventy.config.js` to load blog posts from `content/blog/`
+- Added `Context/**` to Eleventy ignores to prevent internal files from being built
+- Removed HTML comments from `blog-post.njk` template (production cleanup)
+
+### Fixed
+
+- CDATA content in blog posts now renders correctly (accessing `__cdata` property)
+- Context folder no longer builds to `_site/` output
+
+## 2026-01-22 - Google Receipt Vault Sample
+
+### Added
+
+- New "Google Receipt Vault" writing sample replacing "Google - Translate with Lens"
+- Fictional product stand-in representing help center documentation work across Pixel, Search, Drive, and Cloud
+- Sample external help center guides with step-by-step procedures
+- Sample internal knowledge base documentation for technical audiences
+
+### Changed
+
+- Renamed `google-translate-lens.xml` to `google-receipt-vault.xml`
+- Updated navigation.xml with new project ID and label
+
+## 2026-01-22 - Pre-Launch Preparation
+
+### Added
+
+- Site-wide footer with copyright and disclaimer on all pages
+- "Coming Soon" sections for 5 incomplete projects with clock icon and yellow styling
+- Logo marquee on Resume page with link to Content History
+- CSS variables `--color-surface` and `--color-warning` for code blocks and notices
+- Coming Soon notice styling (`.coming-soon-notice`) with SVG clock icon
+
+### Changed
+
+- Resume "Brands" section now shows scrolling marquee with link to Content History
+
+### Fixed
+
+- Removed debug console.log statements from eleventy.config.js (10 statements)
+- Removed placeholder "(Brand logos to be added)" text from resume page
+- Removed awkward "See other brands" position entry from resume.xml
+- About and Contact page templates now properly render CDATA content
+
+## 2026-01-22 - Short Form UGC Copy & Template Improvements
+
+### Added
+
+- New "Podcast UGC-Style Ad Copy" writing sample with Elgato Stream Deck ad read
+- Audio player component for podcast ad samples (`assets/audio/`)
+- Ad copy container styling (`.ad-copy-container`) with lighter background
+- CDATA support in XML parser for HTML content in project bodies
+
+### Changed
+
+- Renamed `short-form` project to `short-form-ugc-copy`
+- URL changed from `/projects/short-form/` to `/projects/short-form-ugc-copy/`
+- Updated project template to handle single-section projects correctly
+- Removed dates from select project headers (7 projects)
+
+### Fixed
+
+- Project template now correctly renders single `<section>` elements (was only working with arrays)
+- CDATA content in XML body sections now renders properly
+
 ## 2026-01-22 - Content History Page & Mini Cards
 
 ### Added
@@ -69,13 +150,12 @@ All notable changes to this portfolio site will be documented in this file.
 - Sacred Grounds Shop
 - Sacred Grounds Supernal
 
-### Individual Samples (6)
+### Individual Samples (5)
 - API Documentation (Gski ReviewLoop)
-- Google Translate Lens
+- Google Receipt Vault
 - Oathforger Chapter 1
-- Other Narrative
 - Sacred Grounds Rulebook
-- Short Form
+- Short Form UGC Copy
 
 ## 2026-01-19 - Navigation Restructure
 

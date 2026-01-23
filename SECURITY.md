@@ -2,7 +2,7 @@
 
 Security best practices and issue tracking for the portfolio website.
 
-**Last Audit:** 2026-01-18 | **Status:** SECURE (Low Risk)
+**Last Audit:** 2026-01-22 | **Status:** SECURE (Low Risk)
 
 ## Current Security Status
 
@@ -81,16 +81,18 @@ Track potential security concerns here:
 
 ### Active Issues
 
-| Issue                     | Severity | Status | Notes                                       |
-| ------------------------- | -------- | ------ | ------------------------------------------- |
-| Missing package-lock.json | Medium   | Open   | Run `npm install` and commit the lock file  |
-| validate script missing   | Low      | Open   | `scripts/validate-xml.js` doesn't exist     |
+| Issue                     | Severity | Status   | Notes                                       |
+| ------------------------- | -------- | -------- | ------------------------------------------- |
+| validate script missing   | Low      | Deferred | `scripts/validate-xml.js` doesn't exist - optional feature |
 
 ### Resolved Issues
 
-| Issue | Resolution | Date |
-| ----- | ---------- | ---- |
-| None yet | - | - |
+| Issue                     | Resolution                                    | Date       |
+| ------------------------- | --------------------------------------------- | ---------- |
+| Missing package-lock.json | File now exists and committed                 | 2026-01-21 |
+| Debug logging in config   | Removed console.log statements from eleventy.config.js | 2026-01-22 |
+| Context folder in build   | Added `Context/**` to Eleventy ignores | 2026-01-22 |
+| Dev comments in HTML      | Removed HTML comments from blog-post.njk template | 2026-01-22 |
 
 ---
 
