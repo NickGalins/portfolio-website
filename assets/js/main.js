@@ -65,6 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // RIGHT MENU COLLAPSE TOGGLE (Desktop)
+  // ==========================================================================
+  // Allows users to collapse/expand the right menu on desktop screens
+
+  const rightMenu = document.getElementById('right-menu');
+  const rightMenuCollapse = document.getElementById('right-menu-collapse');
+
+  if (rightMenuCollapse && rightMenu) {
+    // Check for saved preference
+    const isRightCollapsed = localStorage.getItem('rightMenuCollapsed') === 'true';
+    if (isRightCollapsed) {
+      rightMenu.classList.add('is-collapsed');
+    }
+
+    rightMenuCollapse.addEventListener('click', () => {
+      rightMenu.classList.toggle('is-collapsed');
+      // Save preference
+      localStorage.setItem('rightMenuCollapsed', rightMenu.classList.contains('is-collapsed'));
+    });
+  }
+
+  // ==========================================================================
   // SIDEBAR SCROLL INDICATORS
   // ==========================================================================
   // Shows "More" indicators at top/bottom when sidebar content overflows

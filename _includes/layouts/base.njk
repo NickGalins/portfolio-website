@@ -57,14 +57,16 @@
      ========================================================================== #}
   {# This only displays if showVideoHero is true (set in index.njk) #}
   {% if showVideoHero %}
-  <div class="video-hero">
-    {# VIDEO: Vimeo embed with background autoplay #}
-    {# The video autoplays, is muted, and loops continuously #}
-    <div class="video-hero__video">
-      <iframe src="https://player.vimeo.com/video/1154771220?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Portfolio Trailer"></iframe>
+  <div class="video-hero-band">
+    <div class="video-hero">
+      {# VIDEO: Vimeo embed with background autoplay #}
+      {# The video autoplays, is muted, and loops continuously #}
+      <div class="video-hero__video">
+        <iframe src="https://player.vimeo.com/video/1154771220?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Portfolio Trailer"></iframe>
+      </div>
+      {# OVERLAY: Dark semi-transparent layer over video #}
+      <div class="video-hero__overlay"></div>
     </div>
-    {# OVERLAY: Dark semi-transparent layer over video #}
-    <div class="video-hero__overlay"></div>
   </div>
   {# TEXT CONTENT: Name and tagline appear BELOW the video #}
   <div class="video-hero__content">
@@ -200,7 +202,13 @@
     {# ========================================================================
        RIGHT STICKY MENU - Desktop Only
        ======================================================================== #}
-    <nav class="right-menu" aria-label="Site pages">
+    <nav class="right-menu" id="right-menu" aria-label="Site pages">
+      {# COLLAPSE TOGGLE: Expand/collapse the right menu #}
+      <button class="right-menu__collapse-toggle" id="right-menu-collapse" aria-label="Collapse right menu">
+        <svg viewBox="0 0 24 24" width="16" height="16">
+          <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
       {# Container 1: Blog #}
       <div class="right-menu__section">
         <a href="/blog/" class="right-menu__header">Everything Storyteller Blog</a>
