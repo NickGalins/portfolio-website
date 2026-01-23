@@ -206,6 +206,8 @@ ul, ol {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .video-hero {
+    width: 100%;              /* Override desktop width calculation */
+    max-width: 100%;          /* Remove desktop max-width constraint */
     height: auto;
     min-height: auto;
     max-height: none;
