@@ -17,7 +17,11 @@ All notable changes to this portfolio site will be documented in this file.
 - Right menu now hidden on all mobile devices (was showing on iPhone)
 - Hamburger menu button no longer overlaps site name when menu opens
 - Text wraps properly on mobile, preventing horizontal scroll
-- Added `overflow-x: hidden` to body to prevent mobile overflow issues
+- Added `overflow-x: hidden` to html, body, and site-wrapper to prevent mobile overflow
+- Project pages: images now responsive with `max-width: 100%`, title scales down on mobile
+- Landing pages: cards and text content constrained to viewport width
+- Page body styles (about, contact): added word-wrap and overflow fixes
+- Tables scroll horizontally on mobile instead of breaking layout
 
 ## 2026-01-23 - Favicon & Social Sharing
 
