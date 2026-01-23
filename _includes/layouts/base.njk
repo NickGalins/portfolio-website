@@ -29,6 +29,17 @@
 
   {# STYLESHEET: Links to your main CSS file #}
   <link rel="stylesheet" href="/assets/css/main.css">
+
+  {# FAVICON: Icon shown in browser tab #}
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  {# OPEN GRAPH: Social media link previews (LinkedIn, Facebook, Twitter, Slack, etc.) #}
+  <meta property="og:title" content="{{ title }} | Nick Galinski">
+  <meta property="og:description" content="{{ description | default('Portfolio of Nick Galinski - Content Designer & Writer') }}">
+  <meta property="og:image" content="https://nicholasgalinski.com/assets/images/social-share.png">
+  <meta property="og:url" content="https://nicholasgalinski.com{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 

@@ -4,6 +4,19 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-23 - Favicon & Social Sharing
+
+### Added
+
+- Favicon (`favicon.png`) for browser tab icon
+- Open Graph meta tags for social media link previews (LinkedIn, Facebook, Twitter, Slack)
+- Social sharing image (`assets/images/social-share.png`)
+
+### Changed
+
+- Updated `eleventy.config.js` to include favicon in passthrough copy
+- Added favicon and OG tags to `base.njk` layout
+
 ## 2026-01-22 - Everything Storyteller Blog Launch
 
 ### Added

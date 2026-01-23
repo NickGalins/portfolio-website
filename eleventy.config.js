@@ -197,6 +197,7 @@ module.exports = function(eleventyConfig) {
   // This tells Eleventy to copy the 'assets' folder directly to the output
   // without processing it. Your CSS, JS, images, videos all go through here.
   eleventyConfig.addPassthroughCopy('assets');
+  eleventyConfig.addPassthroughCopy('favicon.png');  // Browser tab icon
 
   // -------------------------------------------------------------------------
   // WATCH TARGETS (Live Reload During Development)
