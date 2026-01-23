@@ -19,13 +19,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {# TITLE: Shows in browser tab. Format: "Page Name | Nick Galinski" #}
-  {# The {{ title }} variable comes from the front matter of each page #}
-  <title>{{ title }} | Nick Galinski</title>
+  {# SITE-WIDE CONSTANTS #}
+  {% set siteName = 'Nicholas Galinski' %}
+  {% set siteTagline = 'Writer, Content Designer, Storyteller' %}
+  {% set defaultDescription = 'Portfolio of Nicholas Galinski - Writer, Content Designer, and Storyteller specializing in technical documentation, UX content, and creative writing.' %}
+
+  {# DYNAMIC TITLE & DESCRIPTION #}
+  {# Handles both static pages (title in front matter) and dynamic pages (post.meta.title, project.meta.title) #}
+  {% set pageTitle = title or post.meta.title or project.meta.title %}
+  {% set pageDescription = description or post.meta.excerpt or project.summary or defaultDescription %}
+  {% set pageImage = ogImage or post.meta.thumbnailImage or project.meta.thumbnail or '/assets/images/social-share.png' %}
+
+  {# TITLE: Shows in browser tab #}
+  <title>{% if pageTitle %}{{ pageTitle }} | {{ siteName }}{% else %}{{ siteName }} - {{ siteTagline }}{% endif %}</title>
 
   {# DESCRIPTION: Shows in search engine results #}
-  {# Uses page's description if provided, otherwise uses default text #}
-  <meta name="description" content="{{ description | default('Portfolio of Nick Galinski - Content Designer & Writer') }}">
+  <meta name="description" content="{{ pageDescription }}">
 
   {# STYLESHEET: Links to your main CSS file #}
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -34,9 +43,9 @@
   <link rel="icon" type="image/png" href="/favicon.png">
 
   {# OPEN GRAPH: Social media link previews (LinkedIn, Facebook, Twitter, Slack, etc.) #}
-  <meta property="og:title" content="{{ title }} | Nick Galinski">
-  <meta property="og:description" content="{{ description | default('Portfolio of Nick Galinski - Content Designer & Writer') }}">
-  <meta property="og:image" content="https://nicholasgalinski.com/assets/images/social-share.png">
+  <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} | {{ siteName }}{% else %}{{ siteName }} - {{ siteTagline }}{% endif %}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:image" content="https://nicholasgalinski.com{{ pageImage }}">
   <meta property="og:url" content="https://nicholasgalinski.com{{ page.url }}">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
