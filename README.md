@@ -286,13 +286,28 @@ For detailed blog instructions, see [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_P
 
 ## Video Header (Homepage)
 
-The homepage features a Vimeo video background that autoplays.
+The homepage features a Vimeo video background that autoplays. The video behaves differently on desktop and mobile to optimize the experience for each device.
+
+### Desktop Behavior
+
+- **Letterboxed display**: Video uses 16:9 aspect ratio centered on screen
+- **Responsive width**: Scales based on viewport minus sidebar (280px) and padding (400px)
+- **Max width**: 1050px to prevent oversized display on large monitors
+- **Title position**: "Nicholas Galinski" and tagline appear below the video
+- **Dark band**: Video sits in a dark (#0a1420) band that spans full width
+
+### Mobile Behavior
+
+- **Full-width display**: Video stretches to 100% viewport width (no letterboxing)
+- **16:9 aspect ratio**: Maintains aspect ratio but fills available width
+- **Simplified layout**: No sidebar offset calculations
+- **Same title position**: Title and tagline appear below video
 
 ### Current Setup
 
 - Video is embedded from Vimeo (not a local file)
 - Autoplays muted, loops continuously
-- Desktop: 80vh height | Mobile: 50vh height
+- Overlay gradient darkens the video for better text contrast (if overlaid)
 
 ### Changing the Video
 
@@ -306,6 +321,7 @@ The homepage features a Vimeo video background that autoplays.
 - Keep it short (15-30 seconds for the loop)
 - No audio needed (muted by default)
 - Works best with subtle, ambient footage
+- 16:9 aspect ratio recommended for best display on both desktop and mobile
 
 ---
 
@@ -313,14 +329,14 @@ The homepage features a Vimeo video background that autoplays.
 
 The site uses a single breakpoint at **768px**. Here's what changes:
 
-| Feature        | Desktop (>768px)           | Mobile (≤768px)          |
-| -------------- | -------------------------- | ------------------------ |
-| Sidebar        | Fixed 280px, collapsible   | Hidden, hamburger menu   |
-| Right menu     | Sticky navigation          | Hidden                   |
-| Project grid   | 4 columns                  | Auto-fill responsive     |
-| Tag filters    | Collapsible panel          | Hidden                   |
-| Video hero     | 80vh height                | 50vh height              |
-| Image magnifier| Hover effect               | Disabled                 |
+| Feature        | Desktop (>768px)             | Mobile (≤768px)        |
+| -------------- | ---------------------------- | ---------------------- |
+| Sidebar        | Fixed 280px, collapsible     | Hidden, hamburger menu |
+| Right menu     | Sticky navigation            | Hidden                 |
+| Project grid   | 4 columns                    | Auto-fill responsive   |
+| Tag filters    | Collapsible panel            | Hidden                 |
+| Video hero     | Letterboxed 16:9, max 1050px | Full-width 16:9        |
+| Image magnifier| Hover effect                 | Disabled               |
 
 Mobile-hidden features are intentional to simplify the experience on smaller screens.
 

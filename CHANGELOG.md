@@ -11,17 +11,26 @@ All notable changes to this portfolio site will be documented in this file.
 - Moved hero title and subtitle below video instead of overlaying it
 - Video hero offset adjusted (+125px) to show more content
 - Main content now centers responsively under viewport-centered title using `max()` calculation
+- Desktop video: letterboxed 16:9 aspect ratio, max-width 1050px, centered with dark band background
+- Mobile video: full-width 16:9 aspect ratio (overrides desktop width calculations)
+
+### Added
+
+- Right menu collapse toggle on desktop (with localStorage persistence)
+- Hamburger overlap fixes for all page types (projects, About, Contact, Work History, landing pages, blog)
 
 ### Fixed
 
 - Right menu now hidden on all mobile devices (was showing on iPhone)
 - Hamburger menu button no longer overlaps site name when menu opens
+- Hamburger menu button no longer overlaps page titles on mobile (added top padding)
 - Text wraps properly on mobile, preventing horizontal scroll
 - Added `overflow-x: hidden` to html, body, and site-wrapper to prevent mobile overflow
 - Project pages: images now responsive with `max-width: 100%`, title scales down on mobile
 - Landing pages: cards and text content constrained to viewport width
 - Page body styles (about, contact): added word-wrap and overflow fixes
 - Tables scroll horizontally on mobile instead of breaking layout
+- Mobile video display fixed (was vanishing due to desktop width calculations)
 
 ## 2026-01-23 - Favicon & Social Sharing
 
