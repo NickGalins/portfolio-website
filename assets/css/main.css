@@ -96,6 +96,7 @@ body {
   line-height: 1.6;                        /* Comfortable reading height */
   color: var(--color-text);                /* Off-white text */
   background-color: var(--color-bg);       /* Dark navy background */
+  overflow-x: hidden;                      /* Prevent horizontal scroll on mobile */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -143,9 +144,6 @@ ul, ol {
   min-height: 500px;
   max-height: 700px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .video-hero__video {
@@ -165,7 +163,7 @@ ul, ol {
   height: 100vh;
   min-width: 100%;
   min-height: 56.25vw;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% - 25px));
 }
 
 .video-hero__overlay {
@@ -178,36 +176,39 @@ ul, ol {
   );
 }
 
+/* Title section below video */
 .video-hero__content {
-  position: relative;
-  z-index: 1;
   text-align: center;
-  color: #fff;
-  padding: var(--space-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--color-bg);
 }
 
 .video-hero__title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--space-sm);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
 }
 
 .video-hero__subtitle {
   font-size: 1.25rem;
-  opacity: 0.9;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
-/* Mobile: static image fallback */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .video-hero {
     height: 50vh;
     min-height: 300px;
   }
-  
+
   .video-hero__title {
     font-size: 2rem;
+  }
+
+  .video-hero__content {
+    padding: var(--space-xl) var(--space-md);
   }
 }
 
@@ -519,6 +520,10 @@ ul, ol {
     transform: translateX(0);
   }
 
+  .sidebar__content {
+    padding-top: calc(var(--space-xl) + 48px);
+  }
+
   .sidebar__toggle {
     display: flex;
     align-items: center;
@@ -530,6 +535,10 @@ ul, ol {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 4px;
+  }
+
+  .right-menu {
+    display: none !important;
   }
 }
 
@@ -698,10 +707,25 @@ ul, ol {
 
 .main-content {
   flex: 1;
-  margin-left: var(--sidebar-width);
   padding: var(--space-3xl);
-  max-width: 1200px;
+  max-width: 900px;
+  /* Center content under viewport-centered title */
+  /* Use max() to ensure it never goes under the sidebar */
+  margin-left: max(var(--sidebar-width), calc(50vw - 450px));
   margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-content pre,
+.main-content code {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {

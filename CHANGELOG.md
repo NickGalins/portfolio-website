@@ -4,6 +4,21 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-23 - Mobile Layout Fixes & Hero Redesign
+
+### Changed
+
+- Moved hero title and subtitle below video instead of overlaying it
+- Video hero offset adjusted (+125px) to show more content
+- Main content now centers responsively under viewport-centered title using `max()` calculation
+
+### Fixed
+
+- Right menu now hidden on all mobile devices (was showing on iPhone)
+- Hamburger menu button no longer overlaps site name when menu opens
+- Text wraps properly on mobile, preventing horizontal scroll
+- Added `overflow-x: hidden` to body to prevent mobile overflow issues
+
 ## 2026-01-23 - Favicon & Social Sharing
 
 ### Added
