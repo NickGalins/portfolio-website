@@ -1503,11 +1503,23 @@ ul, ol {
     max-width: 100%;
     overflow-x: hidden;
   }
+
+  /* Add top padding to first h1 on About/Contact pages to avoid hamburger menu overlap */
+  .page__section:first-child h1 {
+    padding-top: 50px;
+  }
 }
 
 /* Resume / Work History */
 .resume__header {
   margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  /* Add top padding to Work History title to avoid hamburger menu overlap */
+  .resume__header h1 {
+    padding-top: 50px;
+  }
 }
 
 .resume__intro {
@@ -2120,6 +2132,11 @@ ul, ol {
 /* Responsive Design - Mobile Adjustments
    ========================================================================== */
 @media (max-width: 768px) {
+  /* Add top padding to blog listing header to avoid hamburger menu overlap */
+  .blog__header h1 {
+    padding-top: 50px;
+  }
+
   /* Featured post stacks vertically on mobile */
   .blog-post-featured {
     grid-template-columns: 1fr;
@@ -2151,6 +2168,8 @@ ul, ol {
   /* Smaller headings on mobile */
   .blog-post__header h1 {
     font-size: 2rem;
+    /* Add top padding to avoid hamburger menu overlap */
+    padding-top: 50px;
   }
 
   .blog-post__content {
@@ -2345,6 +2364,8 @@ ul, ol {
     font-size: 2rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    /* Add top padding to avoid hamburger menu overlap */
+    padding-top: 50px;
   }
 
   .category-landing__intro {
