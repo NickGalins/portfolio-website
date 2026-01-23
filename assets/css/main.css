@@ -164,7 +164,7 @@ ul, ol {
   height: 100vh;
   min-width: 100%;
   min-height: 56.25vw;
-  transform: translate(-50%, calc(-50% - 25px));
+  transform: translate(-50%, calc(-50% + 125px));
 }
 
 .video-hero__overlay {
