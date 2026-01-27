@@ -4,6 +4,24 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-27 - New Blog Post & Right Sidebar Enhancements
+
+### Added
+
+- New blog post: "Rules are Ok, Constraints are Better" - personal narrative about creative constraints
+- Right sidebar now displays up to 3 most recent blog post titles (previously showed 1)
+- "More posts →" link in right sidebar linking to blog landing page
+- Visual divider lines between blog posts in right sidebar
+- Supernal Gardens case study images (Arena, Bar, Scrying Pool, Joust concepts)
+- Audio samples for Supernal Gardens prophecies (Storm Charm, Guard Captain's Medal)
+
+### Changed
+
+- Renamed "Immersive Marketing Event" to "Immersive Experience" in navigation
+- Moved The Supernal Gardens to top of Case Studies section
+- Updated featured flag: "Constraints are Better" is now featured, "Writers Are Performers" unfeatured
+- Updated BLOG_IMPLEMENTATION_CONTEXT.md with right sidebar documentation
+
 ## 2026-01-23 - Mobile Layout Fixes & Hero Redesign
 
 ### Changed

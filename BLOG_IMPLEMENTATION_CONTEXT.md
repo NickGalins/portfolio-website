@@ -296,6 +296,26 @@ Ensures text readability over hero image background.
    - Body with sections, pull quotes, callouts
 5. **Footer:** Back link, disclaimer, copyright
 
+### In Right Sidebar (All Pages)
+
+The right sidebar navigation displays blog posts site-wide:
+
+1. **Header:** "Everything Storyteller Blog" (links to `/blog/`)
+2. **Recent Posts:** Up to 3 most recent post titles (clickable links)
+3. **More Link:** "More posts →" link to blog landing page
+
+**Visual Design:**
+
+- Posts separated by subtle divider lines (`border-bottom: 1px solid var(--color-border)`)
+- First post has no top padding, last post has no bottom border
+- "More posts" link in accent color with hover effect
+
+**Template Location:** `_includes/layouts/base.njk`
+
+**CSS Classes:**
+- `.right-menu__recent-post` - Individual post links with dividers
+- `.right-menu__more-link` - "More posts" link styling
+
 ---
 
 ## Known Issues & Solutions
@@ -491,6 +511,6 @@ Potential additions (not yet implemented):
 
 ---
 
-**Last Updated:** January 16, 2026
-**Blog Version:** 1.0
+**Last Updated:** January 27, 2026
+**Blog Version:** 1.1
 **Maintained By:** Nicholas Galinski

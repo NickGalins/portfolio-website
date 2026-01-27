@@ -104,7 +104,7 @@
             'aws-ai-agents': 'AI Agents Marketplace',
             'sacred-grounds-shop': 'Live Game System CX',
             'everland-narrative': 'MMO Narrative Design',
-            'sacred-grounds-supernal': 'Immersive Marketing Event',
+            'sacred-grounds-supernal': 'Immersive Experience',
             'sacred-grounds-influencer': 'Influencer Marketing',
             'building-this-portfolio': 'Building This Portfolio',
             'google-translate-lens': 'Tech Product Documentation',
@@ -209,13 +209,18 @@
           <path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2"/>
         </svg>
       </button>
-      {# Container 1: Blog #}
+      {# Container 1: Blog - Show up to 3 recent posts #}
       <div class="right-menu__section">
         <a href="/blog/" class="right-menu__header">Everything Storyteller Blog</a>
-        {% if posts and posts[0] %}
-        <a href="/blog/{{ posts[0].meta.id }}/" class="right-menu__recent-post">
-          {{ posts[0].meta.title }}
-        </a>
+        {% if posts %}
+          {% for post in posts %}
+            {% if loop.index <= 3 %}
+            <a href="/blog/{{ post.meta.id }}/" class="right-menu__recent-post">
+              {{ post.meta.title }}
+            </a>
+            {% endif %}
+          {% endfor %}
+          <a href="/blog/" class="right-menu__more-link">More posts &rarr;</a>
         {% endif %}
       </div>
 

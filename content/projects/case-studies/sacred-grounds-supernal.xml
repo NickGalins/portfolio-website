@@ -3,11 +3,11 @@
   <meta>
     <id>sacred-grounds-supernal</id>
     <title>Sacred Grounds - The Supernal Gardens</title>
-    <subtitle>Campaign narrative and worldbuilding for a live-action event series</subtitle>
+    <subtitle>Immersive Convention Marketing Through Environmental Storytelling</subtitle>
     <client>Sacred Grounds Gaming</client>
-    <role>Creative Director / Lead Writer</role>
-    <thumbnail>/assets/images/supernal-gardens-thumb.png</thumbnail>
-    <teaser>Designed and managed a live gamified event experience combining narrative storytelling with real-time player engagement. Coordinated cross-functional teams including community managers, designers, and developers.</teaser>
+    <role>Director of Content Development</role>
+    <thumbnail>/assets/images/Supernal-Gardens-Arena.jpeg</thumbnail>
+    <teaser>Designed and directed a live immersive marketing experience at a convention, combining environmental storytelling, actor-driven narrative, and tech-enhanced interactions to convert attendees into paying customers for future events.</teaser>
     <tags>
       <tag>Content Design</tag>
       <tag>Game</tag>
@@ -19,25 +19,412 @@
       <tag>Project Management</tag>
       <tag>People Management</tag>
       <tag>Cross-functional Collaboration</tag>
-      <tag>Trust &amp; Safety</tag>
     </tags>
   </meta>
-  
+
+  <summary>
+    The Supernal Gardens was a free immersive marketing experience at a gaming convention, designed to showcase Sacred Grounds Gaming's live event format and convert attendees into future paying customers. I designed the narrative guest journey, wrote environmental storytelling elements, created actor character guides, and directed the experience on-site. The result was a 40% increase in attendance at the following paid Sacred Grounds event.
+  </summary>
+
   <content>
     <section>
-      <body><![CDATA[
-<div class="coming-soon-notice">
-  <div class="coming-soon-notice__header">
-    <svg class="coming-soon-notice__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <polyline points="12 6 12 12 16 14"></polyline>
-    </svg>
-    <span class="coming-soon-notice__title">Coming Soon</span>
-  </div>
-  <p>This is a new portfolio created in January 2026, and I'm still migrating all of my work here.</p>
-  <p>If you were hoping to read this specific sample or case study, you can <a href="/contact/">contact me</a> or connect with me on <a href="https://www.linkedin.com/in/nicholas-galinski/" target="_blank" rel="noopener">LinkedIn</a> for the PDF version.</p>
-</div>
-      ]]></body>
+      <heading>The Challenge</heading>
+      <body>
+        <![CDATA[
+          <p>Sacred Grounds Gaming needed to market their monthly live game experiences at a convention. The challenge: transform a hotel convention hall into a fully immersive experience—complete with props, actors, and a story participants could actively impact—that would funnel attendees into future paid events.</p>
+
+          <div style="background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #7c3aed;">
+            <h4 style="margin-top: 0; color: #c4b5fd;">Core Constraints</h4>
+            <ul style="color: #e2e8f0; line-height: 1.8; margin-bottom: 0;">
+              <li><strong>Limited time:</strong> Guests might only spend 20-60 minutes in the space</li>
+              <li><strong>Varied engagement:</strong> Some would dive deep, others would casually browse</li>
+              <li><strong>Clear conversion goal:</strong> Sign-ups for future paid Sacred Grounds events</li>
+              <li><strong>Must emulate the product:</strong> The convention experience needed to feel like a preview of what they'd pay for</li>
+            </ul>
+          </div>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Approach: Participant-Driven Narrative</heading>
+      <body>
+        <![CDATA[
+          <p>Rather than a passive booth or static display, I designed the experience so that participants would immediately become part of the story. The key insight: <strong>participants are special</strong>.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #3b82f6;">
+              <h4 style="margin-top: 0; color: #93c5fd;">Prophetic Powers</h4>
+              <p style="color: #e2e8f0; margin-bottom: 0;">Participants' devices give them abilities the actors don't have—scanning QR codes reveals hidden information, and RFID-tagged items unlock video prophecies at the scrying pool.</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #3b82f6;">
+              <h4 style="margin-top: 0; color: #93c5fd;">Story Conforms to Actions</h4>
+              <p style="color: #e2e8f0; margin-bottom: 0;">How much participants investigate and reveal shapes the narrative. The story adapts to their level of engagement—passive observers get a show, active investigators uncover conspiracies.</p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #3b82f6;">
+              <h4 style="margin-top: 0; color: #93c5fd;">Actor Autonomy</h4>
+              <p style="color: #e2e8f0; margin-bottom: 0;">Every actor has a backstory, motivation, and personal goals. They don't follow scripts—they improv while pursuing their character's objectives, creating authentic interactions.</p>
+            </div>
+          </div>
+
+          <p>This approach directly mirrors how normal Sacred Grounds events work, so the convention experience <em>is</em> the product demo.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Guest Journey</heading>
+      <body>
+        <![CDATA[
+          <h3>Registration & Onboarding</h3>
+          <p>Guests could pre-register through convention sign-ups or walk in. The event was free, but participants signed a waiver and provided contact info (the first conversion point). Content warnings covered violence, prop blood, and swearing, with age restrictions for certain activities.</p>
+
+          <p>A brief onboarding session explained how to interact with actors, scan QR codes, and use tagged props—with example interactions to loosen people up and set expectations.</p>
+
+          <h3>Narrative Setup</h3>
+          <div style="background: linear-gradient(135deg, #3d2914 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #d97706; border-left: 6px solid #d97706;">
+            <p style="color: #fef3c7; font-style: italic; margin: 0; font-size: 1.1rem; line-height: 1.7;">
+              "You are colonists aboard the GTS Mercurious, crewed by reformed pirates. You were en route to settle the Isle of Lucania when an unexpected storm forced you to dock at the Isle of Casoria instead. The people here are strange, and the local Magistrate is even stranger—and possibly dangerous. Find out what you can about the locals, and keep Captain Tallhorn safe."
+            </p>
+            <p style="color: #fcd34d; margin-top: 1rem; margin-bottom: 0; font-weight: 600;">— First Mate Zala Bag-o-bones</p>
+          </div>
+
+          <h3>The Inciting Incident</h3>
+          <p>As participants entered the main hall, the Magistrate rose from his marble throne to welcome them to the Supernal Gardens—pointing out activities and places to explore, the picture of a gracious host.</p>
+
+          <p>Then the mood shifted. He called out two fighters for his local tournament. One nearly killed the other.</p>
+
+          <p>Participants could stay and watch, or begin exploring. Actors were specifically on the lookout for aimless participants, redirecting them through conversation and suggestions.</p>
+
+          <h3>Rising Action & Discovery</h3>
+          <p>Through interactions with actors, finding tagged objects, timed story events, and scanning QR codes, participants could uncover the truth:</p>
+
+          <ul style="line-height: 1.8;">
+            <li>The storm was fabricated by witches</li>
+            <li>The Magistrate intends to keep the colonists here to participate in his games</li>
+            <li>Various characters have their own agendas that participants can help or hinder</li>
+          </ul>
+
+          <h3>Multiple Endings</h3>
+          <p>Participants could decide how to resolve the story:</p>
+          <ul style="line-height: 1.8;">
+            <li><strong>Plot an escape</strong> with the crew</li>
+            <li><strong>Turn the Magistrate in</strong> to the local senate using gathered evidence</li>
+            <li><strong>Something unexpected</strong>—actors were trained to improvise for creative participants</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Experience Stations</heading>
+      <body>
+        <![CDATA[
+          <p>The overall format was a highly interactive murder mystery party, with distinct zones serving different narrative and engagement purposes.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Arena</heading>
+      <body>
+        <![CDATA[
+          <p style="color: #a5b4fc; font-weight: 600; margin-bottom: 0.5rem;">Main Gathering Area</p>
+
+          <figure style="margin: 1.5rem 0;">
+            <img src="/assets/images/Supernal-Gardens-Arena.jpeg" alt="Concept art of The Arena - the main gathering area featuring the Magistrate's marble throne and gladiator tournament" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+            <figcaption style="color: #a5b4fc; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">The Magistrate hosts a gladiator tournament to honor his unexpected guests</figcaption>
+          </figure>
+
+          <p>The Arena served as the story progression hub. The Magistrate hosted a gladiator tournament honoring the "unexpected guests," with the ship's Captain invited to participate.</p>
+
+          <ul style="line-height: 1.8;">
+            <li>Key cast members lingered here when big plot moments were about to happen</li>
+            <li>Participants could watch the story unfold, talk with actors, or influence outcomes</li>
+            <li>Each cast character had a backstory, motivation, and personal goals participants could discover by asking the right questions</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Bar</heading>
+      <body>
+        <![CDATA[
+          <p style="color: #a5b4fc; font-weight: 600; margin-bottom: 0.5rem;">Social Hub & Information Exchange</p>
+
+          <figure style="margin: 1.5rem 0;">
+            <img src="/assets/images/Supernal-Gardens-Drink.jpeg" alt="Concept art of The Bar - a social area with actors performing card tricks and characters with secrets to share" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+            <figcaption style="color: #a5b4fc; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">The bartender trades information for good jokes</figcaption>
+          </figure>
+
+          <p>The Bar showcased our strongest acting talent and served as the primary social/information hub.</p>
+
+          <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #3b82f6;">
+            <h4 style="margin-top: 0; color: #93c5fd;">Sample Interactions</h4>
+            <ul style="color: #e2e8f0; line-height: 1.8; margin-bottom: 0;">
+              <li><strong>The Bartender:</strong> Trades valuable information for a good joke</li>
+              <li><strong>A Nervous Senator:</strong> Terrified his wife will find him here—pays gold coins to be escorted out unseen</li>
+              <li><strong>Close-up card tricks:</strong> Wager gold coins against skilled performers</li>
+              <li><strong>Information extraction:</strong> Use charisma or blackmail to pry secrets from knowledgeable characters</li>
+            </ul>
+          </div>
+
+          <h4>Tech Integration: Prophetic Visions</h4>
+          <p>Participants have prophetic powers in the story world, and their devices are the conduit. QR codes on items reveal hidden information invisible to the actors.</p>
+
+          <div style="background: #1a1a2e; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #ef4444;">
+            <p style="color: #fca5a5; font-weight: 600; margin-top: 0;">Example: The Pirate's Stein</p>
+            <p style="color: #e2e8f0; margin-bottom: 0;">Scanning the QR code on a pirate's drinking vessel reveals: <em>"You see a vision of death—there's poison in this drink!"</em> Can you stop him from chugging a lethal dose?</p>
+          </div>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Scrying Pool</heading>
+      <body>
+        <![CDATA[
+          <p style="color: #a5b4fc; font-weight: 600; margin-bottom: 0.5rem;">Mystical Discovery Zone</p>
+
+          <figure style="margin: 1.5rem 0;">
+            <img src="/assets/images/Supernal-Gardens-Scry.jpeg" alt="Concept art of The Scrying Pool - a mystical fountain where RFID-tagged items reveal video prophecies" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+            <figcaption style="color: #a5b4fc; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">RFID-tagged items unlock video prophecies revealing key plot information</figcaption>
+          </figure>
+
+          <p>A mystical fountain with a hidden RFID scanner. Participants could find or trade for items with visible RFID tags—the signal that an item was "scryable."</p>
+
+          <p>Bringing a tagged item to the pool triggered a video prophecy related to that item, revealing key plot information. Through the scrying pool, participants could learn the Magistrate's true intentions and discover how to safely expose him.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Joust</heading>
+      <body>
+        <![CDATA[
+          <p style="color: #a5b4fc; font-weight: 600; margin-bottom: 0.5rem;">Competition Zone</p>
+
+          <figure style="margin: 1.5rem 0;">
+            <img src="/assets/images/Supernal-Gardens-Joust.jpeg" alt="Concept art of The Joust - carnival-style competition games with story context and rewards" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);" />
+            <figcaption style="color: #a5b4fc; font-size: 0.9rem; margin-top: 0.5rem; font-style: italic;">Carnival-style games offered gold coins, items, and information as rewards</figcaption>
+          </figure>
+
+          <p>Carnival-style games and yard games, each with their own story context. Participating and winning resulted in rewards: gold coins, items, or information that could be used elsewhere in the experience.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Environmental Storytelling Systems</heading>
+      <body>
+        <![CDATA[
+          <p>To enable actor autonomy and consistent participant experiences, I developed several systems and artifacts.</p>
+
+          <h3>Cast Member Cards</h3>
+          <p>Each actor received a character card with everything they needed to improv effectively:</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <body>
+        <![CDATA[
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+
+            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #3b82f6;">
+              <h4 style="margin-top: 0; color: #93c5fd; border-bottom: 1px solid #3b82f6; padding-bottom: 0.5rem;">Mira "Saltblood" Vance</h4>
+              <p style="color: #fcd34d; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Faction:</strong> Crew (GTS Mercurious)</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Backstory:</strong> Former naval officer turned privateer after her fleet was destroyed by the Magistrate's "games" five years ago. She joined the Mercurious to start fresh, but recognizes the Isle of Casoria—she's been here before, and barely escaped.</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Magistrate stance:</strong> Knows he's dangerous, suspects he's behind their "accidental" arrival</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Demeanor:</strong> Guarded, observant, speaks in low tones</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Motivation:</strong> Protect the crew and escape before history repeats itself</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;"><strong>Goals:</strong></p>
+              <ul style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;">
+                <li>Find proof the storm was manufactured</li>
+                <li>Identify which locals might help them escape</li>
+                <li>Keep an eye on anyone getting too close to Captain Tallhorn</li>
+              </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #3d1414 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #ef4444;">
+              <h4 style="margin-top: 0; color: #fca5a5; border-bottom: 1px solid #ef4444; padding-bottom: 0.5rem;">Dominus Kael</h4>
+              <p style="color: #fcd34d; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Faction:</strong> Magistrate Loyalist</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Backstory:</strong> The Magistrate's Guard Captain. Rose from poverty through the arena—the Magistrate "saved" him by making him a champion, then a soldier. He owes everything to the Magistrate and enforces his will without question. Almost.</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Magistrate stance:</strong> Publicly devoted. Privately, haunted by what he's done.</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Demeanor:</strong> Intimidating, terse, avoids eye contact</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Motivation:</strong> Maintain order and protect his position</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;"><strong>Goals:</strong></p>
+              <ul style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;">
+                <li>Ensure no colonist causes trouble</li>
+                <li>Report suspicious behavior to the Magistrate</li>
+                <li><em>(Secret)</em> Avoid confronting the guilt of past actions</li>
+              </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #14291a 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid #22c55e;">
+              <h4 style="margin-top: 0; color: #86efac; border-bottom: 1px solid #22c55e; padding-bottom: 0.5rem;">Tansy Greenwillow</h4>
+              <p style="color: #fcd34d; font-size: 0.9rem; margin-bottom: 1rem;"><strong>Faction:</strong> Witch (Secret)</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Backstory:</strong> Poses as a simple herbalist selling remedies at the bar. Actually one of the witches who conjured the storm. She's having second thoughts—the Magistrate promised no one would get hurt, but the arena fights are getting bloodier.</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Magistrate stance:</strong> Fears him. Regrets helping him. Looking for a way out.</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Demeanor:</strong> Friendly, chatty, nervously changes subject when magic is mentioned</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem;"><strong>Motivation:</strong> Undo her mistake without getting caught</p>
+
+              <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;"><strong>Goals:</strong></p>
+              <ul style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 0;">
+                <li>Sell herbal remedies for gold coins <em>(repeatable)</em></li>
+                <li>Find someone trustworthy to reveal the truth to</li>
+                <li>Avoid the other witches who remain loyal to the Magistrate</li>
+              </ul>
+
+              <p style="color: #86efac; font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0;"><strong>Items:</strong> RFID-tagged "Storm Charm" (reveals witch conspiracy at scrying pool)</p>
+            </div>
+          </div>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Scrying Pool Scripts</heading>
+      <body>
+        <![CDATA[
+          <p>RFID-tagged items triggered specific video prophecies at the scrying pool. Here are two examples:</p>
+
+          <div style="background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #7c3aed;">
+            <h4 style="margin-top: 0; color: #c4b5fd;">Prophecy: The Storm Charm</h4>
+            <p style="color: #a5b4fc; font-size: 0.9rem; margin-bottom: 1rem;"><em>Triggered by: RFID-tagged charm from Tansy Greenwillow</em></p>
+
+            <audio controls style="width: 100%; margin-bottom: 1rem;">
+              <source src="/assets/audio/Supernal-Gardens-Storm.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+
+            <div style="background: #1a1a2e; padding: 1rem; border-radius: 8px; border-left: 4px solid #7c3aed;">
+              <p style="color: #e2e8f0; font-style: italic; margin: 0; line-height: 1.7;">
+                "The waters cloud... and clear to show three figures on a cliff, hands raised to blackened skies. Lightning dances at their command. Below, a ship struggles against waves that should not exist.<br><br>
+                One figure turns—you see her face. You've seen her before. At the bar. Selling herbs.<br><br>
+                The storm is not natural. The storm is a cage. And the cage was built for you."
+              </p>
+            </div>
+
+            <p style="color: #d8b4fe; font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0;"><strong>Participant takeaway:</strong> The storm was manufactured by witches. The herbalist Tansy is involved. This information can be used to confront her or trade with other characters.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #3d1414 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #ef4444;">
+            <h4 style="margin-top: 0; color: #fca5a5;">Prophecy: The Guard Captain's Medal</h4>
+            <p style="color: #fca5a5; font-size: 0.9rem; margin-bottom: 1rem;"><em>Triggered by: RFID-tagged medal from Dominus Kael</em></p>
+
+            <audio controls style="width: 100%; margin-bottom: 1rem;">
+              <source src="/assets/audio/Supernal-Gardens-Guard.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+
+            <div style="background: #1a1a2e; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+              <p style="color: #e2e8f0; font-style: italic; margin: 0; line-height: 1.7;">
+                "The waters cloud... and clear to show a younger man, bloodied, standing over a fallen opponent in the arena. The crowd roars. The Magistrate descends to place this very medal around his neck.<br><br>
+                The vision shifts. Night. The same man, now in guard's armor, dragging a hooded figure through the gardens. The figure struggles. A muffled scream. Then silence.<br><br>
+                The vision shifts again. The guard captain, alone, staring at the medal in his hands. His shoulders shake. He's weeping.<br><br>
+                He remembers what he did. He carries it with him. Always."
+              </p>
+            </div>
+
+            <p style="color: #fca5a5; font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0;"><strong>Participant takeaway:</strong> The Guard Captain has committed crimes for the Magistrate and is haunted by guilt. This information could be used as blackmail to turn him against the Magistrate—or to show him compassion and earn an ally.</p>
+          </div>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>The Funnel: Discovery to Conversion</heading>
+      <body>
+        <![CDATA[
+          <p>Every element of the experience was designed to serve the business goal: converting convention attendees into paying customers for future Sacred Grounds events.</p>
+
+          <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #3b82f6;">
+            <h4 style="margin-top: 0; color: #93c5fd;">The Conversion Funnel</h4>
+
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+              <tr>
+                <td style="padding: 1rem; background: #2d3748; border: 1px solid #4a5568; border-radius: 4px 4px 0 0;">
+                  <strong style="color: #93c5fd;">1. Discovery</strong><br/>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Convention floor presence, visual hook, pre-registration option</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; background: #374151; border: 1px solid #4a5568;">
+                  <strong style="color: #93c5fd;">2. Data Capture</strong><br/>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Free entry, but waiver + contact info required</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; background: #2d3748; border: 1px solid #4a5568;">
+                  <strong style="color: #93c5fd;">3. Emotional Investment</strong><br/>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Immersive experience creates connection to the brand and format</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; background: #374151; border: 1px solid #4a5568;">
+                  <strong style="color: #93c5fd;">4. Tangible Hook</strong><br/>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Gold coins earned in-experience are redeemable at real Sacred Grounds events (free first event, bonus items)</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; background: #2d3748; border: 1px solid #4a5568; border-radius: 0 0 4px 4px;">
+                  <strong style="color: #93c5fd;">5. Exit Conversion</strong><br/>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Three sign-up stations on the way out: next event registration, email newsletter, social follows. Goody bag with marketing materials.</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <p>A post-mortem session explained the full experience for those interested, revealing how everything connected and answering questions about what they'd discovered—or missed.</p>
+        ]]>
+      </body>
+    </section>
+
+    <section>
+      <heading>Results</heading>
+      <body>
+        <![CDATA[
+          <div style="background: linear-gradient(135deg, #14291a 0%, #1a1a2e 100%); padding: 2rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #22c55e; text-align: center;">
+            <p style="font-size: 3rem; font-weight: bold; color: #22c55e; margin: 0;">40%</p>
+            <p style="color: #86efac; font-size: 1.25rem; margin: 0.5rem 0 0 0;">Attendance increase at the following Sacred Grounds event</p>
+          </div>
+
+          <p>The convention experience demonstrated that participants would engage deeply with narrative-driven immersive events—and that giving them agency over the story created emotional investment that translated into conversion.</p>
+
+          <h3>Key Takeaways</h3>
+          <ul style="line-height: 1.8;">
+            <li><strong>The product is the demo:</strong> By making the convention experience a microcosm of paid events, we let the format sell itself</li>
+            <li><strong>Participant powers work:</strong> Tech-enhanced interactions (QR, RFID) created moments of discovery that felt magical</li>
+            <li><strong>Actor autonomy scales:</strong> Character cards enabled consistent, engaging improv without rigid scripts</li>
+            <li><strong>Multiple engagement levels:</strong> Casual observers and dedicated investigators both had meaningful experiences</li>
+          </ul>
+        ]]>
+      </body>
     </section>
   </content>
+
+  <outcomes>
+    <outcome>40% attendance increase at the following Sacred Grounds event</outcome>
+    <outcome>Multiple narrative endings driven by participant choices and investigation</outcome>
+    <outcome>Tech-enhanced immersion through QR codes and RFID "prophetic powers"</outcome>
+    <outcome>Full-funnel conversion from waiver sign-up through exit station registrations</outcome>
+  </outcomes>
 </project>
