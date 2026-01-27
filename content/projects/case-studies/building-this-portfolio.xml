@@ -23,6 +23,20 @@
 
   <content>
     <!-- ================================================================
+         SECTION 0: WHY CLAUDE CODE
+         ================================================================ -->
+    <section>
+      <heading>Why I Built This Site with Claude Code as a Partner</heading>
+      <body><![CDATA[
+<p>At AWS, I helped design AI-assisted writing workflows using Amazon Q CLI—which runs on Anthropic's Claude models—and trained 50+ writers to integrate AI into their document planning and governance work. That experience convinced me that AI collaboration isn't a shortcut; it's a genuine shift in how content work gets done.</p>
+
+<p>When I decided to rebuild my portfolio, I wanted to practice what I'd been teaching. I used Claude Code in VS Code as a development partner throughout the project—not to generate content, but to collaborate on architecture decisions, debug implementation issues, and move faster without sacrificing quality.</p>
+
+<p>This case study documents how that collaboration worked.</p>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
          SECTION 1: THE CHALLENGE
          ================================================================ -->
     <section>
@@ -118,7 +132,7 @@
     <section>
       <heading>AI-Forward Development Workflow</heading>
       <body><![CDATA[
-<p>I built this entire site using Claude as a development partner. This wasn't about replacing my skills—it was about augmenting them. Here's how the collaboration worked:</p>
+<p>I built this entire site using Claude Code in VS Code as a development partner. This wasn't about replacing my skills—it was about augmenting them. Here's how the collaboration worked:</p>
 
 <h3>Problem-Solving in Natural Language</h3>
 <p>When the tag filtering system wasn't updating correctly, I described the behavior I was seeing. Claude helped me trace the issue to a JavaScript event listener that wasn't properly scoped. Instead of spending hours debugging, we solved it in minutes through conversation.</p>
@@ -135,6 +149,76 @@
 
 <h3>What AI Can't Do</h3>
 <p>AI excelled at implementation but couldn't make content decisions. <em>Which projects to feature? How to frame my career narrative? What tone to strike?</em> Those decisions remained mine. The AI was a skilled collaborator, not an autopilot.</p>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4.5: THE DEVELOPMENT JOURNEY
+         ================================================================ -->
+    <section>
+      <heading>The Development Journey</heading>
+      <body><![CDATA[
+<p>Here's what the collaboration actually looked like, from blank page to published site:</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0;">
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #60a5fa; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Phase 1</div>
+    <h4 style="color: #60a5fa; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      Draft & Define
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Wrote detailed descriptions of goals, structure, and content frameworks with rules and examples. This forced clear thinking before involving Claude.</p>
+  </div>
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #60a5fa; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Phase 2</div>
+    <h4 style="color: #60a5fa; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Plan & Constrain
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Used Claude Code's plan mode to structure implementation. Inserted guardrails to limit scope and contain edits. Planning became dialogue, not handoff.</p>
+  </div>
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #60a5fa; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Phase 3</div>
+    <h4 style="color: #60a5fa; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      Build & Watch
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Once plans were solid, Claude executed. I watched, intervened when needed, and let the system work.</p>
+  </div>
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #60a5fa; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Phase 4</div>
+    <h4 style="color: #60a5fa; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      Review & Verify
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Reviewed outputs independently first, then brought Claude back to check for errors, security issues, and changelog updates.</p>
+  </div>
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #60a5fa; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Phase 5</div>
+    <h4 style="color: #60a5fa; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+      Polish & Produce
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Created custom SVGs, generated audio with ElevenLabs, used Nano Banana Pro for recreations, and sourced stock from Pexels.</p>
+  </div>
+
+  <div style="flex: 1 1 280px; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%); border-radius: 12px; padding: 1.5rem; position: relative;">
+    <div style="position: absolute; top: -10px; left: 20px; background: #f59e0b; color: #1e3a5f; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Repeat</div>
+    <h4 style="color: #f59e0b; margin: 0.5rem 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,4 23,10 17,10"/><polyline points="1,20 1,14 7,14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      Iterate & Document
+    </h4>
+    <p style="color: #e2e8f0; margin: 0; font-size: 0.95rem; line-height: 1.5;">Iterated with tightly scoped plans—page by page. Constantly updated <code style="background: rgba(96, 165, 250, 0.2); padding: 2px 6px; border-radius: 4px; color: #60a5fa;">.md</code> context files to keep Claude oriented across sessions.</p>
+  </div>
+
+</div>
+
+<p>This workflow isn't about prompting tricks. It's about structuring human-AI collaboration so that both sides do what they're good at.</p>
       ]]></body>
     </section>
 
@@ -173,6 +257,9 @@
   <li><strong>Collapsible sections</strong> (Copywriting, Publications, Production) to keep the page scannable</li>
   <li><strong>Card layouts</strong> optimized for quick scanning rather than deep reading</li>
 </ul>
+
+<h3>Why It Matters</h3>
+<p>I'm not actively seeking roles in live streaming, video production, or publishing—but including this work demonstrates a holistic understanding of content across formats and contexts. Writing scripts for live broadcasts taught me pacing and real-time adaptation. Producing video content sharpened my instincts for visual hierarchy and timing. Publishing tabletop rulebooks forced me to structure complex systems for diverse audiences. These experiences added tools to my repertoire that make me better at content design and technical writing, even when the output looks nothing like a Twitch stream or a game manual.</p>
 
 <h3>Anchor Links in Navigation</h3>
 <p>Unlike other sections, Content History's nav items link to anchors within a single page (<code>#copywriting</code>, <code>#publications</code>, <code>#production</code>) rather than separate pages. This keeps related content together while still allowing direct links.</p>
@@ -383,6 +470,25 @@
     <li><strong>Content Strategy</strong> — Long-term content planning and governance</li>
   </ul>
 </div>
+      ]]></body>
+    </section>
+
+    <!-- ================================================================
+         SECTION 10: REFLECTIONS
+         ================================================================ -->
+    <section>
+      <heading>Reflections on Working with Claude</heading>
+      <body><![CDATA[
+<p>Building this site with Claude as a collaborator taught me things I wouldn't have learned from documentation alone:</p>
+
+<ul>
+  <li><strong>Context is everything.</strong> Claude performs dramatically better when given structured context documents upfront. The <code>context.md</code> files I created weren't just for Claude—they forced me to articulate system architecture clearly, which improved my own understanding.</li>
+  <li><strong>AI changes the debugging loop.</strong> Instead of Stack Overflow → trial and error → frustration, I could describe observed behavior conversationally and get targeted hypotheses. The JavaScript scoping issue that would have taken me an hour took ten minutes.</li>
+  <li><strong>The human judgment boundary is real.</strong> Claude never tried to make content decisions for me—which projects to feature, how to frame my career narrative, what tone to strike. Those remained mine. This taught me that effective AI collaboration requires knowing where to draw that line.</li>
+  <li><strong>Workflow design matters more than prompting tricks.</strong> The biggest gains didn't come from clever prompts. They came from structuring my work—context docs, clear problem statements, iterative refinement—in ways that made Claude useful.</li>
+</ul>
+
+<p>This experience shapes how I think about helping others adopt AI tools: it's less about teaching prompt syntax and more about teaching workflow integration.</p>
       ]]></body>
     </section>
   </content>

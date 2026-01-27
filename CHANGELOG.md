@@ -4,6 +4,22 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-27 - Portfolio Case Study Enhancements
+
+### Added
+
+- **Building This Portfolio**: New intro section "Why I Built This Site with Claude Code as a Partner" explaining the AI-forward development approach
+- **Building This Portfolio**: "The Development Journey" visual flow section with 6 phase cards showing the collaboration workflow (Draft & Define, Plan & Constrain, Build & Watch, Review & Verify, Polish & Produce, Iterate & Document)
+- **Building This Portfolio**: "Reflections on Working with Claude" section with insights on AI collaboration
+- **Building This Portfolio**: "Why It Matters" subsection in Content History section explaining holistic content understanding
+- **Everland Trust & Safety**: "Reflections Beyond Gaming" section bridging gaming context to enterprise trust & safety applications
+- SVG icons for each development phase card (pencil, checkbox, eye, magnifying glass, star, cycle arrows)
+
+### Changed
+
+- Updated Claude references to explicitly mention "Claude Code in VS Code" instead of generic "AI" or "Claude"
+- Phase cards use inline SVG icons in titles for visual flow representation
+
 ## 2026-01-27 - New Blog Post & Right Sidebar Enhancements
 
 ### Added

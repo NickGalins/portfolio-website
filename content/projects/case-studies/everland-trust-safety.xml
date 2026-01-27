@@ -314,6 +314,23 @@
         ]]>
       </body>
     </section>
+
+    <section>
+      <heading>Reflections Beyond Gaming</heading>
+      <body>
+        <![CDATA[
+          <p>While this project was built for an MMO, the underlying challenge—designing content for high-stakes, trust-sensitive user actions—applies across industries. Reporting systems, enforcement communications, and appeals processes exist wherever users need to flag harmful behavior and organizations need to respond with clarity, consistency, and legal defensibility.</p>
+          <p>The patterns here (multi-entry access, progressive disclosure, templated enforcement messaging) translate directly to enterprise contexts where compliance and user trust are non-negotiable.</p>
+          <p>This project reinforced several principles I carry into every trust and safety initiative:</p>
+          <ul>
+            <li><strong>Clarity reduces escalation.</strong> When users understand exactly what will happen after they report, they're less likely to seek alternative channels or public callouts. Clear expectations manage emotions.</li>
+            <li><strong>Structure serves both sides.</strong> The categorized reporting flow wasn't just for users—it gave the moderation team actionable data from the start. Good UX and good operations aren't in tension.</li>
+            <li><strong>Tone is policy.</strong> The language in enforcement emails isn't decoration. Phrases like "we do not share who submitted a report" build the trust that makes the entire system function.</li>
+            <li><strong>Design for the worst day.</strong> Someone using a reporting system is often upset, scared, or frustrated. Every word choice needs to acknowledge that emotional context while still being professional and legally sound.</li>
+          </ul>
+        ]]>
+      </body>
+    </section>
   </content>
 
   <outcomes>
