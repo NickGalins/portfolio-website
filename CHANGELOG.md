@@ -4,6 +4,20 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-28 - SEO & Search Engine Indexing
+
+### Added
+
+- **robots.txt**: Points search engines to sitemap, allows all crawlers
+- **404 error page**: Custom page with Stan Lee quote, clickable image, and navigation links to homepage, case studies, and blog
+- **Canonical URL tags**: Added `<link rel="canonical">` to all pages via base layout template
+- **404 illustration**: Custom image at `/assets/images/404-error.png` (150x150, rounded corners)
+
+### Changed
+
+- Updated `eleventy.config.js` to include robots.txt in passthrough copy
+- Added canonical link tag to `_includes/layouts/base.njk`
+
 ## 2026-01-27 - Portfolio Case Study Enhancements
 
 ### Added

@@ -198,6 +198,7 @@ module.exports = function(eleventyConfig) {
   // without processing it. Your CSS, JS, images, videos all go through here.
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('favicon.png');  // Browser tab icon
+  eleventyConfig.addPassthroughCopy('robots.txt');   // Search engine instructions
 
   // -------------------------------------------------------------------------
   // WATCH TARGETS (Live Reload During Development)

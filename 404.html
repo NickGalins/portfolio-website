@@ -1,0 +1,109 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Nicholas Galinski</title>
+  <meta name="description" content="The page you're looking for doesn't exist.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="robots" content="noindex">
+  <style>
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      background: var(--color-bg, #0a0a0a);
+      color: var(--color-text, #e0e0e0);
+    }
+    .error-page__code {
+      font-size: 6rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--color-accent, #64b5f6);
+      line-height: 1;
+    }
+    .error-page__title {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: var(--color-text, #e0e0e0);
+    }
+    .error-page__message {
+      font-size: 1rem;
+      color: var(--color-text-muted, #888);
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+    .error-page__links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .error-page__link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-accent, #64b5f6);
+      color: var(--color-bg, #0a0a0a);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .error-page__link:hover {
+      opacity: 0.9;
+    }
+    .error-page__link--secondary {
+      background: transparent;
+      border: 1px solid var(--color-border, #333);
+      color: var(--color-text, #e0e0e0);
+    }
+    .error-page__quote {
+      margin-top: 3rem;
+      font-style: italic;
+      color: var(--color-text-muted, #888);
+      max-width: 450px;
+      line-height: 1.6;
+    }
+    .error-page__quote-author {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--color-text, #e0e0e0);
+    }
+    .error-page__image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <a href="/"><img src="/assets/images/404-error.png" alt="Go to homepage" class="error-page__image"></a>
+    <p class="error-page__code">404</p>
+    <h1 class="error-page__title">Page Not Found</h1>
+    <p class="error-page__message">The page you're looking for doesn't exist or has been moved.</p>
+    <div class="error-page__links">
+      <a href="/" class="error-page__link">Go to Homepage</a>
+      <a href="/case-studies/" class="error-page__link error-page__link--secondary">View Case Studies</a>
+      <a href="/blog/" class="error-page__link error-page__link--secondary">Read the Blog</a>
+    </div>
+    <p class="error-page__quote">
+      "If you have an idea that you genuinely think is good, don't let some idiot talk you out of it."
+      <span class="error-page__quote-author">— Stan Lee</span>
+    </p>
+  </div>
+</body>
+</html>
