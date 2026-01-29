@@ -11,6 +11,7 @@ The homepage features a tag-based filtering system for project cards (desktop on
 ### Design
 
 - Content Design
+- Event Experience
 - Game
 - Systems Design
 
@@ -33,14 +34,10 @@ The homepage features a tag-based filtering system for project cards (desktop on
 - Writing Sample
 - Other Sample
 
-### Secondary Skills
+### Other
 
 - GenAI
 - Prototyping
-- Change Management
-- Project Management
-- People Management
-- Cross-functional Collaboration
 - Information Architecture
 - Content Strategy
 
@@ -93,10 +90,10 @@ Filter logic is in `assets/js/main.js` under the "TAG FILTERING" section.
 
 | Category | Tags |
 |----------|------|
-| Design | Content Design, Game, Systems Design |
+| Design | Content Design, Event Experience, Game, Systems Design |
 | Copy Types | UX Writing, Technical Writing, API Documentation, Product Writing, UI/UX, Marketing, Narrative, Content Writing, Creative, Trust & Safety |
 | Scope | Case Study, Writing Sample, Other Sample |
-| Secondary Skills | GenAI, Prototyping, Change Management, Project Management, People Management, Cross-functional Collaboration, Information Architecture, Content Strategy |
+| Other | GenAI, Prototyping, Information Architecture, Content Strategy |
 
 **Total: 21 tags across 4 categories**
 
@@ -110,47 +107,47 @@ We are updating each project XML file to use the standardized tags. Use the numb
 
 **Design:**
 1. Content Design
-2. Game
-3. Systems Design
+2. Event Experience
+3. Game
+4. Systems Design
 
 **Copy Types:**
-4. UX Writing
-5. Technical Writing
-6. API Documentation
-7. Product Writing
-8. UI/UX
-9. Marketing
-10. Narrative
-11. Content Writing
-12. Creative
-13. Trust & Safety
+5. UX Writing
+6. Technical Writing
+7. API Documentation
+8. Product Writing
+9. UI/UX
+10. Marketing
+11. Narrative
+12. Content Writing
+13. Creative
+14. Trust & Safety
 
 **Scope:**
-14. Case Study
-15. Writing Sample
-16. Other Sample
+15. Case Study
+16. Writing Sample
+17. Other Sample
 
-**Secondary Skills:**
-17. GenAI
-18. Prototyping
-19. Change Management
-20. Project Management
-21. People Management
-22. Cross-functional Collaboration
-23. Information Architecture
-24. Content Strategy
+**Other:**
+18. GenAI
+19. Prototyping
+20. Information Architecture
+21. Content Strategy
 
 ### Migration Notes
 
 The following changes were made to consolidate tags:
-- **Content Management** merged into **Change Management** (19)
+- **Content Management** tag removed (previously merged into Change Management)
 - **VSCode** tag removed
-- **Technical Documentation** renamed to **Technical Writing** (5)
-- **Product Documentation** renamed to **Product Writing** (7)
-- **UX Documentation** renamed to **UX Writing** (4)
+- **Technical Documentation** renamed to **Technical Writing**
+- **Product Documentation** renamed to **Product Writing**
+- **UX Documentation** renamed to **UX Writing**
 - **Documentation** category removed - all tags moved to **Copy Types**
-- **Trust & Safety** moved from Secondary Skills to Copy Types (13)
-- **Game Design** and **Game Writing** combined into **Game** (2)
+- **Trust & Safety** moved from Secondary Skills to Copy Types
+- **Game Design** and **Game Writing** combined into **Game**
+- **Secondary Skills** category renamed to **Other**
+- **Change Management**, **Project Management**, **People Management**, **Cross-functional Collaboration** removed
+- **Event Experience** added to Design category
 
 ### Projects Need Update
 

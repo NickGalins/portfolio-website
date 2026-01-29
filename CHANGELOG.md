@@ -4,6 +4,25 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-28 - Tag System Refinements & Content Updates
+
+### Added
+
+- **Event Experience** tag added to Design category for immersive/live event projects
+- **Supernal Gardens case study**: New "Actor Role Tiers" section explaining Major, Minor, and Enhancement role hierarchy with examples
+- **Supernal Gardens case study**: New outcome documenting narrative framework for future marketing events
+
+### Changed
+
+- Renamed **Secondary Skills** category to **Other** in tag system and homepage filters
+- Updated Supernal Gardens constraint wording to emphasize audience clarity over time limits
+- Updated discovery funnel to include marketing emails and convention program listing
+
+### Removed
+
+- Removed 4 management-focused tags from tag system: Change Management, Project Management, People Management, Cross-functional Collaboration
+- Removed obsolete management tags from 12 project XML files
+
 ## 2026-01-28 - SEO & Search Engine Indexing
 
 ### Added

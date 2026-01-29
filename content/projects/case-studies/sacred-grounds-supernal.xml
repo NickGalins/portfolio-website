@@ -10,15 +10,13 @@
     <teaser>Designed and directed a live immersive marketing experience at a convention, combining environmental storytelling, actor-driven narrative, and tech-enhanced interactions to convert attendees into paying customers for future events.</teaser>
     <tags>
       <tag>Content Design</tag>
+      <tag>Event Experience</tag>
       <tag>Game</tag>
       <tag>Systems Design</tag>
       <tag>Marketing</tag>
       <tag>Narrative</tag>
       <tag>Creative</tag>
       <tag>Case Study</tag>
-      <tag>Project Management</tag>
-      <tag>People Management</tag>
-      <tag>Cross-functional Collaboration</tag>
     </tags>
   </meta>
 
@@ -36,7 +34,7 @@
           <div style="background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #7c3aed;">
             <h4 style="margin-top: 0; color: #c4b5fd;">Core Constraints</h4>
             <ul style="color: #e2e8f0; line-height: 1.8; margin-bottom: 0;">
-              <li><strong>Limited time:</strong> Guests might only spend 20-60 minutes in the space</li>
+              <li><strong>Audience:</strong> Attendees unfamiliar with immersive events need clear hooks to understand what to do</li>
               <li><strong>Varied engagement:</strong> Some would dive deep, others would casually browse</li>
               <li><strong>Clear conversion goal:</strong> Sign-ups for future paid Sacred Grounds events</li>
               <li><strong>Must emulate the product:</strong> The convention experience needed to feel like a preview of what they'd pay for</li>
@@ -224,7 +222,23 @@
           <p>To enable actor autonomy and consistent participant experiences, I developed several systems and artifacts.</p>
 
           <h3>Cast Member Cards</h3>
-          <p>Each actor received a character card with everything they needed to improv effectively:</p>
+          <p>Each actor received a character card with everything they needed to improv effectively. Actors were organized into three tiers based on their narrative function:</p>
+
+          <div style="background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border: 2px solid #3b82f6;">
+            <h4 style="margin-top: 0; color: #93c5fd;">Actor Role Tiers</h4>
+            <ul style="color: #e2e8f0; line-height: 1.8; margin-bottom: 0;">
+              <li><strong>Major Roles:</strong> Directly linked to the main narrative. Interactions with these characters could unlock scrying pool items or impact the story's outcome.</li>
+              <li><strong>Minor Roles:</strong> Interactive side stories that connected to Major Roles. They provided context, quests, and pathways to deeper engagement.</li>
+              <li><strong>Enhancement Roles:</strong> Atmosphere and guidance. Pre-briefed on all narrative threads, they functioned as "narrative customer service"—spotting lost participants and directing them toward content.</li>
+            </ul>
+          </div>
+
+          <h4>How the Tiers Worked Together</h4>
+          <p>An Enhancement Role actor notices someone standing around, seemingly unsure of what to do. They strike up a conversation to find out what the participant might be interested in, then point them toward an activity or someone in a Minor Role: <em>"I hear the barmaid is looking to buy an herbal remedy and willing to pay a lot for it. You can talk to her to find out more."</em></p>
+
+          <p>The participant approaches the barmaid (Minor Role). Her husband is sick at home and needs herbal remedies. After talking with her, the participant is pointed to Tansy Greenwillow (Major Role). Interaction with Tansy can result in scrying pool items or directly impacting the narrative.</p>
+
+          <h4>Example Character Cards</h4>
         ]]>
       </body>
     </section>
@@ -363,7 +377,7 @@
               <tr>
                 <td style="padding: 1rem; background: #2d3748; border: 1px solid #4a5568; border-radius: 4px 4px 0 0;">
                   <strong style="color: #93c5fd;">1. Discovery</strong><br/>
-                  <span style="color: #e2e8f0; font-size: 0.95rem;">Convention floor presence, visual hook, pre-registration option</span>
+                  <span style="color: #e2e8f0; font-size: 0.95rem;">Convention floor presence, visual hook, pre-registration option, marketing emails, convention program listing</span>
                 </td>
               </tr>
               <tr>
@@ -423,6 +437,7 @@
 
   <outcomes>
     <outcome>40% attendance increase at the following Sacred Grounds event</outcome>
+    <outcome>Created a narrative framework for how to handle future marketing events</outcome>
     <outcome>Multiple narrative endings driven by participant choices and investigation</outcome>
     <outcome>Tech-enhanced immersion through QR codes and RFID "prophetic powers"</outcome>
     <outcome>Full-funnel conversion from waiver sign-up through exit station registrations</outcome>
