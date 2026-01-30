@@ -26,6 +26,24 @@
 
   <content>
     <section>
+      <heading>About This Sample</heading>
+      <body><![CDATA[
+<div class="info-box info-box--note">
+  <div class="info-box__header">
+    <svg class="info-box__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 16v-4"></path>
+      <path d="M12 8h.01"></path>
+    </svg>
+    <span class="info-box__title">About This Sample</span>
+  </div>
+  <p><strong>Gski ReviewLoop is not a real service.</strong> It's a fictional stand-in representing similar API documentation I created at AWS for products including AWS Marketplace and AWS Partner Central.</p>
+  <p>The documentation structure, endpoint patterns, and technical writing approaches shown here reflect real work, adapted into a fictional context to protect proprietary information.</p>
+</div>
+      ]]></body>
+    </section>
+
+    <section>
       <heading>Endpoint</heading>
       <body><![CDATA[
         <p>The endpoint is specific to your Region.</p>

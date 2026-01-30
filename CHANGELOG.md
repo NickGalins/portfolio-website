@@ -4,6 +4,13 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-01-30 - Writing Sample Disclaimers
+
+### Added
+
+- **API Documentation**: "About This Sample" info box explaining Gski ReviewLoop represents AWS Marketplace and Partner Central documentation work
+- **Google Receipt Vault**: Added Workspace to list of Google products in "About This Sample" note
+
 ## 2026-01-28 - Tag System Refinements & Content Updates
 
 ### Added
