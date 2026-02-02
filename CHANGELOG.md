@@ -4,6 +4,34 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-02-02 - Portfolio Content Refinements
+
+### Changed
+
+- **Subtitles updated for clarity and consistency:**
+  - Sacred Grounds Shop: "Utilizing content design principles to streamline a system's user flow"
+  - Sacred Grounds Supernal: Converted to sentence case
+  - API Documentation: "Designing content and information architecture for an API Reference in AWS style."
+  - Oathforger Chapter 1: Sentence case after dash
+  - Sacred Grounds Rulebook: "gamified event experiences" (was "live-action role-playing events")
+
+- **Role titles standardized across projects:**
+  - All Sacred Grounds projects: "Creative Director / Director of Content"
+  - API Documentation: "Content Designer / Technical Writer"
+  - Google Receipt Vault: "Technical Writer / UX Writer"
+  - Short Form UGC Copy: "Content Producer" (was "Content Creator")
+
+- **Resume page updates:**
+  - Sacred Grounds position: "Creative Director / Director of Content"
+  - Teaching position company: "NY & NYCDOE"
+  - "Brands & Talent" section renamed to "Other Experience"
+  - New descriptive paragraph with link to Content History page
+  - Template updated to support CDATA content for HTML links
+
+### Removed
+
+- Removed `<date>2024</date>` field from API Documentation project
+
 ## 2026-01-30 - Writing Sample Disclaimers
 
 ### Added

@@ -65,8 +65,8 @@ permalink: /resume/index.html
   {# BRANDS SECTION: Marquee + link to Content History #}
   {% if resume.brands %}
   <section class="resume__section">
-    <h2>Brands & Talent</h2>
-    <p class="resume__brands-description">{{ resume.brands.description }}</p>
+    <h2>Other Experience</h2>
+    <p class="resume__brands-description">{{ resume.brands.description.__cdata | safe }}</p>
 
     {% set marqueeImages = [
       'brands-sg-card.jpg',

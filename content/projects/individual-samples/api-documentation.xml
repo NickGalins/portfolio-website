@@ -3,10 +3,9 @@
   <meta>
     <id>api-documentation</id>
     <title>Gski ReviewLoop API Reference</title>
-    <subtitle>Note: This service is fictional and provided as an API documentation writing sample.</subtitle>
-    <date>2024</date>
+    <subtitle>Designing content and information architecture for an API Reference in AWS style.</subtitle>
     <client></client>
-    <role>Technical Writer</role>
+    <role>Content Designer / Technical Writer</role>
     <thumbnail>/assets/images/review-loop-api-card.png</thumbnail>
     <teaser>API documentation samples with endpoint descriptions, request/response examples, and error handling guidance. Written for developer audiences with varying familiarity levels.</teaser>
     <tags>
