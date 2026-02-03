@@ -33,8 +33,8 @@
     <authorBio>Multidisciplinary writer specializing in technical documentation, UX content, and creative storytelling. Former English teacher who brings narrative craft to every form of writing.</authorBio>
 
     <!-- HERO IMAGE (Featured visual at top of post) -->
-    <heroImage>/assets/images/blog/aeo-revolution.jpg</heroImage>
-    <heroAlt>Abstract visualization of content flowing into an AI answer engine</heroAlt>
+    <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+    <heroAlt>A prism showing ideas coming in and various types of story content coming out</heroAlt>
 
     <!-- THUMBNAIL IMAGE (Square image for blog listing cards) -->
     <thumbnailImage>/assets/images/blog/aeo-revolution.jpg</thumbnailImage>
@@ -77,6 +77,10 @@
 
       <p>And in this new world of Answer Engine Optimization, the content creators best equipped to thrive are not specialists. They are the multidisciplinary ones who learned to move between structure and story, between clarity and persuasion. Content designers. Technical writers. And the marketers who bothered to learn what those disciplines actually do.</p>
 
+      <figure>
+        <img src="/assets/images/blog/aeo-revolution.jpg" alt="Abstract visualization of content flowing into an AI answer engine">
+      </figure>
+
       <h2>What the algorithm wants now</h2>
 
       <p>For decades, SEO rewarded a particular kind of writing. You buried the answer to increase time-on-page. You stuffed keywords into headers. You wrote more words than you needed to and twisted language into unnatural helixes to follow whatever the flavor-of-the-month SEO best practice was. The goal was the click. Everything after the click was someone else's problem.</p>
@@ -90,10 +94,6 @@
       <p>Technical writers have been pre-chunking information for decades. DITA's topic-based authoring creates modular, self-contained units of truth: a Task topic explains how to do something, a Concept topic explains what something is, a Reference topic provides lookup information. Each topic answers one question. Each topic can stand alone. This is not a coincidence. It is the architecture that LLMs now prefer.</p>
 
       <p>Content designers operate under similar <a href="/blog/constraints-are-better/">constraints</a>. When you write a tooltip, you have one sentence to resolve confusion. When you write an error message, you have three lines to explain what went wrong and how to fix it. Character limits, accessibility requirements, localization constraints. These are not obstacles to good writing. They are training grounds for semantic density. They teach you to say exactly what you mean, with nothing left over.</p>
-
-      <figure>
-        <img src="/assets/images/blog/aeo-revolution.jpg" alt="Abstract visualization of content flowing into an AI answer engine">
-      </figure>
 
       <p>The skills that felt limiting in the SEO era are now advantages. Bottom Line Up Front is not just a military briefing convention anymore; it is what retrieval systems reward. Controlled vocabularies are not just internal terminology guides; they are what prevent an LLM from confusing your "API key" with your "product key." Schema.org markup is not just technical overhead; it is the metadata that tells machines what your content actually represents.</p>
 

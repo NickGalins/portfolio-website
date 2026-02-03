@@ -88,38 +88,85 @@ A complete guide to adding and managing blog posts for the "Everything Storytell
 
 ## Image System
 
-### Hero Images
+**IMPORTANT:** Blog posts use TWO images that serve different purposes. Both are required.
 
+### Hero Image (Top Banner)
+
+**Always use the shared hero image for all blog posts:**
+
+```xml
+<heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+<heroAlt>A prism showing ideas coming in and various types of story content coming out</heroAlt>
+```
+
+- **File:** `multidisciplinary-writer-hero.jpg` (shared across all posts)
 - **Dimensions:** 1600 x 800 pixels (2:1 aspect ratio)
 - **Location:** `assets/images/blog/`
-- **Usage:** Full-width banner at top of individual post page
+- **Usage:** Full-width banner displayed at the very top of individual post pages
+- **Do NOT create unique hero images** — use the shared banner for visual consistency
 
-You can either:
-1. **Create a unique hero** for each post (recommended for visual variety)
-2. **Use the shared hero** (`multidisciplinary-writer-hero.jpg`) for consistency
+### Thumbnail Image (Content Image)
 
-### Thumbnail Images
+**Each post needs a unique thumbnail image.** If the user does not provide a filename, ask for one.
+
+The thumbnail image serves two purposes:
+
+1. **In metadata:** Used for blog listing cards and featured post section
+2. **In content:** Displayed as a `<figure>` after the opening paragraphs
+
+**In the XML metadata:**
+
+```xml
+<thumbnailImage>/assets/images/blog/[post-slug].jpg</thumbnailImage>
+<thumbnailAlt>Description of the image</thumbnailAlt>
+```
+
+**In the post content (REQUIRED placement):**
+
+```html
+<p class="lead">Opening paragraph...</p>
+
+<p>Additional opening paragraphs...</p>
+
+<p>Last paragraph before image...</p>
+
+<figure>
+  <img src="/assets/images/blog/[post-slug].jpg" alt="Description of the image">
+</figure>
+
+<h2>First Section Heading</h2>
+```
+
+**Thumbnail image rules:**
 
 - **Dimensions:** 400 x 400 pixels (1:1 square)
-- **Location:** `assets/images/blog/[post-slug]-thumbnail.jpg` or `[post-slug].jpg`
-- **Usage:**
-  - Blog listing cards in "All Posts" section
-  - Featured post section
-  - Can be used inline in post content
+- **Location:** `assets/images/blog/`
+- **Naming:** `[post-slug].jpg` or `[post-slug]-thumbnail.jpg`
+- **Placement in content:** MUST appear after opening paragraphs, BEFORE the first `<h2>`
+- **Both usages required:** Include in metadata AND as a figure in content
 
 ### Blog Header Background
 
-The `/blog/` page header always uses the shared hero:
+The `/blog/` listing page header uses the shared hero:
 ```
 /assets/images/blog/multidisciplinary-writer-hero.jpg
 ```
-This is hardcoded for visual consistency across the blog landing page.
+This is hardcoded in `blog.njk` for visual consistency.
 
 ### Author Photo
 
+- **File:** `author-nick.jpg`
 - **Dimensions:** 256 x 256 pixels (square)
 - **Location:** `assets/images/author-nick.jpg` (NOT in blog subfolder)
 - **Display:** 64x64px circular on author card
+
+### Image Checklist for New Posts
+
+- [ ] Obtain thumbnail image filename from user (ask if not provided)
+- [ ] Save thumbnail to `assets/images/blog/[filename].jpg`
+- [ ] Set `<heroImage>` to shared banner: `/assets/images/blog/multidisciplinary-writer-hero.jpg`
+- [ ] Set `<thumbnailImage>` to the user's image: `/assets/images/blog/[filename].jpg`
+- [ ] Add `<figure>` with thumbnail in content (after opening paragraphs, before first `<h2>`)
 
 ---
 
