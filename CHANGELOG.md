@@ -4,6 +4,24 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-02-03 - New Blog Post & Documentation Consolidation
+
+### Added
+
+- **New blog post: "Out with SEO, in with AEO"** - exploration of Answer Engine Optimization and why multidisciplinary content creators (technical writers, content designers) are well-positioned for the AEO era
+- **BLOG_GUIDE.md** - consolidated blog documentation combining previous separate files
+
+### Changed
+
+- Updated "Writers are Performers" title to use lowercase "are" for consistency
+- Added internal links between blog posts (AEO post links to "Constraints" and "Writers are Performers")
+- Updated `.eleventyignore` to reference new consolidated blog guide
+
+### Removed
+
+- **BLOG_IMPLEMENTATION_CONTEXT.md** - consolidated into BLOG_GUIDE.md
+- **HOW_TO_ADD_BLOG_POSTS.md** - consolidated into BLOG_GUIDE.md
+
 ## 2026-02-02 - Portfolio Content Refinements
 
 ### Changed

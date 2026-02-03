@@ -20,6 +20,9 @@
     <!-- REQUIRED: Post title displayed in headers and listings -->
     <title>Rules are Ok, Constraints are Better</title>
 
+    <!-- Subtitle displayed below main title -->
+    <subtitle>Why Constraints Aren't a Cage</subtitle>
+
     <!-- REQUIRED: Publication date (YYYY-MM-DD format) -->
     <date>2026-01-27</date>
 
@@ -40,7 +43,7 @@
     <excerpt>A personal story about a 7th grade writing workshop reveals why constraints often produce better writing than unlimited freedom.</excerpt>
 
     <!-- FEATURED FLAG (Makes this post prominent on blog index) -->
-    <featured>true</featured>
+    <featured>false</featured>
 
     <!-- TAGS (Categories for organization and filtering) -->
     <tags>

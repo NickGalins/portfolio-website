@@ -19,7 +19,10 @@
     <id>writers-are-performers</id>
 
     <!-- REQUIRED: Post title displayed in headers and listings -->
-    <title>Writers Are Performers</title>
+    <title>Writers are Performers</title>
+
+    <!-- Subtitle displayed below main title -->
+    <subtitle>Multidisciplinary Content Design is the Future</subtitle>
 
     <!-- REQUIRED: Publication date (YYYY-MM-DD format) -->
     <date>2026-01-16</date>

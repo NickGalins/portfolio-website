@@ -16,6 +16,9 @@ permalink: /blog/{{ post.meta.id }}/index.html
 
   <header class="blog-post__header">
     <h1>{{ post.meta.title }}</h1>
+    {% if post.meta.subtitle %}
+    <p class="blog-post__subtitle">{{ post.meta.subtitle }}</p>
+    {% endif %}
 
     <div class="blog-post__meta">
       <time class="blog-post__date">{{ post.meta.date }}</time>

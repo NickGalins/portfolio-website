@@ -1906,8 +1906,16 @@ ul, ol {
 .blog-post__header h1 {
   font-size: 2.5rem;
   line-height: 1.2;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   color: var(--color-text);
+}
+
+.blog-post__subtitle {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  font-weight: 400;
 }
 
 .blog-post__meta {
@@ -2108,6 +2116,40 @@ ul, ol {
   text-align: center;
   margin-top: var(--space-sm);
   font-style: italic;
+}
+
+/* Tables
+   ========================================================================== */
+.blog-post__content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-xl) 0;
+  font-size: 0.95rem;
+}
+
+.blog-post__content table th,
+.blog-post__content table td {
+  padding: var(--space-md);
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.blog-post__content table th {
+  background-color: var(--color-surface);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.blog-post__content table td {
+  color: var(--color-text);
+}
+
+.blog-post__content table tbody tr:nth-child(even) {
+  background-color: var(--color-surface-alt, rgba(0, 0, 0, 0.02));
+}
+
+.blog-post__content table td:first-child {
+  font-weight: 500;
 }
 
 /* Blog Post Footer

@@ -25,9 +25,17 @@ permalink: /blog/index.html
        ----------------------------------------------------------------
        Shows the blog name and tagline at the top of the page
        If a featured post exists, its hero image displays as background -->
-  {# Find the featured post - simplified to just use first post #}
-  {% set featuredPost = posts[0] %}
-  <header class="blog__header" {% if featuredPost and featuredPost.meta.heroImage %}style="background-image: url('{{ featuredPost.meta.heroImage }}');"{% endif %}>
+  {# Find the featured post - look for one with featured=true, otherwise use first post #}
+  {% set featuredPost = null %}
+  {% for post in posts %}
+    {% if post.meta.featured == "true" or post.meta.featured == true %}
+      {% set featuredPost = post %}
+    {% endif %}
+  {% endfor %}
+  {% if not featuredPost %}
+    {% set featuredPost = posts[0] %}
+  {% endif %}
+  <header class="blog__header" style="background-image: url('/assets/images/blog/multidisciplinary-writer-hero.jpg');">
     <h1>Everything Storyteller</h1>
     <p class="blog__tagline">Stories, insights, and lessons from a multidisciplinary writer</p>
   </header>
@@ -83,8 +91,8 @@ permalink: /blog/index.html
     <h2 class="blog__posts-heading">All Posts</h2>
 
     {% for post in posts %}
-      <!-- Skip the featured post ONLY if there are multiple posts (to avoid duplication) -->
-      {% if not (post.meta.featured and posts.length > 1) %}
+      <!-- Skip the featured post to avoid duplication (it's shown above) -->
+      {% if post.meta.id != featuredPost.meta.id %}
       <article class="blog-post-preview">
         <!-- Thumbnail image (left side on desktop) -->
         {% if post.meta.thumbnailImage %}
