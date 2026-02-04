@@ -80,7 +80,7 @@ A docs-as-code portfolio website built with XML content and Eleventy.
 
 ### Adding a Blog Post
 
-See [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md) for the complete guide.
+See [BLOG_GUIDE.md](BLOG_GUIDE.md) for the complete guide.
 
 Quick steps:
 
@@ -163,7 +163,7 @@ Routes are created automatically from your XML `<id>` fields:
 
 | XML Location                              | ID Value  | Generated URL       |
 | ----------------------------------------- | --------- | ------------------- |
-| `content/projects/creative/example.xml`   | `example` | `/projects/example/`|
+| `content/projects/case-studies/example.xml` | `example` | `/projects/example/`|
 | `content/blog/my-post.xml`                | `my-post` | `/blog/my-post/`    |
 | `content/pages/about.xml`                 | `about`   | `/about/`           |
 
@@ -252,7 +252,7 @@ Routes are created automatically from your XML `<id>` fields:
 
 ### Blog Post XML Structure
 
-For detailed blog instructions, see [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md).
+For detailed blog instructions, see [BLOG_GUIDE.md](BLOG_GUIDE.md).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -377,11 +377,10 @@ This project includes detailed guides for specific features:
 
 | File                                                              | Description                         |
 | ----------------------------------------------------------------- | ----------------------------------- |
-| [HOW_TO_ADD_BLOG_POSTS.md](HOW_TO_ADD_BLOG_POSTS.md)              | Blog post creation guide            |
+| [BLOG_GUIDE.md](BLOG_GUIDE.md)                                    | Blog post creation guide            |
 | [CARD-IMAGES.md](CARD-IMAGES.md)                                  | Homepage card image specifications  |
 | [TAG-SYSTEM.md](TAG-SYSTEM.md)                                    | Tag filtering system reference      |
 | [context.md](context.md)                                          | Technical context for AI assistants |
-| [BLOG_IMPLEMENTATION_CONTEXT.md](BLOG_IMPLEMENTATION_CONTEXT.md)  | Blog system architecture            |
 | [assets/images/README.md](assets/images/README.md)                | Project image guidelines            |
 | [assets/images/blog/README.md](assets/images/blog/README.md)      | Blog image guidelines               |
 | [assets/video/README.md](assets/video/README.md)                  | Video asset guidelines              |

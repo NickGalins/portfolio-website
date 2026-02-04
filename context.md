@@ -45,11 +45,12 @@ portfolio-website/
 │   ├── images/             # Project images/thumbnails
 │   └── video/              # Video assets
 ├── content/                # ALL CONTENT LIVES HERE
-│   ├── blog/               # Blog post XML files
+│   ├── blog/               # Blog post XML files (3 posts)
 │   ├── pages/              # Static page XML files (about, contact, resume)
 │   ├── projects/
-│   │   ├── content-design/ # Content design project XML files
-│   │   └── creative/       # Creative writing project XML files
+│   │   ├── case-studies/       # In-depth case studies (7 files)
+│   │   ├── individual-samples/ # Focused writing samples (6 files)
+│   │   └── content-history/    # Content history tag data (3 files)
 │   └── navigation.xml      # Site navigation structure
 ├── about.njk               # About page template
 ├── blog.njk                # Blog listing template
@@ -108,7 +109,7 @@ Every project XML file MUST have this structure:
 ```
 
 ✅ **Step 2: Check File Location**
-- Projects: `content/projects/content-design/` or `content/projects/creative/`
+- Projects: `content/projects/case-studies/`, `content/projects/individual-samples/`, or `content/projects/content-history/`
 - Pages: `content/pages/`
 - Blog posts: `content/blog/`
 - **CRITICAL for Blog Posts:** The `blog-post.njk` pagination template MUST be at the ROOT level, NOT in `_includes/`. Eleventy only processes pagination from root-level templates.
@@ -123,7 +124,7 @@ Look for your project ID in the console output or check if `_site/projects/your-
 
 ✅ **Step 5: Verify the URL**
 Projects generate at: `/projects/[meta.id]/`
-- XML file: `content/projects/creative/oathforger-chapter-1.xml`
+- XML file: `content/projects/individual-samples/oathforger-chapter-1.xml`
 - `<meta><id>oathforger-chapter-1</id></meta>`
 - URL: `http://localhost:8080/projects/oathforger-chapter-1/`
 
@@ -258,7 +259,7 @@ permalink: /projects/{{ project.meta.id }}/index.html  # URL structure
 
 **3. Example:**
 ```
-XML File: content/projects/creative/oathforger-chapter-1.xml
+XML File: content/projects/individual-samples/oathforger-chapter-1.xml
 <meta><id>oathforger-chapter-1</id></meta>
 ↓
 Eleventy generates: _site/projects/oathforger-chapter-1/index.html
@@ -359,8 +360,9 @@ npm run validate
 ### Typical Workflow for Adding a New Project
 
 1. **Create XML file** in appropriate folder:
-   - `content/projects/content-design/` for content design work
-   - `content/projects/creative/` for creative writing
+   - `content/projects/case-studies/` for in-depth case studies
+   - `content/projects/individual-samples/` for focused writing samples
+   - `content/projects/content-history/` for content history items
 
 2. **Use proper XML structure** (see template above)
 
@@ -424,12 +426,12 @@ When making changes, provide a **concise summary** as if teaching a student:
 I'm going to add a new project XML file for the Everland Trust & Safety case study.
 
 WHAT I'm doing:
-- Creating a new file: content/projects/content-design/everland-trust-safety.xml
+- Creating a new file: content/projects/case-studies/everland-trust-safety.xml
 - Using the project XML structure with meta, summary, content, and outcomes
 - Setting the id to "everland-trust-safety" (this becomes the URL slug)
 
 WHY I'm doing it this way:
-- The file goes in content-design/ because it's a case study (not creative writing)
+- The file goes in case-studies/ because it's a case study (not an individual sample)
 - The id uses hyphens (not underscores or spaces) because it becomes a URL
 - I'm wrapping HTML content in CDATA so XML parser doesn't choke on HTML tags
 
@@ -551,7 +553,7 @@ This site deploys to **Cloudflare Workers**.
 ```css
 --color-bg: #0d1b2a        /* Dark navy background */
 --color-text: #e0e1dd      /* Off-white text */
---color-accent: #415a77    /* Blue-gray accent */
+--color-accent: #4ea8de    /* Light blue accent */
 ```
 
 **When adding styled content in XML, use these colors for consistency.**
@@ -608,7 +610,7 @@ content/blog/*.xml → eleventy.config.js → {{ posts }} → Templates → _sit
 - `content/blog/*.xml` - Individual blog post content files
 - `blog.njk` - Blog listing page template (shows all posts)
 - `blog-post.njk` - Individual post page template (uses pagination) **MUST BE AT ROOT LEVEL**
-- `assets/css/main.css` - Blog styling (lines 756+)
+- `assets/css/main.css` - Blog styling (lines 1643+)
 - `assets/images/blog/` - Hero images for blog posts
 - `assets/images/author-*.jpg` - Author photos
 
@@ -633,25 +635,32 @@ Create a new file in `content/blog/[post-slug].xml` with this structure:
     <!-- REQUIRED FIELDS -->
     <id>post-url-slug</id>                    <!-- Used in URL: /blog/post-url-slug/ -->
     <title>Post Title</title>                 <!-- Main heading -->
+    <subtitle>Subtitle or Tagline</subtitle>  <!-- Displayed below title -->
     <date>2026-01-16</date>                   <!-- YYYY-MM-DD format -->
 
     <!-- AUTHOR INFORMATION -->
     <author>Nicholas Galinski</author>
     <authorPhoto>/assets/images/author-nick.jpg</authorPhoto>
-    <authorBio>Short bio about your writing background and expertise.</authorBio>
+    <authorBio>Multidisciplinary writer specializing in technical documentation, UX content, and creative storytelling.</authorBio>
 
-    <!-- VISUAL & PREVIEW -->
-    <heroImage>/assets/images/blog/post-hero.jpg</heroImage>
-    <heroAlt>Description of hero image for accessibility</heroAlt>
-    <excerpt>Brief summary for blog listings and previews (2-3 sentences).</excerpt>
+    <!-- HERO IMAGE (use shared banner for consistency) -->
+    <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+    <heroAlt>A prism showing ideas coming in and various types of story content coming out</heroAlt>
 
-    <!-- FEATURED POST (optional) -->
-    <featured>true</featured>  <!-- Displays prominently on blog index -->
+    <!-- THUMBNAIL IMAGE (unique per post, 400x400px square) -->
+    <thumbnailImage>/assets/images/blog/post-slug-thumbnail.jpg</thumbnailImage>
+    <thumbnailAlt>Description of thumbnail for accessibility</thumbnailAlt>
+
+    <!-- EXCERPT & PREVIEW -->
+    <excerpt>Brief summary for blog listings and previews (1-2 sentences).</excerpt>
+
+    <!-- FEATURED POST (set ONE post to true) -->
+    <featured>false</featured>
 
     <!-- TAGS (for organization) -->
     <tags>
       <tag>Writing</tag>
-      <tag>Content Marketing</tag>
+      <tag>Content Design</tag>
       <tag>Professional Development</tag>
     </tags>
   </meta>
@@ -689,10 +698,11 @@ Create a new file in `content/blog/[post-slug].xml` with this structure:
 </post>
 ```
 
-**Step 2: Add Hero Image**
+**Step 2: Add Images**
 
-Place hero images in `assets/images/blog/[image-name].jpg`:
-- **Recommended size:** 1200x600px (2:1 aspect ratio)
+Place images in `assets/images/blog/`:
+- **Hero image:** 1600x800px (2:1 aspect ratio) - Use shared `multidisciplinary-writer-hero.jpg` for consistency
+- **Thumbnail:** 400x400px (1:1 square) - Unique per post for blog listing cards
 - **Format:** JPG for photos, PNG for graphics
 - **Optimize for web:** Aim for under 200KB file size
 
@@ -827,7 +837,7 @@ The blog maintains the portfolio's dark navy aesthetic:
 - Identify 2-3 tags that categorize the post
 
 **2. Prepare Images**
-- Create or source a hero image (1200x600px)
+- Create or source a hero image (1600x800px, or use shared hero)
 - Optimize image for web (under 200KB)
 - Write descriptive alt text
 - Place in `assets/images/blog/`
@@ -919,11 +929,12 @@ Based on the first post "Writers Are Performers", the blog covers three intersec
 portfolio-website/
 ├── content/
 │   └── blog/
-│       ├── multidisciplinary-writer.xml    ← First blog post
-│       └── [future-posts].xml              ← Add new posts here
+│       ├── multidisciplinary-writer.xml    ← "Writers Are Performers" post
+│       ├── constraints-are-better.xml      ← "Constraints Are Better" post
+│       └── aeo-revolution.xml              ← "The AEO Revolution" post
 ├── assets/
 │   ├── css/
-│   │   └── main.css                        ← Blog styles (lines 756+)
+│   │   └── main.css                        ← Blog styles (lines 1643+)
 │   ├── images/
 │   │   ├── blog/
 │   │   │   ├── README.md                   ← Image guidelines

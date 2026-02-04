@@ -68,28 +68,15 @@ This directory contains hero images and other visual assets for blog posts.
 
 ---
 
-## Current Needs
+## Current Blog Images
 
-### Hero Image for "Writers Are Performers" Post
-
-**File needed:** `multidisciplinary-writer-hero.jpg`
-**Suggested theme:** Theater stage with spotlight, performance concept, or writing/storytelling visual metaphor
-**Dimensions:** 1600 x 800 pixels (2:1 ratio)
-**Format:** JPG or PNG
-
-### Thumbnail for "Writers Are Performers" Post
-
-**File needed:** `writers-are-performers-thumbnail.jpg`
-**Suggested theme:** Visual representation of multidisciplinary writing as performance (complement to hero image)
-**Dimensions:** 400 x 400 pixels (1:1 square)
-**Format:** JPG or PNG
-
-### Author Photo
-
-**File needed:** `../author-nick.jpg` (in parent images directory)
-**Description:** Professional headshot of Nicholas Galinski
-**Dimensions:** 256 x 256 pixels (square)
-**Format:** JPG
+| File | Post |
+|------|------|
+| `multidisciplinary-writer-hero.jpg` | "Writers Are Performers" hero |
+| `writers-are-performers-thumbnail.jpg` | "Writers Are Performers" thumbnail |
+| `constraints-thumbnail.jpg` | "Constraints Are Better" thumbnail |
+| `aeo-revolution.jpg` | "The AEO Revolution" image |
+| `../author-nick.jpg` | Author photo (in parent directory) |
 
 ---
 

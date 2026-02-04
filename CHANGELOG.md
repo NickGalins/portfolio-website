@@ -4,6 +4,17 @@ All notable changes to this portfolio site will be documented in this file.
 
 ## [Unreleased]
 
+## 2026-02-03 - CLAUDE.md & Documentation Updates
+
+### Added
+
+- **CLAUDE.md** - guidance file for Claude Code with project commands, architecture overview, critical patterns, git workflow guidelines, and content writing style guide
+- Content writing style guidelines to avoid AI-sounding patterns
+
+### Changed
+
+- Updated `.eleventyignore` to include all documentation files (CLAUDE.md, context.md, TAG-SYSTEM.md, CARD-IMAGES.md, CHANGELOG.md)
+
 ## 2026-02-03 - New Blog Post & Documentation Consolidation
 
 ### Added
