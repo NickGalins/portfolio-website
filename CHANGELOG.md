@@ -2,6 +2,12 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-02-12 - OathForger Social Media Preview Fix
+
+### Fixed
+
+- Corrected OathForger Chapter 1 thumbnail path (`oathforger-thumb.png` → `oathforger-chapter-card.png`) so Open Graph social media previews display the correct image
+
 ## [Unreleased]
 
 ## 2026-02-03 - CLAUDE.md & Documentation Updates
