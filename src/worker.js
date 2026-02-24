@@ -1,7 +1,7 @@
 // =============================================================================
 // CLOUDFLARE WORKER — API proxy for Style Guide Editor
 // =============================================================================
-// Routes /api/style-check to Anthropic Claude API
+// Routes /api/style-check to Anthropic Claude API (Sonnet 4.6)
 // Everything else falls through to static assets (Eleventy _site/)
 // =============================================================================
 
