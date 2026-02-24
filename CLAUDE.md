@@ -130,6 +130,12 @@ When generating content (blog posts, project descriptions, copy), avoid patterns
 
 Sound like a human with opinions and experience, not a template with synonyms swapped in.
 
+## Hidden Pages
+
+The following project pages are intentionally **not listed** in navigation, the homepage card grid, or the sitemap. Do not add them to `content/navigation.xml`, `index.njk` card mappings, or any other public-facing menu.
+
+- **`style-editor`** (`content/projects/individual-samples/style-editor.xml`) — AI Style Guide Editor demo. Uses a Cloudflare Worker API route (`/api/style-check` in `src/worker.js`) that proxies to Anthropic's API. The API key is stored as a Cloudflare secret (`ANTHROPIC_API_KEY`), never in source code. Local dev uses `.dev.vars` (gitignored).
+
 ## Documentation Reference
 
 - [BLOG_GUIDE.md](BLOG_GUIDE.md) - Blog post creation guide
