@@ -2,6 +2,13 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-02-24 - Style Editor reliability improvements
+
+### Changed
+
+- Added automatic retry (up to 3 attempts) for Anthropic API overload (529) and rate limit (429) errors
+- Improved error messages to surface specific failure reasons (auth, rate limit, overload) instead of generic text
+
 ## 2026-02-23 - AI Style Guide Editor
 
 ### Added

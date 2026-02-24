@@ -171,31 +171,70 @@ async function handleStyleCheck(request, env) {
     );
   }
 
-  // Call Anthropic API
+  // Call Anthropic API (retry up to 3 times on overload/rate-limit)
   try {
-    const anthropicResponse = await fetch(ANTHROPIC_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 2048,
-        messages: [
-          {
-            role: 'user',
-            content: `Content type: ${contentType}\n\nCopy to review:\n${text.trim()}`,
-          },
-        ],
-        system: buildSystemPrompt(contentType),
-      }),
+    const MAX_RETRIES = 3;
+    let anthropicResponse;
+    let lastStatus;
+
+    const requestBody = JSON.stringify({
+      model: MODEL,
+      max_tokens: 2048,
+      messages: [
+        {
+          role: 'user',
+          content: `Content type: ${contentType}\n\nCopy to review:\n${text.trim()}`,
+        },
+      ],
+      system: buildSystemPrompt(contentType),
     });
+
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+      if (attempt > 0) {
+        // Wait before retrying: 1s, then 2s
+        await new Promise((r) => setTimeout(r, attempt * 1000));
+      }
+
+      anthropicResponse = await fetch(ANTHROPIC_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: requestBody,
+      });
+
+      lastStatus = anthropicResponse.status;
+
+      // Only retry on overload (529) or rate limit (429)
+      if (lastStatus !== 529 && lastStatus !== 429) break;
+      console.log(`Anthropic returned ${lastStatus}, retry ${attempt + 1}/${MAX_RETRIES}`);
+    }
 
     if (!anthropicResponse.ok) {
       const errorText = await anthropicResponse.text();
-      console.error('Anthropic API error:', anthropicResponse.status, errorText);
+      console.error('Anthropic API error:', lastStatus, errorText);
+
+      if (lastStatus === 401) {
+        return Response.json(
+          { error: 'API authentication failed. The API key may be invalid or expired.' },
+          { status: 502 }
+        );
+      }
+      if (lastStatus === 429) {
+        return Response.json(
+          { error: 'Rate limit reached. Wait a moment and try again.' },
+          { status: 429 }
+        );
+      }
+      if (lastStatus === 529) {
+        return Response.json(
+          { error: 'The AI service is temporarily overloaded. Try again in a few seconds.' },
+          { status: 502 }
+        );
+      }
+
       return Response.json(
         { error: 'Style check service is temporarily unavailable. Please try again.' },
         { status: 502 }
