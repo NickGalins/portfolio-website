@@ -2,6 +2,16 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-02-23 - Gski Stagehand Content Guidelines
+
+### Added
+
+- **New writing sample: Gski Stagehand Content Guidelines** — Voice & tone brand guidelines, UI component copy patterns (Alert, Modal, Error Message, Help Panel, Popover, Container), and AEO documentation architecture for a fictional creator community platform
+- Component mock CSS for Figma-style UI component representations
+- Do/Don't and reference table styling for content guidelines
+- Before/After comparison layout for AEO section
+- Navigation entry for new writing sample
+
 ## 2026-02-12 - OathForger Social Media Preview Fix
 
 ### Fixed

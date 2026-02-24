@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>content-guidelines-stagehand</id>
+    <title>Gski Stagehand Content Guidelines</title>
+    <subtitle>Voice, UI copy standards, and AEO documentation architecture for a creator community platform</subtitle>
+    <client></client>
+    <role>Content Designer / Content Strategist</role>
+    <thumbnail>/assets/images/stagehand-guidelines-card.png</thumbnail>
+    <teaser>Brand voice definition, UI component copy patterns, and AEO documentation guidelines for a fictional creator community platform. Demonstrates guidelines and design systems work across three dimensions of content strategy.</teaser>
+    <tags>
+      <tag>Content Design</tag>
+      <tag>UX Writing</tag>
+      <tag>Systems Design</tag>
+      <tag>Writing Sample</tag>
+      <tag>Content Strategy</tag>
+      <tag>Information Architecture</tag>
+    </tags>
+  </meta>
+
+  <summary>
+    Content guidelines for Gski Stagehand, a creator community platform. Covers brand voice and tone, UI copy component patterns, and documentation architecture for AI answer engine retrieval.
+  </summary>
+
+  <content>
+    <section>
+      <heading>About This Sample</heading>
+      <body><![CDATA[
+<div class="info-box info-box--note">
+  <div class="info-box__header">
+    <svg class="info-box__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 16v-4"></path>
+      <path d="M12 8h.01"></path>
+    </svg>
+    <span class="info-box__title">About This Sample</span>
+  </div>
+  <p><strong>Gski Stagehand is not a real product.</strong> It's a fictional creator community platform — think community spaces, live streaming, creator storefronts, and moderation tools — designed as the context for this content guidelines sample.</p>
+  <p>This sample demonstrates three dimensions of content guidelines work: brand voice definition, UI component copy standards, and documentation architecture for AI answer engine retrieval. The guidelines, voice principles, and component patterns shown here reflect real systems thinking from my work across community, gaming, and technology platforms.</p>
+</div>
+
+<div class="toc-box">
+  <strong>In this document</strong>
+  <ul>
+    <li><a href="#voice-&amp;-tone">Voice &amp; Tone</a>
+      <ul>
+        <li><a href="#voice-principles">Voice Principles</a></li>
+        <li><a href="#tone-spectrum">Tone Spectrum</a></li>
+      </ul>
+    </li>
+    <li><a href="#ui-copy-components">UI Copy Components</a>
+      <ul>
+        <li><a href="#alert">Alert</a></li>
+        <li><a href="#modal">Modal</a></li>
+        <li><a href="#error-message">Error Message</a></li>
+        <li><a href="#help-panel">Help Panel</a></li>
+        <li><a href="#popover">Popover</a></li>
+        <li><a href="#container">Container</a></li>
+      </ul>
+    </li>
+    <li><a href="#aeo-(answer-engine-optimization)">AEO (Answer Engine Optimization)</a>
+      <ul>
+        <li><a href="#structural-principles">Structural Principles</a></li>
+        <li><a href="#topic-authoring-reference">Topic-Based Authoring Quick Reference</a></li>
+        <li><a href="#before-and-after">Before &amp; After</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>Voice &amp; Tone</heading>
+      <body><![CDATA[
+<p>Stagehand's voice is consistent across every surface. The tone shifts. A welcome message for a new creator sounds different from a moderation notice, but both should be recognizably Stagehand.</p>
+
+<h3 id="voice-principles">Voice Principles</h3>
+
+<dl>
+  <dt>Direct, not blunt</dt>
+  <dd>
+    <p>Creators have three tabs open and a chat blowing up. Get to the point. That doesn't mean being cold; it means respecting someone enough to skip the preamble and tell them what they need to know.</p>
+    <p><em>Lead with the answer, cut the narration, and name the specific thing. If a payment failed, say which one and where to fix it.</em></p>
+    <table class="do-dont-table">
+      <thead>
+        <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Please be advised that your account has been temporarily restricted due to a potential violation of our community guidelines.</td>
+          <td>Your account is restricted. We found a violation of our Community Standards in #general.</td>
+          <td>Front-load the status. Name the specific policy and location.</td>
+        </tr>
+        <tr>
+          <td>We wanted to let you know that your upload has finished processing and is now ready to view.</td>
+          <td>Your upload is ready.</td>
+          <td>Strip the preamble. The user doesn't need narration about your internal process.</td>
+        </tr>
+        <tr>
+          <td>You need to fix your payment method.</td>
+          <td>Your payment method was declined. Update it in Settings > Billing to keep your subscription.</td>
+          <td>Direct without being a dead end — tell them what happened and what to do.</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+
+  <dt>Builders, not gatekeepers</dt>
+  <dd>
+    <p>When someone hits a limit, they should see a path forward. "You can't do X" is a wall. "X is available on Creator Pro" is a door. Frame copy around capability, not restriction.</p>
+    <p><em>Write the action first, then the constraint. If there's an upgrade path or workaround, surface it.</em></p>
+    <table class="do-dont-table">
+      <thead>
+        <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>You cannot upload files larger than 500MB.</td>
+          <td>Upload files up to 500MB. Need more space? Upgrade to Creator Pro.</td>
+          <td>Leads with the capability and offers a path forward.</td>
+        </tr>
+        <tr>
+          <td>This feature is not available on your plan.</td>
+          <td>This feature is part of Creator Pro. See what's included.</td>
+          <td>Positions the limitation as an opportunity, not a wall.</td>
+        </tr>
+        <tr>
+          <td>Do not share your stream key with anyone.</td>
+          <td>Your stream key is private — treat it like a password.</td>
+          <td>Teaches the concept instead of issuing a command.</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+
+  <dt>Specific over safe</dt>
+  <dd>
+    <p>"Upload a supported file" tells the creator nothing. "Upload a PNG or JPG, 1080x1080px, under 5MB" tells them everything. Vague copy is easy to write and useless to read. Find the spec, then write.</p>
+    <p><em>Real numbers, real formats, real constraints. If you're writing "a moment" or "supported file," you haven't done the research yet.</em></p>
+    <table class="do-dont-table">
+      <thead>
+        <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Upload a supported file.</td>
+          <td>Upload a PNG or JPG, 1080x1080px, under 5MB.</td>
+          <td>The user shouldn't have to guess what "supported" means.</td>
+        </tr>
+        <tr>
+          <td>This may take a moment.</td>
+          <td>Processing usually takes 10–30 seconds.</td>
+          <td>Give a real range. "A moment" could mean anything.</td>
+        </tr>
+        <tr>
+          <td>Something went wrong. Please try again later.</td>
+          <td>We couldn't save your changes (error 502). Try again in a few minutes or check status.stagehand.example.</td>
+          <td>Name the error. Give a timeframe. Offer an escape route.</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+
+  <dt>Warm in the room, not warm in the hallway</dt>
+  <dd>
+    <p>A welcome message should feel like a real greeting. A moderation notice should not. Warmth belongs in community spaces and onboarding flows where people are building something new. In billing, errors, and enforcement, clarity is the kindness.</p>
+    <p><em>Before adding friendliness to any string, ask: does this context earn it? If the user just got suspended, don't open with an exclamation point.</em></p>
+    <table class="do-dont-table">
+      <thead>
+        <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Your message was flagged by our automated system.</td>
+          <td>We removed your message because it violates our Harassment Policy.</td>
+          <td>The problem is passivity and vagueness — own the action and name the policy.</td>
+        </tr>
+        <tr>
+          <td>Welcome.</td>
+          <td>Welcome to Stagehand. Here's how to set up your first community.</td>
+          <td>Onboarding deserves warmth and direction — don't be cold where warmth is earned.</td>
+        </tr>
+        <tr>
+          <td>Your subscription has been canceled. If you have any questions, please contact support.</td>
+          <td>Your subscription is canceled. You'll have access through March 23, 2026.</td>
+          <td>Don't punt to support when you can give them the information they need.</td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+</dl>
+
+<h3 id="tone-spectrum">Tone Spectrum</h3>
+
+<p>Every surface in Stagehand maps to a point on this spectrum. When in doubt, check which context you're writing for.</p>
+
+<table class="ref-table">
+  <thead>
+    <tr><th>Context</th><th>Register</th><th>Example</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Community welcome</td>
+      <td>Warm, encouraging</td>
+      <td>Welcome to Stagehand. Here's how to set up your first community.</td>
+    </tr>
+    <tr>
+      <td>Product UI</td>
+      <td>Neutral-warm, clear</td>
+      <td>Your storefront is live. Share it with your audience.</td>
+    </tr>
+    <tr>
+      <td>Help documentation</td>
+      <td>Efficient, precise</td>
+      <td>To add a payout method, go to Settings > Payments > Add method.</td>
+    </tr>
+    <tr>
+      <td>Moderation</td>
+      <td>Firm, neutral</td>
+      <td>We removed this content because it violates our Harassment Policy.</td>
+    </tr>
+    <tr>
+      <td>Errors &amp; system alerts</td>
+      <td>Direct, calm</td>
+      <td>We couldn't process your payment (error 402). Update your billing info.</td>
+    </tr>
+  </tbody>
+</table>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>UI Copy Components</heading>
+      <body><![CDATA[
+<p>These are copy standards for Stagehand's core UI components. Each component defines the copy structure, constraints, and tone that any writer needs to produce consistent, on-brand content without guesswork.</p>
+
+<h3 id="alert">Alert</h3>
+
+<p>Page-level or section-level messages that persist until dismissed or resolved. Use alerts for system status, required actions, and policy enforcement — not for transient feedback (use toasts for that).</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-alert-example" id="tab-alert-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-alert-usage" id="tab-alert-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-alert-example" aria-hidden="false" aria-labelledby="tab-alert-example">
+    <p><strong>Info</strong></p>
+    <div class="component-mock component-mock--alert-info">
+      <div class="component-mock__alert-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+      </div>
+      <div class="component-mock__alert-content">Stagehand now supports 4K streaming. <a href="#">Update your encoder settings</a> to take advantage of higher resolution.</div>
+    </div>
+
+    <p><strong>Warning</strong></p>
+    <div class="component-mock component-mock--alert-warning">
+      <div class="component-mock__alert-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      </div>
+      <div class="component-mock__alert-content">Your payout method expires in 7 days. <a href="#">Update it</a> to avoid a missed payment.</div>
+    </div>
+
+    <p><strong>Critical</strong></p>
+    <div class="component-mock component-mock--alert-critical">
+      <div class="component-mock__alert-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      </div>
+      <div class="component-mock__alert-content"><strong>Your community was suspended</strong> for violating our Terms of Service. <a href="#">Appeal this decision</a>.</div>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-alert-usage" aria-hidden="true" aria-labelledby="tab-alert-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Use severity levels consistently — Info for announcements, Warning for upcoming deadlines, Critical for immediate action.</li>
+      <li><strong>Do:</strong> Display multiple alerts in urgency order: Critical &gt; Warning &gt; Info.</li>
+      <li><strong>Don't:</strong> Use alerts for success confirmation after user actions — use a toast instead.</li>
+      <li><strong>Don't:</strong> Stack multiple alerts of the same severity. Consolidate into one.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Icon</td>
+          <td>Yes</td>
+          <td>Automatic based on severity. Do not override.</td>
+        </tr>
+        <tr>
+          <td>Header</td>
+          <td>No</td>
+          <td>Max 60 chars. Sentence case. No end punctuation. Summarize the core issue.</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>Yes</td>
+          <td>Max 2 sentences. Must include a recovery action for Warning and Critical.</td>
+        </tr>
+        <tr>
+          <td>Action button</td>
+          <td>Conditional</td>
+          <td>Required for Warning and Critical. 1–2 words, action verb. No punctuation.</td>
+        </tr>
+        <tr>
+          <td>Dismiss</td>
+          <td>Conditional</td>
+          <td>Info alerts are dismissible. Warning and Critical persist until resolved.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Types</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Type</th><th>Color</th><th>Use for</th><th>Action required?</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Info</td>
+          <td>Blue</td>
+          <td>Announcements, tips, feature changes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Warning</td>
+          <td>Yellow</td>
+          <td>Upcoming deadlines, potential issues</td>
+          <td>Yes — preventive</td>
+        </tr>
+        <tr>
+          <td>Critical</td>
+          <td>Red</td>
+          <td>Service disruption, policy violation, blocked state</td>
+          <td>Yes — immediate</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>Sentence case for all text. Capitalize proper nouns only.</li>
+      <li>Body uses present tense, active voice.</li>
+      <li>Header states what happened. Body states what to do.</li>
+      <li>Never use "please" in Critical alerts — urgency, not politeness.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="modal">Modal</h3>
+
+<p>A dialog that overlays the page and blocks interaction until the user takes action. Use modals for decisions that need confirmation — especially destructive or irreversible actions.</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-modal-example" id="tab-modal-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-modal-usage" id="tab-modal-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-modal-example" aria-hidden="false" aria-labelledby="tab-modal-example">
+    <p><strong>Destructive action</strong></p>
+    <div class="component-mock--modal-backdrop">
+      <div class="component-mock component-mock--modal">
+        <div class="component-mock__modal-header">
+          <strong>Delete this community?</strong>
+          <span class="component-mock__modal-close">&times;</span>
+        </div>
+        <div class="component-mock__modal-body">This removes all channels, members, and content. This can't be undone.</div>
+        <div class="component-mock__modal-footer">
+          <span class="component-mock__btn component-mock__btn--danger">Delete community</span>
+          <span class="component-mock__btn component-mock__btn--secondary">Cancel</span>
+        </div>
+      </div>
+    </div>
+
+    <p><strong>Publish confirmation</strong></p>
+    <div class="component-mock--modal-backdrop">
+      <div class="component-mock component-mock--modal">
+        <div class="component-mock__modal-header">
+          <strong>Go live now?</strong>
+          <span class="component-mock__modal-close">&times;</span>
+        </div>
+        <div class="component-mock__modal-body">Your stream will be visible to all followers immediately.</div>
+        <div class="component-mock__modal-footer">
+          <span class="component-mock__btn component-mock__btn--primary">Go live</span>
+          <span class="component-mock__btn component-mock__btn--secondary">Cancel</span>
+        </div>
+      </div>
+    </div>
+
+    <p><strong>Subscription change</strong></p>
+    <div class="component-mock--modal-backdrop">
+      <div class="component-mock component-mock--modal">
+        <div class="component-mock__modal-header">
+          <strong>Cancel your subscription?</strong>
+          <span class="component-mock__modal-close">&times;</span>
+        </div>
+        <div class="component-mock__modal-body">You'll keep access through March 23, 2026. You can resubscribe anytime.</div>
+        <div class="component-mock__modal-footer">
+          <span class="component-mock__btn component-mock__btn--danger">Cancel subscription</span>
+          <span class="component-mock__btn component-mock__btn--secondary">Keep subscription</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-modal-usage" aria-hidden="true" aria-labelledby="tab-modal-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Use modals for actions that need explicit confirmation before executing.</li>
+      <li><strong>Do:</strong> Name the specific action in the primary button — never just "OK" or "Yes."</li>
+      <li><strong>Don't:</strong> Nest modals inside modals.</li>
+      <li><strong>Don't:</strong> Chain sequential modals. Use a multi-step flow instead.</li>
+      <li><strong>Don't:</strong> Use modals for information that doesn't require a decision. Use an alert.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Title</td>
+          <td>Yes</td>
+          <td>Max 60 chars. Format: <code>[Action verb] + [object]?</code> — e.g., "Delete this community?"</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>Yes</td>
+          <td>Max 2 sentences. State what will happen and whether it's reversible.</td>
+        </tr>
+        <tr>
+          <td>Primary button</td>
+          <td>Yes</td>
+          <td>1–3 words. Must name the action: "Delete community," not "Confirm."</td>
+        </tr>
+        <tr>
+          <td>Secondary button</td>
+          <td>Yes</td>
+          <td>"Cancel" for most cases. Use a specific alternative when canceling is ambiguous — e.g., "Keep subscription."</td>
+        </tr>
+        <tr>
+          <td>Dismiss (X)</td>
+          <td>Yes</td>
+          <td>Always present. Behaves the same as the secondary button.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>Title is a question. Body is a statement.</li>
+      <li>For destructive actions, include "This can't be undone" when true.</li>
+      <li>Never use exclamation points in modals.</li>
+      <li>Primary button uses sentence case. No end punctuation.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="error-message">Error Message</h3>
+
+<p>Inline feedback that appears when a user action fails — form validation, submission errors, or system failures. Error messages appear adjacent to the element that triggered them.</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-error-example" id="tab-error-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-error-usage" id="tab-error-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-error-example" aria-hidden="false" aria-labelledby="tab-error-example">
+    <p><strong>Validation error</strong></p>
+    <div class="component-mock component-mock--error">
+      <label class="component-mock__input-label">Username</label>
+      <div class="component-mock__input component-mock__input--invalid">ng</div>
+      <div class="component-mock__error-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        Enter a username between 3–30 characters.
+      </div>
+    </div>
+
+    <p><strong>Submission error</strong></p>
+    <div class="component-mock component-mock--error">
+      <label class="component-mock__input-label">Community description</label>
+      <div class="component-mock__input component-mock__input--invalid">A place for creators to share...</div>
+      <div class="component-mock__error-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        We couldn't save your changes. Check your connection and try again.
+      </div>
+    </div>
+
+    <p><strong>System error</strong></p>
+    <div class="component-mock component-mock--error">
+      <label class="component-mock__input-label">Stream title</label>
+      <div class="component-mock__input component-mock__input--invalid">Friday night art stream</div>
+      <div class="component-mock__error-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        Stagehand is having trouble right now (error 503). Try again in a few minutes.
+      </div>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-error-usage" aria-hidden="true" aria-labelledby="tab-error-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Place error messages directly below the field or action that caused them.</li>
+      <li><strong>Do:</strong> Tell the user what went wrong <em>and</em> how to fix it in the same message.</li>
+      <li><strong>Don't:</strong> Blame the user. "Enter a valid email" — not "You entered an invalid email."</li>
+      <li><strong>Don't:</strong> Use "Oops," "Uh oh," or other filler interjections.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Icon</td>
+          <td>Yes</td>
+          <td>Red warning icon. Automatic — do not override.</td>
+        </tr>
+        <tr>
+          <td>Message</td>
+          <td>Yes</td>
+          <td>Max 2 sentences. Formula: <code>[What went wrong] + [How to fix it]</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Types</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Type</th><th>Trigger</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Validation</td>
+          <td>Field input doesn't meet requirements</td>
+          <td>Enter a username between 3–30 characters.</td>
+        </tr>
+        <tr>
+          <td>Submission</td>
+          <td>Form or action fails to process</td>
+          <td>We couldn't save your changes. Check your connection and try again.</td>
+        </tr>
+        <tr>
+          <td>System</td>
+          <td>Platform-level failure</td>
+          <td>Stagehand is having trouble right now (error 503). Try again in a few minutes.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>Present tense. Active voice.</li>
+      <li>For validation: state the requirement, not the violation. "Enter a valid email" — not "Invalid email address."</li>
+      <li>For system errors: include the error code when available. Give a timeframe, not "try again later."</li>
+      <li>Never use "please" in error messages — just tell them what to do.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="help-panel">Help Panel</h3>
+
+<p>Contextual guidance that appears alongside a feature — during setup flows, on complex settings pages, or on first-time interactions. Help panels explain what isn't obvious from the UI alone.</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-help-example" id="tab-help-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-help-usage" id="tab-help-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-help-example" aria-hidden="false" aria-labelledby="tab-help-example">
+    <p><strong>Storefront setup</strong></p>
+    <div class="component-mock component-mock--help-panel">
+      <div class="component-mock__help-body">Set prices, upload files, and organize your digital products. Buyers see this page when they visit your profile.</div>
+      <a href="#" class="component-mock__help-link">Full setup guide: Storefront basics</a>
+    </div>
+
+    <p><strong>Stream settings</strong></p>
+    <div class="component-mock component-mock--help-panel">
+      <div class="component-mock__help-body">Configure resolution, bitrate, and encoder before going live. Changes take effect on your next stream, not mid-broadcast.</div>
+      <a href="#" class="component-mock__help-link">Full setup guide: Streaming configuration</a>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-help-usage" aria-hidden="true" aria-labelledby="tab-help-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Describe what the feature does and what the user can accomplish with it.</li>
+      <li><strong>Do:</strong> Link to the full documentation at the end.</li>
+      <li><strong>Don't:</strong> Repeat the page title or field label. The user can already see those.</li>
+      <li><strong>Don't:</strong> Write a full tutorial in the panel. Keep it to 2–3 sentences, then link out.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Body</td>
+          <td>Yes</td>
+          <td>Max 3 sentences. Explain what this feature does and what isn't obvious from the UI.</td>
+        </tr>
+        <tr>
+          <td>Doc link</td>
+          <td>Yes</td>
+          <td>Format: "Full setup guide: [Topic]" — links to the relevant help article.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>Assume the user can see the UI. Describe what they <em>can't</em> see — consequences, constraints, timing.</li>
+      <li>Use present tense. Describe what the feature does, not what it "will" do.</li>
+      <li>Doc link goes at the end, on its own line. Don't embed links mid-sentence.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="popover">Popover</h3>
+
+<p>Brief, contextual information anchored to a specific UI element. Appears on click or hover. Popovers answer "what is this?" — not "how do I use this?" (use a help panel for that).</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-popover-example" id="tab-popover-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-popover-usage" id="tab-popover-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-popover-example" aria-hidden="false" aria-labelledby="tab-popover-example">
+    <p><strong>Visibility setting</strong></p>
+    <div class="component-mock--popover-scene">
+      <span class="component-mock__popover-trigger">Visibility</span>
+      <div class="component-mock component-mock--popover">
+        <div class="component-mock__popover-arrow"></div>
+        Controls who can find your community in search and recommendations.
+      </div>
+    </div>
+
+    <p><strong>Creator handle</strong></p>
+    <div class="component-mock--popover-scene">
+      <span class="component-mock__popover-trigger">@handle</span>
+      <div class="component-mock component-mock--popover">
+        <div class="component-mock__popover-arrow"></div>
+        Your unique handle. Appears in your profile URL (stagehand.example/@handle).
+      </div>
+    </div>
+
+    <p><strong>Analytics icon</strong></p>
+    <div class="component-mock--popover-scene">
+      <span class="component-mock__popover-trigger">Analytics</span>
+      <div class="component-mock component-mock--popover">
+        <div class="component-mock__popover-arrow"></div>
+        Views, follows, and revenue for the last 30 days.
+      </div>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-popover-usage" aria-hidden="true" aria-labelledby="tab-popover-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Use for supplemental, non-essential information only.</li>
+      <li><strong>Do:</strong> Trigger via user interaction — click or hover on a specific element.</li>
+      <li><strong>Don't:</strong> Include links. If you need a link, use a help panel instead.</li>
+      <li><strong>Don't:</strong> Use for content that requires extended reading. Keep it to a glance.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Body</td>
+          <td>Yes</td>
+          <td>Max 1–2 sentences. Under 140 characters. No links, no headings, no formatting.</td>
+        </tr>
+        <tr>
+          <td>Dismiss</td>
+          <td>Conditional</td>
+          <td>Required if the popover contains interactive elements.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>One sentence is ideal. Two is the maximum.</li>
+      <li>Describe what the element <em>does</em>, not what it <em>is</em>. "Controls who can find your community" — not "This is the visibility setting."</li>
+      <li>No headings, no formatting, no links. Plain text only.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="container">Container</h3>
+
+<p>A visual group that organizes related content or actions within a page — settings sections, dashboard cards, content blocks. Containers use a title and optional description to orient the user before they interact with the contents inside.</p>
+
+<div class="device-tabs">
+  <div class="device-tabs__nav" role="tablist">
+    <button class="device-tabs__tab" role="tab" aria-selected="true" aria-controls="panel-container-example" id="tab-container-example">Example</button>
+    <button class="device-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-container-usage" id="tab-container-usage">Usage</button>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-container-example" aria-hidden="false" aria-labelledby="tab-container-example">
+    <p><strong>Settings section</strong></p>
+    <div class="component-mock component-mock--container">
+      <strong class="component-mock__container-title">Payment &amp; Billing</strong>
+      <p class="component-mock__container-desc">Payout methods, transaction history, and tax documents.</p>
+    </div>
+
+    <p><strong>Dashboard card</strong></p>
+    <div class="component-mock component-mock--container">
+      <strong class="component-mock__container-title">Community Stats</strong>
+      <p class="component-mock__container-desc">Members, messages, and growth over the last 30 days.</p>
+    </div>
+
+    <p><strong>Configuration group</strong></p>
+    <div class="component-mock component-mock--container">
+      <strong class="component-mock__container-title">Stream Settings</strong>
+      <p class="component-mock__container-desc">Resolution, bitrate, and encoder configuration.</p>
+    </div>
+  </div>
+
+  <div class="device-tabs__panel" role="tabpanel" id="panel-container-usage" aria-hidden="true" aria-labelledby="tab-container-usage">
+    <h4>Guidelines</h4>
+    <ul>
+      <li><strong>Do:</strong> Use titles that are nouns or noun phrases — the actions live inside the container, not in the title.</li>
+      <li><strong>Do:</strong> Include a description when the title alone doesn't make the contents obvious.</li>
+      <li><strong>Don't:</strong> Use verbs or full sentences as container titles. "Manage your payments" is an action, not a label.</li>
+      <li><strong>Don't:</strong> Use descriptions to repeat the title in longer form.</li>
+    </ul>
+
+    <h4>Anatomy</h4>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Element</th><th>Required</th><th>Constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Title</td>
+          <td>Yes</td>
+          <td>Max 40 chars. Noun or noun phrase. Title case.</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>No</td>
+          <td>Max 80 chars. Lists what the container contains or what the user can do here.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Writing rules</h4>
+    <ul>
+      <li>Title uses title case. Description uses sentence case.</li>
+      <li>Descriptions list contents or capabilities — not instructions.</li>
+      <li>If the container only has 1–2 obvious elements, skip the description.</li>
+    </ul>
+  </div>
+</div>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>AEO (Answer Engine Optimization)</heading>
+      <body><![CDATA[
+<p>Stagehand's help documentation needs to work for machines that read on behalf of humans. When a creator asks an AI assistant "how do I set up a storefront on Stagehand," the answer engine pulls from our docs, chunks them by heading, and returns the most relevant fragment. If our content isn't structured for that retrieval pattern, our docs won't surface at all.</p>
+
+<h3 id="structural-principles">Structural Principles</h3>
+
+<dl>
+  <dt>One topic, one page</dt>
+  <dd>No page covers both "how to set up a storefront" and "storefront analytics." Each page addresses a single user intent so retrieval engines can return a precise answer, not a page the user has to scroll through. If you're writing a page that needs a "See also" section with more than three links, the page probably covers too much.</dd>
+
+  <dt>BLUF everything</dt>
+  <dd>First sentence answers the question. The rest is context. Every h2 section starts with a sentence someone could read and walk away satisfied. Retrieval engines pull the first 1-2 sentences of a chunk. If your answer is buried in paragraph three, it won't get retrieved.</dd>
+
+  <dt>Chunk for retrieval</dt>
+  <dd>Semantic HTML headers (h2, h3) act as RAG breakpoints. Each heading and its content should stand alone as a retrievable unit. A section titled "Configure your encoder" should contain everything needed to configure the encoder without requiring the reader to scroll up for context.</dd>
+
+  <dt>Controlled vocabulary</dt>
+  <dd>The thing where creators gather is a "community." Not a "server," "group," "space," or "hub." Pick one term per concept and use it everywhere. Inconsistent terminology fractures retrieval because the engine treats "server" and "community" as different topics. Maintain the terminology table in the content system and enforce it in reviews.</dd>
+
+  <dt>Schema markup</dt>
+  <dd>Every help page gets structured data: HowTo for procedural content, FAQPage for troubleshooting, Article for conceptual explainers, TechArticle for API and reference docs. Structured data is how answer engines know what type of content they're looking at before they read it.</dd>
+</dl>
+
+<h3 id="topic-authoring-reference">Topic-Based Authoring Quick Reference</h3>
+
+<table class="ref-table">
+  <thead>
+    <tr><th>Content Type</th><th>Lead Sentence Pattern</th><th>Required Sections</th><th>Schema Type</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>How-to</td>
+      <td>To [accomplish X], [do Y].</td>
+      <td>Prerequisites, Steps, Result</td>
+      <td>HowTo</td>
+    </tr>
+    <tr>
+      <td>Concept</td>
+      <td>[Term] is [definition].</td>
+      <td>Overview, How it works, Related</td>
+      <td>Article</td>
+    </tr>
+    <tr>
+      <td>Troubleshoot</td>
+      <td>If [symptom], [likely cause].</td>
+      <td>Symptom, Cause, Fix, Escalation</td>
+      <td>FAQPage</td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>[Feature] supports [capabilities].</td>
+      <td>Parameters, Values, Limits</td>
+      <td>TechArticle</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="before-and-after">Before &amp; After</h3>
+
+<p>The difference between SEO-era documentation and AEO-ready documentation often comes down to the first two sentences.</p>
+
+<div class="before-after">
+  <div class="before-after__before">
+    <span class="before-after__label">Before</span>
+    <p>In this article, we'll walk you through everything you need to know about setting up your Stagehand storefront. Whether you're a new creator or an experienced seller, this guide covers all the essential steps to get your products listed and ready for buyers.</p>
+  </div>
+  <div class="before-after__after">
+    <span class="before-after__label">After</span>
+    <p>To set up your storefront, go to Creator Dashboard > Storefront > Create. You need at least one product uploaded and a connected payout method before your storefront goes live.</p>
+  </div>
+</div>
+
+<p>The "before" version buries the answer behind two sentences of throat-clearing. An answer engine retrieving this chunk returns filler. The "after" version leads with the action and the requirements. A retrieval engine can extract and display it directly, no trimming needed.</p>
+      ]]></body>
+    </section>
+  </content>
+</project>
