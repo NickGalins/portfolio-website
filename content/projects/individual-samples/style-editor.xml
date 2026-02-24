@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <meta>
+    <id>style-editor</id>
+    <title>AI Style Guide Editor</title>
+    <subtitle>An interactive tool that uses Claude to rewrite copy according to the Microsoft Writing Style Guide</subtitle>
+    <client></client>
+    <role>Content Designer / Prompt Engineer</role>
+    <thumbnail>/assets/images/style-editor-card.png</thumbnail>
+    <teaser>A live AI-powered editor that analyzes copy against the Microsoft Writing Style Guide, rewrites it to conform, and explains every change with specific rule citations.</teaser>
+    <tags>
+      <tag>AI / LLM</tag>
+      <tag>Content Design</tag>
+      <tag>UX Writing</tag>
+      <tag>Writing Sample</tag>
+    </tags>
+  </meta>
+
+  <summary>
+    An interactive style guide compliance tool powered by Claude (Anthropic). Select a content type, paste your copy, and get instant rewrites with rule-by-rule explanations citing the Microsoft Writing Style Guide.
+  </summary>
+
+  <content>
+    <section>
+      <heading>About This Tool</heading>
+      <body><![CDATA[
+<div class="info-box info-box--note">
+  <div class="info-box__header"></div>
+  <div class="info-box__body">
+    <p>This is a working tool, not a static mockup. It calls Claude (Anthropic's LLM) through a Cloudflare Worker endpoint, with the Microsoft Writing Style Guide distilled into the system prompt.</p>
+    <p>It demonstrates prompt engineering, API integration, structured output parsing, and content design knowledge applied to a real editorial workflow.</p>
+  </div>
+</div>
+]]></body>
+    </section>
+
+    <section>
+      <heading>Style Guide Editor</heading>
+      <body><![CDATA[
+<div class="style-editor" id="style-editor">
+  <div class="style-editor__input-section">
+    <div class="style-editor__field">
+      <label class="style-editor__label" for="content-type-select">Content type</label>
+      <select class="style-editor__select" id="content-type-select">
+        <option value="error-message">Error message</option>
+        <option value="ui-label">UI label / button text</option>
+        <option value="help-documentation">Help documentation</option>
+      </select>
+    </div>
+
+    <div class="style-editor__field">
+      <label class="style-editor__label" for="copy-input">Your copy</label>
+      <textarea
+        class="style-editor__textarea"
+        id="copy-input"
+        rows="6"
+        maxlength="2000"
+        placeholder="Paste or type your copy here..."
+      ></textarea>
+      <div class="style-editor__char-count">
+        <span id="char-count">0</span> / 2,000
+      </div>
+    </div>
+
+    <button class="style-editor__button" id="check-style-btn" type="button">
+      Check style
+    </button>
+  </div>
+
+  <div class="style-editor__results" id="results-section" style="display: none;">
+    <div class="style-editor__result-block">
+      <h4 class="style-editor__result-heading">Revised copy</h4>
+      <div class="style-editor__revised-copy" id="revised-copy"></div>
+    </div>
+
+    <div class="style-editor__result-block" id="changes-block" style="display: none;">
+      <h4 class="style-editor__result-heading">What changed</h4>
+      <div id="changes-list"></div>
+    </div>
+
+    <div class="style-editor__result-block">
+      <h4 class="style-editor__result-heading">Summary</h4>
+      <p class="style-editor__summary" id="summary-text"></p>
+    </div>
+  </div>
+
+  <div class="style-editor__loading" id="loading-section" style="display: none;">
+    <div class="style-editor__spinner"></div>
+    <p>Analyzing your copy against the Microsoft Writing Style Guide...</p>
+  </div>
+
+  <div class="style-editor__error" id="error-section" style="display: none;">
+    <p id="error-text"></p>
+  </div>
+</div>
+
+<script src="/assets/js/style-editor.js"></script>
+]]></body>
+    </section>
+
+    <section>
+      <heading>How It Works</heading>
+      <body><![CDATA[
+<p>The editor runs on three layers:</p>
+
+<ol>
+  <li><strong>Content-type-aware prompting.</strong> Each content type (error messages, UI labels, help docs) loads a different set of Microsoft Style Guide rules into the system prompt. Error messages get rules about blame-free language and conciseness. UI labels get capitalization and verb-first patterns. Help docs get procedural writing and second-person rules.</li>
+  <li><strong>Structured output.</strong> The LLM returns JSON with the revised copy, a list of individual changes (each citing a specific rule), and an overall summary. This makes the output parseable and presentable rather than a blob of freeform text.</li>
+  <li><strong>Server-side proxy.</strong> The browser sends a POST request to a Cloudflare Worker endpoint (<code>/api/style-check</code>), which holds the API key and forwards the request to Anthropic's Messages API. No credentials are exposed client-side.</li>
+</ol>
+
+<h3>Rules coverage</h3>
+<p>The system prompt includes Microsoft's top 10 style and voice principles (brevity, active voice, contractions, sentence-style capitalization, Oxford commas, etc.) plus 10 content-type-specific rules per category. The rules are distilled from the <a href="https://learn.microsoft.com/en-us/style-guide/welcome/" target="_blank" rel="noopener">Microsoft Writing Style Guide</a> rather than RAG'd from the full document, keeping token usage low and responses fast.</p>
+]]></body>
+    </section>
+  </content>
+</project>

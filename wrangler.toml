@@ -1,5 +1,8 @@
 name = "portfolio-website"
 compatibility_date = "2025-01-15"
+main = "src/worker.js"
 
 [assets]
 directory = "./_site"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]

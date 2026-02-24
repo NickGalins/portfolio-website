@@ -2,6 +2,21 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-02-23 - AI Style Guide Editor
+
+### Added
+
+- **New project: AI Style Guide Editor** — Interactive tool that uses Claude (Anthropic) to rewrite copy according to the Microsoft Writing Style Guide with rule-by-rule explanations
+- Cloudflare Worker API endpoint (`/api/style-check`) that proxies requests to Anthropic Messages API with content-type-aware system prompts
+- Three content type modes: error messages, UI labels/button text, and help documentation — each loading specific Microsoft Style Guide rules
+- Client-side editor UI with pre-populated example text, loading states, and structured result rendering
+- Style editor CSS with change cards, before/after diff styling, and responsive layout
+- Worker script (`src/worker.js`) with input validation, CORS support, and structured JSON output parsing
+
+### Changed
+
+- Updated `wrangler.toml` to add Worker script entry point, assets binding, and API route configuration
+
 ## 2026-02-23 - Content Guidelines polish, certifications, and card images
 
 ### Added

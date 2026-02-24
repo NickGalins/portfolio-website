@@ -21,6 +21,7 @@ npm-debug.log*
 # Environment
 .env
 .env.local
+.dev.vars
 
 # Context files for AI assistants
 Context/
