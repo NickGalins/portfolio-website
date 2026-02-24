@@ -107,6 +107,7 @@
   <li><strong>Content-type-aware prompting.</strong> Each content type (error messages, UI labels, help docs) loads a different set of Microsoft Style Guide rules into the system prompt. Error messages get rules about blame-free language and conciseness. UI labels get capitalization and verb-first patterns. Help docs get procedural writing and second-person rules.</li>
   <li><strong>Structured output.</strong> The LLM returns JSON with the revised copy, a list of individual changes (each citing a specific rule), and an overall summary. This makes the output parseable and presentable rather than a blob of freeform text.</li>
   <li><strong>Server-side proxy.</strong> The browser sends a POST request to a Cloudflare Worker endpoint (<code>/api/style-check</code>), which holds the API key and forwards the request to Anthropic's Messages API. No credentials are exposed client-side.</li>
+  <li><strong>Retry with fallback.</strong> The Worker tries Claude Sonnet twice, then automatically falls back to Claude Haiku if the primary model is overloaded. This keeps the tool responsive even during API traffic spikes.</li>
 </ol>
 
 <h3>Rules coverage</h3>

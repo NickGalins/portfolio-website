@@ -7,6 +7,7 @@
 
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 const MODEL = 'claude-sonnet-4-6';
+const FALLBACK_MODEL = 'claude-haiku-4-5-20251001';
 const MAX_INPUT_LENGTH = 2000;
 
 // ---------------------------------------------------------------------------
@@ -171,28 +172,19 @@ async function handleStyleCheck(request, env) {
     );
   }
 
-  // Call Anthropic API (retry up to 3 times on overload/rate-limit)
+  // Call Anthropic API with retry + fallback model
   try {
-    const MAX_RETRIES = 3;
+    const systemPrompt = buildSystemPrompt(contentType);
+    const userMessage = `Content type: ${contentType}\n\nCopy to review:\n${text.trim()}`;
+
+    // Try primary model (Sonnet) with retries, then fall back to Haiku
+    const models = [MODEL, MODEL, FALLBACK_MODEL];
     let anthropicResponse;
     let lastStatus;
 
-    const requestBody = JSON.stringify({
-      model: MODEL,
-      max_tokens: 2048,
-      messages: [
-        {
-          role: 'user',
-          content: `Content type: ${contentType}\n\nCopy to review:\n${text.trim()}`,
-        },
-      ],
-      system: buildSystemPrompt(contentType),
-    });
-
-    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    for (let attempt = 0; attempt < models.length; attempt++) {
       if (attempt > 0) {
-        // Wait before retrying: 1s, then 2s
-        await new Promise((r) => setTimeout(r, attempt * 1000));
+        await new Promise((r) => setTimeout(r, 1000));
       }
 
       anthropicResponse = await fetch(ANTHROPIC_API_URL, {
@@ -202,14 +194,18 @@ async function handleStyleCheck(request, env) {
           'x-api-key': apiKey,
           'anthropic-version': '2023-06-01',
         },
-        body: requestBody,
+        body: JSON.stringify({
+          model: models[attempt],
+          max_tokens: 2048,
+          messages: [{ role: 'user', content: userMessage }],
+          system: systemPrompt,
+        }),
       });
 
       lastStatus = anthropicResponse.status;
 
-      // Only retry on overload (529) or rate limit (429)
       if (lastStatus !== 529 && lastStatus !== 429) break;
-      console.log(`Anthropic returned ${lastStatus}, retry ${attempt + 1}/${MAX_RETRIES}`);
+      console.log(`${models[attempt]} returned ${lastStatus}, attempt ${attempt + 1}/${models.length}`);
     }
 
     if (!anthropicResponse.ok) {
