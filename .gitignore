@@ -24,3 +24,14 @@ npm-debug.log*
 
 # Context files for AI assistants
 Context/
+Discord-Content-Technologist-2026-02-04.md
+interview-email.md
+
+# Claude Code
+.claude/
+
+# Original badge folder (copied to assets/images/certifications/)
+assets/images/Certification Badges/
+
+# Windows artifacts
+nul

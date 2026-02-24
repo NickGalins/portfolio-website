@@ -62,6 +62,35 @@ permalink: /resume/index.html
   </section>
   {% endif %}
 
+  {# CERTIFICATIONS SECTION #}
+  {% if resume.certifications %}
+  <section class="resume__section">
+    <h2>Certifications</h2>
+    <div class="resume__certifications">
+      {% if resume.certifications.certification.length %}
+        {% for cert in resume.certifications.certification %}
+        <div class="resume__certification">
+          <img src="{{ cert.badge }}" alt="{{ cert.name }}" class="resume__certification-badge">
+          <div class="resume__certification-info">
+            <strong>{{ cert.name }}</strong>
+            <span>{{ cert.issuer }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        {% set cert = resume.certifications.certification %}
+        <div class="resume__certification">
+          <img src="{{ cert.badge }}" alt="{{ cert.name }}" class="resume__certification-badge">
+          <div class="resume__certification-info">
+            <strong>{{ cert.name }}</strong>
+            <span>{{ cert.issuer }}</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
   {# BRANDS SECTION: Marquee + link to Content History #}
   {% if resume.brands %}
   <section class="resume__section">

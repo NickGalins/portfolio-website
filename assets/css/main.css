@@ -843,6 +843,19 @@ ul, ol {
   overflow-wrap: break-word;
 }
 
+.home-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.home-badges img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+}
+
 .featured-work {
   margin-bottom: var(--space-3xl);
 }
@@ -1619,6 +1632,36 @@ ul, ol {
 
 .resume__skills {
   line-height: 1.8;
+}
+
+/* Certifications section */
+.resume__certifications {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.resume__certification {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.resume__certification-badge {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.resume__certification-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.resume__certification-info span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
 /* Brands section */

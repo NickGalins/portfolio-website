@@ -2,6 +2,25 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-02-23 - Content Guidelines polish, certifications, and card images
+
+### Added
+
+- **Structured Data section** (Section 4) in Stagehand Content Guidelines — HowTo schema template, filled example, and page output mock
+- **Certifications section** on Work History page with AWS Cloud Practitioner and Google Generative AI Leader badges
+- Certification badges on homepage between intro and project grid
+- Card image for Stagehand Content Guidelines on homepage and Individual Samples landing page
+- "Lists over walls of text" structural principle in AEO section
+
+### Changed
+
+- Stagehand Content Guidelines: replaced "click" with "select" for platform-neutral copy
+- Stagehand Content Guidelines: reduced em dashes, fixed parallel structure, lowered vocabulary to ~8th grade level, softened voice principles
+- Stagehand Content Guidelines: restructured AEO intro and structural principles with bullet lists
+- Navigation label changed from "Gski Stagehand - Content Guidelines" to "Content Framework"
+- Updated .gitignore with .claude/, Windows artifacts, and interview context files
+- Updated .eleventyignore with interview context files
+
 ## 2026-02-23 - Gski Stagehand Content Guidelines
 
 ### Added

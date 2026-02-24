@@ -3,11 +3,11 @@
   <meta>
     <id>content-guidelines-stagehand</id>
     <title>Gski Stagehand Content Guidelines</title>
-    <subtitle>Voice, UI copy standards, and AEO documentation architecture for a creator community platform</subtitle>
+    <subtitle>Voice, UI copy standards, AEO documentation architecture, and structured data for a creator community platform</subtitle>
     <client></client>
     <role>Content Designer / Content Strategist</role>
-    <thumbnail>/assets/images/stagehand-guidelines-card.png</thumbnail>
-    <teaser>Brand voice definition, UI component copy patterns, and AEO documentation guidelines for a fictional creator community platform. Demonstrates guidelines and design systems work across three dimensions of content strategy.</teaser>
+    <thumbnail>/assets/images/content-guidelines-stagehand.jpg</thumbnail>
+    <teaser>Brand voice definition, UI component copy patterns, AEO documentation guidelines, and structured data implementation for a fictional creator community platform. Demonstrates guidelines and design systems work across four dimensions of content strategy.</teaser>
     <tags>
       <tag>Content Design</tag>
       <tag>UX Writing</tag>
@@ -19,7 +19,7 @@
   </meta>
 
   <summary>
-    Content guidelines for Gski Stagehand, a creator community platform. Covers brand voice and tone, UI copy component patterns, and documentation architecture for AI answer engine retrieval.
+    Content guidelines for Gski Stagehand, a creator community platform. Covers brand voice and tone, UI copy component patterns, documentation architecture for AI answer engine retrieval, and structured data implementation.
   </summary>
 
   <content>
@@ -35,8 +35,8 @@
     </svg>
     <span class="info-box__title">About This Sample</span>
   </div>
-  <p><strong>Gski Stagehand is not a real product.</strong> It's a fictional creator community platform — think community spaces, live streaming, creator storefronts, and moderation tools — designed as the context for this content guidelines sample.</p>
-  <p>This sample demonstrates three dimensions of content guidelines work: brand voice definition, UI component copy standards, and documentation architecture for AI answer engine retrieval. The guidelines, voice principles, and component patterns shown here reflect real systems thinking from my work across community, gaming, and technology platforms.</p>
+  <p><strong>Gski Stagehand is not a real product.</strong> It's a fictional creator community platform (community spaces, live streaming, creator storefronts, moderation tools) designed as the context for this content guidelines sample.</p>
+  <p>This sample demonstrates four dimensions of content guidelines work: brand voice definition, UI component copy standards, documentation architecture for AI answer engine retrieval, and structured data implementation. The guidelines, voice principles, and component patterns shown here reflect real systems thinking from my work across community, gaming, and technology platforms.</p>
 </div>
 
 <div class="toc-box">
@@ -65,6 +65,13 @@
         <li><a href="#before-and-after">Before &amp; After</a></li>
       </ul>
     </li>
+    <li><a href="#structured-data">Structured Data</a>
+      <ul>
+        <li><a href="#schema-template">HowTo Schema Template</a></li>
+        <li><a href="#schema-filled-example">Filled Example</a></li>
+        <li><a href="#page-output">Page Output</a></li>
+      </ul>
+    </li>
   </ul>
 </div>
       ]]></body>
@@ -80,8 +87,8 @@
 <dl>
   <dt>Direct, not blunt</dt>
   <dd>
-    <p>Creators have three tabs open and a chat blowing up. Get to the point. That doesn't mean being cold; it means respecting someone enough to skip the preamble and tell them what they need to know.</p>
-    <p><em>Lead with the answer, cut the narration, and name the specific thing. If a payment failed, say which one and where to fix it.</em></p>
+    <p>Your users are mid-task. They have tabs open, a chat going, and half their attention somewhere else. Respect that by getting to the point quickly. Being direct isn't being cold. It's cutting the warm-up so someone can act on what you wrote.</p>
+    <p><em>Lead with the answer and name the specific thing. If a payment failed, say which one and where to fix it.</em></p>
     <table class="do-dont-table">
       <thead>
         <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
@@ -95,12 +102,12 @@
         <tr>
           <td>We wanted to let you know that your upload has finished processing and is now ready to view.</td>
           <td>Your upload is ready.</td>
-          <td>Strip the preamble. The user doesn't need narration about your internal process.</td>
+          <td>Cut the warm-up. The user doesn't need narration about your internal process.</td>
         </tr>
         <tr>
           <td>You need to fix your payment method.</td>
           <td>Your payment method was declined. Update it in Settings > Billing to keep your subscription.</td>
-          <td>Direct without being a dead end — tell them what happened and what to do.</td>
+          <td>Direct without being a dead end. Tell them what happened and what to do next.</td>
         </tr>
       </tbody>
     </table>
@@ -108,7 +115,7 @@
 
   <dt>Builders, not gatekeepers</dt>
   <dd>
-    <p>When someone hits a limit, they should see a path forward. "You can't do X" is a wall. "X is available on Creator Pro" is a door. Frame copy around capability, not restriction.</p>
+    <p>When someone hits a limit, they should see what they can do next. "You can't do X" is a wall. "X is available on Creator Pro" is a door. Frame copy around what's possible, not what's blocked.</p>
     <p><em>Write the action first, then the constraint. If there's an upgrade path or workaround, surface it.</em></p>
     <table class="do-dont-table">
       <thead>
@@ -136,8 +143,8 @@
 
   <dt>Specific over safe</dt>
   <dd>
-    <p>"Upload a supported file" tells the creator nothing. "Upload a PNG or JPG, 1080x1080px, under 5MB" tells them everything. Vague copy is easy to write and useless to read. Find the spec, then write.</p>
-    <p><em>Real numbers, real formats, real constraints. If you're writing "a moment" or "supported file," you haven't done the research yet.</em></p>
+    <p>"Upload a supported file" tells the creator nothing. "Upload a PNG or JPG, 1080x1080px, under 5MB" tells them everything. Vague copy creates support tickets. Specific copy prevents them.</p>
+    <p><em>Use real numbers, real formats, real constraints. If a string says "a moment" or "supported file," it still needs the actual spec.</em></p>
     <table class="do-dont-table">
       <thead>
         <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
@@ -164,8 +171,8 @@
 
   <dt>Warm in the room, not warm in the hallway</dt>
   <dd>
-    <p>A welcome message should feel like a real greeting. A moderation notice should not. Warmth belongs in community spaces and onboarding flows where people are building something new. In billing, errors, and enforcement, clarity is the kindness.</p>
-    <p><em>Before adding friendliness to any string, ask: does this context earn it? If the user just got suspended, don't open with an exclamation point.</em></p>
+    <p>A welcome message should feel like a real greeting. A moderation notice should not. Warmth fits naturally in community spaces and onboarding, where someone is getting started. In billing, errors, and enforcement, the kindest thing you can do is be clear.</p>
+    <p><em>Before adding friendliness to any string, consider whether the context earns it. An account suspension doesn't need an exclamation point.</em></p>
     <table class="do-dont-table">
       <thead>
         <tr><th>Don't</th><th>Do</th><th>Why</th></tr>
@@ -174,12 +181,12 @@
         <tr>
           <td>Your message was flagged by our automated system.</td>
           <td>We removed your message because it violates our Harassment Policy.</td>
-          <td>The problem is passivity and vagueness — own the action and name the policy.</td>
+          <td>The problem is vague language and passive voice. Own the action and name the policy.</td>
         </tr>
         <tr>
           <td>Welcome.</td>
           <td>Welcome to Stagehand. Here's how to set up your first community.</td>
-          <td>Onboarding deserves warmth and direction — don't be cold where warmth is earned.</td>
+          <td>Onboarding earns warmth. A bare "Welcome." with no next step wastes the moment.</td>
         </tr>
         <tr>
           <td>Your subscription has been canceled. If you have any questions, please contact support.</td>
@@ -233,11 +240,11 @@
     <section anchor="true">
       <heading>UI Copy Components</heading>
       <body><![CDATA[
-<p>These are copy standards for Stagehand's core UI components. Each component defines the copy structure, constraints, and tone that any writer needs to produce consistent, on-brand content without guesswork.</p>
+<p>Copy standards for Stagehand's core UI components. Any writer should be able to pick up a component below and produce consistent, on-brand content without guesswork.</p>
 
 <h3 id="alert">Alert</h3>
 
-<p>Page-level or section-level messages that persist until dismissed or resolved. Use alerts for system status, required actions, and policy enforcement — not for transient feedback (use toasts for that).</p>
+<p>Page-level or section-level messages that stay visible until dismissed or resolved. Use alerts for system status, required actions, and policy enforcement. For temporary feedback (like "Saved!"), use toasts instead.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -274,9 +281,9 @@
   <div class="device-tabs__panel" role="tabpanel" id="panel-alert-usage" aria-hidden="true" aria-labelledby="tab-alert-usage">
     <h4>Guidelines</h4>
     <ul>
-      <li><strong>Do:</strong> Use severity levels consistently — Info for announcements, Warning for upcoming deadlines, Critical for immediate action.</li>
+      <li><strong>Do:</strong> Use severity levels consistently. Info for announcements, Warning for upcoming deadlines, Critical for immediate action.</li>
       <li><strong>Do:</strong> Display multiple alerts in urgency order: Critical &gt; Warning &gt; Info.</li>
-      <li><strong>Don't:</strong> Use alerts for success confirmation after user actions — use a toast instead.</li>
+      <li><strong>Don't:</strong> Use alerts for success confirmation after user actions. Use a toast instead.</li>
       <li><strong>Don't:</strong> Stack multiple alerts of the same severity. Consolidate into one.</li>
     </ul>
 
@@ -346,14 +353,14 @@
       <li>Sentence case for all text. Capitalize proper nouns only.</li>
       <li>Body uses present tense, active voice.</li>
       <li>Header states what happened. Body states what to do.</li>
-      <li>Never use "please" in Critical alerts — urgency, not politeness.</li>
+      <li>Never use "please" in Critical alerts. The tone should convey urgency, not politeness.</li>
     </ul>
   </div>
 </div>
 
 <h3 id="modal">Modal</h3>
 
-<p>A dialog that overlays the page and blocks interaction until the user takes action. Use modals for decisions that need confirmation — especially destructive or irreversible actions.</p>
+<p>A dialog that overlays the page and blocks interaction until the user takes action. Use modals for decisions that need confirmation, especially destructive or irreversible actions.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -412,7 +419,7 @@
     <h4>Guidelines</h4>
     <ul>
       <li><strong>Do:</strong> Use modals for actions that need explicit confirmation before executing.</li>
-      <li><strong>Do:</strong> Name the specific action in the primary button — never just "OK" or "Yes."</li>
+      <li><strong>Do:</strong> Name the specific action in the primary button. Never just "OK" or "Yes."</li>
       <li><strong>Don't:</strong> Nest modals inside modals.</li>
       <li><strong>Don't:</strong> Chain sequential modals. Use a multi-step flow instead.</li>
       <li><strong>Don't:</strong> Use modals for information that doesn't require a decision. Use an alert.</li>
@@ -427,7 +434,7 @@
         <tr>
           <td>Title</td>
           <td>Yes</td>
-          <td>Max 60 chars. Format: <code>[Action verb] + [object]?</code> — e.g., "Delete this community?"</td>
+          <td>Max 60 chars. Format: <code>[Action verb] + [object]?</code> (e.g., "Delete this community?")</td>
         </tr>
         <tr>
           <td>Body</td>
@@ -442,7 +449,7 @@
         <tr>
           <td>Secondary button</td>
           <td>Yes</td>
-          <td>"Cancel" for most cases. Use a specific alternative when canceling is ambiguous — e.g., "Keep subscription."</td>
+          <td>"Cancel" for most cases. When "Cancel" could be confusing, use a specific alternative (e.g., "Keep subscription").</td>
         </tr>
         <tr>
           <td>Dismiss (X)</td>
@@ -464,7 +471,7 @@
 
 <h3 id="error-message">Error Message</h3>
 
-<p>Inline feedback that appears when a user action fails — form validation, submission errors, or system failures. Error messages appear adjacent to the element that triggered them.</p>
+<p>Inline feedback that appears when a user action fails: form validation, submission errors, or system failures. Error messages appear directly below the element that triggered them.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -489,7 +496,7 @@
       <div class="component-mock__input component-mock__input--invalid">A place for creators to share...</div>
       <div class="component-mock__error-text">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-        We couldn't save your changes. Check your connection and try again.
+        We couldn't save your changes (error 408). Check your connection and try again.
       </div>
     </div>
 
@@ -509,7 +516,7 @@
     <ul>
       <li><strong>Do:</strong> Place error messages directly below the field or action that caused them.</li>
       <li><strong>Do:</strong> Tell the user what went wrong <em>and</em> how to fix it in the same message.</li>
-      <li><strong>Don't:</strong> Blame the user. "Enter a valid email" — not "You entered an invalid email."</li>
+      <li><strong>Don't:</strong> Blame the user. Write "Enter a valid email," not "You entered an invalid email."</li>
       <li><strong>Don't:</strong> Use "Oops," "Uh oh," or other filler interjections.</li>
     </ul>
 
@@ -522,7 +529,7 @@
         <tr>
           <td>Icon</td>
           <td>Yes</td>
-          <td>Red warning icon. Automatic — do not override.</td>
+          <td>Red warning icon. Automatic; do not override.</td>
         </tr>
         <tr>
           <td>Message</td>
@@ -546,7 +553,7 @@
         <tr>
           <td>Submission</td>
           <td>Form or action fails to process</td>
-          <td>We couldn't save your changes. Check your connection and try again.</td>
+          <td>We couldn't save your changes (error 408). Check your connection and try again.</td>
         </tr>
         <tr>
           <td>System</td>
@@ -559,16 +566,16 @@
     <h4>Writing rules</h4>
     <ul>
       <li>Present tense. Active voice.</li>
-      <li>For validation: state the requirement, not the violation. "Enter a valid email" — not "Invalid email address."</li>
+      <li>For validation: state the requirement, not the violation. "Enter a valid email," not "Invalid email address."</li>
       <li>For system errors: include the error code when available. Give a timeframe, not "try again later."</li>
-      <li>Never use "please" in error messages — just tell them what to do.</li>
+      <li>Never use "please" in error messages. State the action directly.</li>
     </ul>
   </div>
 </div>
 
 <h3 id="help-panel">Help Panel</h3>
 
-<p>Contextual guidance that appears alongside a feature — during setup flows, on complex settings pages, or on first-time interactions. Help panels explain what isn't obvious from the UI alone.</p>
+<p>Contextual guidance that appears alongside a feature during setup flows, on complex settings pages, or on first-time interactions. Help panels explain what isn't obvious from the UI alone.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -613,14 +620,14 @@
         <tr>
           <td>Doc link</td>
           <td>Yes</td>
-          <td>Format: "Full setup guide: [Topic]" — links to the relevant help article.</td>
+          <td>Format: "Full setup guide: [Topic]." Links to the relevant help article.</td>
         </tr>
       </tbody>
     </table>
 
     <h4>Writing rules</h4>
     <ul>
-      <li>Assume the user can see the UI. Describe what they <em>can't</em> see — consequences, constraints, timing.</li>
+      <li>Assume the user can see the UI. Describe what they <em>can't</em> see: consequences, constraints, timing.</li>
       <li>Use present tense. Describe what the feature does, not what it "will" do.</li>
       <li>Doc link goes at the end, on its own line. Don't embed links mid-sentence.</li>
     </ul>
@@ -629,7 +636,7 @@
 
 <h3 id="popover">Popover</h3>
 
-<p>Brief, contextual information anchored to a specific UI element. Appears on click or hover. Popovers answer "what is this?" — not "how do I use this?" (use a help panel for that).</p>
+<p>Brief, contextual information anchored to a specific UI element. Appears on select or hover. Popovers answer "what is this?" For "how do I use this?" use a help panel instead.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -669,8 +676,8 @@
   <div class="device-tabs__panel" role="tabpanel" id="panel-popover-usage" aria-hidden="true" aria-labelledby="tab-popover-usage">
     <h4>Guidelines</h4>
     <ul>
-      <li><strong>Do:</strong> Use for supplemental, non-essential information only.</li>
-      <li><strong>Do:</strong> Trigger via user interaction — click or hover on a specific element.</li>
+      <li><strong>Do:</strong> Use for supporting, non-essential information only.</li>
+      <li><strong>Do:</strong> Trigger on user interaction: select or hover on a specific element.</li>
       <li><strong>Don't:</strong> Include links. If you need a link, use a help panel instead.</li>
       <li><strong>Don't:</strong> Use for content that requires extended reading. Keep it to a glance.</li>
     </ul>
@@ -697,7 +704,7 @@
     <h4>Writing rules</h4>
     <ul>
       <li>One sentence is ideal. Two is the maximum.</li>
-      <li>Describe what the element <em>does</em>, not what it <em>is</em>. "Controls who can find your community" — not "This is the visibility setting."</li>
+      <li>Describe what the element <em>does</em>, not what it <em>is</em>. Write "Controls who can find your community," not "This is the visibility setting."</li>
       <li>No headings, no formatting, no links. Plain text only.</li>
     </ul>
   </div>
@@ -705,7 +712,7 @@
 
 <h3 id="container">Container</h3>
 
-<p>A visual group that organizes related content or actions within a page — settings sections, dashboard cards, content blocks. Containers use a title and optional description to orient the user before they interact with the contents inside.</p>
+<p>A visual group that organizes related content or actions within a page: settings sections, dashboard cards, content blocks. Containers use a title and optional description to orient the user before they interact with what's inside.</p>
 
 <div class="device-tabs">
   <div class="device-tabs__nav" role="tablist">
@@ -736,7 +743,7 @@
   <div class="device-tabs__panel" role="tabpanel" id="panel-container-usage" aria-hidden="true" aria-labelledby="tab-container-usage">
     <h4>Guidelines</h4>
     <ul>
-      <li><strong>Do:</strong> Use titles that are nouns or noun phrases — the actions live inside the container, not in the title.</li>
+      <li><strong>Do:</strong> Use titles that are nouns or noun phrases. Actions live inside the container, not in the title.</li>
       <li><strong>Do:</strong> Include a description when the title alone doesn't make the contents obvious.</li>
       <li><strong>Don't:</strong> Use verbs or full sentences as container titles. "Manage your payments" is an action, not a label.</li>
       <li><strong>Don't:</strong> Use descriptions to repeat the title in longer form.</li>
@@ -764,7 +771,7 @@
     <h4>Writing rules</h4>
     <ul>
       <li>Title uses title case. Description uses sentence case.</li>
-      <li>Descriptions list contents or capabilities — not instructions.</li>
+      <li>Descriptions list contents or capabilities, not instructions.</li>
       <li>If the container only has 1–2 obvious elements, skip the description.</li>
     </ul>
   </div>
@@ -775,25 +782,75 @@
     <section anchor="true">
       <heading>AEO (Answer Engine Optimization)</heading>
       <body><![CDATA[
-<p>Stagehand's help documentation needs to work for machines that read on behalf of humans. When a creator asks an AI assistant "how do I set up a storefront on Stagehand," the answer engine pulls from our docs, chunks them by heading, and returns the most relevant fragment. If our content isn't structured for that retrieval pattern, our docs won't surface at all.</p>
+<p>Stagehand's help documentation needs to work for machines that read on behalf of humans.</p>
+
+<p>When a creator asks an AI assistant "how do I set up a storefront on Stagehand," the answer engine:</p>
+<ul>
+  <li>Pulls from our documentation</li>
+  <li>Chunks content by heading into retrievable fragments</li>
+  <li>Returns the most relevant fragment as the answer</li>
+</ul>
+
+<p>If our content isn't structured for that retrieval pattern, our docs won't surface at all.</p>
 
 <h3 id="structural-principles">Structural Principles</h3>
 
 <dl>
   <dt>One topic, one page</dt>
-  <dd>No page covers both "how to set up a storefront" and "storefront analytics." Each page addresses a single user intent so retrieval engines can return a precise answer, not a page the user has to scroll through. If you're writing a page that needs a "See also" section with more than three links, the page probably covers too much.</dd>
+  <dd>Each page addresses a single user intent. No page covers both "how to set up a storefront" and "storefront analytics."
+    <ul>
+      <li>Retrieval engines return precise answers, not pages the user has to scroll through</li>
+      <li>If your "See also" section needs more than three links, the page covers too much</li>
+      <li>Split by intent, not by feature. "Set up your storefront" and "Manage storefront pricing" are separate pages</li>
+    </ul>
+  </dd>
 
   <dt>BLUF everything</dt>
-  <dd>First sentence answers the question. The rest is context. Every h2 section starts with a sentence someone could read and walk away satisfied. Retrieval engines pull the first 1-2 sentences of a chunk. If your answer is buried in paragraph three, it won't get retrieved.</dd>
+  <dd>First sentence answers the question. The rest is context.
+    <ul>
+      <li>Every h2 section starts with a sentence someone could read and walk away satisfied</li>
+      <li>Retrieval engines pull the first 1–2 sentences of a chunk. If your answer is in paragraph three, it won't get retrieved</li>
+      <li>Write the answer, then write the explanation. Never the reverse</li>
+    </ul>
+  </dd>
 
   <dt>Chunk for retrieval</dt>
-  <dd>Semantic HTML headers (h2, h3) act as RAG breakpoints. Each heading and its content should stand alone as a retrievable unit. A section titled "Configure your encoder" should contain everything needed to configure the encoder without requiring the reader to scroll up for context.</dd>
+  <dd>Semantic HTML headers (h2, h3) act as RAG breakpoints.
+    <ul>
+      <li>Each heading and its content should stand alone as a retrievable unit</li>
+      <li>A section titled "Configure your encoder" should contain everything needed to configure the encoder without requiring the reader to scroll up for context</li>
+      <li>If removing a section breaks the one above it, the content isn't chunked properly</li>
+    </ul>
+  </dd>
+
+  <dt>Lists over walls of text</dt>
+  <dd>Dense paragraphs lose both humans and machines.
+    <ul>
+      <li>When content has three or more related items (steps, requirements, options, constraints), use a list</li>
+      <li>Retrieval engines extract list items as discrete facts</li>
+      <li>Humans scan lists without re-reading the surrounding paragraph</li>
+      <li>A bulleted list of three requirements outperforms the same three requirements buried mid-sentence every time</li>
+    </ul>
+  </dd>
 
   <dt>Controlled vocabulary</dt>
-  <dd>The thing where creators gather is a "community." Not a "server," "group," "space," or "hub." Pick one term per concept and use it everywhere. Inconsistent terminology fractures retrieval because the engine treats "server" and "community" as different topics. Maintain the terminology table in the content system and enforce it in reviews.</dd>
+  <dd>The thing where creators gather is a "community." Not a "server," "group," "space," or "hub."
+    <ul>
+      <li>Pick one term per concept and use it everywhere</li>
+      <li>Inconsistent terminology splits retrieval. The engine treats "server" and "community" as different topics</li>
+      <li>Maintain the terminology table in the content system and enforce it in reviews</li>
+    </ul>
+  </dd>
 
   <dt>Schema markup</dt>
-  <dd>Every help page gets structured data: HowTo for procedural content, FAQPage for troubleshooting, Article for conceptual explainers, TechArticle for API and reference docs. Structured data is how answer engines know what type of content they're looking at before they read it.</dd>
+  <dd>Every help page gets structured data. Structured data is how answer engines know what type of content they're looking at before they read it.
+    <ul>
+      <li><strong>HowTo:</strong> procedural content (setup guides, configuration steps)</li>
+      <li><strong>FAQPage:</strong> troubleshooting (symptom, cause, fix)</li>
+      <li><strong>Article:</strong> conceptual explainers (what something is, how it works)</li>
+      <li><strong>TechArticle:</strong> API and reference docs (parameters, values, limits)</li>
+    </ul>
+  </dd>
 </dl>
 
 <h3 id="topic-authoring-reference">Topic-Based Authoring Quick Reference</h3>
@@ -845,7 +902,130 @@
   </div>
 </div>
 
-<p>The "before" version buries the answer behind two sentences of throat-clearing. An answer engine retrieving this chunk returns filler. The "after" version leads with the action and the requirements. A retrieval engine can extract and display it directly, no trimming needed.</p>
+<p>The "before" version buries the answer behind two sentences of throat-clearing, so an answer engine retrieving this chunk gets filler. The "after" version leads with the action and requirements, which means a retrieval engine can extract and display it directly.</p>
+      ]]></body>
+    </section>
+
+    <section anchor="true">
+      <heading>Structured Data</heading>
+      <body><![CDATA[
+<p>Structured data tells answer engines what type of content a page contains before they read the body text. Without it, engines have to infer from headings and body copy whether something is a how-to or a troubleshooting guide. With structured data in place, they know immediately.</p>
+
+<p>How it works in practice:</p>
+<ul>
+  <li>Each page includes a <code>&lt;script type="application/ld+json"&gt;</code> block in the <code>&lt;head&gt;</code></li>
+  <li>The block is invisible to users. It's metadata for machines only</li>
+  <li>Writers don't create these blocks by hand. The CMS template generates the schema automatically from content fields</li>
+  <li>This is why the writing patterns in the AEO section matter: predictable content structure means reliable schema generation</li>
+</ul>
+
+<h3 id="schema-template">HowTo Schema Template</h3>
+
+<p>HowTo is the most common schema type for Stagehand's help docs. The template maps directly to the lead sentence pattern and required sections defined in the topic-authoring reference.</p>
+
+<div class="code-example">
+<h4>Template</h4>
+<pre><code>{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "[Page title, must match the h1]",
+  "description": "[BLUF lead sentence of the page]",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "[Step label]",
+      "text": "[Single discrete action the user takes]"
+    }
+  ]
+}</code></pre>
+</div>
+
+<h3 id="schema-filled-example">Filled Example</h3>
+
+<p>Here's what the schema looks like filled in for a help page about exporting and importing stream overlays.</p>
+
+<div class="code-example">
+<h4>Export &amp; import stream overlays</h4>
+<pre><code>{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Export and import stream overlays",
+  "description": "To share a stream overlay, export it as a unique string and send the string to anyone on Stagehand.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Open your overlay settings",
+      "text": "Go to Creator Dashboard > Stream > Overlays and select the overlay you want to share."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Export the overlay",
+      "text": "Select Export and copy the generated share string. This string encodes your layout, positioning, and style settings."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Send the share string",
+      "text": "Paste the share string in a message, community post, or anywhere the recipient can copy it."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Import an overlay",
+      "text": "To use someone else's overlay, go to Overlays > Import and paste their share string. The overlay appears in your library immediately."
+    }
+  ]
+}</code></pre>
+</div>
+
+<p>Why this schema works:</p>
+<ul>
+  <li><strong><code>name</code> matches the page h1.</strong> Answer engines cross-reference the schema against the visible heading. Mismatches reduce trust signals.</li>
+  <li><strong><code>description</code> is the BLUF lead sentence.</strong> This is what gets pulled into featured snippets and AI-generated answers, so it needs to answer the question on its own.</li>
+  <li><strong>Each step is one action.</strong> "Open your overlay settings" is a single thing to do. Combining "open settings and select export" into one step breaks the retrieval unit.</li>
+  <li><strong>Schema type follows the reference table.</strong> This is procedural content, so it uses HowTo. A troubleshooting page about overlay import failures would use FAQPage instead.</li>
+</ul>
+
+<h3 id="page-output">Page Output</h3>
+
+<p>Below is what the help page for this schema would look like in Stagehand's documentation, following every pattern from these guidelines: BLUF lead sentence, chunked sections, list-based steps, and the UI components defined in Section 2.</p>
+
+<div class="component-mock component-mock--container" style="padding: 1.5rem;">
+  <strong class="component-mock__container-title" style="font-size: 1.25rem; display: block; margin-bottom: 1rem;">Export and Import Stream Overlays</strong>
+
+  <p style="margin: 0 0 1rem 0; color: #cbd5e1;">To share a stream overlay, export it as a unique string and send the string to anyone on Stagehand.</p>
+
+  <div class="component-mock component-mock--alert-info" style="margin-bottom: 1.25rem;">
+    <div class="component-mock__alert-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+    </div>
+    <div class="component-mock__alert-content">Overlays include layout, positioning, and style, but not media assets like images or audio. Recipients need their own copies of any media files.</div>
+  </div>
+
+  <p style="margin: 0 0 0.5rem 0; color: #94a3b8; font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Steps</p>
+
+  <ol style="margin: 0 0 1.25rem 0; padding-left: 1.25rem; color: #cbd5e1;">
+    <li style="margin-bottom: 0.5rem;">Go to <strong>Creator Dashboard &gt; Stream &gt; Overlays</strong> and select the overlay you want to share.</li>
+    <li style="margin-bottom: 0.5rem;">Select <strong>Export</strong>. Copy the generated share string.</li>
+    <li style="margin-bottom: 0.5rem;">Send the share string to the recipient. Paste it in a message, community post, or anywhere they can copy it.</li>
+    <li style="margin-bottom: 0.5rem;">To import: go to <strong>Overlays &gt; Import</strong>, paste the share string, and select <strong>Apply</strong>. The overlay appears in your library immediately.</li>
+  </ol>
+
+  <div class="component-mock component-mock--error" style="margin-bottom: 0;">
+    <label class="component-mock__input-label">Share string</label>
+    <div class="component-mock__input component-mock__input--invalid">stghnd_overlay_</div>
+    <div class="component-mock__error-text">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      This share string is incomplete or invalid. Copy the full string from the sender and paste it again.
+    </div>
+  </div>
+</div>
+
+<p>This page mock shows the guidelines working together:</p>
+<ul>
+  <li><strong>BLUF lead sentence.</strong> The first sentence answers "how do I share an overlay" before anything else</li>
+  <li><strong>Info alert.</strong> Surfaces a constraint (no bundled media) that isn't obvious from the UI, following the Alert component pattern</li>
+  <li><strong>Numbered steps.</strong> Each step is one action, matching both the schema's HowToStep structure and the "Lists over walls of text" principle</li>
+  <li><strong>Error message.</strong> Follows the Error Message component rules: states what went wrong and how to fix it, no blame</li>
+</ul>
       ]]></body>
     </section>
   </content>

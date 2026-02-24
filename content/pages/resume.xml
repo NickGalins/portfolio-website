@@ -52,6 +52,20 @@
       <institution>University of Central Florida</institution>
     </degree>
   </education>
+
+  <certifications>
+    <certification>
+      <name>AWS Certified Cloud Practitioner</name>
+      <issuer>Amazon Web Services</issuer>
+      <badge>/assets/images/certifications/aws-cloud-practitioner.png</badge>
+    </certification>
+    <certification>
+      <name>Generative AI Leader</name>
+      <issuer>Google Cloud</issuer>
+      <badge>/assets/images/certifications/google-generative-ai-leader.png</badge>
+    </certification>
+  </certifications>
+
   <brands>
     <description><![CDATA[I have worked with different brands and talent across a variety of copywriting, creative direction, and content production experiences. Many of these experiences run concurrent with my traditional experience, and has kept me busy between roles. The brands, platforms, and influencers I've worked with range from small to large, with a wide variety and breadth that centers around one clear theme: content. You can view a little bit more about these experiences in <a href="/content-history/">Content History</a>.]]></description>
   </brands>
