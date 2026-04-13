@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData('projects', () => {
     const projects = [];  // Start with empty array
     // Look in both project directories
-    const projectDirs = ['content/projects/case-studies', 'content/projects/individual-samples', 'content/projects/content-history'];
+    const projectDirs = ['content/projects/case-studies', 'content/projects/interactive-demos', 'content/projects/individual-samples', 'content/projects/content-history'];
 
     // Loop through each directory
     projectDirs.forEach(dir => {
@@ -91,6 +91,7 @@ module.exports = function(eleventyConfig) {
                 ...data.project,  // Spread operator: copies all properties from data.project
                 // Add a 'category' field based on which folder it came from
                 category: dir.includes('case-studies') ? 'case-studies' :
+                         dir.includes('interactive-demos') ? 'interactive-demos' :
                          dir.includes('individual-samples') ? 'individual-samples' : 'content-history'
               });
             }

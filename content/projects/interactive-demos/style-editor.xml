@@ -6,13 +6,16 @@
     <subtitle>An interactive tool that uses Claude to rewrite copy according to the Microsoft Writing Style Guide</subtitle>
     <client></client>
     <role>Content Designer / Prompt Engineer</role>
-    <thumbnail>/assets/images/style-editor-card.png</thumbnail>
+    <thumbnail>/assets/images/style-editor-card.jpg</thumbnail>
     <teaser>A live AI-powered editor that analyzes copy against the Microsoft Writing Style Guide, rewrites it to conform, and explains every change with specific rule citations.</teaser>
     <tags>
       <tag>AI / LLM</tag>
+      <tag>GenAI</tag>
       <tag>Content Design</tag>
       <tag>UX Writing</tag>
       <tag>Writing Sample</tag>
+      <tag>Prototyping</tag>
+      <tag>Interactive</tag>
     </tags>
   </meta>
 

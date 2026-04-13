@@ -1,43 +1,36 @@
 ---
 layout: base.njk
-title: Case Studies
-permalink: /case-studies/
+title: Interactive Demos
+permalink: /interactive-demos/
 ---
 
 {# Card image mapping: project ID -> image filename #}
-{# Projects with content first, then Coming Soon alphabetically #}
 {% set cardImages = {
-  'everland-trust-safety': 'everland-trust-safety-card.jpg',
-  'sacred-grounds-shop': 'sg-shop-processes-card.jpg',
-  'building-this-portfolio': 'building-this-site-card.jpg',
-  'sacred-grounds-supernal': 'supernal-gardens-card.jpg'
+  'chatbot-demo': 'chatbot-demo-card.jpg',
+  'style-editor': 'style-editor-card.jpg'
 } %}
 
 {# Company/client mapping for header display #}
 {% set companyMap = {
-  'everland-trust-safety': 'Everland',
-  'sacred-grounds-shop': 'Sacred Grounds',
-  'building-this-portfolio': 'Everything Storyteller',
-  'sacred-grounds-supernal': 'Sacred Grounds'
+  'chatbot-demo': 'GskiFlix',
+  'style-editor': 'Sample'
 } %}
 
 {# Short title mapping for cleaner display #}
 {% set titleMap = {
-  'everland-trust-safety': 'Trust & Safety Reporting System',
-  'sacred-grounds-shop': 'Shop Processes',
-  'building-this-portfolio': 'Building This Portfolio',
-  'sacred-grounds-supernal': 'The Supernal Gardens'
+  'chatbot-demo': 'Support Chatbot',
+  'style-editor': 'Style Guide Editor'
 } %}
 
 <section class="category-landing">
   <div class="category-landing__header">
-    <h1>Case Studies</h1>
-    <p class="category-landing__intro">These selected works are deep dives into content decisions based on specific objectives. They showcase projects that required cross-collaboration as well as my contribution in content design and strategy.</p>
+    <h1>Interactive Demos</h1>
+    <p class="category-landing__intro">Working tools that demonstrate content design and conversation design in action. These aren't mockups—they're live, functional applications powered by LLMs.</p>
   </div>
 
   <div class="landing-cards">
     {% for section in navigation.section %}
-      {% if section['@_id'] === 'case-studies' %}
+      {% if section['@_id'] === 'interactive-demos' %}
         {% if section.item.length %}
           {% for item in section.item %}
             {% set project = projects | findProject(item['@_id']) %}
@@ -61,7 +54,7 @@ permalink: /case-studies/
                     {% if project and project.meta and project.meta.teaser %}
                       {{ project.meta.teaser }}
                     {% else %}
-                      Case study coming soon.
+                      Interactive demo coming soon.
                     {% endif %}
                   </p>
                   {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}
@@ -99,7 +92,7 @@ permalink: /case-studies/
                   {% if project and project.meta and project.meta.teaser %}
                     {{ project.meta.teaser }}
                   {% else %}
-                    Case study coming soon.
+                    Interactive demo coming soon.
                   {% endif %}
                 </p>
                 {% if project and project.meta and project.meta.tags and project.meta.tags.tag %}

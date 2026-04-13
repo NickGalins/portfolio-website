@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation>
   <section id="case-studies" label="Case Studies" landing="/case-studies/">
-    <!-- Projects with content -->
     <item id="sacred-grounds-supernal" label="The Supernal Gardens - Immersive Experience" />
     <item id="everland-trust-safety" label="Everland - Trust &amp; Safety Reporting System" />
     <item id="sacred-grounds-shop" label="Sacred Grounds - Shop Processes" />
     <item id="building-this-portfolio" label="Building This Portfolio" />
-    <!-- Coming Soon (alphabetical) -->
-    <item id="aws-ai-agents" label="AWS - AI Agents and Tools" coming-soon="true" />
-    <item id="everland-narrative" label="Everland - Narrative, Dialogue, &amp; Creative Micro-copy" coming-soon="true" />
-    <item id="sacred-grounds-influencer" label="Sacred Grounds - Influencer Marketing Campaign" coming-soon="true" />
+    <!-- Archived: aws-ai-agents, everland-narrative, sacred-grounds-influencer -->
+  </section>
+
+  <section id="interactive-demos" label="Interactive Demos" landing="/interactive-demos/">
+    <item id="chatbot-demo" label="GskiFlix Support Chatbot" />
+    <item id="style-editor" label="AI Style Guide Editor" />
   </section>
 
   <section id="individual-samples" label="Individual Samples" landing="/individual-samples/">
-    <!-- Projects with content -->
     <item id="api-documentation" label="Gski ReviewLoop API Reference" />
     <item id="google-receipt-vault" label="Google-Style UX &amp; KB Writing" />
-    <item id="oathforger-chapter-1" label="Oathforger, Chapter 1 - Long Form Narrative" />
-    <item id="short-form-ugc-copy" label="Short Form UGC Copy" />
     <item id="content-guidelines-stagehand" label="Content Framework" />
-    <!-- Coming Soon (alphabetical) -->
-    <item id="sacred-grounds-rulebook" label="Sacred Grounds - Rulebook Examples" coming-soon="true" />
+    <!-- Archived: oathforger-chapter-1, short-form-ugc-copy, sacred-grounds-rulebook -->
   </section>
 
   <section id="content-history" label="Content History" landing="/content-history/">

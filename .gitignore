@@ -34,5 +34,8 @@ interview-email.md
 # Original badge folder (copied to assets/images/certifications/)
 assets/images/Certification Badges/
 
+# Wrangler dev artifacts
+.wrangler/
+
 # Windows artifacts
 nul

@@ -2,12 +2,39 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-04-13 - GskiFlix Support Chatbot & Interactive Demos category
+
+### Added
+
+- **New project: GskiFlix Support Chatbot** — Working AI chatbot demo for a fictional streaming service, demonstrating conversation design, multi-turn dialogue, escalation logic, and prompt engineering
+- **New navigation category: Interactive Demos** — Sits between Case Studies and Individual Samples, housing both the chatbot and style editor
+- Cloudflare Worker API endpoint (`/api/chat`) for multi-turn chat with conversation history, Sonnet/Haiku fallback, and rate limiting
+- Chat UI with message bubbles, typing indicator, suggestion chips, auto-resizing input, and restart functionality
+- AWS Partner Assistant context section linking to public documentation
+- New filter tags: Conversational Design (Design), Interactive (Scope)
+- Landing page at `/interactive-demos/` with cards for both demo projects
+- Card images for chatbot demo and style editor
+
+### Changed
+
+- Moved Style Editor from hidden page to visible under Interactive Demos
+- Moved `style-editor.xml` from `individual-samples/` to `interactive-demos/` directory
+- Updated `eleventy.config.js` to include `interactive-demos` project directory
+- Added Interactive Demos to sitemap
+
+### Removed
+
+- Archived 6 projects from navigation (content files preserved): AWS AI Agents, Everland Narrative, Sacred Grounds Influencer, Oathforger Chapter 1, Short Form UGC Copy, Sacred Grounds Rulebook
+
 ## 2026-02-24 - Style Editor reliability improvements
 
 ### Changed
 
-- Added automatic retry (up to 3 attempts) for Anthropic API overload (529) and rate limit (429) errors
+- Added Haiku 4.5 fallback model when Sonnet 4.6 is overloaded (tries Sonnet twice, then Haiku)
+- Added automatic retry logic for Anthropic API overload (529) and rate limit (429) errors
 - Improved error messages to surface specific failure reasons (auth, rate limit, overload) instead of generic text
+- Updated "How It Works" section to document the retry/fallback strategy
+- Added `.wrangler/` to `.gitignore`
 
 ## 2026-02-23 - AI Style Guide Editor
 
