@@ -2,6 +2,13 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-04-20 - Blog post: "Don't Turn Off Your Brain"
+
+### Added
+
+- **New blog post: Don't Turn Off Your Brain** — Blog hop entry on the "Mind the Gap" theme, covering the gap between using AI to build vs. using AI to learn. Includes a pasteable Claude Code "teacher" skill and a worked example from the author's Godot/GDScript learning project.
+- Set as the new featured post on `/blog/`
+
 ## 2026-04-13 - GskiFlix Support Chatbot & Interactive Demos category
 
 ### Added

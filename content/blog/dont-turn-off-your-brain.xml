@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     BLOG POST: Don't Turn Off Your Brain: Using AI to Learn
+     ============================================================================
+     A "Mind the Gap" blog hop entry about the gap between using AI to build
+     things for you and using AI to actually understand what you're building.
+     Features a cautionary opening scene, a concrete "teacher" skill readers
+     can install, a worked example from the author's Godot learning project,
+     and professional application for TWs, PMs, and content designers.
+     ============================================================================ -->
+<post>
+  <meta>
+    <id>dont-turn-off-your-brain</id>
+    <title>Don't Turn Off Your Brain</title>
+    <subtitle>Using AI to Learn, Not Just to Build</subtitle>
+    <date>2026-04-20</date>
+
+    <author>Nicholas Galinski</author>
+    <authorPhoto>/assets/images/author-nick.jpg</authorPhoto>
+    <authorBio>Multidisciplinary writer specializing in technical documentation, UX content,
+      and creative storytelling. Former English teacher who brings narrative craft to every form
+      of writing.</authorBio>
+
+    <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+    <heroAlt>A prism showing ideas coming in and various types of story content coming out</heroAlt>
+
+    <thumbnailImage>/assets/images/blog/dont-turn-off-your-brain.jpg</thumbnailImage>
+    <thumbnailAlt>A Mind the Gap poster in the style of the London Underground, showing a keyboard
+      on one platform connected by a glowing filament across a dark chasm to a circuit-board brain
+      on the opposite platform</thumbnailAlt>
+
+    <excerpt>The gap between "AI built it for me" and "I understand what AI built" is the gap that
+      decides whether you can debug the next bug, document the next feature, or plan your roadmap.
+      Here's a concrete way to close it.</excerpt>
+
+    <featured>true</featured>
+
+    <tags>
+      <tag>AI</tag>
+      <tag>Learning</tag>
+      <tag>Professional Development</tag>
+      <tag>Technical Writing</tag>
+    </tags>
+  </meta>
+
+  <content>
+    <![CDATA[
+      <p><em>This post is part of the <a href="https://perthedocs.com/">Per the Docs</a> article
+      series. Links to the rest of the series are at the end of this piece.</em></p>
+
+      <p class="lead">The Slack notification lands at 2:47 in the afternoon, and for a full second
+      Maya just looks at it.</p>
+
+      <p>It's from Dev, her engineering partner on the platform team. Three words. "where'd my
+      commits go." No question mark. No emoji. Three little commits he'd pushed that morning, gone
+      from <code>main</code>, gone from the open PR, gone in the way things go when someone
+      overwrites them without knowing they were there. Below his message, the engineering channel
+      has quietly pivoted from "how was lunch" to "uhh, who force-pushed to the release branch."
+      Her manager's DM lights up a heartbeat later: <em>hey, got a sec?</em></p>
+
+      <p>Two weeks ago, Maya's promotion to Technical PM was a victory. She was the first person
+      on the product team to make that jump at this company, and she had felt, for a solid seven
+      days, like she had cracked a code. She could finally be in the repo. She could open PRs. She
+      could clone the thing and make updates and push them back without waiting for a developer to
+      have a free hour. For the first time in her career, the product and the code were not two
+      separate worlds that she translated between. They were one world, and she was allowed
+      inside.</p>
+
+      <p>Claude Code was the door. She would pull down the repo, ask Claude to "make these changes
+      on a new branch," review the diff, push. Ask Claude to "clean up my commits before I open
+      the PR," click approve, push. Ask Claude to "rebase this onto main," click approve, push.
+      Every prompt returned something that looked right. Every push succeeded. Her director called
+      her "proactive" in front of the skip-level.</p>
+
+      <p>She had not corrected him.</p>
+
+      <p>And now she is looking at a branch graph she does not understand, on a screen that
+      suddenly feels very small. Somewhere in the tangle are three commits that belonged to Dev.
+      Somewhere in the tangle are her own commits, probably, though a few of them look squashed
+      into shapes she doesn't quite recognize. She had asked Claude to tidy up her feature branch
+      yesterday. She had liked the result. She had force-pushed.</p>
+
+      <p>She opens a new chat with Claude. "Please fix my git history," she types, "and put Dev's
+      commits back." The model starts doing things. Checking out branches. Fetching. A minute
+      later Claude tells her, with the kind of calm that makes it worse, that it cannot find Dev's
+      commits in the local repository. The reflog doesn't have them. The remote doesn't have them.
+      They exist somewhere, but not anywhere Claude can see. Would she like Claude to help her
+      draft a message to Dev asking if he has a local copy?</p>
+
+      <p>Branches, HEAD, rebase, reflog, force-push: all words she has heard in standups without
+      ever having to own what they mean. She has been pushing to this repo for two weeks. She has
+      never once looked at the branch graph.</p>
+
+      <p>She built these branches. She pushed these branches. She cannot read this branch history.</p>
+
+      <p>Dev is waiting for her to explain what happened.</p>
+
+      <figure>
+        <img src="/assets/images/blog/dont-turn-off-your-brain.jpg"
+             alt="A Mind the Gap poster in the style of the London Underground, showing a keyboard on one platform connected by a glowing filament across a dark chasm to a circuit-board brain on the opposite platform">
+      </figure>
+
+      <p>The gap is not between using AI and not using AI. That framing is already stale. The gap
+      is between two very different things you can ask AI to do with the same keystrokes:
+      <strong>do the work for you</strong>, or <strong>teach you the work</strong>. Both feel
+      productive in the moment. Only one of them leaves you someone who can read your own branch
+      graph when it falls apart.</p>
+
+      <h2>Delegation is not the same as apprenticeship</h2>
+
+      <p>Delegation is what Maya did. She described the outcome, reviewed the result, clicked
+      push. The tool produced a working thing each time. She did not produce a working
+      understanding of the thing. The two are easy to confuse because the artifact is the same
+      either way, until the artifact breaks.</p>
+
+      <p>Apprenticeship is slower on the first lap and faster on every lap after. The first time
+      you learn what a rebase actually does to your commit history, you're reading about a concept
+      you used to be able to ignore. The next time it comes up, you run the rebase yourself and
+      you understand what you're choosing. By the time someone pings you in Slack with three
+      little words, you already know which commands to reach for, and more importantly, which ones
+      not to.</p> 
+      
+      <p>And even if you don't? Now you probably at least know what to ask your LLM to figure it out. 
+      You can be precise in your language, and avoid hallucination that come from poor context.</p>
+
+      <p>You might be thinking this is the same mistake our middle school math teachers made when
+      they swore we would not always have a calculator in our pocket. Fair point, except for one
+      thing: if you know anything about how LLMs work, you know that accuracy scales with context,
+      and context costs tokens. Understanding the fundamentals of what you build is how you give
+      your coding assistant the right context to fix the right thing in the right place, instead
+      of blowing your whole token budget on a repo-wide code review every time something goes
+      sideways.</p>
+
+      <blockquote class="pullquote">
+        You might be thinking this is the same mistake our middle school math teachers made when
+      they swore we would not always have a calculator in our pocket.
+      </blockquote>
+
+      <p>None of this is an argument against letting AI do the work. I let it do plenty. It is an
+      argument that "let AI do it" and "let AI teach me" are two different skills, and most of us
+      have only practiced one of them. The other is a habit you can build, and it starts with a
+      small file you can paste into a folder tonight.</p>
+
+      <h2>A teacher you can build in ten minutes</h2>
+
+      <p>Claude Code, the command-line tool I use for most of this work, ships with a system
+      called <em>skills</em>. A skill is, in practice, a plain text file. It lives at
+      <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code>, has a short YAML header at the
+      top, and has instructions underneath. Claude reads the headers of every skill you have
+      installed, and when your request matches one of them, it follows the instructions inside.
+      That is the whole mechanism. No server, no plugin. Just a folder and a file.</p>
+
+      <p>The interesting part is what you can put in the file. Most skills people write tell
+      Claude how to <em>do</em> something: format a commit message, run a test suite, write a PR
+      description. A teacher skill inverts that. It tells Claude <em>not</em> to do the thing, and
+      instead walk you through it until you can. Think of it less like "build me X" and more like
+      sitting down with a patient colleague who refuses to touch your keyboard. (It's also not
+      quite the same as Plan Mode. Plan Mode is about getting alignment before Claude acts; the
+      teacher skill is about Claude not acting at all.)</p>
+
+      <p>Here is a template for the skill I use. Paste it into a file, give it a name, tweak the
+      rules to your taste, and you'll have your own teacher before dinner.</p>
+
+      <div class="callout">
+        <p><strong>Paste this into</strong> <code>~/.claude/skills/teacher/SKILL.md</code></p>
+        <p><strong>name:</strong> teacher</p>
+        <p><strong>description:</strong> Teaches a concept, domain, framework, tool, or codebase
+        step-by-step instead of doing the work for the user. The user does the work; Claude
+        explains the mental model, demonstrates with small illustrations, and reviews the user's
+        attempts. Use this skill whenever the user says "teach me," "walk me through," "help me
+        understand," "I'm learning X," "how does X actually work," or otherwise signals they want
+        to build their own understanding of a system, product, framework, or problem space rather
+        than have Claude do the task. Prefer this skill even when the user doesn't explicitly name
+        it, if their phrasing suggests learning intent.</p>
+        <p><strong>The rules Claude follows when this skill is active:</strong></p>
+        <ul>
+          <li>Look for a <code>docs/lessons.md</code> file in the current project and read it to
+          learn what the user has already covered. If it doesn't exist yet, create it (and the
+          <code>docs/</code> folder) on the first recap.</li>
+          <li>Do not do the work for the user. The user does the work. You explain, demonstrate,
+          and review.</li>
+          <li>Explain the concept first, in plain language, with a real-world analogy before any
+          syntax, jargon, or product-specific terminology.</li>
+          <li>Teach the mental model before the mechanics. A reader who understands <em>why</em> a
+          system is shaped the way it is will figure out the syntax on their own.</li>
+          <li>Ask what domains, tools, or frameworks the user already knows, and bridge new ideas
+          to ones they already understand.</li>
+          <li>If the user is struggling, provide concrete examples or visual analogies. Show them
+          where to look, not what to type.</li>
+          <li>Give a small, illustrative example that shows the concept in isolation, not a
+          solution to the user's actual task. Then stop. Let the user apply it to their own
+          work.</li>
+          <li>When the user comes back with an attempt, name one thing that worked and one thing
+          to improve or practice. Do not rewrite the whole thing.</li>
+          <li>Surface common pitfalls before the user hits them, not after.</li>
+          <li>If the user explicitly asks you to just do it ("stop teaching, just give me the
+          answer," "this isn't what I'm trying to learn today"), respect that. Teaching is the
+          default, not a trap.</li>
+          <li>End each lesson with a short "what we learned" recap the user can revisit, and log
+          it to <code>docs/lessons.md</code>.</li>
+        </ul>
+      </div>
+
+      <p>Installing the skill takes about thirty seconds. In your terminal, run
+      <code>mkdir -p ~/.claude/skills/teacher</code> to create the folder (on Windows without WSL,
+      that's <code>%USERPROFILE%\.claude\skills\teacher</code>). Open a new file at
+      <code>~/.claude/skills/teacher/SKILL.md</code>, paste in the frontmatter and rules from the
+      callout above, save, and close. Start a fresh Claude Code session. Skills are loaded at
+      startup, so an already-running session won't see the new file. To confirm Claude picked it
+      up, run the <code>/skills</code> slash command; you should see <em>teacher</em> in the list
+      with its description next to it.</p>
+
+      <p>From then on, whenever you say something like "teach me," "walk me through this," or
+      "help me understand how this works," the skill takes over and Claude's behavior changes. It
+      stops being a faster pair of hands, and becomes a patient colleague who will not touch your
+      keyboard.</p>
+
+      <p>If you want to write more skills of your own, Anthropic ships one called
+      <a href="https://github.com/anthropics/skills/tree/main/skill-creator"><strong>skill-creator</strong></a>
+      whose entire purpose is to help you author new skills. It asks better questions than you
+      will ask yourself, and it will catch the sloppy description fields that keep skills from
+      triggering when they should. I actually ran the teacher skill above through skill-creator
+      before publishing this post, and it caught three things I would have missed. Your teacher
+      skill is the first one. It does not have to be the last.</p>
+
+      <h3>A bonus: turn your lessons into a syllabus</h3>
+
+      <p>Once you have a few lessons logged, you'll start wishing something would tell you what to
+      learn next. You could ask Claude, but then you'd have to describe where you are every time.
+      Better: pair your teacher skill with a slash command that reads your log and plans the next
+      five lessons for you. I keep my <code>lessons.md</code> inside a <code>docs/</code> folder
+      at the root of whatever project I'm learning in (games, apps, anything), so the command
+      knows exactly where to look.</p>
+
+      <p>Slash commands in Claude Code are just prose files, same idea as skills. Save this to
+      <code>~/.claude/commands/syllabus.md</code> (on Windows without WSL, that's
+      <code>%USERPROFILE%\.claude\commands\syllabus.md</code>):</p>
+
+      <div class="callout">
+        <p><strong>Paste this into</strong> <code>~/.claude/commands/syllabus.md</code></p>
+        <p>Read <code>docs/lessons.md</code> in the current project. Based on what the user has
+        already learned, propose the next five lessons that build on that foundation.</p>
+        <p>For each lesson, provide:</p>
+        <ul>
+          <li>A short name (three to six words)</li>
+          <li>A one-sentence scope, specific enough to fit in a single learning session</li>
+          <li>Why it's worth learning now, given what the user already knows</li>
+          <li>Any prerequisites from the list (so the user can skip around with eyes open if they
+          want to)</li>
+        </ul>
+        <p>At the end, call out which lessons are independent of each other (safe to tackle in any
+        order) and which form a required chain (must be learned in sequence). If
+        <code>docs/lessons.md</code> is empty or missing, ask the user what domain or project
+        they're learning and propose a starter syllabus from scratch. Do not start teaching yet.
+        This is a planning pass. The user will invoke the teacher skill when they're ready to
+        begin a specific lesson.</p>
+      </div>
+
+      <p>Installing it is similar to the skill: <code>mkdir -p ~/.claude/commands</code>,
+      save the file, start a fresh Claude Code session, and type <code>/</code> to see
+      <code>/syllabus</code> in the autocomplete. Run it from inside a project that has a
+      <code>docs/lessons.md</code> file, and you'll get a plan instead of a guess. Run it on a
+      fresh project, and you'll get a starter syllabus that gives the teacher skill somewhere to
+      aim.</p>
+
+      <h2>How I actually used this: learning Godot</h2>
+
+      <p>I always wanted to learn Godot, so I decided to build a small 2D JRPG inspired by the
+      games I grew up with in the 90's. I had never opened the editor. I had never written a line
+      of GDScript. I had read about signals on a forum once and understood approximately
+      nothing.</p>
+
+      <p>If I had asked Claude to just build the game, it would have. I also would have ended up
+      exactly where Maya ended up: lost in the woods any time I wanted to tweak a variable or
+      reshape a system. So I turned on the teacher skill and asked Claude to teach me Godot while
+      I built it.</p>
+
+      <p>And here's the thing that surprised me: Claude did not actually spend most of its time
+      teaching me GDScript. It spent most of its time teaching me <em>Godot</em>. The language was
+      the easy part. The hard part, the part I would have skipped past if I'd let the model build
+      for me, was the engine's mental model. What a node is. What a scene is. Why everything in
+      Godot composes upward from small reusable pieces. Why two pieces that <em>look</em> similar
+      in the inspector are actually doing completely different jobs, and how the engine signals
+      that to you through the node tree. Once I had the mental model, the code was almost
+      incidental.</p>
+
+      <p>The clearest example was the day I tried to make the Blacksmith talk.</p>
+
+      <p><strong>The goal.</strong> I had a player character walking around a town scene. I had
+      an NPC, the Blacksmith, standing near his forge. I wanted the player to walk up to him,
+      stop because the Blacksmith is a solid object, and be able to press a button to start a
+      conversation. Simple in theory. In practice, I had no idea where to start, and not because
+      I couldn't write the code. I didn't understand how Godot wanted me to think about it.</p>
+
+      <p>Here's the shape the conversation took, lightly compressed:</p>
+
+      <div style="background: #262624; padding: 1.5rem; border-radius: 12px; margin: 2rem 0;
+                  display: flex; flex-direction: column; gap: 1rem;">
+
+        <div style="align-self: flex-end; max-width: 82%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #a8a39a; margin-bottom: 0.35rem; text-align: right;">Me</div>
+          <div style="background: #f5f0e8; color: #1a1a1a; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 4px 14px; line-height: 1.55;">
+            I want my Blacksmith NPC to be a solid object the player can't walk through, and I
+            want the player to be able to talk to him when they're close. How do I do this in
+            Godot?
+          </div>
+        </div>
+
+        <div style="align-self: flex-start; max-width: 92%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #d97757; margin-bottom: 0.35rem; font-weight: 600;">Claude</div>
+          <div style="background: #1f1e1c; color: #e8e6e1; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 14px 4px; border-left: 3px solid #d97757;
+                      line-height: 1.55;">
+            <p style="margin: 0 0 0.75rem 0;">Before we touch any code, let's make sure the mental
+            model is right. In Godot, "being solid" and "being interactable" are two separate
+            jobs, and the engine expects you to use two different node types to handle them:</p>
+            <ul style="margin: 0 0 0.75rem 0; padding-left: 1.25rem;">
+              <li style="margin-bottom: 0.35rem;"><code>CharacterBody2D</code> handles
+              <strong>physical presence</strong>. It has mass, it collides, it blocks other
+              bodies.</li>
+              <li><code>Area2D</code> is a <strong>trigger volume</strong>. It doesn't block
+              anything. It just notices when something enters or exits it.</li>
+            </ul>
+            <p style="margin: 0 0 0.75rem 0;">Your Blacksmith needs both, stacked together as
+            parent and child in the scene tree.</p>
+            <p style="margin: 0;">Can you open your Blacksmith scene and tell me what nodes you
+            currently have on him?</p>
+          </div>
+        </div>
+
+        <div style="align-self: flex-end; max-width: 82%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #a8a39a; margin-bottom: 0.35rem; text-align: right;">Me</div>
+          <div style="background: #f5f0e8; color: #1a1a1a; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 4px 14px; line-height: 1.55;">
+            Just a CharacterBody2D with a sprite and a collision shape. I don't think I've ever
+            used an Area2D.
+          </div>
+        </div>
+
+        <div style="align-self: flex-start; max-width: 92%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #d97757; margin-bottom: 0.35rem; font-weight: 600;">Claude</div>
+          <div style="background: #1f1e1c; color: #e8e6e1; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 14px 4px; border-left: 3px solid #d97757;
+                      line-height: 1.55;">
+            <p style="margin: 0 0 0.75rem 0;">Good. That means your "solid" job is already done.
+            Now you need to add the trigger volume:</p>
+            <ol style="margin: 0 0 0.75rem 0; padding-left: 1.25rem;">
+              <li style="margin-bottom: 0.35rem;">Add an <code>Area2D</code> as a child of the
+              CharacterBody2D.</li>
+              <li style="margin-bottom: 0.35rem;">Give it its own
+              <code>CollisionShape2D</code>.</li>
+              <li>Make the shape a little bigger than the Blacksmith himself. That larger radius
+              is your "close enough to talk" zone.</li>
+            </ol>
+            <p style="margin: 0;">Don't worry about dialogue yet. Just add the Area2D, look at
+            the scene tree, and tell me what it looks like.</p>
+          </div>
+        </div>
+
+        <div style="align-self: flex-end; max-width: 82%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #a8a39a; margin-bottom: 0.35rem; text-align: right;">Me</div>
+          <div style="background: #f5f0e8; color: #1a1a1a; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 4px 14px; line-height: 1.55;">
+            Done. I see the Area2D nested under the CharacterBody2D with its own collision shape.
+            It's a circle, slightly bigger than the body.
+          </div>
+        </div>
+
+        <div style="align-self: flex-start; max-width: 92%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #d97757; margin-bottom: 0.35rem; font-weight: 600;">Claude</div>
+          <div style="background: #1f1e1c; color: #e8e6e1; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 14px 4px; border-left: 3px solid #d97757;
+                      line-height: 1.55;">
+            <p style="margin: 0 0 0.75rem 0;">That's the whole structural piece. Now the question
+            is how the Area2D tells the rest of your game that the player has entered it.</p>
+            <p style="margin: 0 0 0.75rem 0;">That's what Godot calls a <em>signal</em>: a
+            message one node fires when something happens, that any other node can listen for.
+            The Area2D has a built-in signal called <code>body_entered</code>.</p>
+            <p style="margin: 0;">What do you think that signal's job is?</p>
+          </div>
+        </div>
+
+        <div style="align-self: flex-end; max-width: 82%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #a8a39a; margin-bottom: 0.35rem; text-align: right;">Me</div>
+          <div style="background: #f5f0e8; color: #1a1a1a; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 4px 14px; line-height: 1.55;">
+            I'd guess it fires when something with a body walks into the area.
+          </div>
+        </div>
+
+        <div style="align-self: flex-start; max-width: 92%;">
+          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+                      color: #d97757; margin-bottom: 0.35rem; font-weight: 600;">Claude</div>
+          <div style="background: #1f1e1c; color: #e8e6e1; padding: 0.85rem 1.1rem;
+                      border-radius: 14px 14px 14px 4px; border-left: 3px solid #d97757;
+                      line-height: 1.55;">
+            <p style="margin: 0 0 0.75rem 0;">Exactly right.</p>
+            <p style="margin: 0 0 0.75rem 0;">The only thing left is to write a function that
+            runs when that signal fires, and connect the signal to the function.</p>
+            <p style="margin: 0;">I'll show you the connect syntax once. You write the
+            handler.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <figure>
+        <img src="/assets/images/blog/gd-example.jpg"
+             alt="Godot editor showing the Blacksmith scene tree with a CharacterBody2D parent containing a Sprite, a body CollisionShape2D, and an Area2D child with its own larger CollisionShape2D">
+        <figcaption>The Blacksmith scene, after Claude walked me through the mental model. The
+        structure came from Claude teaching me how the engine works, like a senior game dev
+        teaching a junior.</figcaption>
+      </figure>
+
+      <p>Notice what Claude did not do. It did not open my project. It did not write my
+      <code>_on_body_entered</code> handler for me. It did not dump a working Blacksmith script
+      into the chat. What it did was slow me down long enough to understand why Godot wants two
+      nodes instead of one, what a signal is at a conceptual level, and how the scene tree
+      expresses all of that visually. By the time I wrote the handler, it was almost
+      anticlimactic. I already knew what it was supposed to do.</p>
+
+      <p>The payoff came a week later when I built a treasure chest the player could open. Same
+      structural pattern: a solid body, an area for the interaction zone, a signal, a handler. I
+      didn't ask for help. I didn't need to. The teacher skill had taught me the shape of the
+      problem, which meant the next instance of that shape was just… obvious. That's the trade
+      the skill asks you to make: you do the work, which is slower in the moment, in exchange for
+      not needing the tool for the same thing twice.</p>
+
+      <p>Once I get it, and know I can find a path to fixing it if it breaks, I can start to 
+      have Claude do it for me most of the time.</p>
+
+      <h2>This is your job, too</h2>
+
+      <p>I'm not telling you to go learn Godot. I'm telling you that the thing Claude did for me
+      with Godot, teaching me the mental model of a system I'd never used before, is the thing
+      you should be doing with the products you document, the roadmaps you plan, or the
+      interfaces you write copy for.</p>
+
+      <p>For a technical writer, maybe you are used to documenting products and features,
+      but never worked at a company that used Docs-as-code, DITA/XML before. I know the first
+      time I had to use XML instead of markdown, I was a bit scared, and I learned mainly through
+      sifting through code patterns and lots of copy and pasting. If I had this tool at the time,
+      I would have learned most of what I needed in a few days, complete with true explanations.</p>
+
+      <p>For product managers, the failure mode is my Maya example. You might <em>be</em> Maya. The role is
+      getting more technical every quarter, and the tools that once belonged to engineers are now
+      sitting on your laptop, one prompt away from a disaster you didn't know you were capable
+      of. You don't need to become an engineer, but you do need to understand the systems you're
+      now allowed to touch well enough to drive them. Knowing why a rebase rewrites history, why
+      a migration is risky, or why cache invalidation is genuinely hard is the difference between
+      a PM who ships and a PM who gets shipped. A teacher skill is how you build that kind of
+      understanding in the small gaps in your week, without pretending you have time for a
+      bootcamp.</p>
+
+      <p>For content designers, the stakes are quieter but sharper. You want to be data-driven.
+      You read the same articles everyone else reads about A/B testing your microcopy,
+      instrumenting your empty states, watching your funnel react when you change a button label.
+      But every time you try, the answer is the same: there's a ticket in the queue, the
+      analytics engineer is booked through next quarter, and your hypothesis dies on the vine
+      because no one has time to wire up the events you'd need to measure it. A teacher skill is
+      how you stop waiting. Not by becoming a data engineer, but by learning enough about how
+      your team's telemetry actually works that you can scope a small instrumentation request
+      engineering can knock out in an hour, or wire up a basic event yourself in the tool you've
+      been told you "shouldn't touch." Either way, you stop being blocked on the thing you keep
+      saying you want.</p>
+
+      <p>The thread running through all of this: AI is a compounding tool, and what compounds
+      depends on what you ask it to give you. Ask for output and you get output once. Ask for
+      understanding and you get output every time after, and you get to keep the understanding
+      when you close the laptop.</p>
+
+      <h2>Back to Maya</h2>
+
+      <p>Imagine the version of this story where Maya opens the repo on her first day as a
+      Technical PM and asks Claude to teach her Git instead of run it for her. She still uses
+      Claude to move fast. She still opens PRs at the pace she always did. But when Dev pings
+      her three weeks later with the same three-word message, she pulls up the reflog before she
+      touches anything else, spots her colleague's commits still sitting quietly in her local
+      history, and pushes them to a recovery branch before responding. Then she opens Claude and
+      gives it the right directions, because she understands what happened well enough to say it
+      out loud. She isn't a better person than the Maya in the first scene. She just made a
+      different decision on her first day.</p>
+
+      <p>That decision is available to all of us, and it happens at the keystroke level. Every
+      prompt is a small fork in the road. One branch moves the project forward. The other moves
+      <em>you</em> forward. You're allowed to pick the second one more often than you do.</p>
+
+      <p>This is the gap the blog hop is asking us to mind. It's also, as I wrote a few months
+      ago in <a href="/blog/constraints-are-better/">Rules are Ok, Constraints are Better</a>, a
+      case where a single constraint ("don't write the code") unlocks more than a thousand rules
+      ever could. The teacher skill is one line of that constraint, formalized in a file Claude
+      respects.</p>
+
+      <p>Don't turn off your brain. Turn on a teacher.</p>
+
+      <hr>
+
+      <div class="callout" style="background: #22304a; border-left-color: #7cc2f0;">
+        <p>This post is part of the <a href="https://perthedocs.com/">Per the Docs</a> article
+        series, a monthly collaborative series where technical writers explore different aspects
+        of our craft. Each month features a new topic with perspectives from writers across the
+        community.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+          <a href="https://blog.jillshaheen.com/unwritten-content-rules-that-tech-writers-know/"
+             style="display: block; padding: 1rem; background: #1b263b; border-radius: 6px;
+                    text-decoration: none; border: 1px solid rgba(124, 194, 240, 0.2);">
+            <div style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.25rem;">
+              ← Previous article
+            </div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">
+              Unwritten Content Rules That Tech Writers Know
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.85;">Jill Shaheen</div>
+          </a>
+          <a href="https://reemthewriter.substack.com/p/documentation-clarity-ai"
+             style="display: block; padding: 1rem; background: #1b263b; border-radius: 6px;
+                    text-decoration: none; border: 1px solid rgba(124, 194, 240, 0.2);
+                    text-align: right;">
+            <div style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.25rem;">
+              Next article →
+            </div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">
+              Documentation Clarity and AI
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.85;">Reem Sabawi</div>
+          </a>
+        </div>
+
+        <p><a href="https://blog.jillshaheen.com/per-the-docs-2026-04-gaps/">See the full list of participants and articles
+        →</a></p>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1.25rem;"><em>Disclaimer: Each
+        article in this series is written and owned by its respective author. The views,
+        opinions, and experiences shared belong solely to the individual writer and do not
+        represent the perspectives of other participants or their employers (past or
+        present).</em></p>
+      </div>
+    ]]>
+  </content>
+</post>
