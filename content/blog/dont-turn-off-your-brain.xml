@@ -121,7 +121,7 @@
       not to.</p> 
       
       <p>And even if you don't? Now you probably at least know what to ask your LLM to figure it out. 
-      You can be precise in your language, and avoid hallucination that come from poor context.</p>
+      You can be precise in your language, and avoid hallucinations that come from poor context.</p>
 
       <p>You might be thinking this is the same mistake our middle school math teachers made when
       they swore we would not always have a calculator in our pocket. Fair point, except for one
@@ -216,7 +216,7 @@
       keyboard.</p>
 
       <p>If you want to write more skills of your own, Anthropic ships one called
-      <a href="https://github.com/anthropics/skills/tree/main/skill-creator"><strong>skill-creator</strong></a>
+      <a href="https://github.com/anthropics/skills/tree/main/skills/skill-creator"><strong>skill-creator</strong></a>
       whose entire purpose is to help you author new skills. It asks better questions than you
       will ask yourself, and it will catch the sloppy description fields that keep skills from
       triggering when they should. I actually ran the teacher skill above through skill-creator

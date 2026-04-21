@@ -2,6 +2,13 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-04-21 - "Don't Turn Off Your Brain" copy fixes
+
+### Changed
+
+- Pluralized "hallucination" in the apprenticeship paragraph (subject/verb agreement)
+- Fixed broken skill-creator link — Anthropic moved the directory to `/skills/skill-creator`
+
 ## 2026-04-20 - Blog post: "Don't Turn Off Your Brain"
 
 ### Added
