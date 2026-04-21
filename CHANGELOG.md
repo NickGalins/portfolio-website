@@ -8,6 +8,7 @@ All notable changes to this portfolio site will be documented in this file.
 
 - Pluralized "hallucination" in the apprenticeship paragraph (subject/verb agreement)
 - Fixed broken skill-creator link — Anthropic moved the directory to `/skills/skill-creator`
+- Updated closing line from "Turn on a teacher" to "Turn on a new skill"
 
 ## 2026-04-20 - Blog post: "Don't Turn Off Your Brain"
 
