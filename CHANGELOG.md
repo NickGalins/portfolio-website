@@ -14,6 +14,7 @@ All notable changes to this portfolio site will be documented in this file.
 
 - Set as the new featured post on `/blog/` (most recent post)
 - Unset `featured` on "Don't Turn Off Your Brain" so only one post is featured
+- Removed the Nature Communications citation from the "Why this costs more" section (medical-domain study; claim stands without it)
 
 ## 2026-04-21 - "Don't Turn Off Your Brain" copy fixes
 
