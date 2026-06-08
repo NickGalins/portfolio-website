@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     BLOG POST: Timmy Techwriter and the Sorcerer's Schema
+     ============================================================================
+     A "Content Alchemy" Blog Hop entry (theme: transforming raw, inconsistent,
+     overwhelming source material into something a reader can use). Argues that
+     schema markup is downstream of taxonomy: the real work is modeling entities
+     and relationships, and that work matters MORE as retrieval gets more
+     sophisticated (agentic, multi-query reasoning models compound naming
+     inconsistencies across hops). Opens with a wizard-school satire vignette
+     starring Timmy Techwriter, includes a worked billing-domain example
+     (controlled-vocab + entity model + before/after JSON-LD), acknowledges the
+     2023/2026 deprecation of HowTo and FAQ rich results, and notes the
+     unsettled AEO/GEO terminology. Companion to "Out with SEO, in with AEO."
+     ============================================================================ -->
+<post>
+  <meta>
+    <!-- REQUIRED: Unique identifier used in URL (/blog/techwriter-schema/) -->
+    <id>techwriter-schema</id>
+
+    <!-- REQUIRED: Post title displayed in headers and listings -->
+    <title>Timmy Techwriter and the Sorcerer's Schema</title>
+
+    <!-- Subtitle displayed below main title -->
+    <subtitle>Markup Is the Spell. Taxonomy Is the Spellcraft.</subtitle>
+
+    <!-- REQUIRED: Publication date (YYYY-MM-DD format) -->
+    <date>2026-06-08</date>
+
+    <!-- AUTHOR INFORMATION -->
+    <author>Nicholas Galinski</author>
+    <authorPhoto>/assets/images/author-nick.jpg</authorPhoto>
+    <authorBio>Multidisciplinary writer specializing in technical documentation, UX content, and creative storytelling. Former English teacher who brings narrative craft to every form of writing.</authorBio>
+
+    <!-- HERO IMAGE (Featured visual at top of post) -->
+    <heroImage>/assets/images/blog/multidisciplinary-writer-hero.jpg</heroImage>
+    <heroAlt>A prism showing ideas coming in and various types of story content coming out</heroAlt>
+
+    <!-- THUMBNAIL IMAGE (Square image for blog listing cards) -->
+    <thumbnailImage>/assets/images/blog/techwriter-schema.jpg</thumbnailImage>
+    <thumbnailAlt>A storybook cover titled "Timmy Techwriter and the Sorcerer's Schema," showing a young technical writer in a server room waving a wand that conjures glowing code and schema windows, a "Docs &amp; Caffeine" mug and a laptop full of markup on the desk beside him</thumbnailAlt>
+
+    <!-- EXCERPT (Used in blog listings and previews) -->
+    <excerpt>Schema markup is the spell everyone wants to learn. The real spellcraft is the taxonomy underneath it. Here's the part of Answer Engine Optimization that most people get backwards.</excerpt>
+
+    <!-- FEATURED FLAG (Makes this post prominent on blog index) -->
+    <featured>true</featured>
+
+    <!-- TAGS (Categories for organization and filtering) -->
+    <tags>
+      <tag>AI</tag>
+      <tag>Technical Writing</tag>
+      <tag>Content Design</tag>
+      <tag>Information Architecture</tag>
+    </tags>
+  </meta>
+
+  <!-- POST CONTENT
+       ======================================================================
+       Content is wrapped in CDATA to allow HTML/CSS without XML parsing issues.
+
+       AVAILABLE CSS CLASSES:
+       - .lead           : Larger opening paragraph
+       - .pullquote      : Centered, emphasized quote (use <blockquote>)
+       - .callout        : Highlighted box for important content
+       - <figure>        : Images with captions
+       ====================================================================== -->
+  <content>
+    <![CDATA[
+      <p><em>This post is part of the <a href="https://perthedocs.com/">Per the Docs</a> article
+      series. Links to the rest of the series are at the end of this piece.</em></p>
+
+      <p class="lead">Timmy Techwriter wrote the cleanest documentation at Sogwarts SaaS of Stack &amp; Sprintery, and not a single answer engine would say his name.</p>
+
+      <p>This was the part that stung. His articles were good: throat-clearing cut, task up front, terminology consistent across forty pages of a billing product nobody enjoyed reading about. Human readers loved him. The answer engines that now sat between those readers and his words behaved as though the articles did not exist, and when someone asked how to dispute a charge, an assistant answered in its own smooth voice and cited a competitor whose docs were objectively worse. So Timmy did what any panicked apprentice does when his craft stops working and a deadline breathes down his neck. He went looking for a spell.</p>
+
+      <p>He found schema markup on the locked shelf of an SEO forum, the kind of thing older wizards only mention in a lowered voice: structured data, the secret language that tells the machines what your content <em>is</em>. FAQPage. Article. HowTo. Timmy understood none of it, but he understood that the writers getting cited were the ones casting it, and at that point understanding felt optional. He raised his wand and pointed it at the entire Help Center. A conceptual overview of billing cycles? <code>HowTo</code>. A troubleshooting note with one question in it? <code>FAQPage</code>. Release notes, a glossary, the page that was mostly a table all got the same flick of the wrist: <code>Article</code>, <code>Article</code>, <code>Article</code>. He tagged a "step 3" whose "step 2" lived on a different page entirely and felt rather like a first-year who had just learned <em>Liftarus Featherio</em>, right up until the feather caught fire.</p>
+
+      <p>The results arrived a few weeks later, and they were fool's gold. He was still uncited. He had, however, conjured a small forest of warnings in Search Console: HowTo steps with no steps, FAQ markup that matched nothing on the visible page, an <code>Article</code> the crawler quietly declined to believe. His clean documentation now wore a layer of contradictory metadata like cheap gilt over a rotted beam. He had made good content invisible <em>and</em> broken at once, which he had not known was a thing one wand could do.</p>
+
+      <p>The realization landed the way it lands on every apprentice eventually: the markup had never been the magic. He had labeled things he had not bothered to understand, and the machine, being a machine, believed his labels. The spell did exactly what he told it to. The trouble was that Timmy had no idea what he had told it.</p>
+
+      <figure>
+        <img src="/assets/images/blog/techwriter-schema.jpg"
+             alt="A storybook cover titled 'Timmy Techwriter and the Sorcerer's Schema,' showing a young technical writer in a server room waving a wand that conjures glowing code and schema windows, with a 'Docs & Caffeine' mug and a laptop full of markup on the desk beside him">
+      </figure>
+
+      <h2>The spell is not the spellcraft</h2>
+
+      <p>If you have been anywhere near this conversation in the last year, you already accept the premise: machines read your content now, they retrieve pieces of it to answer questions, and the words you publish are increasingly spoken in a voice that is not yours. Nobody has even settled on what to call the work, Answer Engine Optimization or Generative Engine Optimization or a half-dozen other acronyms used interchangeably. I made the broad case a few months back. What I want to dig into here is the layer underneath, the part where writers like Timmy go wrong, because the failure is almost always the same failure.</p>
+
+      <p>There is a timely irony in the spells Timmy chose. Google retired HowTo rich results in 2023, and as of May 2026 it stopped showing FAQ rich results too, so the two incantations he reached for first conjure nothing in the search results anymore. That does not make the markup worthless, but it should change what you think it is for. Structured data was never really about the decorative snippet in a results page. Its job now is to help a machine understand and cite what your content means, which it can only do if the meaning is actually there.</p>
+
+      <p>Schema markup is a labeling system. It lets you declare, in a vocabulary machines recognize, "this is a procedure," "this is the author," "this product is the same one described over there." But labeling is downstream of meaning, and this is the thing Timmy got backwards. When you put <code>HowTo</code> on a page, you are claiming it contains an ordered procedure with discrete steps. If that is true, a retrieval system can lift those steps cleanly into an answer. If it is not, you have told a literal-minded machine something false about your own content, and the kind outcome is that it ignores you. The unkind one is that it believes you, serves a "procedure" that is really a concept page, and sends a user in a circle.</p>
+
+      <blockquote class="pullquote">
+        Structured data only amplifies meaning the content already carries. Where the meaning is absent, the markup points at empty space.
+      </blockquote>
+
+      <h2>The actual alchemy</h2>
+
+      <p>Here is the gold, and it is less glamorous than a spellbook. The transformation that makes content legible to a machine is modeling the entities in your domain and the relationships between them clearly enough that a machine can reason over them. An entity is a thing your content is about that has an identity of its own: a product, a plan, a user role, an error code. A relationship is the verb between the nouns, the way a plan <em>includes</em> features or an error <em>is resolved by</em> a procedure.</p>
+
+      <p>That sounds like ontology homework, so here is the smallest possible version for Timmy's billing product. The raw material he started with was a mess, the way most source material is: three support engineers who each called the thing something different, a help center that had drifted over two years, a spec that contradicted the UI. The first move is not markup. It is deciding what the entities are and giving each one a single canonical name.</p>
+
+      <div class="callout">
+        <p><strong>The unrefined input (one concept, three names across the docs):</strong></p>
+        <ul>
+          <li>"your subscription" (billing page)</li>
+          <li>"your membership" (welcome email, cancellation flow)</li>
+          <li>"your plan" (pricing page, upgrade guide)</li>
+        </ul>
+        <p><strong>The refined model (one canonical entity, with its relationships named):</strong></p>
+        <ul>
+          <li><strong>Plan</strong> <em>is the canonical term</em>; "subscription" and "membership" are deprecated aliases.</li>
+          <li>A <strong>Plan</strong> <em>includes</em> one or more <strong>Features</strong>.</li>
+          <li>A <strong>Plan</strong> <em>is changed by</em> the <strong>Upgrade</strong> and <strong>Cancellation</strong> procedures.</li>
+          <li>A <strong>Charge</strong> <em>is disputed through</em> the <strong>Billing Support</strong> procedure.</li>
+        </ul>
+      </div>
+
+      <p>Five lines, no software, and now the markup writes itself, because every type it declares is a structure you already made true in the prose. Timmy's <code>FAQPage</code>, slapped on a page that called the thing a "membership," had nothing behind it to declare.</p>
+
+      <p>This is also why Timmy's docs read well to humans but fell apart for machines. A person reading forty pages builds the entity model in their own head, inferring that "subscription," "membership," and "plan" are one thing because they are forgiving and want to solve their problem. A machine does not extend that charity. If page twelve says subscription and page thirty says membership and nothing connects them, it sees two entities where you meant one, and your prose dissolves into noise at the moment it gets retrieved.</p>
+
+      <h2>Why this costs more than it used to</h2>
+
+      <p>You could have skated on sloppy taxonomy a couple of years ago, and this is the part that has genuinely changed. Early retrieval pulled a single chunk and answered from it, so one inconsistent page cost you one bad answer. The reasoning models retrieving now do not run a single query. They fan a question out into many, often a dozen or more sub-queries, then walk across pages stitching the pieces together: what is the Plan, what does it include, how do I cancel it. Every hop is a chance for your naming to betray you. A model that pulls "Plan" from the pricing page and "membership" from the cancellation flow has to decide whether those are the same product, and when it cannot tell, it either drops you or guesses, and the guesses are not reliably in your favor.</p>
+
+      <p>So the cost of a bad taxonomy is no longer flat. It scales with how sophisticated the retrieval is, and the retrieval gets more sophisticated every quarter. An agent traversing your entity graph compounds every inconsistency across every hop, where the old single-chunk approach only ever stumbled once. And the ceiling is low even when you win: a 2025 study in <em>Nature Communications</em> found that somewhere between half and nearly all of LLM responses were not fully supported by the sources they cited. You control the inputs you hand the machine, not what it does with them, which is all the more reason the inputs should be clean.</p>
+
+      <h2>What this looks like at the desk</h2>
+
+      <p>None of this requires you to become an ontologist. It is the five-line exercise above, done on purpose, with intention, before the markup. List your core entities. Give each one a single name and demote the rest to aliases. Then write the verbs between them down, in a sentence or a table, because those verbs are the relationships your markup will later claim are real. That is the whole ontologist's job in miniature, and you can do it on a whiteboard.</p>
+
+      <p>The second half is writing so the meaning survives extraction. Lead with the definition or the answer in the first sentence, so a chunk still makes sense when it is lifted out of context, because it will be. Keep one idea per passage. Name your entities explicitly instead of leaning on "it" and "this" and "the above," which read fine to a human and turn to fog the moment a machine grabs a single fragment. That serves the person skimming at 2 a.m. and the reasoning model fanning out across your docs for the same reason: both need the meaning fast, in the chunk in front of them.</p>
+
+      <div class="callout">
+        <p><strong>Before you mark up a page, answer these:</strong></p>
+        <ul>
+          <li>What entities does this page describe, and do I call each one by exactly one name?</li>
+          <li>Is the structure I'm about to declare actually present? (A <code>HowTo</code> needs real, ordered steps. A <code>FAQPage</code> needs real questions with answers on the same page.)</li>
+          <li>If a machine lifted any single paragraph out of this page, would it still mean what I intended?</li>
+          <li>Does this content's structure match the type I'm assigning, or am I assigning the type because I saw someone else use it?</li>
+        </ul>
+      </div>
+
+      <p>Get those right and the markup becomes the easy part, almost anticlimactic, just a faithful description of work you already did. Get them wrong and no amount of bracketed incantation will save you, which is the lesson Timmy paid for in Search Console warnings.</p>
+
+      <h2>Turning lead into gold</h2>
+
+      <p>The alchemists are the right patron saints for this. They never actually had a spell that turned lead into gold. What they had, when they had anything, was a slow and unglamorous understanding of what their materials really were, the kind of patient chemistry that nobody puts in the story but that did all the actual transmuting.</p>
+
+      <p>Documentation is the same trick. Raw information does not become a usable document on its own, and the schema is only the dramatic gesture, the part that looks like magic. The transformation is the refining underneath: taking the unrefined, the inconsistent, and the overwhelming, the three engineers and the drifted help center and the spec that fights the UI, and resolving it into entities with single names and relationships you can state out loud. That is what turns a pile of source material into something a reader, or a machine, can use. For the longer version of why this decides whose voice the machines speak in, see the companion to this argument, where I made the case that <a href="/blog/aeo-revolution/">structure and semantics beat clicks and keywords</a> in the age of answer engines.</p>
+
+      <p>Timmy eventually figured it out. He put the wand down, opened a doc, and mapped what his billing product actually was: the entities, the one name each would answer to, the relationships he had been assuming his readers would infer. The markup came last, and it was easy when it came, because by then it was only telling the truth.</p>
+
+      <p>Schema is the spell. Taxonomy is the spellcraft. Learn the second one and the first finally works.</p>
+
+      <hr>
+
+      <div class="callout" style="background: #22304a; border-left-color: #7cc2f0;">
+        <p>This post is part of the <a href="https://perthedocs.com/">Per the Docs</a> article
+        series, a monthly collaborative series where technical writers explore different aspects
+        of our craft. Each month features a new topic with perspectives from writers across the
+        community.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+          <a href="https://brandihopkins.com/blog/find-source-truth"
+             style="display: block; padding: 1rem; background: #1b263b; border-radius: 6px;
+                    text-decoration: none; border: 1px solid rgba(124, 194, 240, 0.2);">
+            <div style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.25rem;">
+              &larr; Previous article
+            </div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">
+              When the source of truth isn't true
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.85;">Brandi Hopkins</div>
+          </a>
+          <a href="https://codyanthony.dev/blog/where-the-script-stops/"
+             style="display: block; padding: 1rem; background: #1b263b; border-radius: 6px;
+                    text-decoration: none; border: 1px solid rgba(124, 194, 240, 0.2);
+                    text-align: right;">
+            <div style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.25rem;">
+              Next article &rarr;
+            </div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">
+              Where the Script Stops and the Judgment Starts
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.85;">Cody Anthony</div>
+          </a>
+        </div>
+
+        <p><a href="https://perthedocs.com/">See the full list of participants and articles
+        &rarr;</a></p>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1.25rem;"><em>Disclaimer: Each
+        article in this series is written and owned by its respective author. The views,
+        opinions, and experiences shared belong solely to the individual writer and do not
+        represent the perspectives of other participants or their employers (past or
+        present).</em></p>
+      </div>
+    ]]>
+  </content>
+</post>

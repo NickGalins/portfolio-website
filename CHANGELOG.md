@@ -2,6 +2,19 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-06-08 - Blog post: "Timmy Techwriter and the Sorcerer's Schema"
+
+### Added
+
+- **New blog post: Timmy Techwriter and the Sorcerer's Schema** — Per the Docs blog hop entry on the "Content Alchemy" theme (transforming raw, inconsistent, overwhelming source material into usable docs). Opens with a wizard-school satire vignette, then argues that schema markup is downstream of taxonomy: the real work is modeling entities and relationships, and that work matters more as agentic, multi-query retrieval compounds naming inconsistencies across hops. Includes a worked billing-domain entity model, acknowledges the 2023/2026 deprecation of HowTo and FAQ rich results, and notes the unsettled AEO/GEO terminology. Companion to "Out with SEO, in with AEO."
+- Hero/thumbnail image `techwriter-schema.jpg`
+- Per the Docs series header and prev/next participant footer (Brandi Hopkins ← / Cody Anthony →)
+
+### Changed
+
+- Set as the new featured post on `/blog/` (most recent post)
+- Unset `featured` on "Don't Turn Off Your Brain" so only one post is featured
+
 ## 2026-04-21 - "Don't Turn Off Your Brain" copy fixes
 
 ### Changed
