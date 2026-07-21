@@ -92,5 +92,14 @@
 <script src="/assets/js/chatbot-demo.js"></script>
 ]]></body>
     </section>
+
+    <section>
+      <heading>The design spec behind Gski</heading>
+      <body><![CDATA[
+<p>Gski isn't improv — it's a designed artifact. The full conversation design spec lives in Figma, laid out the way I'd hand it to a PM for sign-off: the production system prompt annotated block by block, a proposed RAG architecture for grounding answers in a real knowledge base, voice and style governance, three authored conversation flows (the money path, the guardrail path, and the happy path), and a golden response set that doubles as a regression suite.</p>
+<p>There's also an appendix that rebuilds the entire support scope the traditional way — a left-to-right wall of ~55 hand-authored nodes covering every intent, retry, and dead end, next to the six prompt blocks that replaced it. The tooling changed; the discipline didn't.</p>
+<p><a href="https://www.figma.com/design/vxUL6S8yo5rsxbUMLDtuhH" target="_blank" rel="noopener">View the full conversation design spec in Figma →</a></p>
+]]></body>
+    </section>
   </content>
 </project>

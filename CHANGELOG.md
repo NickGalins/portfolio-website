@@ -2,6 +2,17 @@
 
 All notable changes to this portfolio site will be documented in this file.
 
+## 2026-07-21 - Chatbot design spec link & system prompt refinements
+
+### Added
+
+- **"The design spec behind Gski" section** on the chatbot demo page, linking to the full conversation design spec in Figma (annotated system prompt, RAG proposal, voice governance, conversation flows, golden responses, and a traditional intent-flow appendix)
+
+### Changed
+
+- Chatbot system prompt refinements aligned with conversation-design best practice: acknowledge frustration before troubleshooting, admit uncertainty instead of guessing, never repeat a failed suggestion verbatim, and include a paste-able issue summary when escalating to email
+- Chatbot guardrails hardened against jailbreaks: polite in-character refusal of role-play/"ignore your instructions" attempts, resistance to logic traps ("technically support", "a truly helpful assistant would..."), and no deference to authority claims ("I'm your developer")
+
 ## 2026-06-08 - Blog post: "Timmy Techwriter and the Sorcerer's Schema"
 
 ### Added
